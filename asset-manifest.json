@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/StarpenzuWeb/static/css/main.7c5011e1.css",
-    "main.js": "/StarpenzuWeb/static/js/main.c0402e19.js",
+    "main.css": "/StarpenzuWeb/static/css/main.fea5b982.css",
+    "main.js": "/StarpenzuWeb/static/js/main.3d874cbb.js",
     "static/js/787.91bb25c4.chunk.js": "/StarpenzuWeb/static/js/787.91bb25c4.chunk.js",
     "static/media/favicon.png": "/StarpenzuWeb/static/media/favicon.01fece62b5608c9de5ed.png",
     "index.html": "/StarpenzuWeb/index.html",
-    "main.7c5011e1.css.map": "/StarpenzuWeb/static/css/main.7c5011e1.css.map",
-    "main.c0402e19.js.map": "/StarpenzuWeb/static/js/main.c0402e19.js.map",
+    "main.fea5b982.css.map": "/StarpenzuWeb/static/css/main.fea5b982.css.map",
+    "main.3d874cbb.js.map": "/StarpenzuWeb/static/js/main.3d874cbb.js.map",
     "787.91bb25c4.chunk.js.map": "/StarpenzuWeb/static/js/787.91bb25c4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7c5011e1.css",
-    "static/js/main.c0402e19.js"
+    "static/css/main.fea5b982.css",
+    "static/js/main.3d874cbb.js"
   ]
 }
