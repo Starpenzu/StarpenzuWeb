@@ -1,13 +1,14 @@
-import './App.css';
-import Logo from "./images/favicon.png"
+import {HashRouter as Router, Route, Routes} from "react-router-dom";
+import Home from './Components/Home/Home'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={Logo} className="App-logo" alt="logo" />
-      </header>
-    </div>
+      <Router>
+          <Routes>
+              <Route exact  path ="/" element={<Home/>} />
+          </Routes>
+      </Router>
   );
 }
 
