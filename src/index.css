@@ -7,18 +7,35 @@
 }
 
 body{
-    background-color: red;
+    background: #F9B70B;
+
 }
 
 /*Nav Bar*/
-.nav{
-    background-color: #ffffff;
+
+nav{
+    background: white;
+    width: 100%;
+    height: 37px;
+}
+.hamBurgerActive{
+    color: #F9B70B;
+
+}
+
+.nav {
+    width: 100%;
     display: inline-flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
-    height: 37px;
     align-items: center;
+    background: white;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.navItems{
+    display: none;
 }
 
 .brand{
@@ -56,9 +73,131 @@ body{
 
 .harmBurgerDropDown ul li{
     list-style: none;
+    font-size: 24px;
+    font-weight: 500;
     padding-bottom: 48px;
 }
 
 .hamBurgerActive{
     padding-top: 48px;
+}
+@media (min-width: 390px){
+
+}
+
+@media (min-width: 560px){
+    nav{
+        height: 55px;
+    }
+
+    .navLogo{
+        width: 40px;
+        height: 40px;
+    }
+    .lgText{
+        font-size: 12px;
+    }
+
+    .hamburgerImg{
+        width: 25px;
+        height: 25px;
+    }
+
+}
+
+@media (min-width: 760px){
+    .brand{
+        padding-left: 39px;
+    }
+
+    nav{
+        height: 64px;
+    }
+
+    .navLogo{
+        width: 80px;
+        height: 80px;
+    }
+
+    .lgText{
+        font-size: 24px;
+    }
+
+    .hamBurgerActive{
+        padding-top: 50px;
+    }
+
+    .harmBurgerDropDown{
+        padding-left: 64px;
+    }
+
+    .harmBurger{
+        padding-right: 57px;
+    }
+    .hamburgerImg {
+         width: 39px;
+         height: 23px;
+    }
+}
+
+@media (min-width: 1024px){
+    .harmBurger{
+        display: none;
+    }
+    .harmBurgerDropDown{
+        display: none;
+    }
+
+    .navItems{
+        display: flex;
+        padding-right: 47px;
+    }
+
+    .navItems ul{
+        display: inline-flex;
+        list-style: none;
+        gap: 24px;
+        align-items: center;
+    }
+
+    .navItems ul li{
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    .registerButton{
+        background: #F9B70B;
+        color: white;
+        padding: 10px 37px 10px 37px;
+        border-radius: 5px;
+        border: none;
+        width: 140px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    .loginButton{
+        background: #000000;
+        color: white;
+        padding: 10px 37px 10px 37px;
+        border-radius: 5px;
+        border: none;
+        width: 140px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    .navItemActive{
+        color: #F9B70B;
+    }
+
+}
+
+@media (min-width: 1440px){
+   nav{
+       max-width: 1440px;
+       margin: 0 auto;
+   }
 }

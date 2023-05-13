@@ -1,8 +1,9 @@
 import React from 'react'
 import Logo from '../../images/favicon.png'
+import Button from './Button'
 //import harmburger from 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1683922753/starpenzu/Vector_r4aqp6.svg'
 
-export default function NavBar(){
+export default function NavBar() {
     const [hamburger, setHamburger] = React.useState(false)
 
     function handlehamburger() {
@@ -29,6 +30,24 @@ export default function NavBar(){
                     <img src={"https://res.cloudinary.com/do5wu6ikf/image/upload/v1683922753/starpenzu/Vector_r4aqp6.svg"}
                                                                                             className='hamburgerImg'  onClick={handlehamburger} alt="ham"/>}
             </div>
+
+        {/*show on 1024px*/}
+
+            <div className="navItems">
+                <ul>
+                    <li className='navItemActive'>Home</li>
+                    <li>Courses</li>
+                    <li>Contact Us</li>
+                    <li>About Us</li>
+                    <li>
+                        <Button className="registerButton" name='Register'/>
+                    </li>
+                    <li>
+                       <Button className="loginButton" name='Login'/>
+                    </li>
+                </ul>
+            </div>
+
         </div>
             {hamburger &&
                 <div className={`harmBurgerDropDown`}>
@@ -42,6 +61,8 @@ export default function NavBar(){
                      </ul>
                 </div>
             }
+
+
         </nav>
     )
 }
