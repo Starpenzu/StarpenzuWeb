@@ -14,25 +14,29 @@ body{
 /*Nav Bar*/
 
 nav{
-    background: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    height: 37px;
+    background: white;
+    height: 40px;
 }
+
 .hamBurgerActive{
     color: #F9B70B;
 
 }
 
-.nav {
-    width: 100%;
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background: white;
-    padding-top: 18px;
-    padding-bottom: 18px;
-}
+/*.nav {*/
+/*    width: 100%;*/
+/*    display: inline-flex;*/
+/*    flex-direction: row;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    background: white;*/
+/*    padding-top: 18px;*/
+/*    padding-bottom: 18px;*/
+/*}*/
 
 .navItems{
     display: none;
@@ -87,7 +91,7 @@ nav{
 
 @media (min-width: 560px){
     nav{
-        height: 55px;
+        height: 58px;
     }
 
     .navLogo{
@@ -111,6 +115,7 @@ nav{
     }
 
     nav{
+        padding: 18px 0 18px 0;
         height: 64px;
     }
 
