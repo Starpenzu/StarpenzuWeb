@@ -7,8 +7,7 @@
 }
 
 body{
-    background: #F9B70B;
-
+    background: #fff2cf;
 }
 
 /*Nav Bar*/
@@ -20,6 +19,7 @@ nav{
     width: 100%;
     background: white;
     height: 40px;
+
 }
 
 .hamBurgerActive{
@@ -68,11 +68,19 @@ nav{
     width: 19.5px;
     height: 11.5px;
 }
-
+.sss{
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
 .harmBurgerDropDown{
+
     padding-left: 38px;
     background-color: white;
-    transition: background 0.5s ease-in;
+    transition: margin 0.5s ease-in;
 }
 
 .harmBurgerDropDown ul li{
@@ -85,11 +93,75 @@ nav{
 .hamBurgerActive{
     padding-top: 48px;
 }
+
+/*Footer*/
+
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: black;
+    padding:24px 34px 24px 0;
+    color: white;
+    display: inline-flex;
+    flex-direction: row;
+    gap: 35px;
+}
+
+footer h1{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+     letter-spacing: 0.5px; 
+}
+
+footer  ul li{
+    list-style: none;
+    font-size: 8px;
+    font-weight: 400;
+    line-height: 24px;
+     letter-spacing: 0.5px;
+}
+
+.footerBrand {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding-left: 25px;
+    justify-content: flex-start;
+}
+
+.footerLogo{
+    width: 30px;
+    height: 30px;
+}
+
+.footerlgText{
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.socialSeg, .companySeg{
+    padding-left: 34px;
+}
+
+.socialHead, .companyHead, .menuHead, .offersHead{
+    margin-bottom: 10px;
+}
+
+.companySeg ul{
+    margin-bottom: 15px;
+}
+
 @media (min-width: 390px){
 
 }
 
 @media (min-width: 560px){
+    /*Nav Bar*/
+
     nav{
         height: 58px;
     }
@@ -110,6 +182,8 @@ nav{
 }
 
 @media (min-width: 760px){
+    /*Nav Bar*/
+
     .brand{
         padding-left: 39px;
     }
@@ -146,6 +220,8 @@ nav{
 }
 
 @media (min-width: 1024px){
+    /*Nav Bar*/
+
     .harmBurger{
         display: none;
     }
@@ -201,7 +277,9 @@ nav{
 }
 
 @media (min-width: 1440px){
-   nav{
+    /*Nav Bar*/
+
+   .sss{
        max-width: 1440px;
        margin: 0 auto;
    }

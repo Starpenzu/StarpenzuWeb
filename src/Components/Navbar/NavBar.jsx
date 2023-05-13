@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../../images/favicon.png'
+//import Logo from '../../images/favicon.png'
 import Button from './Button'
 //import harmburger from 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1683922753/starpenzu/Vector_r4aqp6.svg'
 
@@ -15,7 +15,7 @@ export default function NavBar() {
     }
 
     return(
-        <>
+        <div className='sss'>
 
         <nav>
                 <div className="brand">
@@ -67,6 +67,6 @@ export default function NavBar() {
             }
         </div>
 
-        </>
+        </div>
     )
 }
