@@ -3,6 +3,7 @@ import React from 'react'
 export default function Footer(){
     return(
         <footer>
+            {/*<div className='forceMiddle'>*/}
             <div className="leftSeg">
                 <div className="companySeg">
                     <h1 className='companyHead'>Company</h1>
@@ -46,7 +47,7 @@ export default function Footer(){
                     <li>Interview Prep</li>
                     <li>Cover Letter Template</li>
                     <li>Expert Training</li>
-                    <li>Certificates  After Completion</li>
+                    <li>Certificates</li>
                     <li>Mentors Live Session</li>
                 </ul>
             </div>
@@ -63,6 +64,18 @@ export default function Footer(){
                 </ul>
             </div>
 
+            <div className="socialSeg2">
+                <h1 className='socialHead'>Social Media</h1>
+
+                <ul>
+                    <li>Instagram</li>
+                    <li>Facebook</li>
+                    <li>Linkedin</li>
+                    <li>Email</li>
+                </ul>
+
+            </div>
+            {/*</div>*/}
         </footer>
     )
 }
