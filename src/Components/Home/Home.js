@@ -11,7 +11,7 @@ export default function Home (){
 
             <Hero/>
 
-            <Footer/>
+            {/*<Footer/>*/}
         </div>
     )
 }
@@ -32,18 +32,4 @@ export default function Home (){
             {/*    </div>*/}
             {/*</div>*/}
 
-            {/*<div className="whatDoYouWant">*/}
-            {/*    <div className="wantText">*/}
-            {/*        What do you want <br/>*/}
-            {/*        to learn today?*/}
-            {/*    </div>*/}
-            {/*    */}
-            {/*    <div className="wantInput">*/}
-            {/*        <input type="text"/>*/}
-            {/*    </div>*/}
 
-            {/*    <div className="wantTrend">*/}
-            {/*        <p>Trending Courses: <span>Data Structure</span> <span>cyber Security</span> <span>Product Designing</span></p>*/}
-            {/*    </div>*/}
-            {/*    */}
-            {/*</div>*/}
