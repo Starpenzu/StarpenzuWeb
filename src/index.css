@@ -213,8 +213,11 @@ ul{
     color: white;
     border-radius: 5px;
     padding: 12px;
-    width: 227px;
-    height: 102px;
+    width: 229px;
+    height: 91px;
+    position: absolute;
+    left: 0;
+    right: 0;
 }
 
 .wantInput input {
@@ -223,6 +226,7 @@ ul{
     width: 187px;
     height: 12px;
     font-size: 10px;
+    text-indent: 5px;
 }
 
 .wantInput input:active {
@@ -245,11 +249,6 @@ ul{
     position: relative;
 }
 
-.whatDoYouWantcontainer{
-    position: absolute;
-    left: 0;
-    right: 0;
-}
 
 .searchBtn {
     margin-top: 1px;
@@ -269,13 +268,14 @@ ul{
 }
 
 .wantText{
+    font-weight: 500;
     font-size: 16px;
     margin-bottom: 10px;
 }
 
-.wantTrend{
+.wantTrend {
     font-family: Poppins;
-    margin-top: 6px;
+    margin-top: 13px;
     padding-left: 5px;
 }
 
@@ -285,8 +285,8 @@ ul{
 }
 
 .wantTrend p u{
+    margin-left: 4px;
     color: #F9B70B;
-    /*text-decoration: #F9B70B underline solid 0.15px;*/
 }
 
 @media (min-width: 320px){
@@ -301,6 +301,32 @@ ul{
     /*    width: 82%;*/
     /*    margin: 0 auto;*/
     /*}*/
+
+    .whatDoYouWantcontainer {
+        margin: 0 auto;
+        background: black;
+        color: white;
+        border-radius: 5px;
+        padding: 12px;
+        width: 294px;
+        height: 102px;
+    }
+
+    .wantInput {
+        padding: 2px;
+        display: inline-flex;
+        width: 283px;
+        height: 20px;
+        background: #FFFFFF;
+        border-radius: 2px;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+
+    .wantTrend p {
+        font-family: Poppins;
+        font-size: 6px;
+    }
 }
 
 @media (min-width: 425px){
@@ -318,6 +344,29 @@ ul{
     .heroImg img {
         width: 317.26px;
         height: 495.28px;
+    }
+
+    .whatDoYouWantcontainer {
+        width: 337px;
+        height: 102px;
+    }
+
+    .wantInput {
+        padding: 2px;
+        display: inline-flex;
+        width: 322px;
+        height: 20px;
+        background: #FFFFFF;
+        border-radius: 2px;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+    .wantInput input {
+        border: none;
+        margin-top: 3px;
+        width: 285px;
+        height: 12px;
+        font-size: 10px;
     }
 }
 
@@ -430,8 +479,9 @@ ul{
     }
 
     /*mainbody*/
-    .hero{
+    .hero {
         margin-top: 100px;
+        padding-bottom: 185px;
     }
 
     .hero2{
@@ -449,6 +499,61 @@ ul{
         width: 294.26px;
         height: 447.28px;
     }
+
+    .whatDoYouWantcontainer {
+        border-radius: 10px;
+        width: 615.92px;
+        height: 190px;
+        padding: 35px;
+        margin-bottom: 100px;
+        margin-top: 33px;
+    }
+
+    .wantText {
+        font-weight: 500;
+        font-size: 35px;
+        margin-bottom: 30px;
+    }
+
+    .wantInput {
+        padding: 2px;
+        display: inline-flex;
+        width: 621px;
+        height: 33px;
+        background: #FFFFFF;
+        border-radius: 2px;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+
+    .searchBtn {
+        margin-top: 2px;
+        height: 50px;
+        width: 50px;
+    }
+
+    .wantInput input {
+        border: none;
+        margin-top: 3px;
+        width: 431px;
+        height: 26px;
+        font-size: 19px;
+    }
+
+    .wantTrend p {
+        font-size: 13px;
+    }
+
+    .wantTrend {
+        font-family: Poppins;
+        margin-top: 24px;
+        padding-left: 5px;
+    }
+
+    .wantTrend p u{
+        margin-left: 6px;
+    }
+
 
 }
 
@@ -520,8 +625,8 @@ ul{
     }
 
 /*    mainbody*/
-    .hero{
-        padding: 40px 47px 83px 58px;
+    .hero {
+        padding: 41px 47px 292px 58px;
     }
 
     .hero2{
@@ -537,6 +642,36 @@ ul{
     .heroImg img {
         width: 390px;
         height: 586.5px;
+    }
+
+    .whatDoYouWantcontainer {
+        margin-top: 130px;
+        width: 771.92px;
+        height: 210px;
+        padding: 35px;
+        margin-bottom: 100px;
+        border-radius: 15px;
+    }
+
+    .wantInput {
+        padding: 2px;
+        display: inline-flex;
+        width: 766px;
+        height: 33px;
+        background: #FFFFFF;
+        border-radius: 2px;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+
+    .wantText {
+        font-weight: 500;
+        font-size: 48px;
+        margin-bottom: 30px;
+    }
+
+    .wantTrend p {
+        font-size: 16px;
     }
 
 }
@@ -581,13 +716,33 @@ ul{
     /*    main body*/
     .heroText {
         font-weight: 500;
-        font-size: 80px;
+        font-size: 75px;
         line-height: 105px;
     }
 
     .heroImg img {
         width: 433px;
         height: 639px;
+    }
+
+    .whatDoYouWantcontainer {
+        margin-top: 130px;
+        width: 919.92px;
+        height: 214px;
+        padding: 35px;
+        margin-bottom: 100px;
+        border-radius: 15px;
+    }
+
+    .wantInput {
+        padding: 2px;
+        display: inline-flex;
+        width: 920px;
+        height: 33px;
+        background: #FFFFFF;
+        border-radius: 2px;
+        align-items: stretch;
+        justify-content: space-between;
     }
 
 }
@@ -629,6 +784,46 @@ ul{
 
     .socialHead, .companyHead, .menuHead, .offersHead{
         padding-bottom: 20px
+    }
+
+    .whatDoYouWantcontainer {
+        margin-top: 130px;
+        width: 1219px;
+        height: 231px;
+        padding: 35px;
+        margin-bottom: 100px;
+        border-radius: 15px;
+    }
+
+    .wantTrend {
+        font-family: Poppins;
+        margin-top: 31px;
+        padding-left: 5px;
+    }
+
+    .wantInput {
+        padding: 2px;
+        display: inline-flex;
+        width: 1210px;
+        height: 44px;
+        background: #FFFFFF;
+        border-radius: 2px;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+
+    .searchBtn {
+        margin-top: 1px;
+        height: 70px;
+        width: 70px;
+    }
+
+    .wantInput input {
+        border: none;
+        margin-top: 3px;
+        width: 1122px;
+        height: 37px;
+        font-size: 30px;
     }
 
 
