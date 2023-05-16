@@ -15,7 +15,8 @@
         font-family: 'Clash Display';
         font-style: normal;
         font-weight: 500;
-        font-size: 12px;
+        letter-spacing: 0.7px;
+        font-size: 11px;
         line-height: 15px;
         margin-top: 21px;
     }
@@ -25,14 +26,14 @@
         background: #1E1E1E;
         border-radius: 10px;
         padding: 20px;
-        width: 249px;
-        height: 381px;
+        width: 204px;
+        height: 338px;
         margin-bottom: 30px;
     }
 
     .CoursesComponentImg {
-        width: 250px;
-        height: 163px;
+        width: 198px;
+        height: 129px;
         border-radius: 10px;
         margin: 0 auto;
     }
@@ -42,7 +43,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
-        gap: 18px;
+        gap: 6px;
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 500;
@@ -77,27 +78,26 @@
         margin-top: 18px;
         font-style: normal;
         font-weight: 500;
-        font-size: 16px;
+        font-size: 13px;
         line-height: 30px;
         color: #D1CACA;
-
     }
 
     .courseCTA {
         background: #FFFFFF;
         border-radius: 10px;
         border: none;
-        padding: 8px 56px;
+        padding: 4px 56px;
         font-family: 'Clash Display';
         font-style: normal;
         font-weight: 500;
-        font-size: 24px;
+        font-size: 21px;
         line-height: 34px;
         color: #1E1E1E;
         margin-top: 22px;
         text-align: center;
-        width: 247px;
-        height: 46px;
+        width: 200px;
+        height: 38px;
     }
 }
 

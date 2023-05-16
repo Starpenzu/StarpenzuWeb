@@ -34,18 +34,9 @@ export default function Courses(){
                     </div>
 
 
-
                 </div>
 
-                <div className="courcesContainer2">
-                    <CoursesComponent/>
-                    <CoursesComponent/>
-                    <CoursesComponent/>
 
-                    <CoursesComponent/>
-                    <CoursesComponent/>
-                    <CoursesComponent/>
-                </div>
 
             </>
         );
