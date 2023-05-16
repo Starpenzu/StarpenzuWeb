@@ -43,21 +43,21 @@ nav{
     display: none;
 }
 
-.brand{
+.brand {
     display: inline-flex;
     flex-wrap: nowrap;
     align-items: center;
     gap: 0;
-    padding-left: 32px;
+    padding-left: 7px;
 }
 
-.navLogo{
-    width: 24px;
-    height: 24px;
+.navLogo {
+    width: 45px;
+    height: 45px;
 }
 
 .lgText{
-    font-size: 8px;
+    font-size: 13px;
     font-weight: 500;
 }
 
@@ -77,12 +77,12 @@ nav{
     right: 0;
   
 }
-.harmBurgerDropDown{
+.harmBurgerDropDown {
     padding-left: 38px;
     background-color: white;
     position: absolute;
     transition: margin 0.5s ease-in;
-    top: 0;
+    top: 31px;
     left: 0;
     right: 0;
     z-index: -100;
@@ -588,12 +588,13 @@ ul{
         height: 58px;
     }
 
-    .navLogo{
-        width: 40px;
-        height: 40px;
+    .navLogo {
+        width: 66px;
+        height: 66px;
     }
-    .lgText{
-        font-size: 12px;
+
+    .lgText {
+        font-size: 20px;
     }
 
     .hamburgerImg{
@@ -850,12 +851,13 @@ ul{
         line-height: 27px;
     }
 
-    .firstText{
+    .firstText {
         font-family: 'Clash Display';
         font-style: normal;
         font-weight: 500;
         font-size: 40px;
         line-height: 49px;
+        margin-top: 20px;
     }
 
     .secondText{
@@ -1179,6 +1181,29 @@ ul{
         gap: 709px;
     }
 
+    .firstText{
+        font-size: 40px;
+        line-height: 49px;
+        letter-spacing: 1px;
+    }
+
+    .secondSection img{
+        padding-top: 30px;
+    }
+
+    .secondSection {
+        text-align: center;
+        color: white;
+        background: #1E1E1E;
+        padding: 8px 28px 45px 28px;
+    }
+
+
+    .firstSection {
+        background: url('https://res.cloudinary.com/do5wu6ikf/image/upload/v1684242212/starpenzu/dexkRectangle_132_1_gnftu0.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 
 
 }
