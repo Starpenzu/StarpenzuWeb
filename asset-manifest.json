@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/StarpenzuWeb/static/css/main.4c8b0b03.css",
+    "main.css": "/StarpenzuWeb/static/css/main.ad0d9a45.css",
     "main.js": "/StarpenzuWeb/static/js/main.b4c540c2.js",
     "static/js/787.91bb25c4.chunk.js": "/StarpenzuWeb/static/js/787.91bb25c4.chunk.js",
     "static/media/slick.svg": "/StarpenzuWeb/static/media/slick.2630a3e3eab21c607e21.svg",
@@ -8,12 +8,12 @@
     "static/media/slick.ttf": "/StarpenzuWeb/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/StarpenzuWeb/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/StarpenzuWeb/index.html",
-    "main.4c8b0b03.css.map": "/StarpenzuWeb/static/css/main.4c8b0b03.css.map",
+    "main.ad0d9a45.css.map": "/StarpenzuWeb/static/css/main.ad0d9a45.css.map",
     "main.b4c540c2.js.map": "/StarpenzuWeb/static/js/main.b4c540c2.js.map",
     "787.91bb25c4.chunk.js.map": "/StarpenzuWeb/static/js/787.91bb25c4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4c8b0b03.css",
+    "static/css/main.ad0d9a45.css",
     "static/js/main.b4c540c2.js"
   ]
 }
