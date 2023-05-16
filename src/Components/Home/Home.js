@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../Navbar/NavBar'
 import Footer from '../Footer/Footer'
 import Hero from './Hero'
+import Courses from '../Courses/Courses'
 
 export default function Home (){
 
@@ -10,6 +11,8 @@ export default function Home (){
             <Navbar/>
 
             <Hero/>
+
+            <Courses/>
 
             {/*<Footer/>*/}
         </div>

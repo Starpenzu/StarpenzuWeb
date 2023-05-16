@@ -110,7 +110,7 @@ footer{
     gap: 35px;
     width: 100%;
     justify-content: center;
-    z-index: -1000000;
+    /*z-index: -1000000;*/
 }
 
 footer h1{
@@ -288,6 +288,58 @@ ul{
     margin-left: 4px;
     color: #F9B70B;
 }
+.coursesContainer{
+    margin: 0 auto;
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 36px;
+}
+.feaCourses{
+    display: inline-flex;
+    flex-direction: row;
+    gap: 23px;
+    justify-content: center;
+    align-items: center;
+}
+
+.headText{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    color: #F9B70B;
+}
+
+.subText{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 7px;
+    line-height: 12px;
+    color: #000000;
+}
+
+.viewCouses button{
+    font-family: 'clash display';
+    width: 64.57px;
+    height: 24px;
+    background: #000000;
+    color: white;
+    border: none;
+    font-size: 8px;
+    border-radius: 5px;
+}
+
+.courcesContainer2{
+    display: flex;
+    gap: 61px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
 
 @media (min-width: 320px){
     /*.hero2 {*/
@@ -326,6 +378,10 @@ ul{
     .wantTrend p {
         font-family: Poppins;
         font-size: 6px;
+    }
+
+    .feaCourses{
+        gap: 81px;
     }
 }
 
@@ -367,6 +423,18 @@ ul{
         width: 285px;
         height: 12px;
         font-size: 10px;
+    }
+
+    .feaCourses {
+        gap: 102px;
+    }
+
+    .headText{
+        font-size: 16px;
+    }
+
+    .subText{
+        font-size: 8px;
     }
 }
 
@@ -554,6 +622,35 @@ ul{
         margin-left: 6px;
     }
 
+    .feaCourses {
+        margin-top: 136px;
+        padding: 0 36px 0 36px;
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 94px;
+    }
+
+    .headText {
+        font-size: 40px;
+        line-height: 49px;
+    }
+
+    .subText {
+        font-size: 20px;
+        line-height: 51px;
+    }
+
+    .viewCouses button{
+        width: 116.27px;
+        height: 48px;
+        font-size: 16px;
+    }
+
+
+
+
 
 }
 
@@ -674,6 +771,10 @@ ul{
         font-size: 16px;
     }
 
+    .feaCourses{
+        gap: 245px;
+    }
+
 }
 
 
@@ -743,6 +844,10 @@ ul{
         border-radius: 2px;
         align-items: stretch;
         justify-content: space-between;
+    }
+
+    .feaCourses {
+        gap: 402px;
     }
 
 }
@@ -826,6 +931,22 @@ ul{
         font-size: 30px;
     }
 
+    .headText{
+
+    }
+
+    .subText{
+
+    }
+
+    .viewCouses button{
+        width: 116.27px;
+        height: 48px;
+    }
+
+    .feaCourses {
+        gap: 709px;
+    }
 
 
 

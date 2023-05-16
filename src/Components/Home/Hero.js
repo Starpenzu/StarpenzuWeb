@@ -29,7 +29,7 @@ export default function Hero(){
                         <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1684105403/starpenzu/Group_103_zvhj59.svg" className='searchBtn' alt=""/>
                     </div>
                     <div className="wantTrend">
-                        <p>Trending Courses: <u>Data Structure</u> <u>cyber Security</u> <u>Product Designing</u></p>
+                        <p>Trending Courses: <u>Data Structure</u> <u>Cyber Security</u> <u>Product Designing</u></p>
                     </div>
             </div>
 
