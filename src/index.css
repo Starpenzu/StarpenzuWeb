@@ -357,6 +357,112 @@ ul{
     scroll-snap-align:start ;
 }
 
+.firstSection{
+    background: url("https://res.cloudinary.com/do5wu6ikf/image/upload/v1684250308/mobileRectangle_132_1_wmo1au.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*background-position: center center;*/
+    /*width: 100%;*/
+}
+
+.firstSectionImgTxt img{
+    width: 64px;
+    height: 64px;
+}
+
+.firstSection{
+    margin-top: 24px;
+}
+
+.firstSectionText{
+    font-family: 'Clash Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+
+}
+
+.firstSectionTxt{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 9px;
+    text-align: center;
+}
+
+.firstSectionImgTxt{
+    text-align: center;
+}
+
+.firstSectionImgTxtContainer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 18px;
+    /* width: 100%; */
+    padding-bottom: 25px;
+    align-items: center;
+}
+
+.breakPoint2, .breakPoint1{
+    display: inline-flex;
+    gap: 33px;
+}
+
+.secondSection{
+    text-align: center;
+    color: white;
+    background: #1E1E1E;
+    padding: 8px 28px 21px 28px;
+}
+
+.firstText{
+    font-family: 'Clash Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 4px;
+}
+
+.secondText{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 12px;
+    margin-bottom: 18px;
+}
+
+.secondSection img{
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 18px;
+    width: 168.69px;
+    height: 41.52px;
+}
+
+.secondSection .button{
+    width: 64px;
+    /* height: 23px; */
+    background: #F9B70B;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-family: Poppins;
+    padding: 5px 63px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 12px;
+    margin: 0 auto;
+}
+
 @media (min-width: 300px){
     /*.hero2 {*/
     /*    width: 99%;*/
@@ -704,6 +810,76 @@ ul{
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
+    }
+
+    .firstSectionImgTxtContainer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 20px;
+        /* width: 100%; */
+        padding-bottom: 48px;
+        align-items: center;
+    }
+
+    .firstSection{
+        background: url("https://res.cloudinary.com/do5wu6ikf/image/upload/v1684242212/starpenzu/Rectangle_132_tw5dlg.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .breakPoint2, .breakPoint1{
+        gap: 20px;
+    }
+
+    .firstSectionText{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 49px;
+        margin-bottom: 18px;
+        margin-top: 48px;
+    }
+
+    .firstSectionTxt{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 27px;
+    }
+
+    .firstText{
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 49px;
+    }
+
+    .secondText{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .secondSection img {
+        width: 451.32px;
+        margin-bottom: 36px;
+        height: 103.5px;
+    }
+
+    .secondSection .button{
+        width: 200px;
+       padding: 16px 86px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
     }
 
 

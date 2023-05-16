@@ -36,6 +36,20 @@ export default function Courses(){
 
                 </div>
 
+                <div className="coursesContainer1">
+                    <div className="courcesContainer2">
+
+                        <CoursesComponent/>
+                        <CoursesComponent/>
+                        <CoursesComponent/>
+                        <CoursesComponent/>
+                        <CoursesComponent/>
+                        <CoursesComponent/>
+
+                    </div>
+
+                </div>
+
 
 
             </>

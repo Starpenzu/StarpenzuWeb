@@ -4,20 +4,9 @@ import Footer from '../Footer/Footer'
 import Hero from './Hero'
 import Courses from '../Courses/Courses'
 import CoursesComponent from '../Courses/CoursesComponent'
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import Section from './Section'
 
 export default function Home (){
-
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-    };
-
     return(
         <div className='forceMiddle'>
             <Navbar/>
@@ -25,26 +14,9 @@ export default function Home (){
             <Hero/>
 
             <Courses/>
-            <div className="coursesContainer1">
-                <div className="courcesContainer2">
 
-                            <CoursesComponent/>
-                            <CoursesComponent/>
-                            <CoursesComponent/>
-                            <CoursesComponent/>
-                            <CoursesComponent/>
-                            <CoursesComponent/>
-                            <CoursesComponent/>
-                            <CoursesComponent/>
-                            <CoursesComponent/>
-                            <CoursesComponent/>
-                            <CoursesComponent/>
-                            <CoursesComponent/>
-                            <CoursesComponent/>
-                            <CoursesComponent/>
-                </div>
+            <Section/>
 
-            </div>
 
 
             {/*<Footer/>*/}
