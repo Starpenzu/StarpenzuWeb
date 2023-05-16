@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/StarpenzuWeb/static/css/main.834cb47a.css",
-    "main.js": "/StarpenzuWeb/static/js/main.bd376325.js",
+    "main.css": "/StarpenzuWeb/static/css/main.63ea01fd.css",
+    "main.js": "/StarpenzuWeb/static/js/main.7f418ec3.js",
     "static/js/787.91bb25c4.chunk.js": "/StarpenzuWeb/static/js/787.91bb25c4.chunk.js",
     "index.html": "/StarpenzuWeb/index.html",
-    "main.834cb47a.css.map": "/StarpenzuWeb/static/css/main.834cb47a.css.map",
-    "main.bd376325.js.map": "/StarpenzuWeb/static/js/main.bd376325.js.map",
+    "main.63ea01fd.css.map": "/StarpenzuWeb/static/css/main.63ea01fd.css.map",
+    "main.7f418ec3.js.map": "/StarpenzuWeb/static/js/main.7f418ec3.js.map",
     "787.91bb25c4.chunk.js.map": "/StarpenzuWeb/static/js/787.91bb25c4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.834cb47a.css",
-    "static/js/main.bd376325.js"
+    "static/css/main.63ea01fd.css",
+    "static/js/main.7f418ec3.js"
   ]
 }
