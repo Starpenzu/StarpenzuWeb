@@ -101,9 +101,9 @@ export default function Section (){
                 </div>
 
             </div>
-            {/*<div className="overlay">*/}
-            {/*    <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1684242212/starpenzu/rocket-3994327-3307661_1_osi3e7.svg" alt=""/>*/}
-            {/*</div>*/}
+            <div className="overlay">
+                <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1684242212/starpenzu/rocket-3994327-3307661_1_osi3e7.svg" alt=""/>
+            </div>
 
             <div className="fourthSection">
                 <div className="randomContainer">

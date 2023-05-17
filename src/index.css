@@ -62,7 +62,7 @@ nav{
 }
 
 .harmBurger{
-    padding-right: 36px;
+    padding-right: 44px;
 }
 
 .hamburgerImg{
@@ -523,6 +523,8 @@ ul{
 }
 .overlay{
     position: relative;
+    bottom: 218px;
+    left: -46px;
 }
 
 .fourthSection{
@@ -530,7 +532,8 @@ ul{
 }
 
 .overlay img{
-    position: relative;
+    position: absolute;
+    aspect-ratio: 1/1;
 }
 
 .randomContainer{
@@ -779,6 +782,12 @@ ul{
         border-radius: 5px;
         width: 316px;
         height: 85px;
+    }
+
+    .overlay {
+        position: relative;
+        bottom: 218px;
+        left: -14px;
     }
 }
 
@@ -1208,6 +1217,12 @@ ul{
         height: 137px;
     }
 
+    .overlay {
+        position: relative;
+        bottom: 115px;
+        left: -14px;
+    }
+
 
 }
 
@@ -1342,6 +1357,16 @@ ul{
         color: #000000;
         margin-top: 19px;
         margin-bottom: 13px;
+    }
+
+    .randomContainer {
+        padding: 25px;
+        text-align: center;
+        margin: 0 auto;
+        background: #F9B70B;
+        border-radius: 5px;
+        width: 816px;
+        height: 137px;
     }
 }
 
@@ -1550,6 +1575,17 @@ ul{
         display: flex;
         flex-direction: row;
         gap: 195px;
+    }
+
+
+    .randomContainer {
+        padding: 25px;
+        text-align: center;
+        margin: 0 auto;
+        background: #F9B70B;
+        border-radius: 5px;
+        width: 1222px;
+        height: 137px;
     }
 
 
