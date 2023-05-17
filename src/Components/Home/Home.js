@@ -10,15 +10,9 @@ export default function Home (){
     return(
         <div className='forceMiddle'>
             <Navbar/>
-
             <Hero/>
-
             <Courses/>
-
             <Section/>
-
-
-
             <Footer/>
         </div>
     )

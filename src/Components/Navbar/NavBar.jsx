@@ -1,6 +1,7 @@
 import React from 'react'
 //import Logo from '../../images/favicon.png'
 import Button from './Button'
+import {Link, useLocation} from "react-router-dom";
 //import harmburger from 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1683922753/starpenzu/Vector_r4aqp6.svg'
 
 export default function NavBar() {
@@ -36,8 +37,8 @@ export default function NavBar() {
 
                 <div className="navItems">
                     <ul>
-                        <li className='navItemActive'>Home</li>
-                        <li>Courses</li>
+                        <Link className='link-d'  to='/'> <li className='navItemActive'>Home</li></Link>
+                        <Link className='link-d'  to='/Courses'><li>Courses</li></Link>
                         <li>Contact Us</li>
                         <li>About Us</li>
                         <li>
@@ -56,8 +57,8 @@ export default function NavBar() {
             {hamburger &&
                 <div className={`harmBurgerDropDown`}>
                     <ul>
-                        <li className='hamBurgerActive'>Home</li>
-                        <li>Courses</li>
+                        <Link className='link-d'  to='/'> <li className='hamBurgerActive'>Home</li></Link>
+                        <Link  className='link-d' to='/Courses'>  <li>Courses</li> </Link>
                         <li>Contact Us</li>
                         <li>About Us</li>
                         <li>Register</li>

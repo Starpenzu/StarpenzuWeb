@@ -7,6 +7,27 @@ body{
     overflow-x: hidden;
 }
 
+/*ViewAllcourses*/
+.pheww{
+/*margin-top: 140px;*/
+}
+
+.allcourses{
+    font-family: 'Clash Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 60px;
+    margin-left: 40px;
+}
+
+.link-d{
+    text-decoration: none;
+    color: unset;
+}
+
+
 /*body{*/
 /*    background: #fff2cf;*/
 /*}*/
@@ -88,6 +109,10 @@ nav{
     z-index: -100;
 }
 
+/*.widthAdjust{*/
+/*    width: 100%;*/
+/*}*/
+
 .harmBurgerDropDown ul li{
     list-style: none;
     font-size: 24px;
@@ -107,14 +132,18 @@ footer{
     left: 0;
     right: 0;
     background: black;
-    padding:24px 34px 24px 0;
+    padding: 23px 0px 24px 0;
     color: white;
     display: inline-flex;
     flex-direction: row;
     gap: 35px;
     width: 100%;
     justify-content: center;
-    /*z-index: -1000000;*/
+    /* z-index: -1000000; */
+}
+
+.rightSeg{
+    margin-right: 15px;
 }
 
 footer h1{
@@ -1082,11 +1111,11 @@ ul{
         margin-top: 20px;
     }
 
-    .secondText{
+    .secondText {
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 400;
-        font-size: 20px;
+        font-size: 15px;
         line-height: 30px;
     }
 
@@ -1119,8 +1148,8 @@ ul{
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 400;
-        font-size: 23px;
-        line-height: 39px;
+        font-size: 19px;
+        line-height: 28px;
         color: #000000;
     }
 
@@ -1223,6 +1252,16 @@ ul{
         left: -14px;
     }
 
+    .allcourses{
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 49px;
+        margin-top: 140px;
+        margin-left: 40px;
+    }
+
 
 }
 
@@ -1234,6 +1273,16 @@ ul{
 
 
 @media (min-width: 1024px){
+    .allcourses {
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 49px;
+        margin-top: 118px;
+        margin-left: 59px;
+    }
+
     /*Nav Bar*/
 
     .harmBurger{
@@ -1243,9 +1292,9 @@ ul{
         display: none;
     }
 
-    .navItems{
+    .navItems {
         display: flex;
-        padding-right: 47px;
+        padding-right: 65px;
     }
 
     .navItems ul{
@@ -1594,7 +1643,7 @@ ul{
 @media (min-width: 1441px){
     /*Nav Bar*/
 
-   .sss, .forceMiddle{
+   .sss, .forceMiddle .allcourcesContainer2{
        max-width: 1441px;
        margin: 0 auto;
    }

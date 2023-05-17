@@ -3,6 +3,14 @@
     height: 8px;
 }
 
+.allcourcesContainer2{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+}
+
 .courseTime{
     display: inline-flex;
     flex-direction: row;
@@ -190,6 +198,18 @@
         height: 56px;
     }
 
+    .allcourcesContainer2 {
+        padding-left: 0;
+        padding-right: 0;
+        display: flex;
+        overflow-x: hidden;
+        gap: 17px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
 
 }
 
@@ -274,3 +294,5 @@
         height: 56px;
     }
 }
+
+

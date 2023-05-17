@@ -3,7 +3,7 @@ import React from 'react'
 export default function Footer(){
     return(
         <footer>
-            {/*<div className='forceMiddle'>*/}
+            {/*<div className='widthAdjust'>*/}
             <div className="leftSeg">
                 <div className="companySeg">
                     <h1 className='companyHead'>Company</h1>

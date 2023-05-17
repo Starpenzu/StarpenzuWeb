@@ -1,7 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import CoursesComponent from './CoursesComponent'
-
+import {Link, useLocation} from "react-router-dom";
 
 export default function Courses(){
 
@@ -29,7 +29,11 @@ export default function Courses(){
                         </div>
 
                         <div className="viewCouses">
-                            <button>View All</button>
+
+                            <Link to='/Courses'>
+                                <button>View All</button>
+                            </Link>
+
                         </div>
                     </div>
 
