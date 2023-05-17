@@ -58,6 +58,72 @@ export default function Section (){
 
                 <div className='button'>Register With Us</div>
             </div>
+
+
+            <div className="thirdSection">
+                <div className="testi">Testimonials</div>
+                <div className="testiSub">
+                    What Our Student Are Saying About Us.
+                </div>
+
+                <div className="peeps">
+                    <div className="peeps1">
+                        <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1684272184/starpenzu/Starpenzu%20%28Copy%29%20%282%29/Rectangle-2_njg3hr.svg" alt=""/>
+                        <div className="name">Ajadi  Michael</div>
+                        <div className="notes">
+                            I believe in lifelong learning and Starpenzu is
+                            a great place to learn from experts. I’ve learned
+                            a lot and recommended it to all my friends.
+                        </div>
+                    </div>
+
+                    <div className="peeps1">
+                        <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1684272184/starpenzu/Starpenzu%20%28Copy%29%20%282%29/Rectangle-1_mk1d5u.svg" alt=""/>
+                        <div className="name">Sebastian Promise</div>
+                        <div className="notes">
+                            I believe in lifelong learning and Starpenzu is
+                            a great place to learn from experts. I’ve learned
+                            a lot and recommended it to all my friends.
+                        </div>
+
+                    </div>
+
+                    <div className="peeps1">
+                        <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1684272184/starpenzu/Starpenzu%20%28Copy%29%20%282%29/Rectangle_g9lguq.svg" alt=""/>
+
+                        <div className="name">Olalekan Tunmise</div>
+                        <div className="notes">
+                            I believe in lifelong learning and Starpenzu is
+                            a great place to learn from experts. I’ve learned
+                            a lot and recommended it to all my friends.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            {/*<div className="overlay">*/}
+            {/*    <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1684242212/starpenzu/rocket-3994327-3307661_1_osi3e7.svg" alt=""/>*/}
+            {/*</div>*/}
+
+            <div className="fourthSection">
+                <div className="randomContainer">
+                    <div className="fourthText">
+                        Subscribe to our Newsletter
+                    </div>
+
+                    <div className="fourthSubtext">
+                        Get Personal Learning Recommendations.
+                    </div>
+
+                    <form>
+                        <input type="text"/>
+                        <button>Subscribe</button>
+                    </form>
+
+
+                </div>
+
+            </div>
         </>
 
     )

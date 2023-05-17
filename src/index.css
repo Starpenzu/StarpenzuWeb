@@ -102,7 +102,7 @@ nav{
 /*Footer*/
 
 footer{
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
     right: 0;
@@ -365,9 +365,9 @@ ul{
     /*width: 100%;*/
 }
 
-.firstSectionImgTxt img{
-    width: 64px;
-    height: 64px;
+.firstSectionImgTxt img {
+    width: 46px;
+    height: 46px;
 }
 
 .firstSection{
@@ -411,7 +411,7 @@ ul{
 
 .breakPoint2, .breakPoint1{
     display: inline-flex;
-    gap: 33px;
+    gap: 19px
 }
 
 .secondSection{
@@ -463,6 +463,144 @@ ul{
     margin: 0 auto;
 }
 
+.thirdSection{
+    margin: 20px 30px;
+    text-align: center;
+}
+
+.testi{
+    font-family: 'Clash Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #F9B70B;
+}
+
+.testiSub{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 12px;
+    color: #000000;
+}
+
+.peeps{
+    margin-top: 25px;
+}
+
+.peeps1{
+    margin-bottom: 25px;
+}
+
+.peeps1 img{
+    width: 50px;
+    height: 50px;
+}
+
+.peeps1 .name{
+    font-family: 'Clash Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+     color: #000000;
+    margin-top: 4px;
+    margin-bottom: 6px;
+}
+
+.peeps1 .notes{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 12px;
+    text-align: center;
+    color: #000000;
+    width: 69%;
+    margin: 0 auto;
+}
+.overlay{
+    position: relative;
+}
+
+.fourthSection{
+    margin-bottom: 30px;
+}
+
+.overlay img{
+    position: relative;
+}
+
+.randomContainer{
+    padding: 25px;
+    text-align: center;
+    margin: 0 auto;
+    background: #F9B70B;
+    border-radius: 5px;
+    width: 255px;
+    height: 85px;
+}
+
+.fourthText{
+    font-family: 'Clash Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+}
+
+.fourthSubtext{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 12px;
+    color: #FFFFFF;
+    margin: 5px 0 22px 0;
+}
+
+.fourthSection form input{
+    width: 206px;
+    height: 20px;
+    border: none;
+    margin-top: 3px;
+}
+
+.fourthSection form input:focus-visible{
+    outline: none;
+}
+
+.fourthSection form input:focus{
+ border: white;
+    outline: none;
+}
+
+.fourthSection form{
+    background-color: white;
+    width: 264px;
+    height: 28px;
+    display: flex;
+    margin: 0 auto;
+
+}
+
+.fourthSection button{
+    width: 58px;
+    height: 28px;
+    color: white;
+    background: black;
+    border: none;
+    font-family: 'Clash Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 8px;
+    line-height: 10px;
+}
+
+
 @media (min-width: 300px){
     /*.hero2 {*/
     /*    width: 99%;*/
@@ -497,6 +635,18 @@ ul{
     /*    margin: 0 auto;*/
     /*}*/
 
+    .peeps1 .notes {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 14px;
+        text-align: center;
+        color: #000000;
+        width: 69%;
+        margin: 0 auto;
+    }
+
     .whatDoYouWantcontainer {
         margin: 0 auto;
         background: black;
@@ -525,6 +675,45 @@ ul{
 
     .feaCourses{
         gap: 81px;
+    }
+
+    .peeps1 .name {
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 19px;
+        line-height: 20px;
+        color: #000000;
+        margin-top: 4px;
+        margin-bottom: 6px;
+    }
+
+    .testi {
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 20px;
+        color: #F9B70B;
+    }
+
+    .testiSub {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 9px;
+        line-height: 12px;
+        color: #000000;
+    }
+
+    .randomContainer {
+        padding: 25px;
+        text-align: center;
+        margin: 0 auto;
+        background: #F9B70B;
+        border-radius: 5px;
+        width: 292px;
+        height: 85px;
     }
 }
 
@@ -579,6 +768,18 @@ ul{
     .subText{
         font-size: 8px;
     }
+
+
+
+    .randomContainer {
+        padding: 25px;
+        text-align: center;
+        margin: 0 auto;
+        background: #F9B70B;
+        border-radius: 5px;
+        width: 316px;
+        height: 85px;
+    }
 }
 
 @media (min-width: 560px){
@@ -615,6 +816,18 @@ ul{
     /*    align-items: center;*/
     /*    justify-content: center;*/
     /*}*/
+
+    .peeps1 .notes {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 17px;
+        text-align: center;
+        color: #000000;
+        width: 46%;
+        margin: 0 auto;
+    }
 
 }
 
@@ -884,6 +1097,117 @@ ul{
         line-height: 24px;
     }
 
+    .testi {
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 72px;
+        color: #F9B70B;
+    }
+
+    .testiSub {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 23px;
+        line-height: 39px;
+        color: #000000;
+    }
+
+    .peeps{
+        display: flex;
+        flex-direction: row;
+        gap: 46px;
+    }
+
+    .peeps1 img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .peeps1 .notes{
+        width: fit-content;
+    }
+
+    .peeps1 .name {
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 19px;
+        line-height: 20px;
+        color: #000000;
+        margin-top: 19px;
+        margin-bottom: 13px
+    }
+
+    .randomContainer {
+        padding: 25px;
+        text-align: center;
+        margin: 0 auto;
+        background: #F9B70B;
+        border-radius: 5px;
+        width: 617px;
+        height: 110px;
+    }
+
+    .fourthText {
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 20px;
+        color: #000000;
+    }
+
+    .fourthSubtext {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 34px;
+        color: #FFFFFF;
+        margin: 5px 0 22px 0;
+    }
+
+    .fourthSection form {
+        background-color: white;
+        width: 389px;
+        height: 38px;
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .fourthSection button {
+        width: 92px;
+        height: 38px;
+        color: white;
+        background: black;
+        border: none;
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 10px;
+    }
+
+    .fourthSection form input {
+        width: 294px;
+        height: 20px;
+        border: none;
+        margin-top: 8px;
+    }
+
+    .randomContainer {
+        padding: 25px;
+        text-align: center;
+        margin: 0 auto;
+        background: #F9B70B;
+        border-radius: 5px;
+        width: 617px;
+        height: 137px;
+    }
+
 
 }
 
@@ -1008,6 +1332,17 @@ ul{
         gap: 245px;
     }
 
+
+    .peeps1 .name {
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 20px;
+        color: #000000;
+        margin-top: 19px;
+        margin-bottom: 13px;
+    }
 }
 
 
@@ -1081,6 +1416,12 @@ ul{
 
     .feaCourses {
         gap: 402px;
+    }
+
+    .peeps {
+        display: flex;
+        flex-direction: row;
+        gap: 195px;
     }
 
 }
@@ -1203,6 +1544,12 @@ ul{
         background: url('https://res.cloudinary.com/do5wu6ikf/image/upload/v1684242212/starpenzu/dexkRectangle_132_1_gnftu0.svg');
         background-repeat: no-repeat;
         background-size: cover;
+    }
+
+    .peeps {
+        display: flex;
+        flex-direction: row;
+        gap: 195px;
     }
 
 
