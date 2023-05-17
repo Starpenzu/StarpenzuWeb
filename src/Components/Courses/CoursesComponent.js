@@ -10,7 +10,7 @@ export default function CoursesComponent(){
 
           <div className="CoursesComponent-row2">
               <div className="courseSpec">
-                  Design
+                  Development
               </div>
 
               <p className='courseDiff'>Advanced Level</p>

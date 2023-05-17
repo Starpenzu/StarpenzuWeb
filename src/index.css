@@ -259,7 +259,12 @@ ul{
     width: 187px;
     height: 12px;
     font-size: 10px;
-    text-indent: 5px;
+    text-indent: 10px;
+    font-family: clash display;
+}
+
+.clickedActive{
+    color: #F9B70B;
 }
 
 .wantInput input:active {
@@ -599,6 +604,8 @@ ul{
     height: 20px;
     border: none;
     margin-top: 3px;
+    text-indent: 10px;
+    font-family: clash display;
 }
 
 .fourthSection form input:focus-visible{

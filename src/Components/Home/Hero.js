@@ -25,7 +25,7 @@ export default function Hero(){
                     </div>
 
                     <div className="wantInput">
-                        <input type="text"/>
+                        <input type="text" placeholder={'Search for courses'}/>
                         <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1684105403/starpenzu/Group_103_zvhj59.svg" className='searchBtn' alt=""/>
                     </div>
                     <div className="wantTrend">

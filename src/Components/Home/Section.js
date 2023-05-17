@@ -116,7 +116,7 @@ export default function Section (){
                     </div>
 
                     <form>
-                        <input type="text"/>
+                        <input type="email" placeholder={'Enter your mail...'}/>
                         <button>Subscribe</button>
                     </form>
 
