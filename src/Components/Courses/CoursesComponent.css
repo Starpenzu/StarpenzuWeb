@@ -140,13 +140,18 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
-        gap: 18px;
+        gap: 12px;
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 500;
-        font-size: 8px;
+        font-size: 11px;
         line-height: 18px;
         margin-top: 10px;
+    }
+
+    .courseTime img {
+        width: 12px;
+        height: 18px;
     }
 
     .courseTime {
