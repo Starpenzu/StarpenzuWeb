@@ -8,7 +8,7 @@ function SignUp() {
     const [isArchived, setIsArchived] = useState(false);
 
    return(
-       <>
+       <div className='dab'>
            <NavBar/>
            <div className="signup">
                <input
@@ -22,7 +22,7 @@ function SignUp() {
            </div>
 
            <Footer/>
-       </>
+       </div>
 
    )
 }

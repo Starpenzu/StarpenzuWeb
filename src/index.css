@@ -127,7 +127,7 @@ nav{
 /*Footer*/
 
 footer{
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
     right: 0;
@@ -139,6 +139,7 @@ footer{
     gap: 35px;
     width: 100%;
     justify-content: center;
+    margin-top: 50px;
     /* z-index: -1000000; */
 }
 
@@ -561,9 +562,13 @@ ul{
     left: -46px;
 }
 
-.fourthSection{
-    margin-bottom: 600px;
-}
+/*.fixfooter{*/
+/*    margin-top: 1000px;*/
+/*}*/
+
+/*.fourthSection,.allcourcesContainer2{*/
+/*    margin-bottom: 600px;*/
+/*}*/
 
 .overlay img{
     position: absolute;
@@ -1650,7 +1655,7 @@ ul{
 @media (min-width: 1441px){
     /*Nav Bar*/
 
-   .sss, .forceMiddle .allcourcesContainer2{
+   .dab, .sss, .forceMiddle, .allcourcesContainer2{
        max-width: 1441px;
        margin: 0 auto;
    }
