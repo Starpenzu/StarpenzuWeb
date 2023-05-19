@@ -11,9 +11,13 @@ export default function NavBar() {
 
     React.useEffect(() => {
         // Update selectedItem state when the location changes
-        if (location.pathname === '/Courses') {
-            setSelectedItem('item1');
-        } else {
+        if(location.pathname === '/'){
+            setSelectedItem('item1')
+        } else if (location.pathname === '/Courses') {
+            setSelectedItem('item2');
+        } else if(location.pathname === '/signup'){
+            setSelectedItem('item3');
+        }else {
             setSelectedItem(null);
         }
     }, [location]);
@@ -52,11 +56,16 @@ export default function NavBar() {
 
                 <div className="navItems">
                     <ul>
-                        <Link className='link-d'  to='/'> <li className='navItemActive'>Home</li></Link>
+                        <Link className='link-d'  to='/'>
+                            <li
+                            className={selectedItem === 'item1' ? 'clickedActive' : ''}
+                            onClick={() => handleItemClick('item1')}
+                        >Home</li>
+                        </Link>
                         <Link className='link-d'  to='/Courses'>
                             <li
-                                className={selectedItem === 'item1' ? 'clickedActive' : ''}
-                                onClick={() => handleItemClick('item1')}
+                                className={selectedItem === 'item2' ? 'clickedActive' : ''}
+                                onClick={() => handleItemClick('item2')}
                             >
                                 Courses</li>
                         </Link>
@@ -78,17 +87,26 @@ export default function NavBar() {
             {hamburger &&
                 <div className={`harmBurgerDropDown`}>
                     <ul>
-                        <Link className='link-d'  to='/'> <li className='hamBurgerActive'>Home</li></Link>
+                        <Link className='link-d'  to='/'> <li
+                            className={selectedItem === 'item1' ? 'clickedActive' : ''}
+                            onClick={() => handleItemClick('item1')}
+                        >Home</li>
+                        </Link>
                         <Link  className='link-d' to='/Courses'>
                             <li
-                                className={selectedItem === 'item1' ? 'clickedActive' : ''}
-                                onClick={() => handleItemClick('item1')}
+                                className={selectedItem === 'item2' ? 'clickedActive' : ''}
+                                onClick={() => handleItemClick('item2')}
                             >
                                 Courses</li>
                         </Link>
                         <li>Contact Us</li>
                         <li>About Us</li>
-                        <Link to='/signup'>  <li>Register</li></Link>
+                        <Link to='/signup' className='link-d'>
+                            <li
+                            className={selectedItem === 'item3' ? 'clickedActive' : ''}
+                            onClick={() => handleItemClick('item3')}
+                        >Register</li>
+                        </Link>
                         <li>Login</li>
                     </ul>
                 </div>

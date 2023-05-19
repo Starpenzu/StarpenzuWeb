@@ -44,3 +44,35 @@
     color: #000000;
 }
 
+.pword{
+    padding: 0 15px;
+    text-align: left;
+    font-size: 6px;
+    font-family: Poppins;
+    font-weight: bolder;
+    color: #d32f2f;
+}
+
+.cluse{
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.cluse p{
+    text-align: center;
+}
+
+
+@media (min-width: 375px){
+    .signupHeader {
+        display: flex;
+        justify-content: flex-start;
+        gap: 78px;
+        margin-bottom: 30px;
+    }
+}
+
+#outlined-basic-1{
+    width: 300px;
+}
+

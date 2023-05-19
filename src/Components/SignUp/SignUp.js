@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from '../Footer/Footer';
 import NavBar from '../Navbar/NavBar';
-import { TextField , MenuItem  } from '@mui/material';
+import { TextField , MenuItem, useMediaQuery  } from '@mui/material';
 import { makeStyles, multiTextField } from '@mui/styles';
 import './SignUp.css'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -17,6 +17,8 @@ import SignInButton from './SignInbutton'
 //         }
 //     }
 // )
+
+
 
 
 const useStyles = makeStyles({
@@ -44,6 +46,8 @@ const SelectGender = [
     ]
 
 function SignUp() {
+    const matches = useMediaQuery('(min-width:375px)');
+
 
     const classes = useStyles();
 
@@ -60,6 +64,7 @@ function SignUp() {
         }
     );
     const [error, setError] = React.useState(false)
+    const { firstName, surname, DOB, gender, whatsappNum, email, password, confirmPassword } = formData;
 
     function handleChange(event) {
 
@@ -120,136 +125,164 @@ function SignUp() {
                </div>
                 {/*<ThemeProvider theme={Mytheme}>*/}
                <form action="" noValidate onSubmit={handleSubmit} className="register">
-                   <TextField
-                       error={error}
-                       className={classes.field}
-                       id="outlined-basic-1"
-                       label="First Name"
-                       color='secondary'
-                       variant="outlined"
-                       margin="dense"
-                       type='text'
-                       required
-                       name={"firstName"}
-                       value={formData.firstName}
-                       onChange={handleChange}
-                   />
-                   {/*<DatePicker sx={{ color: 'red' }/>*/}
-                   <TextField
-                        error={error}
-                       className={classes.field}
-                       id="outlined-basic-2"
-                       label="Surname"
-                       color='secondary'
-                       variant="outlined"
-                       margin="dense"
-                       type='text'
-                       required
-                       name={"surname"}
-                       value={formData.surname}
-                       onChange={handleChange}
-                   />
-                     <TextField
-                          error={error}
-                       className={classes.field}
-                       id="outlined-basic-3"
-                       label="Date of Birth"
-                       color='secondary'
-                       InputLabelProps={{
-                           shrink: true,
-                       }}
-                       margin="dense"
-                       variant="outlined"
-                       type='date'
-                       name={"DOB"}
-                       required
-                       value={formData.DOB}
-                       onChange={handleChange}
-                   />
+                   <div className="cluse">
+                       <TextField
+                           error={error}
+                           className={classes.field}
+                           id="outlined-basic-1"
+                           label="First Name"
+                           color='secondary'
+                           variant="outlined"
+                           margin="dense"
+                           type='text'
+                           required
+                           name={"firstName"}
+                           value={formData.firstName}
+                           onChange={handleChange}
+                       />
+                   </div>
 
-                   <TextField
-                        error={error}
-                       className={classes.field}
-                       id="outlined-basic-4"
-                       label="Gender"
-                       color='secondary'
-                       margin="dense"
-                       variant="outlined"
-                       select
-                       type='select'
-                       name={"gender"}
-                       required
-                       // value={formData.gender}
-                       onChange={handleChange}
-                       defaultValue="">
+                   <div className="cluse">
+                       <TextField
+                            error={error}
+                           className={classes.field}
+                           id="outlined-basic-2"
+                           label="Surname"
+                           color='secondary'
+                           variant="outlined"
+                           margin="dense"
+                           type='text'
+                           required
+                           name={"surname"}
+                           value={formData.surname}
+                           onChange={handleChange}
+                       />
+                   </div>
 
-                             {SelectGender.map((option) => (
-                                 <MenuItem key={option.value} value={option.value}>
-                                     {option.label}
-                                 </MenuItem>
-                             ))}
+                   <div className="cluse">
+                         <TextField
+                              error={error}
+                           className={classes.field}
+                           id="outlined-basic-3"
+                           label="Date of Birth"
+                           color='secondary'
+                           InputLabelProps={{
+                               shrink: true,
+                           }}
+                           margin="dense"
+                           variant="outlined"
+                           type='date'
+                           name={"DOB"}
+                           required
+                           value={formData.DOB}
+                           onChange={handleChange}
+                       />
+                   </div>
 
-                   </TextField>
+                   <div className="cluse">
+                       <TextField
+                            error={error}
+                           className={classes.field}
+                           id="outlined-basic-4"
+                           label="Gender"
+                           color='secondary'
+                           margin="dense"
+                           variant="outlined"
+                           select
+                           type='select'
+                           name={"gender"}
+                           required
+                           // value={formData.gender}
+                           onChange={handleChange}
+                           defaultValue="">
 
-                   <TextField
-                        error={error}
-                       className={classes.field}
-                       id="outlined-basic-4"
-                       label="Whatsapp Number"
-                       color='secondary'
-                       variant="outlined"
-                       margin="dense"
-                       type='text'
-                       required
-                       name={"whatsappNum"}
-                       value={formData.whatsappNum}
-                       onChange={handleChange}
-                   />
+                                 {SelectGender.map((option) => (
+                                     <MenuItem key={option.value} value={option.value}>
+                                         {option.label}
+                                     </MenuItem>
+                                 ))}
 
-                   <TextField
-                        error={error}
-                       className={classes.field}
-                       id="outlined-basic-5"
-                       label="Email"
-                       color='secondary'
-                       variant="outlined"
-                       margin="dense"
-                       type='email'
-                       required
-                       name={"email"}
-                       value={formData.email}
-                       onChange={handleChange}
-                   />
+                       </TextField>
+                   </div>
 
-                   <TextField
-                        error={error}
-                       className={classes.field}
-                       id="outlined-basic-6"
-                       label="Password"
-                       color='secondary'
-                       variant="outlined"
-                       margin="dense"
-                       type='password'
-                       required
-                       name={"password"}
-                       value={formData.password}
-                       onChange={handleChange}
-                   />
+                   <div className="cluse">
+                       <TextField
+                            error={error}
+                           className={classes.field}
+                           id="outlined-basic-4"
+                           label="Whatsapp Number"
+                           color='secondary'
+                           variant="outlined"
+                           margin="dense"
+                           type='text'
+                           required
+                           name={"whatsappNum"}
+                           value={formData.whatsappNum}
+                           onChange={handleChange}
+                       />
+                   </div>
 
-                   <TextField
-                        error={error}
-                       className={classes.field}
-                       id="outlined-basic-7"
-                       label="Confirm Password"
-                       color='secondary'
-                       variant="outlined"
-                       margin="dense"
-                       type='password'
-                       required
-                       name={"confirmPassword"}
-                       value={formData.confirmPassword}
-                       onChange={handleChange}
-                   />
+                   <div className="cluse">
+                       <TextField
+                            error={error}
+                           className={classes.field}
+                           id="outlined-basic-5"
+                           label="Email"
+                           color='secondary'
+                           variant="outlined"
+                           margin="dense"
+                           type='email'
+                           required
+                           name={"email"}
+                           value={formData.email}
+                           onChange={handleChange}
+                       />
+                   </div>
+
+                    <div className="cluse">
+                           <TextField
+                                error={error}
+                               className={classes.field}
+                               id="outlined-basic-6"
+                               label="Password"
+                               color='secondary'
+                               variant="outlined"
+                               margin="dense"
+                               type='password'
+                               required
+                               name={"password"}
+                               value={formData.password}
+                               onChange={handleChange}
+                           />
+                          <p className={'pword'} > {error ? '*Password must contain at least one character, one number, one uppercase letter, and' +
+                            ' have a' +  ' minimum length of' +  ' 8' + ' characters' : ""}
+                            <br/>
+                            {formData.password !== formData.confirmPassword ? '*Passwords do not match' : ''}
+                          </p>
+                    </div>
+
+                   <div className="cluse">
+                       <TextField
+                            error={error}
+                           className={classes.field}
+                           id="outlined-basic-7"
+                           label="Confirm Password"
+                           color='secondary'
+                           variant="outlined"
+                           margin="dense"
+                           type='password'
+                           required
+                           name={"confirmPassword"}
+                           value={formData.confirmPassword}
+                           onChange={handleChange}
+                       />
+
+                       <p className={'pword'} > {error ? '*Password must contain at least one character, one number, one uppercase letter, and' +
+                           ' have a' +  ' minimum length of' +  ' 8' + ' characters' : ""}
+                           <br/>
+                           {formData.password !== formData.confirmPassword ? '*Passwords do not match' : ''}
+                       </p>
+                   </div>
 
                    <SignInButton
                        className='registerBtn'
