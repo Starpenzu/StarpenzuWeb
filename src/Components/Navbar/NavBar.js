@@ -63,7 +63,7 @@ export default function NavBar() {
                         <li>Contact Us</li>
                         <li>About Us</li>
                         <li>
-                            <Button className="registerButton" name='Register'/>
+                          <Link to='/signup'>  <Button className="registerButton" name='Register'/></Link>
                         </li>
                         <li>
                            <Button className="loginButton" name='Login'/>
@@ -88,7 +88,7 @@ export default function NavBar() {
                         </Link>
                         <li>Contact Us</li>
                         <li>About Us</li>
-                        <li>Register</li>
+                        <Link to='/signup'>  <li>Register</li></Link>
                         <li>Login</li>
                     </ul>
                 </div>

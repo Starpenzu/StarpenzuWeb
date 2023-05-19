@@ -1,7 +1,46 @@
 .signup{
-    margin-top: 150px;
+    margin-top: 60px;
+    text-align: center;
+    padding: 0px 32px;
 }
 
-.archived {
-    background-color: lightgray;
+.signupHeader{
+    display: flex;
+    justify-content: flex-start;
+    gap: 52px;
+    margin-bottom: 30px;
 }
+
+.dhur{
+    width: 20px;
+}
+
+/*#outlined-basic{*/
+/*    width: 237.36px;*/
+/*    height: 25px;*/
+/*    border: 1px solid #000000;*/
+/*    border-radius: 10px;*/
+/*}*/
+
+
+.signupTitle{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    color: #000000;
+}
+
+.registerBtn{
+    font-family: clash display;
+    margin-top: 20px;
+    border: none;
+    width: 250px;
+    height: 46px;
+    background: #F9B70B;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    color: #000000;
+}
+
