@@ -65,7 +65,7 @@ function SignUp() {
     );
     const [error, setError] = React.useState(false)
     const { firstName, surname, DOB, gender, whatsappNum, email, password, confirmPassword } = formData;
-
+    const Name = firstName + " " + surname;
     function handleChange(event) {
 
         const {name, type, value} = event.target;
@@ -104,7 +104,7 @@ function SignUp() {
         }
 
         // Proceed with form submission or further processing
-        alert('Form submitted successfully!');
+        alert('Registration Form submitted successfully!' + " " + "Welcome" + " " + Name);
     }
 
 
