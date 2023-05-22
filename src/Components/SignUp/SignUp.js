@@ -2,33 +2,20 @@ import React from 'react';
 import Footer from '../Footer/Footer';
 import NavBar from '../Navbar/NavBar';
 import { TextField , MenuItem, useMediaQuery  } from '@mui/material';
-import { makeStyles, multiTextField } from '@mui/styles';
-import './SignUp.css'
+import FormControl from '@mui/material/FormControl';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Button from '@mui/material/Button';
+import './SignUp.css'
 import SignInButton from './SignInbutton'
-// import { createTheme, ThemeProvider } from '@mui/material/styles';
-// import { purple } from '@mui/material/colors';
-
-// const Mytheme = createTheme(
-//     {
-//         shape:{
-//             borderRadius: 10
-//         }
-//     }
-// )
+import IconButton from '@mui/material/IconButton';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputLabel from '@mui/material/InputLabel';
+import InputAdornment from '@mui/material/InputAdornment';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import theme from '../SignUp/theme';
 
 
 
-
-const useStyles = makeStyles({
-    field: {
-        marginBlock: '20px',
-        width: '250px',
-        borderRadius: '10px',
-        fontSize: 14
-    }
-})
 
 const SelectGender = [
     {
@@ -45,13 +32,21 @@ const SelectGender = [
     }
     ]
 
-function SignUp() {
-    const matches = useMediaQuery('(min-width:375px)');
+export default function SignUp() {
+    const [showPassword, setShowPassword] = React.useState(false);
+    const [formErrors, setFormErrors] = React.useState({});
+
+    const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+    const handleMouseDownPassword = (event) => {
+        event.preventDefault();
+    };
 
 
-    const classes = useStyles();
+    // const classes = useStyles();
 
-    const [formData, setFormData] = React.useState(
+    const [formData, setFormData] = React.useState(()=> JSON.parse(localStorage.getItem("RegisterUser"))
+        ||
         {
             firstName: "",
             surname: "",
@@ -66,40 +61,72 @@ function SignUp() {
     const [error, setError] = React.useState(false)
     const { firstName, surname, DOB, gender, whatsappNum, email, password, confirmPassword } = formData;
     const Name = firstName + " " + surname;
+
+    React.useEffect(
+        function (){
+            return(
+                localStorage.setItem("RegisterUser", JSON.stringify(formData))
+            )
+        },
+        [formData]
+    )
+
+
     function handleChange(event) {
 
-        const {name, type, value} = event.target;
+        const {name, value} = event.target;
         // setting your new state
         setFormData(prevState => (
             {
                 ...prevState,
                 [name] : value
             }
-        ))
-        // console.log(event.target)
+        ));
+        setFormErrors((prevFormErrors) => ({
+            ...prevFormErrors,
+            [name]: value ? '' : 'This field is required',
+        }));
+        //console.log(event.target.name + ':' + event.target.value)
     }
     function handleSubmit(event) {
         event.preventDefault();
         setError(false);
 
+        const emptyFields = Object.keys(formData).filter((key) => !formData[key]);
+
+        if (emptyFields.length > 0) {
+            // Set the error messages for empty fields
+            const fieldErrors = emptyFields.reduce((errors, field) => {
+                return { ...errors, [field]: 'This field is required' };
+            }, {});
+
+            setFormErrors(fieldErrors);
+            return; // Stop further processing
+        }
+
+        // All fields are filled, continue with form submission logic
+
+        // Reset formErrors if needed
+        setFormErrors({});
+
         const { firstName, surname, DOB, gender, whatsappNum, email, password, confirmPassword } = formData;
 
         if (!firstName || !surname || !DOB || !gender || !whatsappNum || !email || !password || !confirmPassword) {
             setError(true);
-            console.log('Please fill in all the fields');
+            alert('Please fill in all the fields');
             return;
         }
 
         if (password !== confirmPassword) {
             setError(true);
-            console.log('Passwords do not match');
+            alert('Passwords do not match');
             return;
         }
 
         const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
         if (!passwordRegex.test(password)) {
             setError(true);
-            console.log('Password must contain at least one character, one number, one uppercase letter, and have a minimum length of 8 characters');
+            alert('Password must contain at least one character, one number, one uppercase letter, and have a minimum length of 8 characters');
             return;
         }
 
@@ -123,12 +150,12 @@ function SignUp() {
                        Register
                    </div>
                </div>
-                {/*<ThemeProvider theme={Mytheme}>*/}
+                <ThemeProvider theme={theme}>
                <form action="" noValidate onSubmit={handleSubmit} className="register">
                    <div className="cluse">
                        <TextField
-                           error={error}
-                           className={classes.field}
+                           error={!!formErrors.firstName}
+                           className='outlined'
                            id="outlined-basic-1"
                            label="First Name"
                            color='secondary'
@@ -144,8 +171,8 @@ function SignUp() {
 
                    <div className="cluse">
                        <TextField
-                            error={error}
-                           className={classes.field}
+                           error={!!formErrors.surname}
+                           className='outlined'
                            id="outlined-basic-2"
                            label="Surname"
                            color='secondary'
@@ -161,8 +188,8 @@ function SignUp() {
 
                    <div className="cluse">
                          <TextField
-                              error={error}
-                           className={classes.field}
+                             error={!!formErrors.DOB}
+                              className='outlined'
                            id="outlined-basic-3"
                            label="Date of Birth"
                            color='secondary'
@@ -181,8 +208,9 @@ function SignUp() {
 
                    <div className="cluse">
                        <TextField
-                            error={error}
-                           className={classes.field}
+                           sx={{border:'1px'}}
+                           error={!!formErrors.gender}
+                            className='outlined'
                            id="outlined-basic-4"
                            label="Gender"
                            color='secondary'
@@ -207,8 +235,8 @@ function SignUp() {
 
                    <div className="cluse">
                        <TextField
-                            error={error}
-                           className={classes.field}
+                           error={!!formErrors.whatsappNum}
+                            className='outlined'
                            id="outlined-basic-4"
                            label="Whatsapp Number"
                            color='secondary'
@@ -224,8 +252,8 @@ function SignUp() {
 
                    <div className="cluse">
                        <TextField
-                            error={error}
-                           className={classes.field}
+                           error={!!formErrors.email}
+                            className='outlined'
                            id="outlined-basic-5"
                            label="Email"
                            color='secondary'
@@ -240,49 +268,81 @@ function SignUp() {
                    </div>
 
                     <div className="cluse">
-                           <TextField
-                                error={error}
-                               className={classes.field}
-                               id="outlined-basic-6"
-                               label="Password"
-                               color='secondary'
-                               variant="outlined"
-                               margin="dense"
-                               type='password'
-                               required
-                               name={"password"}
-                               value={formData.password}
-                               onChange={handleChange}
-                           />
+                           {/*<TextField*/}
+                           {/*     error={error}*/}
+                           {/*     className='outlined'*/}
+                           {/*    id="outlined-basic-6"*/}
+                           {/*    label="Password"*/}
+                           {/*    color='secondary'*/}
+                           {/*    variant="outlined"*/}
+                           {/*    margin="dense"*/}
+                           {/*    type='password'*/}
+                           {/*    required*/}
+                           {/*    name={"password"}*/}
+                           {/*    value={formData.password}*/}
+                           {/*    onChange={handleChange}*/}
+                           {/*/>*/}
+
+                        <FormControl sx={{ marginTop: 1}} variant="outlined">
+                            <InputLabel htmlFor="outlined-adornment-password" error={!!formErrors.password} color='secondary' sx={{fontSize:15}}>Password</InputLabel>
+                            <OutlinedInput
+                                sx={{
+                                    fontSize:15
+                                }}
+                                className='outlined'
+                                error={!!formErrors.password}
+                                onChange={handleChange}
+                                value={formData.password}
+                                name={"password"}
+                                color='secondary'
+                                id="outlined-adornment-password"
+                                required
+                                type={showPassword ? 'text' : 'password'}
+                                endAdornment={
+                                    <InputAdornment position="end">
+                                        <IconButton
+                                            aria-label="toggle password visibility"
+                                            onClick={handleClickShowPassword}
+                                            onMouseDown={handleMouseDownPassword}
+                                            edge="end"
+                                        >
+                                            {showPassword ? <VisibilityOff /> : <Visibility />}
+                                        </IconButton>
+                                    </InputAdornment>
+                                }
+                                label="Password"
+                            />
+
+                        </FormControl>
                           <p className={'pword'} > {error ? '*Password must contain at least one character, one number, one uppercase letter, and' +
                             ' have a' +  ' minimum length of' +  ' 8' + ' characters' : ""}
                             <br/>
-                            {formData.password !== formData.confirmPassword ? '*Passwords do not match' : ''}
+                            {/*{formData.password !== formData.confirmPassword ? '*Passwords do not match' : ''}*/}
                           </p>
                     </div>
 
-                   <div className="cluse">
-                       <TextField
-                            error={error}
-                           className={classes.field}
-                           id="outlined-basic-7"
-                           label="Confirm Password"
-                           color='secondary'
-                           variant="outlined"
-                           margin="dense"
-                           type='password'
-                           required
-                           name={"confirmPassword"}
-                           value={formData.confirmPassword}
-                           onChange={handleChange}
-                       />
+                   {/*<div className="cluse">*/}
+                   {/*    <TextField*/}
+                   {/*         error={error}*/}
+                   {/*         className='outlined'*/}
+                   {/*        id="outlined-basic-7"*/}
+                   {/*        label="Confirm Password"*/}
+                   {/*        color='secondary'*/}
+                   {/*        variant="outlined"*/}
+                   {/*        margin="dense"*/}
+                   {/*        type='password'*/}
+                   {/*        required*/}
+                   {/*        name={"confirmPassword"}*/}
+                   {/*        value={formData.confirmPassword}*/}
+                   {/*        onChange={handleChange}*/}
+                   {/*    />*/}
 
-                       <p className={'pword'} > {error ? '*Password must contain at least one character, one number, one uppercase letter, and' +
-                           ' have a' +  ' minimum length of' +  ' 8' + ' characters' : ""}
-                           <br/>
-                           {formData.password !== formData.confirmPassword ? '*Passwords do not match' : ''}
-                       </p>
-                   </div>
+                   {/*    <p className={'pword'} > {error ? '*Password must contain at least one character, one number, one uppercase letter, and' +*/}
+                   {/*        ' have a' +  ' minimum length of' +  ' 8' + ' characters' : ""}*/}
+                   {/*        <br/>*/}
+                   {/*        {formData.password !== formData.confirmPassword ? '*Passwords do not match' : ''}*/}
+                   {/*    </p>*/}
+                   {/*</div>*/}
 
                    <SignInButton
                        className='registerBtn'
@@ -290,7 +350,7 @@ function SignUp() {
                    />
 
                </form>
-                {/*</ThemeProvider>*/}
+                </ThemeProvider>
 
 
 
@@ -302,4 +362,3 @@ function SignUp() {
    )
 }
 
-export default SignUp;
