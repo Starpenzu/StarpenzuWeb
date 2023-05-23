@@ -17,6 +17,8 @@ export default function NavBar() {
             setSelectedItem('item2');
         } else if(location.pathname === '/signup'){
             setSelectedItem('item3');
+        }else if(location.pathname === '/Login'){
+            setSelectedItem('item4');
         }else {
             setSelectedItem(null);
         }
@@ -75,7 +77,7 @@ export default function NavBar() {
                           <Link to='/signup'>  <Button className="registerButton" name='Register'/></Link>
                         </li>
                         <li>
-                           <Button className="loginButton" name='Login'/>
+                            <Link to='/Login'> <Button className="loginButton" name='Login'/></Link>
                         </li>
                     </ul>
                 </div>
@@ -107,7 +109,12 @@ export default function NavBar() {
                             onClick={() => handleItemClick('item3')}
                         >Register</li>
                         </Link>
-                        <li>Login</li>
+                        <Link to='/Login' className='link-d'>
+                        <li
+                            className={selectedItem === 'item4' ? 'clickedActive' : ''}
+                            onClick={() => handleItemClick('item4')}
+                        >Login</li>
+                        </Link>
                     </ul>
                 </div>
             }

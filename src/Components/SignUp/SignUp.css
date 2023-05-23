@@ -4,6 +4,23 @@
     padding: 0px 32px;
 }
 
+.loginbtn{
+    margin-top: 90px;
+}
+
+.forgotpword{
+    width: 100%;
+    text-align: left;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 5px;
+    margin-bottom: 70px;
+    color: #F9B70B;
+}
+
 .new{
     width: 100%;
     margin: 0 auto;
@@ -233,6 +250,11 @@
         justify-content: center;
         gap: 0px;
         margin-bottom: 30px;
+    }
+
+    .forgotpword{
+        margin-top: 10px;
+        font-size: 20px;
     }
 
     .signupTitle {

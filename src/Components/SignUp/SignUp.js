@@ -400,7 +400,7 @@ export default function SignUp() {
                        buttonName='Register'
                    />
 
-                   <div className="already">Already have an account? <Link className='link-d' to='/'><span className="loginn">Sign In</span></Link></div>
+                   <div className="already">Already have an account? <Link className='link-d' to='/Login'><span className="loginn">Sign In</span></Link></div>
 
                </form>
                 </ThemeProvider>
