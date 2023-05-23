@@ -157,6 +157,10 @@ export default function SignUp() {
                <form action="" noValidate onSubmit={handleSubmit} className="register">
                    <div className="cluse">
                        <TextField
+                           sx={{
+                               fontFamily: 'Clash display',
+                               fontSize:18
+                           }}
                            error={!!formErrors.firstName}
                            className='outlined'
                            id="outlined-basic-1"
@@ -174,6 +178,10 @@ export default function SignUp() {
 
                    <div className="cluse">
                        <TextField
+                           sx={{
+                               fontFamily: 'Clash display',
+                               fontSize:18
+                           }}
                            error={!!formErrors.surname}
                            className='outlined'
                            id="outlined-basic-2"
@@ -191,6 +199,10 @@ export default function SignUp() {
 
                    <div className="cluse">
                          <TextField
+                             sx={{
+                                 fontFamily: 'Clash display',
+                                 fontSize:18
+                             }}
                              error={!!formErrors.DOB}
                               className='outlined'
                            id="outlined-basic-3"
@@ -211,7 +223,12 @@ export default function SignUp() {
 
                    <div className="cluse">
                        <TextField
-                           sx={{border:'1px'}}
+                           sx={{
+                               fontFamily: 'Clash display',
+                               fontSize:18,
+                               border:'1px'
+                           }}
+
                            error={!!formErrors.gender}
                             className='outlined'
                            id="outlined-basic-4"
@@ -238,6 +255,10 @@ export default function SignUp() {
 
                    <div className="cluse">
                        <TextField
+                           sx={{
+                               fontFamily: 'Clash display',
+                               fontSize:18
+                           }}
                            error={!!formErrors.whatsappNum}
                             className='outlined'
                            id="outlined-basic-4"
@@ -255,6 +276,10 @@ export default function SignUp() {
 
                    <div className="cluse">
                        <TextField
+                           sx={{
+                               fontFamily: 'Clash display',
+                               fontSize:18
+                           }}
                            error={!!formErrors.email}
                             className='outlined'
                            id="outlined-basic-5"
@@ -262,7 +287,7 @@ export default function SignUp() {
                            color='secondary'
                            variant="outlined"
                            margin="dense"
-                           type='email'
+                           type="email"
                            required
                            name={"email"}
                            value={formData.email}
@@ -289,8 +314,11 @@ export default function SignUp() {
                         <FormControl sx={{ marginTop: 1, fontSize:10}} variant="outlined">
                             <InputLabel htmlFor="outlined-adornment-password" error={!!formErrors.password} color='secondary' sx={{fontSize:15}}>Password</InputLabel>
                             <OutlinedInput
-
-                                className='outlined'
+                                sx={{
+                                    fontFamily: 'Clash display',
+                                    fontSize:18
+                                }}
+                                 className='outlined'
                                 error={!!formErrors.password}
                                 onChange={handleChange}
                                 value={formData.password}
@@ -322,7 +350,10 @@ export default function SignUp() {
                        <FormControl sx={{ marginTop: 1.5, fontSize:10}} variant="outlined">
                            <InputLabel htmlFor="outlined-adornment-password-1" error={!!formErrors.confirmPassword} color='secondary' sx={{fontSize:15}}>Confirm Password</InputLabel>
                            <OutlinedInput
-
+                                sx={{
+                                    fontFamily: 'Clash display',
+                                    fontSize:18
+                                }}
                                className='outlined'
                                error={!!formErrors.confirmPassword}
                                onChange={handleChange}
@@ -356,9 +387,10 @@ export default function SignUp() {
                    {/*    </p>*/}
                    </div>
 
-                   {error ? <div className="cluse">
+                   {error ? <div className="new">
                        <p className={'pword'}> {error ? '*Password must contain at least one character, one number, one uppercase letter, and' +
                            ' have a' + ' minimum length of' + ' 8' + ' characters.' : ""}
+                           <br/>
                            <br/>
                            {formData.password !== formData.confirmPassword ? '*Passwords do not match.' : ''}
                        </p>
