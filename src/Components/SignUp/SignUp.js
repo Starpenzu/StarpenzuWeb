@@ -1,6 +1,7 @@
 import React from 'react';
 import Footer from '../Footer/Footer';
 import NavBar from '../Navbar/NavBar';
+import {Link, useLocation} from "react-router-dom";
 import { TextField , MenuItem, useMediaQuery  } from '@mui/material';
 import FormControl from '@mui/material/FormControl';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -142,9 +143,11 @@ export default function SignUp() {
            <div className="signup">
 
                <div className="signupHeader">
-                   <div className="backarrow">
-                       <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1684452441/starpenzu/back_qpybto.svg" alt=""/>
-                   </div>
+                   <Link to='/'>
+                       <div className="backarrow">
+                           <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1684452441/starpenzu/back_qpybto.svg" alt=""/>
+                       </div>
+                   </Link>
 
                    <div className="signupTitle">
                        Register
@@ -220,7 +223,7 @@ export default function SignUp() {
                            type='select'
                            name={"gender"}
                            required
-                           // value={formData.gender}
+                           value={formData.gender}
                            onChange={handleChange}
                            defaultValue="">
 
@@ -283,12 +286,10 @@ export default function SignUp() {
                            {/*    onChange={handleChange}*/}
                            {/*/>*/}
 
-                        <FormControl sx={{ marginTop: 1}} variant="outlined">
+                        <FormControl sx={{ marginTop: 1, fontSize:10}} variant="outlined">
                             <InputLabel htmlFor="outlined-adornment-password" error={!!formErrors.password} color='secondary' sx={{fontSize:15}}>Password</InputLabel>
                             <OutlinedInput
-                                sx={{
-                                    fontSize:15
-                                }}
+
                                 className='outlined'
                                 error={!!formErrors.password}
                                 onChange={handleChange}
@@ -314,40 +315,60 @@ export default function SignUp() {
                             />
 
                         </FormControl>
-                          <p className={'pword'} > {error ? '*Password must contain at least one character, one number, one uppercase letter, and' +
-                            ' have a' +  ' minimum length of' +  ' 8' + ' characters' : ""}
-                            <br/>
-                            {/*{formData.password !== formData.confirmPassword ? '*Passwords do not match' : ''}*/}
-                          </p>
+
                     </div>
 
-                   {/*<div className="cluse">*/}
-                   {/*    <TextField*/}
-                   {/*         error={error}*/}
-                   {/*         className='outlined'*/}
-                   {/*        id="outlined-basic-7"*/}
-                   {/*        label="Confirm Password"*/}
-                   {/*        color='secondary'*/}
-                   {/*        variant="outlined"*/}
-                   {/*        margin="dense"*/}
-                   {/*        type='password'*/}
-                   {/*        required*/}
-                   {/*        name={"confirmPassword"}*/}
-                   {/*        value={formData.confirmPassword}*/}
-                   {/*        onChange={handleChange}*/}
-                   {/*    />*/}
+                   <div className="cluse">
+                       <FormControl sx={{ marginTop: 1.5, fontSize:10}} variant="outlined">
+                           <InputLabel htmlFor="outlined-adornment-password-1" error={!!formErrors.confirmPassword} color='secondary' sx={{fontSize:15}}>Confirm Password</InputLabel>
+                           <OutlinedInput
+
+                               className='outlined'
+                               error={!!formErrors.confirmPassword}
+                               onChange={handleChange}
+                               value={formData.confirmPassword}
+                               name={"confirmPassword"}
+                               color='secondary'
+                               id="outlined-adornment-password-1"
+                               required
+                               type={showPassword ? 'text' : 'password'}
+                               endAdornment={
+                                   <InputAdornment position="end">
+                                       <IconButton
+                                           aria-label="toggle password visibility"
+                                           onClick={handleClickShowPassword}
+                                           onMouseDown={handleMouseDownPassword}
+                                           edge="end"
+                                       >
+                                           {showPassword ? <VisibilityOff /> : <Visibility />}
+                                       </IconButton>
+                                   </InputAdornment>
+                               }
+                               label="Password"
+                           />
+
+                       </FormControl>
 
                    {/*    <p className={'pword'} > {error ? '*Password must contain at least one character, one number, one uppercase letter, and' +*/}
                    {/*        ' have a' +  ' minimum length of' +  ' 8' + ' characters' : ""}*/}
                    {/*        <br/>*/}
                    {/*        {formData.password !== formData.confirmPassword ? '*Passwords do not match' : ''}*/}
                    {/*    </p>*/}
-                   {/*</div>*/}
+                   </div>
 
+                   {error ? <div className="cluse">
+                       <p className={'pword'}> {error ? '*Password must contain at least one character, one number, one uppercase letter, and' +
+                           ' have a' + ' minimum length of' + ' 8' + ' characters.' : ""}
+                           <br/>
+                           {formData.password !== formData.confirmPassword ? '*Passwords do not match.' : ''}
+                       </p>
+                   </div>: ''}
                    <SignInButton
                        className='registerBtn'
                        buttonName='Register'
                    />
+
+                   <div className="already">Already have an account? <Link className='link-d' to='/'><span className="loginn">Sign In</span></Link></div>
 
                </form>
                 </ThemeProvider>
