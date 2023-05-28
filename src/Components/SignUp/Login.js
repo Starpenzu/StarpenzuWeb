@@ -207,6 +207,11 @@ export default function Login (){
 
                 </form>
             </ThemeProvider>
+            
+            <div className="wrapper">
+                <input type="text" required={true}/>
+                <label htmlFor="Name">Name</label>
+            </div>
 
         </div>
         <Footer/>

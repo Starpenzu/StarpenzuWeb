@@ -1,11 +1,11 @@
 import React from 'react';
 
-const SignInButton =(props) => {
+const SignInButton =({className, buttonName, onclick}) => {
 
     return(
         <>
-            <button className={props.className}>
-                {props.buttonName}
+            <button className={className} onClick={onclick}>
+                {buttonName}
             </button>
         </>
     )
