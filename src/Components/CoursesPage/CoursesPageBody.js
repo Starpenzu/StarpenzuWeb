@@ -10,10 +10,10 @@ export default function CoursesPageBody(){
     //     alert('yooo')}
 
     function handleBtnChange(){
-        if(!changeButton){
-            setChangeButton(true)
-        }else{
+        if(changeButton){
             setChangeButton(false)
+        }else{
+            setChangeButton(true)
 
         }
 
@@ -74,8 +74,8 @@ export default function CoursesPageBody(){
             </div>
 
            <SignInButton
-                className={!changeButton ? 'registerBtn loginbtn makepaymentactive':'registerBtn loginbtn makepayment'}
-                buttonName={!changeButton ? 'In progress' : 'Proceed to Pay'}
+                className={changeButton ? 'registerBtn loginbtn makepaymentactive':'registerBtn loginbtn makepayment'}
+                buttonName={changeButton ? 'In progress' : 'Proceed to Pay'}
                 onclick={handleBtnChange}
             />
 

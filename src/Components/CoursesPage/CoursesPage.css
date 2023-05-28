@@ -10,7 +10,7 @@
 
 .CoursesPagetitle{
     width: 84%;
-    font-family: 'Clash Display', serif;
+    font-family: 'Clash Display';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -43,7 +43,7 @@
 }
 
 .CoursesPagelist1{
-    font-family: 'Poppins', serif;
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 7px;
@@ -57,7 +57,7 @@
 }
 
 .CoursesPagelist2{
-    font-family: 'Poppins', serif;
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 7px;
@@ -101,7 +101,7 @@
 }
 
 .CoursesPageContenttext{
-    font-family: 'Poppins', serif;
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 8px;
@@ -137,7 +137,7 @@
     cursor: pointer;
     list-style: none;
     padding: 0 10px;
-    font-family: 'Poppins', serif;
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 6px;
