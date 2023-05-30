@@ -1,0 +1,50 @@
+.outlined-input-container {
+    position: relative;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.outlined-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    font-size: 14px;
+}
+
+.outlined-label {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    padding: 0 4px;
+    background-color: white;
+    color: #666;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    font-size: 12px;
+}
+
+.outlined-input-container.focused .outlined-label,
+.outlined-input:focus + .outlined-label {
+    top: 0;
+    left: 0;
+    font-size: 10px;
+    transform: translate(10px, -50%);
+    background-color: white;
+    color: #F9B70B;
+}
+
+.outlined-input-container.focused .outlined-label,
+.outlined-input-container.has-value .outlined-label {
+    color: #F9B70B;
+}
+
+.outlined-input:focus,
+.outlined-input-container.has-value .outlined-input {
+    border-color: #F9B70B;
+}
