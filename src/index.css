@@ -226,7 +226,7 @@ ul{
 
 .hero{
     margin-top: 40px;
-    background: #F9B70B;
+    background: linear-gradient(105.82deg, rgba(249, 183, 11, 0.2) 9.8%, rgba(28, 14, 112, 0.2) 40.18%, rgba(79, 9, 150, 0.2) 78.98%);
     padding: 40px 36px 83px 36px;
 }
 
@@ -330,23 +330,25 @@ ul{
     margin-left: 4px;
     color: #F9B70B;
 }
+.lefty{
+padding-left: 20px;
+    padding-right: 5px;
+}
+
 .coursesContainer{
     margin: 0 auto;
-    padding-top: 60px;
+
+    padding-top: 20px;
+    /*padding-left: 35px;*/
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    /*justify-content: left;*/
+    /*align-items: center;*/
+    /*flex-direction: column;*/
     gap: 36px;
     overflow-x: auto;
 }
 .feaCourses{
-    display: inline-flex;
-    flex-direction: row;
-    gap: 23px;
-    justify-content: center;
-    align-items: center;
-    overflow-x: hidden;
+   margin-bottom: 25px;
 }
 
 .headText{
@@ -672,7 +674,7 @@ ul{
     .coursesContainer1 {
         margin-top: 25px;
         overflow: hidden;
-        padding: 0 10px 0 35px;
+        /*padding: 0 10px 0 35px;*/
     }
 }
 
@@ -1044,7 +1046,7 @@ ul{
 
     .feaCourses {
         margin-top: 136px;
-        padding: 0 36px 0 36px;
+        /*padding: 0 36px 0 36px;*/
         display: inline-flex;
         flex-direction: row;
         align-items: center;
