@@ -62,6 +62,7 @@ export default function Courses(){
                             courseHours='500 Hours'
                             courseTitle='Learn Figma: User Interface Design Essentials - UI/UX Design'
                             coursePrice='#3750.00'
+                            link='/coursespageuiux'
                         />
                         <CoursesComponent
                             img='https://res.cloudinary.com/do5wu6ikf/image/upload/v1686257309/starpenzu/dj_fsxez8.svg'
@@ -70,14 +71,17 @@ export default function Courses(){
                             courseHours='500 Hours'
                             courseTitle='Backend Web Development(Python & Django)'
                             coursePrice='#3750.00'
+                            link='/coursespagedg'
                         />
                         <CoursesComponent
                             img='https://res.cloudinary.com/do5wu6ikf/image/upload/v1686257309/starpenzu/fd_dmdhkv.svg'
                             courseSpec='Design'
                             courseDiff='Beginner Level'
                             courseHours='500 Hours'
-                            courseTitle='Frontend Web Development(HTML, CSS & Javascript)'
+                            courseTitle='Frontend Web
+                             Development(HTML, CSS & Javascript)'
                             coursePrice='#3750.00'
+                            link='/coursespagefe'
                         />
 
                         {/*<CoursesComponent/>*/}

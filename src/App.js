@@ -5,7 +5,9 @@ import SignUp from '../src/Components/SignUp/SignUp'
 import ViewAllCourses from './Components/Courses/ViewAllCourses'
 import Login from '../src/Components/SignUp/Login'
 import MyForm from '../src/Components/OutlinedInput/MyForm'
-import CoursesPage from '../src/Components/CoursesPage/CoursesPage'
+import CoursesPageUIUX from '../src/Components/CoursesPageUIUX/CoursesPage'
+import CoursesPageDG from '../src/Components/CoursesPageDG/CoursesPage'
+import CoursesPageFE from '../src/Components/CoursesPageFE/CoursesPage'
 
 
 
@@ -19,7 +21,9 @@ function App() {
               <Route exact  path ="/signup" element={<SignUp/>} />
               <Route exact  path ="/Login" element={<Login/>} />
               <Route exact  path ="/form" element={<MyForm/>} />
-              <Route exact  path ="/coursespage" element={<CoursesPage/>} />
+              <Route exact  path ="/coursespageuiux" element={<CoursesPageUIUX/>} />
+              <Route exact  path ="/coursespagedg" element={<CoursesPageDG/>} />
+              <Route exact  path ="/coursespagefe" element={<CoursesPageFE/>} />
           </Routes>
       </Router>
 

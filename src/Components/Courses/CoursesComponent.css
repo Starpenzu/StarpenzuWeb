@@ -40,7 +40,7 @@
     }
 
     .CoursesComponentImg {
-        width: 198px;
+        width: 194px;
         height: 129px;
         border-radius: 10px;
         margin: 0 auto;
@@ -114,6 +114,7 @@
         font-style: normal;
         font-weight: 500;
         font-size: 16px;
+        width: 98%;
         line-height: 20px;
         margin-top: 21px;
     }
@@ -123,15 +124,15 @@
         background: #1E1E1E;
         border-radius: 10px;
         padding: 20px;
-        width: 302px;
-        height: 436px;
+        width: 271px;
+        height: 445px;
         margin-bottom: 30px;
     }
 
     .CoursesComponentImg {
-        width: 303px;
-        height: 200px;
-        border-radius: 10px;
+        width: 269px;
+        height: 178px;
+        border-radius: 7px;
         margin: 0 auto;
     }
 
@@ -198,7 +199,7 @@
         color: #1E1E1E;
         margin-top: 22px;
         text-align: center;
-        width: 302px;
+        width: 272px;
         height: 56px;
     }
 
@@ -217,7 +218,36 @@
 
 }
 
-@media (min-width: 1140px) {
+@media (min-width: 1024px){
+    .CoursesComponent-row2 {
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        gap: 12px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 9px;
+        line-height: 18px;
+        margin-top: 10px;
+    }
+    .courseTitle {
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        width: 98%;
+        line-height: 22px;
+        margin-top: 21px;
+    }
+
+    .courcesContainer2{
+        /*flex-wrap: nowrap;*/
+    }
+}
+
+    @media (min-width: 1140px) {
 
     .CoursesComponent {
         color: white;
@@ -297,6 +327,18 @@
         width: 344px;
         height: 56px;
     }
+
+        .coursesContainer {
+            margin: 0 auto;
+            padding-top: 20px;
+            padding-left: 111px;
+            /* display: flex; */
+            /* justify-content: left; */
+            /* align-items: center; */
+            /* flex-direction: column; */
+            gap: 36px;
+            overflow-x: auto;
+        }
 }
 
 

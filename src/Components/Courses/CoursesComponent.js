@@ -1,5 +1,6 @@
 import React from 'react';
 import './CoursesComponent.css'
+import { Link } from "react-router-dom";
 
 
 export default function CoursesComponent(props){
@@ -29,7 +30,7 @@ export default function CoursesComponent(props){
                 {props.coursePrice}
             </div>
 
-            <button className='courseCTA'>Enroll</button>
+            <Link to={props.link}><button className='courseCTA' >Enroll</button></Link>
 
         </div>
     )

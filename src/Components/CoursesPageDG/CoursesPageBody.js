@@ -1,7 +1,7 @@
 import React from 'react';
-import CoursesPageContent from '../CoursesPage/CoursesPageContent'
+import CoursesPageContent from '../CoursesPageDG/CoursesPageContent'
 import SignInButton from '../SignUp/SignInbutton'
-import accordionData from '../../Components/CoursesPage/accordionData'
+import accordionData from '../../Components/CoursesPageDG/accordionData'
 
 export default function CoursesPageBody(){
     const [changeButton, setChangeButton] = React.useState(false)
