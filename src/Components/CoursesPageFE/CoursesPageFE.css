@@ -1,12 +1,14 @@
-/*.CoursesPageContainer{*/
-/*    margin: 50px 20px 0 20px;*/
-/*    display: grid;*/
-/*    flex-direction: column;*/
-/*    justify-content: center;*/
-/*    justify-items: center;*/
+.CoursesPageContainer{
+    margin: 50px 20px 0 20px;
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+}
+
+/*#increase2{*/
+/*    width: 100%;*/
 /*}*/
-
-
 
 .CoursesPagetitle{
     width: 84%;
@@ -42,7 +44,7 @@
     margin-bottom: 4px;
 }
 
-.CoursesPagelist1{
+.CoursesPagelist2{
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
@@ -154,10 +156,10 @@
     flex-wrap: nowrap;
 }
 
-.accordionContentsLists img{
-    width: 8px;
-    height: 8px;
-}
+/*.accordionContentsLists img{*/
+/*    width: 8px;*/
+/*    height: 8px;*/
+/*}*/
 
 .makepayment{
     width: 100%;
@@ -175,8 +177,16 @@
 
 
 
-@media (min-width: 300px){
-
+@media (min-width: 375px){
+    .CoursesPageimg2 {
+        background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686270096/starpenzu/FE_sm_jx5zbu.svg);
+        width: 356px;
+        height: 160px;
+        margin: 0;
+        border-radius: 10px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 }
 
 

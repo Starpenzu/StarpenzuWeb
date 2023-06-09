@@ -16,7 +16,7 @@ export default function CoursesPageContent({ courses }) {
     return (
         <>
             {courses.map((course, index) => (
-                <div className={openAccordions.includes(index) ? 'xxxx' : 'jjj'} key={index}>
+                <div className={openAccordions.includes(index) ? 'xxxx' : 'jjj2'} key={index}>
                     <div className={openAccordions.includes(index) ? 'ssss' : 'CoursesPageContent'}>
                         <div className="CoursesPageContenttext" onClick={() => handleAccordion(index)}>
                             {course.title}

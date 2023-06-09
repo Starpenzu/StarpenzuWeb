@@ -9,15 +9,15 @@ import Footer from '../Footer/Footer';
 
 export default function CoursesPage(){
     return(
-        <>
+        <div className='forceMiddle'>
             <NavBar/>
 
-            <div className="CoursesPageContainer">
+            <div className="CoursesPageContainer1">
                 <CoursesPageHeader/>
                 <CoursesPageBody/>
             </div>
 
             <Footer/>
-        </>
+        </div>
     )
 }

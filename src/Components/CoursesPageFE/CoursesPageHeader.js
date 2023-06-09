@@ -4,7 +4,7 @@ import React from 'react'
 export default function CoursesPageHeader(){
     return(
         <div className="CoursesPageHeader">
-            <div className="CoursesPagetitle">Frontend Web Development(HTML,CSS & Javascript)</div>
+            <div className="CoursesPagetitle" id='increase2'>Frontend Web Development(HTML,CSS & Javascript)</div>
 
             <div className="CoursesPageimg2">
 

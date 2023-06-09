@@ -3,8 +3,8 @@ import React from 'react'
 
 export default function CoursesPageHeader(){
     return(
-        <div className="CoursesPageHeader">
-            <div className="CoursesPagetitle">Backend Web Development(Python & Django)</div>
+        <div className="CoursesPageHeader1">
+            <div className="CoursesPagetitle1" id='increase'>Backend Web Development(Python & Django)</div>
 
             <div className="CoursesPageimg1">
 

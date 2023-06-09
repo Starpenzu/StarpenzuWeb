@@ -16,9 +16,9 @@ export default function CoursesPageContent({ courses }) {
     return (
         <>
             {courses.map((course, index) => (
-                <div className={openAccordions.includes(index) ? 'xxxx' : 'jjj'} key={index}>
-                    <div className={openAccordions.includes(index) ? 'ssss' : 'CoursesPageContent'}>
-                        <div className="CoursesPageContenttext" onClick={() => handleAccordion(index)}>
+                <div className={openAccordions.includes(index) ? 'xxxx1' : 'jjj1'} key={index}>
+                    <div className={openAccordions.includes(index) ? 'ssss1' : 'CoursesPageContent'}>
+                        <div className="CoursesPageContenttext1" onClick={() => handleAccordion(index)}>
                             {course.title}
                         </div>
                         <img className="force" id={openAccordions.includes(index) ? 'makewhite' : ''} src={openAccordions.includes(index) ? course.img2 : course.img} alt="" onClick={() => handleAccordion(index)} />
@@ -28,7 +28,7 @@ export default function CoursesPageContent({ courses }) {
                         <div className="accordionContents">
                             {course.stages.map((stage, stageIndex) => (
                                 <div className="accordionContentsLists" key={stageIndex}>
-                                    <div className='makeFlex'>
+                                    <div className='makeFlex1'>
                                         <div><img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1686285838/starpenzu/youtube_od2mnk.svg" alt=""/></div>
                                         {stage}
                                     </div>

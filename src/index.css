@@ -1681,7 +1681,7 @@ padding-left: 20px;
 @media (min-width: 1441px){
     /*Nav Bar*/
 
-   .dab, .sss, .forceMiddle, .allcourcesContainer2, .CoursesPageContainer{
+   .dab, .sss, .forceMiddle, .allcourcesContainer2{
        max-width: 1441px;
        margin: 0 auto;
    }
