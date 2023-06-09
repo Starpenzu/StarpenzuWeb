@@ -1,10 +1,10 @@
-.CoursesPageContainer{
-    margin: 50px 20px 0 20px;
-    display: grid;
-    flex-direction: column;
-    justify-content: center;
-    justify-items: center;
-}
+/*.CoursesPageContainer{*/
+/*    margin: 50px 20px 0 20px;*/
+/*    display: grid;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*    justify-items: center;*/
+/*}*/
 
 
 
@@ -98,6 +98,12 @@
 
 #makewhite{
     filter: brightness(0) invert(1);
+}
+
+.makeFlex {
+    display: flex;
+    justify-content: space-between;
+    gap: 7px;
 }
 
 .CoursesPageContenttext{

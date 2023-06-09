@@ -89,8 +89,8 @@ nav{
     font-weight: 500;
 }
 
-.harmBurger{
-    padding-right: 44px;
+.harmBurger {
+    padding-right: 28px;
 }
 
 .hamburgerImg{
@@ -1659,13 +1659,29 @@ padding-left: 20px;
         height: 137px;
     }
 
+    .coursesContainer {
+        display: block;
+        padding-left: 125px;
+    }
+
+    .courcesContainer2 {
+        padding-left: 0;
+        padding-right: 0;
+        display: flex;
+        overflow-x: hidden;
+        gap: 108px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
 
 }
 
 @media (min-width: 1441px){
     /*Nav Bar*/
 
-   .dab, .sss, .forceMiddle, .allcourcesContainer2{
+   .dab, .sss, .forceMiddle, .allcourcesContainer2, .CoursesPageContainer{
        max-width: 1441px;
        margin: 0 auto;
    }

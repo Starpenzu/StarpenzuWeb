@@ -1,10 +1,10 @@
-.CoursesPageContainer{
-    margin: 50px 20px 0 20px;
-    display: grid;
-    flex-direction: column;
-    justify-content: center;
-    justify-items: center;
-}
+/*.CoursesPageContainer{*/
+/*    margin: 50px 20px 0 20px;*/
+/*    display: grid;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*    justify-items: center;*/
+/*}*/
 
 
 
@@ -19,11 +19,11 @@
     margin-bottom: 18px;
 }
 
-.CoursesPageimg3{
-    background-image: url("https://res.cloudinary.com/do5wu6ikf/image/upload/v1686270096/starpenzu/fg_sm_nnqjxy.svg");
-    width: 276px;
-    height: 137px;
-    border-radius: 10px;
+.CoursesPageimg3 {
+    background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686270096/starpenzu/fg_sm_nnqjxy.svg);
+    width: 305px;
+    height: 134px;
+    border-radius: 11px;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -98,6 +98,12 @@
 
 #makewhite{
     filter: brightness(0) invert(1);
+}
+
+.makeFlex {
+    display: flex;
+    justify-content: space-between;
+    gap: 7px;
 }
 
 .CoursesPageContenttext{

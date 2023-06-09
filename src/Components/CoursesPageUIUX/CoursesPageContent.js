@@ -28,7 +28,10 @@ export default function CoursesPageContent({ courses }) {
                         <div className="accordionContents">
                             {course.stages.map((stage, stageIndex) => (
                                 <div className="accordionContentsLists" key={stageIndex}>
-                                    <div>{stage}</div>
+                                    <div className='makeFlex'>
+                                        <div><img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1686285838/starpenzu/youtube_od2mnk.svg" alt=""/></div>
+                                        {stage}
+                                    </div>
                                     {course.locked && <img src={course.imgLock} alt="" />}
                                 </div>
                             ))}
