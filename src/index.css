@@ -9,7 +9,11 @@ body{
     /*width: border-box;*/
     overflow-x: hidden;
 }
-
+.stop{
+    margin-top: 5px;
+    text-decoration: none;
+    color: black;
+}
 /*ViewAllcourses*/
 .pheww{
 /*margin-top: 140px;*/
