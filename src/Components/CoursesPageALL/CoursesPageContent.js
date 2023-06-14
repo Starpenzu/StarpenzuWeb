@@ -16,12 +16,12 @@ export default function CoursesPageContent({ courses }) {
     return (
         <>
             {courses.map((course, index) => (
-                <div className={openAccordions.includes(index) ? 'xxxx' : 'jjj2'} key={index}>
-                    <div className={openAccordions.includes(index) ? 'ssss' : 'CoursesPageContent'}>
-                        <div className="CoursesPageContenttext" onClick={() => handleAccordion(index)}>
+                <div className={openAccordions.includes(index) ? 'xxxx' : 'jjj'} onClick={() => handleAccordion(index)} key={index}>
+                    <div className={openAccordions.includes(index) ? 'ssss' : 'CoursesPageContent' }>
+                        <div className="CoursesPageContenttext" >
                             {course.title}
                         </div>
-                        <img className="force" id={openAccordions.includes(index) ? 'makewhite' : ''} src={openAccordions.includes(index) ? course.img2 : course.img} alt="" onClick={() => handleAccordion(index)} />
+                        <img className="force icall" id={openAccordions.includes(index) ? 'makewhite' : ''} src={openAccordions.includes(index) ? course.img2 : course.img} alt="" onClick={() => handleAccordion()} />
                     </div>
 
                     {openAccordions.includes(index) && (
@@ -29,10 +29,10 @@ export default function CoursesPageContent({ courses }) {
                             {course.stages.map((stage, stageIndex) => (
                                 <div className="accordionContentsLists" key={stageIndex}>
                                     <div className='makeFlex'>
-                                        <div><img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1686285838/starpenzu/youtube_od2mnk.svg" alt=""/></div>
+                                        <img id='mag' src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1686285838/starpenzu/youtube_od2mnk.svg" alt=""/>
                                         {stage}
                                     </div>
-                                    {course.locked && <img src={course.imgLock} alt="" />}
+                                    {course.locked && <img  className='icall' src={course.imgLock} alt="" />}
                                 </div>
                             ))}
                         </div>

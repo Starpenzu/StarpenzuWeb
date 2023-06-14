@@ -1,7 +1,7 @@
 import React from 'react';
-import CoursesPageContent from '../CoursesPageDG/CoursesPageContent'
+import CoursesPageContent from '../CoursesPageALL/CoursesPageContent'
 import SignInButton from '../SignUp/SignInbutton'
-import accordionData from '../../Components/CoursesPageDG/accordionData'
+import accordionData from '../../Components/CoursesPageALL/accordionData'
 
 export default function CoursesPageBody(){
     const [changeButton, setChangeButton] = React.useState(false)
@@ -22,8 +22,8 @@ export default function CoursesPageBody(){
 
     return(
         <div>
-            <div className="CoursesPagetitle1 margin1">About Course</div>
-            <div className="CoursesPagetext1">
+            <div className="CoursesPagetitle margin">About Course</div>
+            <div className="CoursesPagetext">
                 This is a course in Product Design using Figma as your main tool for Beginners requesting a
                 full concentration from students. This is so well detailed starting from how to install Figma software even for those with
                 zero knowledge in design. There would be series of live sections, quizzes and examinations as you partake in this course.
@@ -31,7 +31,7 @@ export default function CoursesPageBody(){
             </div>
 
             <div className="CoursesPageLearn">
-                <div className="CoursesPagetitle1 margin1">What Will I Learn?</div>
+                <div className="CoursesPagetitle margin">What Will I Learn?</div>
 
                 <div className="CoursesPagelist1">
                     <ul>
@@ -55,7 +55,7 @@ export default function CoursesPageBody(){
                 </div>
 
                 <div className="CoursesPagelist2">
-                    <div className="CoursesPagetitle1 margin1">Course Requirements</div>
+                    <div className="CoursesPagetitle margin">Course Requirements</div>
                     <ul className='req'>
                         <li>Internet Connectivity</li>
                         <li>At Least a 4GB RAM Laptop</li>
@@ -66,8 +66,8 @@ export default function CoursesPageBody(){
 
             </div>
 
-            <div className="CoursesPagecontent1">
-                <div className="CoursesPagetitle1 margin1">Course Content</div>
+            <div className="CoursesPagecontent">
+                <div className="CoursesPagetitle margin">Course Content</div>
 
                 <CoursesPageContent courses={accordionData} />
 

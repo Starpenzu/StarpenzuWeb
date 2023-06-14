@@ -1,7 +1,7 @@
 import React from 'react';
-import CoursesPageHeader from '../CoursesPageDG/CoursesPageHeader'
-import CoursesPageBody from '../CoursesPageDG/CoursesPageBody'
-import '../CoursesPageDG/CoursesPageDG.css';
+import CoursesPageHeader from '../CoursesPageALL/CoursesPageHeader'
+import CoursesPageBody from '../CoursesPageALL/CoursesPageBody'
+import '../CoursesPageALL/CoursesPageALL.css';
 import NavBar from '../Navbar/NavBar';
 import Footer from '../Footer/Footer';
 
@@ -12,7 +12,7 @@ export default function CoursesPage(){
         <div className='forceMiddle'>
             <NavBar/>
 
-            <div className="CoursesPageContainer1">
+            <div className="CoursesPageContainer">
                 <CoursesPageHeader/>
                 <CoursesPageBody/>
             </div>
