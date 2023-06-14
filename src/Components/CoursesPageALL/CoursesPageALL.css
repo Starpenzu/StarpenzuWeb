@@ -37,7 +37,15 @@
 }
 
 
-
+/*.CoursesPagetitle {*/
+/*    line-height: 43px;*/
+/*    width: 112%;*/
+/*    font-family: 'Clash Display';*/
+/*    font-style: normal;*/
+/*    font-weight: 500;*/
+/*    font-size: 40px;*/
+/*    margin-bottom: 57px;*/
+/*}*/
 
 .CoursesPagetitle {
     width: 100%;
@@ -53,6 +61,24 @@
 
 .CoursesPageimg{
     background-image: url("https://res.cloudinary.com/do5wu6ikf/image/upload/v1686270096/starpenzu/gd_sm_s2rhi1.svg");
+    width: 276px;
+    height: 137px;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.CoursesPageimgFE{
+    background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686270096/starpenzu/FE_sm_jx5zbu.svg);
+    width: 276px;
+    height: 137px;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.CoursesPageimgUIUX{
+    background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686270096/starpenzu/fg_sm_nnqjxy.svg);
     width: 276px;
     height: 137px;
     border-radius: 10px;
@@ -230,6 +256,30 @@
         background-position: center;
     }
 
+    /*.ggggdFE{*/
+    /*    width: 427px;*/
+    /*    height: 173px;*/
+    /*}*/
+
+    /*.CoursesPageimgFE {*/
+    /*    background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686313674/starpenzu/fe_xmd_vntu6q.svg);*/
+
+    /*    margin: 0;*/
+    /*    border-radius: 10px;*/
+    /*    background-repeat: no-repeat;*/
+    /*    background-position: center;*/
+    /*}*/
+
+    .CoursesPageimgUIUX {
+        background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686313673/starpenzu/fg_xmd_ncqz44.svg);
+        width: 321px;
+        height: 147px;
+        margin: 0;
+        border-radius: 10px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
     /*.CoursesPageimg {*/
     /*    background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686313674/starpenzu/dj_xmd_fsvppf.svg);*/
     /*    width: 500px;*/
@@ -305,6 +355,7 @@
     }
 
     .CoursesPagetitle{
+        line-height: 20px;
         width: 112%;
         font-family: 'Clash Display';
         font-style: normal;
@@ -368,12 +419,33 @@
         /*font-size: 23px;*/
     }
 
+    .CoursesPageimgUIUX {
+        background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686313673/starpenzu/fg_xmd_ncqz44.svg);
+        width: 500px;
+        height: 181px;
+        margin: 0;
+        border-radius: 10px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .CoursesPageimgFE {
+        background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686313674/starpenzu/fe_xmd_vntu6q.svg);
+        width: 500px;
+        height: 181px;
+        margin: 0;
+        border-radius: 10px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
     .CoursesPagetitle {
         width: 112%;
         font-family: 'Clash Display';
         font-style: normal;
         font-weight: 500;
         font-size: 23px;
+        line-height: 43px;
         margin-bottom: 34px;
     }
 
@@ -444,6 +516,19 @@
         height: 164px;
         /*background-image:url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686288205/starpenzu/dj_md_padwuf.svg);*/
     }
+
+    .CoursesPageimgUIUX {
+        /*background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686313673/starpenzu/fg_xmd_ncqz44.svg);*/
+        width: 527px;
+        height: 164px;
+    }
+
+    .CoursesPageimgFE {
+        /*background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686313673/starpenzu/fg_xmd_ncqz44.svg);*/
+        width: 527px;
+        height: 164px;
+    }
+
     .accordionContentsLists {
         margin: 10px 0;
         cursor: pointer;
@@ -473,6 +558,7 @@
         font-family: 'Clash Display';
         font-style: normal;
         font-weight: 500;
+        line-height: 43px;
         font-size: 30px;
         margin-bottom: 34px;
     }
@@ -541,8 +627,23 @@
         background-image:url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686288205/starpenzu/dj_md_padwuf.svg);
     }
 
+    .CoursesPageimgFE {
+        width: 900px;
+        height: 300px;
+        background-image:url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686288206/starpenzu/fe_md_wqppjw.svg);
+    }
+
+    .CoursesPageimgUIUX {
+        width: 900px;
+        height: 300px;
+        background-image:url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686288205/starpenzu/ui_md_jpxwmo.svg);
+    }
+
+
+
     .CoursesPagetitle {
         width: 112%;
+        line-height: 43px;
         font-family: 'Clash Display';
         font-style: normal;
         font-weight: 500;
@@ -637,6 +738,18 @@
         height: 300px;
         background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686320775/starpenzu/20230605_015939_1_akvrqn.svg);
     }
+
+    .CoursesPageimgUIUX {
+        width: 1230px;
+        height: 300px;
+        background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686320774/starpenzu/20230605_015939_1_2_qtutby.svg);
+    }
+
+    .CoursesPageimgFE {
+        width: 1230px;
+        height: 300px;
+        background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686320775/starpenzu/20230605_015939_1_1_ricalg.svg);
+    }
 }
 
 
@@ -645,5 +758,17 @@
         width: 1300px;
         height: 300px;
         background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686320775/starpenzu/20230605_015939_1_akvrqn.svg);
+    }
+
+    .CoursesPageimgUIUX {
+        width: 1300px;
+        height: 300px;
+        background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686320774/starpenzu/20230605_015939_1_2_qtutby.svg);
+    }
+
+    .CoursesPageimgFE {
+        width: 1300px;
+        height: 300px;
+        background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686320775/starpenzu/20230605_015939_1_1_ricalg.svg);
     }
 }

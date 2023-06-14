@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function CoursesPageContent({ courses }) {
+export default function CoursesPageContentProps({ courses }) {
     const [openAccordions, setOpenAccordions] = React.useState([]);
 
     function handleAccordion(index) {
@@ -16,8 +16,8 @@ export default function CoursesPageContent({ courses }) {
     return (
         <>
             {courses.map((course, index) => (
-                <div className={openAccordions.includes(index) ? 'xxxx' : 'jjj'} onClick={() => handleAccordion(index)} key={index}>
-                    <div className={openAccordions.includes(index) ? 'ssss' : 'CoursesPageContent' }>
+                <div className={openAccordions.includes(index) ? 'xxxx' : 'jjj'} >
+                    <div className={openAccordions.includes(index) ? 'ssss' : 'CoursesPageContent' } onClick={() => handleAccordion(index)} key={index}>
                         <div className="CoursesPageContenttext" >
                             {course.title}
                         </div>

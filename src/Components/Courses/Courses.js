@@ -71,7 +71,7 @@ export default function Courses(){
                             courseHours='500 Hours'
                             courseTitle='Backend Web Development(Python & Django)'
                             coursePrice='#3750.00'
-                            link='/coursespagedg'
+                            link='/coursespagedjango'
                         />
                         <CoursesComponent
                             img='https://res.cloudinary.com/do5wu6ikf/image/upload/v1686257309/starpenzu/fd_dmdhkv.svg'
