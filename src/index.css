@@ -146,7 +146,7 @@ footer{
     gap: 35px;
     width: 100%;
     justify-content: center;
-    margin-top: 50px;
+    /*margin-top: 50px;*/
     /* z-index: -1000000; */
 }
 
@@ -587,11 +587,12 @@ padding-left: 20px;
 .randomContainer{
     padding: 25px;
     text-align: center;
-    margin: 0 auto;
+    margin: 0 auto 50px auto;
     background: #F9B70B;
     border-radius: 5px;
     width: 255px;
     height: 85px;
+    /*margin-bottom: 50px;*/
 }
 
 .fourthText{
@@ -618,6 +619,7 @@ padding-left: 20px;
     height: 20px;
     border: none;
     margin-top: 3px;
+    margin-bottom: 50px;
     text-indent: 10px;
     font-family: clash display;
 }
@@ -762,7 +764,7 @@ padding-left: 20px;
     .randomContainer {
         padding: 25px;
         text-align: center;
-        margin: 0 auto;
+        /*margin: 0 auto;*/
         background: #F9B70B;
         border-radius: 5px;
         width: 292px;
@@ -827,7 +829,7 @@ padding-left: 20px;
     .randomContainer {
         padding: 25px;
         text-align: center;
-        margin: 0 auto;
+        /*margin: 0 auto;*/
         background: #F9B70B;
         border-radius: 5px;
         width: 316px;
@@ -1204,7 +1206,7 @@ padding-left: 20px;
     .randomContainer {
         padding: 25px;
         text-align: center;
-        margin: 0 auto;
+        /*margin: 0 auto;*/
         background: #F9B70B;
         border-radius: 5px;
         width: 617px;
@@ -1261,7 +1263,7 @@ padding-left: 20px;
     .randomContainer {
         padding: 25px;
         text-align: center;
-        margin: 0 auto;
+        /*margin: 0 auto;*/
         background: #F9B70B;
         border-radius: 5px;
         width: 617px;
@@ -1433,7 +1435,7 @@ padding-left: 20px;
     .randomContainer {
         padding: 25px;
         text-align: center;
-        margin: 0 auto;
+        /*margin: 0 auto;*/
         background: #F9B70B;
         border-radius: 5px;
         width: 816px;
@@ -1652,7 +1654,7 @@ padding-left: 20px;
     .randomContainer {
         padding: 25px;
         text-align: center;
-        margin: 0 auto;
+        /*margin: 0 auto;*/
         background: #F9B70B;
         border-radius: 5px;
         width: 1222px;
