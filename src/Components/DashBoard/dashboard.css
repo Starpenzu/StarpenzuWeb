@@ -1,0 +1,76 @@
+.myProfile{
+    text-align: left;
+    font-family: 'Clash Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.dashcontainer{
+    background: #ACACAC;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.centralize{
+text-align: center;
+}
+
+.myProfileava{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 32px auto;
+}
+
+.profname{
+    font-family: 'Clash Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 24px;
+    margin-top: 24px;
+    line-height: 30px;
+}
+
+.dashProg{
+    display: inline-flex;
+    gap: 10px;
+    /*flex-wrap: wrap;*/
+}
+
+.round {
+    background: #FFFFFF;
+    border-radius: 15px;
+    text-align: left;
+    padding: 12px;
+    width: 113px;
+    height: 122px;
+}
+
+.certificate{
+    background: #F9B70B;
+}
+
+.titlecompleted, .titlecompletedno{
+    font-family: 'Clash Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.titlecompleted {
+     padding-right: 25px;
+ }
+.titlecompletedno{
+    padding-top: 62px;
+}
+
+.dashProg2{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}

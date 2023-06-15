@@ -11,8 +11,11 @@ import accordionData from './accordionData';
 
 export default function CoursesPageFE(){
     return(
-        <div className='forceMiddle'>
+        <>
             <NavBar/>
+
+        <div className='forceMiddle'>
+
 
             <div className="CoursesPageContainer">
                 <CoursesPageHeaderProps
@@ -56,5 +59,6 @@ export default function CoursesPageFE(){
 
             <Footer/>
         </div>
+        </>
     )
 }
