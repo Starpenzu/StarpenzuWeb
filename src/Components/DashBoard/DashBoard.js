@@ -25,6 +25,7 @@ export default function  DashBoard (){
                     </div>
                 </div>
 
+                <div className="overalldash">
 
                <div className="dashProg">
                     <div className="completed round">
@@ -34,21 +35,22 @@ export default function  DashBoard (){
                     </div>
 
                    <div className="inprogress round">
-                       <div className="titlecompleted">Courses in progress</div>
+                       <div className="titlecompleted">Courses in Progress</div>
                        <div className="titlecompletedno">01</div>
                    </div>
 
 
 
 
-               </div>
-                    <div className="dashProg2">
-                        <div className="certificate round">
-                            <div className="titlecompleted">Certificate Earned</div>
-                            <div className="titlecompletedno">01</div>
-                        </div>
+                       </div>
+                            <div className="dashProg2">
+                                <div className="certificate round">
+                                    <div className="titlecompleted">Certificate <br/> Earned</div>
+                                    <div className="titlecompletedno">01</div>
+                                </div>
+                            </div>
                     </div>
-            </div>
+                </div>
             </div>
 
             <Footer/>

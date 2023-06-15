@@ -8,14 +8,17 @@
 }
 
 .dashcontainer{
-    background: #ACACAC;
+    background: #ecf8e8;
     margin-top: 40px;
     padding: 20px 20px 50px 20px;
 }
 
-.centralize{
-text-align: center;
-}
+.centralize {
+     display: flex;
+     text-align: center;
+     flex-direction: column;
+     align-items: center;
+ }
 
 .myProfileava{
     display: inline-flex;
@@ -38,7 +41,7 @@ text-align: center;
 .dashProg{
     display: inline-flex;
     gap: 10px;
-    /*flex-wrap: wrap;*/
+    color: #4E4D4D;
 }
 
 .round {
@@ -73,4 +76,122 @@ text-align: center;
     display: flex;
     justify-content: center;
     margin-top: 10px;
+}
+
+@media (min-width: 375px){
+    .round {
+        padding: 12px;
+        width: 137px;
+        height: 136px;
+    }
+
+    .dashProg {
+        gap: 15px;
+    }
+
+    .dashProg2 {
+        margin-top: 15px;
+    }
+
+    .titlecompleted, .titlecompletedno {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 425px){
+    .round {
+        padding: 15px;
+        width: 148px;
+        height: 148px;
+    }
+
+    .profname {
+        font-size: 28px;
+    }
+
+    .myProfile {
+        font-size: 20px;
+    }
+
+    .myProfile {
+        font-size: 20px;
+    }
+
+    .titlecompletedno {
+        padding-top: 85px;
+    }
+
+    .titlecompleted, .titlecompletedno {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 560px) {
+    .dashcontainer {
+        padding: 51px 20px 68px 20px;
+    }
+}
+
+@media (min-width: 600px) {
+    .dashProg2 {
+         margin-top: 0;
+    }
+
+    .overalldash {
+        display: inline-flex;
+        gap: 15px;
+        flex-direction: row;
+    }
+
+    .myProfile {
+        font-size: 30px;
+    }
+
+    .profname {
+        font-size: 30px;
+    }
+
+    .titlecompletedno{
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 660px){
+    .dashProg {
+        gap: 30px;
+    }
+
+    .overalldash {
+        gap: 30px;
+    }
+}
+
+@media (min-width: 760px){
+    .dashcontainer {
+        padding: 100px 30px 68px 30px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .round {
+        padding: 20px;
+        width: 203px;
+        height: 203px;
+    }
+
+    .titlecompletedno {
+        padding-top: 129px;
+    }
+
+    .myProfile {
+        font-size: 40px;
+    }
+
+    .profname {
+        font-size: 40px;
+    }
+
+    .dashcontainer {
+        padding: 100px 40px 68px 40px;
+    }
 }
