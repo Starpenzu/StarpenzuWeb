@@ -1,0 +1,71 @@
+.certiContainer {
+    /*gap: 20px;*/
+    margin-bottom: 20px;
+    padding: 15px;
+    width: 650px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.firstSeg, .secSeg{
+    padding-right: 25px;
+}
+
+.subtext{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    /*line-height: 48px;*/
+    color: #F9B70B;
+}
+
+.headtext{
+    font-family: 'Clash Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    /*line-height: 48px;*/
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.thirdsegbtn{
+    background: #F9B70B;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 39px;
+    color: #FFFFFF;
+    padding: 0 25px 0 25px ;
+}
+
+.thirdsegbtn2{
+    background: #F9B70B;
+    border-radius: 5px;
+    font-size: 11px;
+    line-height: 39px;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+    padding: 0 25px 0 25px ;
+}
+
+.thirdsegbtn3{
+    background: #000000;
+    border-radius: 5px;
+    font-size: 11px;
+    line-height: 39px;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+    padding: 0 25px 0 25px ;
+}
+
+.subtext3{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    /*line-height: 48px;*/
+    color: #959292;
+}

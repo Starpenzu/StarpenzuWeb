@@ -316,10 +316,10 @@
         font-style: normal;
         font-weight: 500;
         gap: 30px;
-        width: 107%;
+        /*width: 107%;*/
         font-size: 18px;
         line-height: 48px;
-        color: #959292;
+        color: rgba(149, 146, 146, 0.63);
         border-radius: 10px;
         justify-content: space-evenly;
     }

@@ -1,6 +1,10 @@
 import React, {useState} from 'react';
 import NavBar from '../Navbar/NavBar';
-import Footer from '../Footer/Footer'
+import Footer from '../Footer/Footer';
+import NotificationProps from './NotificationProp';
+import CertificateProps from './CertificateProps';
+import CompletedProps from './CompletedProps';
+import InprogressProps from './InprogressProps';
 import '../DashBoard/dashboard.css';
 
 
@@ -12,28 +16,28 @@ export default function  DashBoard (){
     const[notification, setNotification] = useState(null)
 
     const makeactiveCourses ={
-        color: myCourses ? 'red' : '',
-        borderBottom: myCourses ? 'red solid 1px' : ''
+        color: myCourses ? '#F9B70B' : '',
+        borderBottom: myCourses ? '#F9B70B solid 1.5px' : ''
     }
 
     const makeactiveInprogress = {
-        color: inprogress ? 'red' : '',
-        borderBottom: inprogress ? 'red solid 1px' : ''
+        color: inprogress ? '#F9B70B' : '',
+        borderBottom: inprogress ? '#F9B70B solid 1.5px' : ''
     }
 
     const makeactiveCompleted = {
-        color: completed ? 'red' : '',
-        borderBottom: completed ? 'red solid 1px' : ''
+        color: completed ? '#F9B70B' : '',
+        borderBottom: completed ? '#F9B70B solid 1.5px' : ''
     }
 
     const makeactiveCertificate = {
-        color: certificate ? 'red' : '',
-        borderBottom: certificate ? 'red solid 1px' : ''
+        color: certificate ? '#F9B70B' : '',
+        borderBottom: certificate ? '#F9B70B solid 1.5px' : ''
     }
 
     const makeactiveNotifications = {
-        color: notification ? 'red' : '',
-        borderBottom: notification ? 'red solid 1px' : '',
+        color: notification ? '#F9B70B' : '',
+        borderBottom: notification ? '#F9B70B solid 1.5px' : '',
         borderBottomWidth: notification ? '1px' : '0'
     }
 
@@ -180,11 +184,94 @@ export default function  DashBoard (){
                             <li style={makeactiveNotifications} onClick={() => handleitemclick('Notifications')}>Notifications</li>
                         </ul>
                     </div>
-                    { myCourses ? <div className="myCourses">My courses</div> : ''}
-                    { inprogress ? <div className="inprogress">In progress</div> : ''}
-                    { completed ? <div className="Completed">Completed</div> : ''}
-                    { certificate ? <div className="Certificate">Certificate</div> : ''}
-                    { notification ? <div className="Notifications">Notifications</div> : ''}
+                    { myCourses ?
+                        <div className="myCourses">
+                            <InprogressProps
+                                CompletedProps
+                                imgFirst='https://res.cloudinary.com/do5wu6ikf/image/upload/v1686911910/starpenzu/How-Important-is-UI-UX-Design-in-an-App-Development-Process_4_k6q7yv.svg'
+                                headtext='The complete javascript course 2023: build real projects'
+                                subtext='In Progress'
+                                thirdsegbtn='View Course'
+                            />
+
+                            <CompletedProps
+                                imgFirst='https://res.cloudinary.com/do5wu6ikf/image/upload/v1686911910/starpenzu/How-Important-is-UI-UX-Design-in-an-App-Development-Process_4_k6q7yv.svg'
+                                headtext='The complete javascript course 2023: build real projects'
+                                subtext='Completed'
+                                thirdsegbtn='View Course'
+                            />
+
+                        </div>
+
+                        : ''
+                    }
+
+                    { inprogress ?
+                            <div className="inprogress">
+                                <InprogressProps
+                                    CompletedProps
+                                    imgFirst='https://res.cloudinary.com/do5wu6ikf/image/upload/v1686911910/starpenzu/How-Important-is-UI-UX-Design-in-an-App-Development-Process_4_k6q7yv.svg'
+                                    headtext='The complete javascript course 2023: build real projects'
+                                    subtext='In Progress'
+                                    thirdsegbtn='View Course'
+                                />
+
+                            </div>
+
+                            : ''
+                    }
+
+                    { completed ?
+                        <div className="Completed">
+                            <CompletedProps
+                                imgFirst='https://res.cloudinary.com/do5wu6ikf/image/upload/v1686911910/starpenzu/How-Important-is-UI-UX-Design-in-an-App-Development-Process_4_k6q7yv.svg'
+                                headtext='The complete javascript course 2023: build real projects'
+                                subtext='Completed'
+                                thirdsegbtn='View Course'
+                            />
+
+                            <CompletedProps
+                                imgFirst='https://res.cloudinary.com/do5wu6ikf/image/upload/v1686911910/starpenzu/How-Important-is-UI-UX-Design-in-an-App-Development-Process_4_k6q7yv.svg'
+                                headtext='The complete javascript course 2023: build real projects'
+                                subtext='Completed'
+                                thirdsegbtn='View Course'
+                            />
+
+                        </div>
+
+                        : ''
+                    }
+
+                    { certificate ?
+                            <div className="Certificate">
+                                <CertificateProps
+                                    imgFirst='https://res.cloudinary.com/do5wu6ikf/image/upload/v1686911910/starpenzu/How-Important-is-UI-UX-Design-in-an-App-Development-Process_4_k6q7yv.svg'
+                                    headtext='The complete javascript course 2023: build real projects'
+                                    subtext='Congratulations, your certificate is ready. Proceed to download.'
+                                    thirdsegbtn='Download'
+
+                                />
+                            </div>
+
+                        : ''
+                    }
+
+                    { notification ?
+                        <div className="Notifications">
+                            <NotificationProps
+                                notificationText='Hello  Rasheedat, Congratulations on completing your Javascript courses, we know it hasn’t
+                                                    been easy so far but we are glad you scaled through. Congratulations once again'
+                                notificationDate='8th June, 2023'
+                            />
+
+                            <NotificationProps
+                            notificationText='Hello  Rasheedat, Congratulations on enrolling  for one of our courses, we hope to see you
+                                                become a star player in that field. Enjoy your day. '
+                            notificationDate='8th May, 2023'
+                        />
+                         </div>
+                        : ''
+                    }
 
                     {/*{myCourses && (<div className="myCourses">My courses</div>)} ||*/}
                     {/*{inprogress && (<div className="inprogress">In progress</div>)} ||*/}
