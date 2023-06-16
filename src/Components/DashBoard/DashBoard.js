@@ -132,7 +132,9 @@ export default function  DashBoard (){
 
             <div className="dashcontainer2">
                 <div className="profile2">
-                    <div className="logout">logout</div>
+                    <div className="logout">
+                        <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1686916316/starpenzu/Vector_lpnux7.svg" alt=""/>
+                    </div>
                     <div className="myProfileava2">
                         <div className="avartar2">
                             <img src='https://res.cloudinary.com/do5wu6ikf/image/upload/v1686802377/starpenzu/Rectangle_ep2xlk.svg' alt=''/>
@@ -273,11 +275,6 @@ export default function  DashBoard (){
                         : ''
                     }
 
-                    {/*{myCourses && (<div className="myCourses">My courses</div>)} ||*/}
-                    {/*{inprogress && (<div className="inprogress">In progress</div>)} ||*/}
-                    {/*{completed && (<div className="Completed">Completed</div>)}||*/}
-                    {/*{certificate && (<div className="Certificate">Certificate</div>)} ||*/}
-                    {/*{notification && (<div className="Notifications">Notifications</div>)}*/}
 
                 </div>
             </div>

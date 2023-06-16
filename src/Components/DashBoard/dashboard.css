@@ -10,7 +10,7 @@
     display:none ;
 }
 .dashcontainer{
-    background: #ecf8e8;
+    background: #eff1ef;
     margin-top: 40px;
     padding: 20px 20px 50px 20px;
 }
@@ -204,14 +204,17 @@
     }
 
     .logout{
+        padding-top: 10px;
         text-align: right;
+        cursor: pointer;
     }
 
     .dashcontainer2{
         display: flex;
-        background: #ecf8e8;
+        background: #eff1ef;
         margin-top: 90px;
-        padding: 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
     }
 
     .profile2{
@@ -248,7 +251,7 @@
         font-size: 16px;
         line-height: 20px;
         color: #4E4D4D;
-        background: #ecf8e8;
+        background: #eff1ef;
         border-radius: 15px;
         text-align: left;
         padding: 12px;
@@ -319,7 +322,7 @@
         /*width: 107%;*/
         font-size: 18px;
         line-height: 48px;
-        color: rgba(149, 146, 146, 0.63);
+        color: rgb(90 89 89 / 98%);
         border-radius: 10px;
         justify-content: space-evenly;
     }
