@@ -6,7 +6,9 @@
     font-size: 18px;
     line-height: 22px;
 }
-
+.dashcontainer2{
+    display:none ;
+}
 .dashcontainer{
     background: #ecf8e8;
     margin-top: 40px;
@@ -194,4 +196,136 @@
     .dashcontainer {
         padding: 100px 40px 68px 40px;
     }
+}
+
+@media (min-width: 1300px){
+    .dashcontainer{
+        display: none;
+    }
+
+    .logout{
+        text-align: right;
+    }
+
+    .dashcontainer2{
+        display: flex;
+        background: #ecf8e8;
+        margin-top: 90px;
+        padding: 30px;
+    }
+
+    .profile2{
+        display: inline-flex;
+        flex-direction: column;
+        background: white;
+        border-radius: 10px;
+        margin:20px;
+        padding: 10px 30px 30px 30px;
+
+    }
+
+    .myProfileava2{
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 30px;
+        margin: 60px 0 60px 0;
+    }
+
+    .profname2{
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 48px;
+        color: #000000;
+    }
+
+    .round2 {
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        color: #4E4D4D;
+        background: #ecf8e8;
+        border-radius: 15px;
+        text-align: left;
+        padding: 12px;
+        width: 138px;
+        height: 138px;
+    }
+
+    .certificate2{
+        color: black;
+    }
+
+    .certificate2{
+        background: #F9B70B;
+    }
+
+    .dashProg3{
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .dashProg3 {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        gap: 28px;
+    }
+
+    .dashProg4{
+        margin-top: 28px;
+        margin-bottom: 60px;
+    }
+
+    .titlecompletedno2{
+        padding-top: 50px;
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 39px;
+        color: #000000;
+    }
+
+    .mydashboard {
+        padding: 0 30px 30px 10px;
+        margin: 20px;
+    }
+
+    .mydashhh{
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 39px;
+        line-height: 48px;
+         color: #000000;
+    }
+
+    .listitems {
+        padding: 0 10px;
+        background: white;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        gap: 30px;
+        width: 107%;
+        font-size: 18px;
+        line-height: 48px;
+        color: #959292;
+        border-radius: 10px;
+        justify-content: space-evenly;
+    }
+
+    .listitems li{
+        padding: 10px 0;
+    }
+
 }
