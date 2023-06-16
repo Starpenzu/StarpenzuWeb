@@ -1,13 +1,1735 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.cdnfonts.com/css/clash-display');
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'clash display', 'Montserrat';
+    margin: 0;
+    padding: 0;
+    /*width: border-box;*/
+    overflow-x: hidden;
+}
+.stop{
+    margin-top: 5px;
+    text-decoration: none;
+    color: black;
+}
+/*ViewAllcourses*/
+.pheww{
+/*margin-top: 140px;*/
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.allcourses{
+    font-family: 'Clash Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 60px;
+    margin-left: 40px;
+}
+
+.link-d{
+    text-decoration: none;
+    color: unset;
+}
+
+
+/*body{*/
+/*    background: #fff2cf;*/
+/*}*/
+
+/*Nav Bar*/
+
+nav{
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: white;
+    height: 40px;
+
+}
+
+.hamBurgerActive{
+    color: #F9B70B;
+
+}
+
+.dashboard{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 48px;
+}
+
+.dashboardii{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.harmBurgerDropDown ul li.dashboardf{
+    padding-bottom: 0;
+}
+
+.drpaimg{
+    padding-right: 29px;
+}
+
+.drpaimg img{
+    width: 20px;
+    height: 20px;
+    padding-bottom: 0;
+}
+
+
+/*.nav {*/
+/*    width: 100%;*/
+/*    display: inline-flex;*/
+/*    flex-direction: row;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    background: white;*/
+/*    padding-top: 18px;*/
+/*    padding-bottom: 18px;*/
+/*}*/
+
+.navItems{
+    display: none;
+}
+
+.brand {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0;
+    padding-left: 7px;
+}
+
+.navLogo {
+    width: 45px;
+    height: 45px;
+}
+
+.lgText{
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.harmBurger {
+    padding-right: 28px;
+}
+
+.hamburgerImg{
+    width: 19.5px;
+    height: 11.5px;
+}
+.sss{
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  
+}
+.harmBurgerDropDown {
+    padding-left: 38px;
+    background-color: white;
+    position: absolute;
+    transition: margin 0.5s ease-in;
+    top: 31px;
+    left: 0;
+    right: 0;
+    z-index: -100;
+}
+
+/*.widthAdjust{*/
+/*    width: 100%;*/
+/*}*/
+
+.harmBurgerDropDown ul li{
+    list-style: none;
+    font-size: 24px;
+    font-weight: 500;
+    padding-bottom: 48px;
+}
+
+.hamBurgerActive{
+    padding-top: 48px;
+}
+
+.dds{
+    margin-left: 20px;
+    padding: 10px 0;
+}
+
+.dashboarddp{
+    margin-bottom: 10px;
+}
+
+/*Footer*/
+
+footer{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: black;
+    padding: 23px 0px 24px 0;
+    color: white;
+    display: inline-flex;
+    flex-direction: row;
+    gap: 35px;
+    width: 100%;
+    justify-content: center;
+    /*margin-top: 50px;*/
+    /* z-index: -1000000; */
+}
+
+.rightSeg{
+    margin-right: 15px;
+}
+
+footer h1{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+     letter-spacing: 0.5px; 
+}
+
+footer  ul li{
+    list-style: none;
+    font-size: 8px;
+    font-weight: 400;
+    line-height: 24px;
+     letter-spacing: 0.5px;
+}
+
+footer ul{
+    padding: 0;
+}
+
+.footerBrand {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding-left: 25px;
+    justify-content: flex-start;
+}
+
+.footerLogo{
+    width: 30px;
+    height: 30px;
+}
+
+.footerlgText{
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.socialSeg, .companySeg{
+    padding-left: 34px;
+}
+
+.socialHead, .companyHead, .menuHead, .offersHead{
+    margin-bottom: 10px;
+}
+
+.companySeg ul{
+    margin-bottom: 15px;
+}
+
+/*.forceMiddle{*/
+/*    margin: 0 auto;*/
+/*    gap: 10px;*/
+/*    display: inline-flex;*/
+/*}*/
+
+.socialSeg2{
+    display: none;
+}
+
+ul{
+    padding: 0;
+}
+
+/*main body*/
+.heroImg{
+    margin-top: 18px;
+}
+
+.heroImg img{
+    width: 238.26px;
+    height: 357.28px;
+}
+
+.hero{
+    margin-top: 40px;
+    background: linear-gradient(105.82deg, rgba(249, 183, 11, 0.2) 9.8%, rgba(28, 14, 112, 0.2) 40.18%, rgba(79, 9, 150, 0.2) 78.98%);
+    padding: 40px 36px 83px 36px;
+}
+
+.hero2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.heroText{
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 39px;
+    text-align: left;
+}
+
+.whatDoYouWantcontainer {
+    margin: 0 auto;
+    background: black;
+    color: white;
+    border-radius: 5px;
+    padding: 12px;
+    width: 229px;
+    height: 91px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.wantInput input {
+    border: none;
+    margin-top: 3px;
+    width: 187px;
+    height: 12px;
+    font-size: 10px;
+    text-indent: 10px;
+    font-family: clash display;
+}
+
+.clickedActive{
+    color: #F9B70B;
+}
+
+.wantInput input:active {
+    outline: white;
+    border: white;
+}
+
+.wantInput input:focus{
+    border: none;
+}
+
+.wantInput input:focus-visible{
+    border: 0 none white;
+    background: white;
+    outline: none;
+}
+
+.testRel{
+    margin: 33px auto;
+    position: relative;
+}
+
+
+.searchBtn {
+    margin-top: 1px;
+    height: 30px;
+    width: 30px;
+}
+
+.wantInput {
+   padding: 2px;
+    display: inline-flex;
+    width: 227px;
+    height: 20px;
+    background: #FFFFFF;
+    border-radius: 2px;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.wantText{
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.wantTrend {
+    font-family: Poppins;
+    margin-top: 13px;
+    padding-left: 5px;
+}
+
+.wantTrend p{
+    font-family: Poppins;
+    font-size: 4px;
+}
+
+.wantTrend p u{
+    margin-left: 4px;
+    color: #F9B70B;
+}
+.lefty{
+padding-left: 20px;
+    padding-right: 5px;
+}
+
+.coursesContainer{
+    margin: 0 auto;
+
+    padding-top: 20px;
+    /*padding-left: 35px;*/
+    display: flex;
+    /*justify-content: left;*/
+    /*align-items: center;*/
+    /*flex-direction: column;*/
+    gap: 36px;
+    overflow-x: auto;
+}
+.feaCourses{
+   margin-bottom: 25px;
+}
+
+.headText{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    color: #F9B70B;
+}
+
+.subText{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 7px;
+    line-height: 12px;
+    color: #000000;
+}
+
+.viewCouses button{
+    font-family: 'clash display';
+    width: 64.57px;
+    height: 24px;
+    background: #000000;
+    color: white;
+    border: none;
+    font-size: 8px;
+    border-radius: 5px;
+}
+
+.courcesContainer2{
+    display: flex;
+    gap: 61px;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    scroll-snap-type: inline mandatory;
+}
+
+
+
+
+.courcesContainer2 div{
+    scroll-snap-align:start ;
+}
+
+.firstSection{
+    background: url("https://res.cloudinary.com/do5wu6ikf/image/upload/v1684250308/mobileRectangle_132_1_wmo1au.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*background-position: center center;*/
+    /*width: 100%;*/
+}
+
+.firstSectionImgTxt img {
+    width: 46px;
+    height: 46px;
+}
+
+.firstSection{
+    margin-top: 24px;
+}
+
+.firstSectionText{
+    font-family: 'Clash Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+
+}
+
+.firstSectionTxt{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 9px;
+    text-align: center;
+}
+
+.firstSectionImgTxt{
+    text-align: center;
+}
+
+.firstSectionImgTxtContainer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 18px;
+    /* width: 100%; */
+    padding-bottom: 25px;
+    align-items: center;
+}
+
+.breakPoint2, .breakPoint1{
+    display: inline-flex;
+    gap: 19px
+}
+
+.secondSection{
+    text-align: center;
+    color: white;
+    background: #1E1E1E;
+    padding: 8px 28px 21px 28px;
+}
+
+.firstText{
+    font-family: 'Clash Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 4px;
+}
+
+.secondText{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 12px;
+    margin-bottom: 18px;
+}
+
+.secondSection img{
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 18px;
+    width: 168.69px;
+    height: 41.52px;
+}
+
+.secondSection .button{
+    width: 64px;
+    /* height: 23px; */
+    background: #F9B70B;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-family: Poppins;
+    padding: 5px 63px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 12px;
+    margin: 0 auto;
+}
+
+.thirdSection{
+    margin: 20px 30px;
+    text-align: center;
+}
+
+.testi{
+    font-family: 'Clash Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #F9B70B;
+}
+
+.testiSub{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 12px;
+    color: #000000;
+}
+
+.peeps{
+    margin-top: 25px;
+}
+
+.peeps1{
+    margin-bottom: 25px;
+}
+
+.peeps1 img{
+    width: 50px;
+    height: 50px;
+}
+
+.peeps1 .name{
+    font-family: 'Clash Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+     color: #000000;
+    margin-top: 4px;
+    margin-bottom: 6px;
+}
+
+.peeps1 .notes{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 12px;
+    text-align: center;
+    color: #000000;
+    width: 69%;
+    margin: 0 auto;
+}
+.overlay{
+    position: relative;
+    bottom: 218px;
+    left: -46px;
+}
+
+/*.fixfooter{*/
+/*    margin-top: 1000px;*/
+/*}*/
+
+/*.fourthSection,.allcourcesContainer2{*/
+/*    margin-bottom: 600px;*/
+/*}*/
+
+.overlay img{
+    position: absolute;
+    aspect-ratio: 1/1;
+}
+
+.randomContainer{
+    padding: 25px;
+    text-align: center;
+    margin: 0 auto 50px auto;
+    background: #F9B70B;
+    border-radius: 5px;
+    width: 255px;
+    height: 85px;
+    /*margin-bottom: 50px;*/
+}
+
+.fourthText{
+    font-family: 'Clash Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+}
+
+.fourthSubtext{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 12px;
+    color: #FFFFFF;
+    margin: 5px 0 22px 0;
+}
+
+.fourthSection form input{
+    width: 206px;
+    height: 20px;
+    border: none;
+    margin-top: 3px;
+    margin-bottom: 50px;
+    text-indent: 10px;
+    font-family: clash display;
+}
+
+.fourthSection form input:focus-visible{
+    outline: none;
+}
+
+.fourthSection form input:focus{
+ border: white;
+    outline: none;
+}
+
+.fourthSection form{
+    background-color: white;
+    width: 264px;
+    height: 28px;
+    display: flex;
+    margin: 0 auto;
+
+}
+
+.fourthSection button{
+    width: 58px;
+    height: 28px;
+    color: white;
+    background: black;
+    border: none;
+    font-family: 'Clash Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 8px;
+    line-height: 10px;
+}
+
+
+@media (min-width: 300px){
+    /*.hero2 {*/
+    /*    width: 99%;*/
+    /*    margin: 0 auto;*/
+    /*}*/
+
+    .courcesContainer2 {
+        grid-auto-flow: column;
+        grid-auto-columns: auto;
+        overflow-x: auto;
+        gap: 20px;
+        /* width: fit-content; */
+        width: 100%;
+        overscroll-behavior: contain;
+        justify-content: flex-start;
+        justify-items: stretch;
+        align-items: baseline;
+        align-content: space-between;
+
+    }
+
+    .coursesContainer1 {
+        margin-top: 25px;
+        overflow: hidden;
+        /*padding: 0 10px 0 35px;*/
+    }
+}
+
+@media (min-width: 375px){
+    /*.hero2 {*/
+    /*    width: 82%;*/
+    /*    margin: 0 auto;*/
+    /*}*/
+
+    .peeps1 .notes {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 14px;
+        text-align: center;
+        color: #000000;
+        width: 69%;
+        margin: 0 auto;
+    }
+
+    .whatDoYouWantcontainer {
+        margin: 0 auto;
+        background: black;
+        color: white;
+        border-radius: 5px;
+        padding: 12px;
+        width: 294px;
+        height: 102px;
+    }
+
+    .wantInput {
+        padding: 2px;
+        display: inline-flex;
+        width: 283px;
+        height: 20px;
+        background: #FFFFFF;
+        border-radius: 2px;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+
+    .wantTrend p {
+        font-family: Poppins;
+        font-size: 6px;
+    }
+
+    .feaCourses{
+        gap: 81px;
+    }
+
+    .peeps1 .name {
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 19px;
+        line-height: 20px;
+        color: #000000;
+        margin-top: 4px;
+        margin-bottom: 6px;
+    }
+
+    .testi {
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 20px;
+        color: #F9B70B;
+    }
+
+    .testiSub {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 9px;
+        line-height: 12px;
+        color: #000000;
+    }
+
+    .randomContainer {
+        padding: 25px;
+        text-align: center;
+        /*margin: 0 auto;*/
+        background: #F9B70B;
+        border-radius: 5px;
+        width: 292px;
+        height: 85px;
+    }
+}
+
+@media (min-width: 425px){
+    /*.hero2 {*/
+    /*    width: 87%;*/
+    /*    margin: 0 auto;*/
+    /*}*/
+
+    .heroText {
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 39px;
+    }
+
+    .heroImg img {
+        width: 317.26px;
+        height: 495.28px;
+    }
+
+    .whatDoYouWantcontainer {
+        width: 337px;
+        height: 102px;
+    }
+
+    .wantInput {
+        padding: 2px;
+        display: inline-flex;
+        width: 322px;
+        height: 20px;
+        background: #FFFFFF;
+        border-radius: 2px;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+    .wantInput input {
+        border: none;
+        margin-top: 3px;
+        width: 285px;
+        height: 12px;
+        font-size: 10px;
+    }
+
+    .feaCourses {
+        gap: 102px;
+    }
+
+    .headText{
+        font-size: 16px;
+    }
+
+    .subText{
+        font-size: 8px;
+    }
+
+
+
+    .randomContainer {
+        padding: 25px;
+        text-align: center;
+        /*margin: 0 auto;*/
+        background: #F9B70B;
+        border-radius: 5px;
+        width: 316px;
+        height: 85px;
+    }
+
+    .overlay {
+        position: relative;
+        bottom: 218px;
+        left: -14px;
+    }
+}
+
+@media (min-width: 560px){
+    /*Nav Bar*/
+
+    nav{
+        height: 58px;
+    }
+
+    .navLogo {
+        width: 66px;
+        height: 66px;
+    }
+
+    .lgText {
+        font-size: 20px;
+    }
+
+    .hamburgerImg{
+        width: 25px;
+        height: 25px;
+    }
+
+/* footer*/
+    footer{
+        justify-content: center;
+    }
+
+    /*.courcesContainer2 {*/
+    /*    display: flex;*/
+    /*    overflow-x: hidden;*/
+    /*    gap: 17px;*/
+    /*    flex-wrap: wrap;*/
+    /*    align-items: center;*/
+    /*    justify-content: center;*/
+    /*}*/
+
+    .peeps1 .notes {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 17px;
+        text-align: center;
+        color: #000000;
+        width: 46%;
+        margin: 0 auto;
+    }
+
+}
+
+@media (min-width: 760px){
+    /*Nav Bar*/
+
+    .brand{
+        padding-left: 39px;
+    }
+
+    nav{
+        padding: 18px 0 18px 0;
+        height: 64px;
+    }
+
+    .navLogo{
+        width: 80px;
+        height: 80px;
+    }
+
+    .lgText{
+        font-size: 24px;
+    }
+
+    .hamBurgerActive{
+        padding-top: 50px;
+    }
+
+    .harmBurgerDropDown {
+        padding-left: 64px;
+        margin-top: 62px;
+    }
+
+    .harmBurger{
+        padding-right: 57px;
+    }
+    .hamburgerImg {
+         width: 39px;
+         height: 23px;
+    }
+
+
+/*footer*/
+
+    .socialSeg{
+        display: none;
+    }
+
+    .socialSeg2{
+        display: inline;
+    }
+
+    footer{
+        gap: 69px;
+    }
+
+    footer h1{
+        font-size: 16px;
+    }
+
+    footer ul li{
+        font-size: 11px;
+        margin-bottom: 12px;
+    }
+
+    .footerBrand {
+        display: inline-flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        padding-left: 25px;
+        padding-top: 33px;
+        justify-content: flex-start;
+    }
+
+    .footerlgText {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.7px;
+    }
+
+    .footerLogo {
+        width: 40px;
+        height: 40px;
+    }
+
+    /*mainbody*/
+    .hero {
+        margin-top: 100px;
+        padding-bottom: 185px;
+    }
+
+    .hero2{
+        flex-direction: row;
+        gap: 35px;
+    }
+
+    .heroText {
+        font-weight: 500;
+        font-size: 38px;
+        line-height: 60px;
+    }
+
+    .heroImg img {
+        width: 294.26px;
+        height: 447.28px;
+    }
+
+    .whatDoYouWantcontainer {
+        border-radius: 10px;
+        width: 615.92px;
+        height: 190px;
+        padding: 35px;
+        margin-bottom: 100px;
+        margin-top: 33px;
+    }
+
+    .wantText {
+        font-weight: 500;
+        font-size: 35px;
+        margin-bottom: 30px;
+    }
+
+    .wantInput {
+        padding: 2px;
+        display: inline-flex;
+        width: 621px;
+        height: 33px;
+        background: #FFFFFF;
+        border-radius: 2px;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+
+    .searchBtn {
+        margin-top: 2px;
+        height: 50px;
+        width: 50px;
+    }
+
+    .wantInput input {
+        border: none;
+        margin-top: 3px;
+        width: 431px;
+        height: 26px;
+        font-size: 19px;
+    }
+
+    .wantTrend p {
+        font-size: 13px;
+    }
+
+    .wantTrend {
+        font-family: Poppins;
+        margin-top: 24px;
+        padding-left: 5px;
+    }
+
+    .wantTrend p u{
+        margin-left: 6px;
+    }
+
+    .feaCourses {
+        margin-top: 136px;
+        /*padding: 0 36px 0 36px;*/
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 94px;
+    }
+
+    .headText {
+        font-size: 40px;
+        line-height: 49px;
+    }
+
+    .subText {
+        font-size: 20px;
+        line-height: 51px;
+    }
+
+    .viewCouses button{
+        width: 116.27px;
+        height: 48px;
+        font-size: 16px;
+    }
+
+
+    .courcesContainer2 {
+        padding-left: 0;
+        padding-right: 0;
+        display: flex;
+        overflow-x: hidden;
+        gap: 17px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .firstSectionImgTxtContainer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 20px;
+        /* width: 100%; */
+        padding-bottom: 48px;
+        align-items: center;
+    }
+
+    .firstSection{
+        background: url("https://res.cloudinary.com/do5wu6ikf/image/upload/v1684242212/starpenzu/Rectangle_132_tw5dlg.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .breakPoint2, .breakPoint1{
+        gap: 20px;
+    }
+
+    .firstSectionText{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 49px;
+        margin-bottom: 18px;
+        margin-top: 48px;
+    }
+
+    .firstSectionTxt{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 27px;
+    }
+
+    .firstText {
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 49px;
+        margin-top: 20px;
+    }
+
+    .secondText {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 30px;
+    }
+
+    .secondSection img {
+        width: 451.32px;
+        margin-bottom: 36px;
+        height: 103.5px;
+    }
+
+    .secondSection .button{
+        width: 200px;
+       padding: 16px 86px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .testi {
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 72px;
+        color: #F9B70B;
+    }
+
+    .testiSub {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 19px;
+        line-height: 28px;
+        color: #000000;
+    }
+
+    .peeps{
+        display: flex;
+        flex-direction: row;
+        gap: 46px;
+    }
+
+    .peeps1 img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .peeps1 .notes{
+        width: fit-content;
+    }
+
+    .peeps1 .name {
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 19px;
+        line-height: 20px;
+        color: #000000;
+        margin-top: 19px;
+        margin-bottom: 13px
+    }
+
+    .randomContainer {
+        padding: 25px;
+        text-align: center;
+        /*margin: 0 auto;*/
+        background: #F9B70B;
+        border-radius: 5px;
+        width: 617px;
+        height: 110px;
+    }
+
+    .fourthText {
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 20px;
+        color: #000000;
+    }
+
+    .fourthSubtext {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 34px;
+        color: #FFFFFF;
+        margin: 5px 0 22px 0;
+    }
+
+    .fourthSection form {
+        background-color: white;
+        width: 389px;
+        height: 38px;
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .fourthSection button {
+        width: 92px;
+        height: 38px;
+        color: white;
+        background: black;
+        border: none;
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 10px;
+    }
+
+    .fourthSection form input {
+        width: 294px;
+        height: 20px;
+        border: none;
+        margin-top: 8px;
+    }
+
+    .randomContainer {
+        padding: 25px;
+        text-align: center;
+        /*margin: 0 auto;*/
+        background: #F9B70B;
+        border-radius: 5px;
+        width: 617px;
+        height: 137px;
+    }
+
+    .overlay {
+        position: relative;
+        bottom: 115px;
+        left: -14px;
+    }
+
+    .allcourses{
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 49px;
+        margin-top: 140px;
+        margin-left: 40px;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+@media (min-width: 1024px){
+    .allcourses {
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 49px;
+        margin-top: 118px;
+        margin-left: 59px;
+    }
+
+    /*Nav Bar*/
+
+    .harmBurger{
+        display: none;
+    }
+    .harmBurgerDropDown{
+        display: none;
+    }
+
+    .navItems {
+        display: flex;
+        padding-right: 65px;
+    }
+
+    .navItems ul{
+        display: inline-flex;
+        list-style: none;
+        gap: 24px;
+        align-items: center;
+    }
+
+    .navItems ul li{
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    .registerButton{
+        background: #F9B70B;
+        color: white;
+        padding: 10px 37px 10px 37px;
+        border-radius: 5px;
+        border: none;
+        width: 140px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    .loginButton{
+        background: #000000;
+        color: white;
+        padding: 10px 37px 10px 37px;
+        border-radius: 5px;
+        border: none;
+        width: 140px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    .navItemActive{
+        color: #F9B70B;
+    }
+
+/*    footer*/
+    footer {
+        gap: 122px;
+    }
+
+/*    mainbody*/
+    .hero {
+        padding: 41px 47px 292px 58px;
+    }
+
+    .hero2{
+        justify-content: space-between;
+    }
+
+    .heroText {
+        font-weight: 500;
+        font-size: 52px;
+        line-height: 70px;
+    }
+
+    .heroImg img {
+        width: 390px;
+        height: 586.5px;
+    }
+
+    .whatDoYouWantcontainer {
+        margin-top: 130px;
+        width: 771.92px;
+        height: 210px;
+        padding: 35px;
+        margin-bottom: 100px;
+        border-radius: 15px;
+    }
+
+    .wantInput {
+        padding: 2px;
+        display: inline-flex;
+        width: 766px;
+        height: 33px;
+        background: #FFFFFF;
+        border-radius: 2px;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+
+    .wantText {
+        font-weight: 500;
+        font-size: 48px;
+        margin-bottom: 30px;
+    }
+
+    .wantTrend p {
+        font-size: 16px;
+    }
+
+    .feaCourses{
+        gap: 245px;
+    }
+
+
+    .peeps1 .name {
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 20px;
+        color: #000000;
+        margin-top: 19px;
+        margin-bottom: 13px;
+    }
+
+    .randomContainer {
+        padding: 25px;
+        text-align: center;
+        /*margin: 0 auto;*/
+        background: #F9B70B;
+        border-radius: 5px;
+        width: 816px;
+        height: 137px;
+    }
+}
+
+
+@media (min-width: 1280px) {
+    /*    footer*/
+    footer ul li {
+        font-size: 14px;
+        margin-bottom: 24px;
+    }
+
+    footer h1 {
+        font-size: 21px;
+        margin-bottom: 15px;
+    }
+
+    .footerlgText {
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 1.7px;
+    }
+
+    .footerLogo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .footerBrand {
+        display: inline-flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        padding-left: 14px;
+        padding-top: 33px;
+        justify-content: flex-start;
+    }
+
+    .socialHead, .companyHead, .menuHead, .offersHead {
+        padding-bottom: 15px
+    }
+
+    /*    main body*/
+    .heroText {
+        font-weight: 500;
+        font-size: 75px;
+        line-height: 105px;
+    }
+
+    .heroImg img {
+        width: 433px;
+        height: 639px;
+    }
+
+    .whatDoYouWantcontainer {
+        margin-top: 130px;
+        width: 919.92px;
+        height: 214px;
+        padding: 35px;
+        margin-bottom: 100px;
+        border-radius: 15px;
+    }
+
+    .wantInput {
+        padding: 2px;
+        display: inline-flex;
+        width: 920px;
+        height: 33px;
+        background: #FFFFFF;
+        border-radius: 2px;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+
+    .feaCourses {
+        gap: 402px;
+    }
+
+    .peeps {
+        display: flex;
+        flex-direction: row;
+        gap: 195px;
+    }
+
+}
+@media (min-width: 1440px){
+    /*Nav Bar*/
+
+
+
+/*    footer*/
+    footer ul li {
+        font-size: 16px;
+        margin-bottom: 24px;
+    }
+
+    footer h1{
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .footerlgText {
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 1.7px;
+    }
+
+    .footerLogo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .footerBrand {
+        display: inline-flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        padding-left: 14px;
+        padding-top: 33px;
+        justify-content: flex-start;
+    }
+
+    .socialHead, .companyHead, .menuHead, .offersHead{
+        padding-bottom: 20px
+    }
+
+    .whatDoYouWantcontainer {
+        margin-top: 130px;
+        width: 1219px;
+        height: 231px;
+        padding: 35px;
+        margin-bottom: 100px;
+        border-radius: 15px;
+    }
+
+    .wantTrend {
+        font-family: Poppins;
+        margin-top: 31px;
+        padding-left: 5px;
+    }
+
+    .wantInput {
+        padding: 2px;
+        display: inline-flex;
+        width: 1210px;
+        height: 44px;
+        background: #FFFFFF;
+        border-radius: 2px;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+
+    .searchBtn {
+        margin-top: 1px;
+        height: 70px;
+        width: 70px;
+    }
+
+    .wantInput input {
+        border: none;
+        margin-top: 3px;
+        width: 1122px;
+        height: 37px;
+        font-size: 30px;
+    }
+
+    .headText{
+
+    }
+
+    .subText{
+
+    }
+
+    .viewCouses button{
+        width: 116.27px;
+        height: 48px;
+    }
+
+    .feaCourses {
+        gap: 709px;
+    }
+
+    .firstText{
+        font-size: 40px;
+        line-height: 49px;
+        letter-spacing: 1px;
+    }
+
+    .secondSection img{
+        padding-top: 30px;
+    }
+
+    .secondSection {
+        text-align: center;
+        color: white;
+        background: #1E1E1E;
+        padding: 8px 28px 45px 28px;
+    }
+
+
+    .firstSection {
+        background: url('https://res.cloudinary.com/do5wu6ikf/image/upload/v1684242212/starpenzu/dexkRectangle_132_1_gnftu0.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .peeps {
+        display: flex;
+        flex-direction: row;
+        gap: 195px;
+    }
+
+
+    .randomContainer {
+        padding: 25px;
+        text-align: center;
+        /*margin: 0 auto;*/
+        background: #F9B70B;
+        border-radius: 5px;
+        width: 1222px;
+        height: 137px;
+    }
+
+    .coursesContainer {
+        display: block;
+        padding-left: 125px;
+    }
+
+    .courcesContainer2 {
+        padding-left: 0;
+        padding-right: 0;
+        display: flex;
+        overflow-x: hidden;
+        gap: 108px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+}
+
+@media (min-width: 1441px){
+    /*Nav Bar*/
+
+   .dab, .sss, .forceMiddle, .allcourcesContainer2, .dashcontainer, .dashcontainer2{
+       max-width: 1441px;
+       margin: 0 auto;
+   }
+
+    /*footer{*/
+    /*    width: unset;*/
+    /*    left: unset;*/
+    /*}*/
+
 }

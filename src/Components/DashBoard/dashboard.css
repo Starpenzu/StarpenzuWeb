@@ -1,0 +1,342 @@
+.myProfile{
+    text-align: left;
+    font-family: 'Clash Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+}
+.dashcontainer2{
+    display:none ;
+}
+.dashcontainer{
+    background: #eff1ef;
+    margin-top: 40px;
+    padding: 20px 20px 50px 20px;
+}
+
+.centralize {
+     display: flex;
+     text-align: center;
+     flex-direction: column;
+     align-items: center;
+ }
+
+.myProfileava{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 32px auto;
+}
+
+.profname{
+    font-family: 'Clash Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 24px;
+    margin-top: 24px;
+    line-height: 30px;
+}
+
+.dashProg{
+    display: inline-flex;
+    gap: 10px;
+    color: #4E4D4D;
+}
+
+.round {
+    background: #FFFFFF;
+    border-radius: 15px;
+    text-align: left;
+    padding: 12px;
+    width: 113px;
+    height: 122px;
+}
+
+.certificate{
+    background: #F9B70B;
+}
+
+.titlecompleted, .titlecompletedno{
+    font-family: 'Clash Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.titlecompleted {
+     padding-right: 25px;
+ }
+.titlecompletedno{
+    padding-top: 62px;
+}
+
+.dashProg2{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+@media (min-width: 375px){
+    .round {
+        padding: 12px;
+        width: 137px;
+        height: 136px;
+    }
+
+    .dashProg {
+        gap: 15px;
+    }
+
+    .dashProg2 {
+        margin-top: 15px;
+    }
+
+    .titlecompleted, .titlecompletedno {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 425px){
+    .round {
+        padding: 15px;
+        width: 148px;
+        height: 148px;
+    }
+
+    .profname {
+        font-size: 28px;
+    }
+
+    .myProfile {
+        font-size: 20px;
+    }
+
+    .myProfile {
+        font-size: 20px;
+    }
+
+    .titlecompletedno {
+        padding-top: 85px;
+    }
+
+    .titlecompleted, .titlecompletedno {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 560px) {
+    .dashcontainer {
+        padding: 51px 20px 68px 20px;
+    }
+}
+
+@media (min-width: 600px) {
+    .dashProg2 {
+         margin-top: 0;
+    }
+
+    .overalldash {
+        display: inline-flex;
+        gap: 15px;
+        flex-direction: row;
+    }
+
+    .myProfile {
+        font-size: 30px;
+    }
+
+    .profname {
+        font-size: 30px;
+    }
+
+    .titlecompletedno{
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 660px){
+    .dashProg {
+        gap: 30px;
+    }
+
+    .overalldash {
+        gap: 30px;
+    }
+}
+
+@media (min-width: 760px){
+    .dashcontainer {
+        padding: 100px 30px 68px 30px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .round {
+        padding: 20px;
+        width: 203px;
+        height: 203px;
+    }
+
+    .titlecompletedno {
+        padding-top: 129px;
+    }
+
+    .myProfile {
+        font-size: 40px;
+    }
+
+    .profname {
+        font-size: 40px;
+    }
+
+    .dashcontainer {
+        padding: 100px 40px 68px 40px;
+    }
+}
+
+@media (min-width: 1300px){
+    .dashcontainer{
+        display: none;
+    }
+
+    .logout{
+        padding-top: 10px;
+        text-align: right;
+        cursor: pointer;
+    }
+
+    .dashcontainer2{
+        display: flex;
+        background: #eff1ef;
+        margin-top: 90px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .profile2{
+        display: inline-flex;
+        flex-direction: column;
+        background: white;
+        border-radius: 10px;
+        margin:20px;
+        padding: 10px 30px 30px 30px;
+
+    }
+
+    .myProfileava2{
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 30px;
+        margin: 60px 0 60px 0;
+    }
+
+    .profname2{
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 48px;
+        color: #000000;
+    }
+
+    .round2 {
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        color: #4E4D4D;
+        background: #eff1ef;
+        border-radius: 15px;
+        text-align: left;
+        padding: 12px;
+        width: 138px;
+        height: 138px;
+    }
+
+    .certificate2{
+        color: black;
+    }
+
+    .certificate2{
+        background: #F9B70B;
+    }
+
+    .dashProg3{
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .dashProg3 {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        gap: 28px;
+    }
+
+    .dashProg4{
+        margin-top: 28px;
+        margin-bottom: 60px;
+    }
+
+    .titlecompletedno2{
+        padding-top: 50px;
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 39px;
+        color: #000000;
+    }
+
+    .mydashboard {
+        padding: 0 30px 30px 10px;
+        margin: 20px;
+    }
+
+    .mydashhh{
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 39px;
+        line-height: 48px;
+         color: #000000;
+    }
+
+    .listitems {
+        padding: 0 10px;
+        background: white;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        gap: 30px;
+        /*width: 107%;*/
+        font-size: 18px;
+        line-height: 48px;
+        color: rgb(90 89 89 / 98%);
+        border-radius: 10px;
+        justify-content: space-evenly;
+    }
+
+    .listitems li{
+        padding: 10px 0;
+        cursor: pointer;
+    }
+
+}
+
+@media (max-width: 1024px) {
+    /*.margine{*/
+    /*    margin-bottom: 20px;*/
+    /*}*/
+
+}

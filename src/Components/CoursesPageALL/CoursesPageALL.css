@@ -1,0 +1,775 @@
+.CoursesPageContainer{
+    margin: 50px 20px 0 20px;
+    display: grid;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: left;
+    padding: 20px;
+}
+
+#mag {
+    margin-right: 6px;
+}
+
+.centbtn{
+    display: inline-flex;
+}
+
+.imageplay{
+    margin-right: 7px;
+}
+
+.makeFlex{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+#increase{
+    width: 95%;
+}
+
+.CoursesPageHeader {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+/*.CoursesPagetitle {*/
+/*    line-height: 43px;*/
+/*    width: 112%;*/
+/*    font-family: 'Clash Display';*/
+/*    font-style: normal;*/
+/*    font-weight: 500;*/
+/*    font-size: 40px;*/
+/*    margin-bottom: 57px;*/
+/*}*/
+
+.CoursesPagetitle {
+    width: 100%;
+    font-family: 'Clash Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 10px;
+    color: #000000;
+    margin-bottom: 18px;
+}
+
+.CoursesPageimg{
+    background-image: url("https://res.cloudinary.com/do5wu6ikf/image/upload/v1686270096/starpenzu/gd_sm_s2rhi1.svg");
+    width: 276px;
+    height: 137px;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.CoursesPageimgFE{
+    background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686270096/starpenzu/FE_sm_jx5zbu.svg);
+    width: 276px;
+    height: 137px;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.CoursesPageimgUIUX{
+    background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686270096/starpenzu/fg_sm_nnqjxy.svg);
+    width: 276px;
+    height: 137px;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.CoursesPagetext{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 12px;
+    color: #000000;
+}
+
+.margin{
+    margin-top: 18px;
+    margin-bottom: 4px;
+}
+
+.CoursesPagelist1 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 7px;
+    width: 100%;
+    line-height: 12px;
+    color: #000000;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.CoursesPagelist1 ul{
+    margin-left: 20px;
+}
+
+.CoursesPagelist2{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 7px;
+    line-height: 12px;
+    color: #000000;
+}
+
+.CoursesPagelist2 ul{
+    margin-left: 20px;
+}
+
+.CoursesPageContent {
+    cursor: pointer;
+    height: 24px;
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    /* margin-bottom: 31px; */
+}
+
+.force{
+    /*z-index: 100;*/
+    padding-right: 10px;
+}
+
+.ssss {
+    cursor: pointer;
+    border-radius: 8px 8px 0 0;
+    color: white;
+    height: 24px;
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding: 5px 0;
+    background: #4F0995;
+}
+
+#makewhite{
+    filter: brightness(0) invert(1);
+}
+
+.makeFlex1 {
+    display: flex;
+    justify-content: space-between;
+    gap: 7px;
+}
+
+.CoursesPageContenttext{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    padding-left: 10px;
+    /*line-height: 40px;*/
+}
+
+/* .icall{*/
+/*    cursor: pointer;*/
+/*    width: 12px;*/
+/*    height: 12px;*/
+/*    padding-right: 10px;*/
+/*}*/
+
+.accordionContents{
+    max-height: 100%;
+    overflow: hidden;
+    transition: max-height 1s ease 0s;
+   display: block;
+    /*margin: 10px;*/
+}
+
+.jjj{
+    margin: 15px 0;
+}
+
+.xxxx {
+    border: 1px #4F0995 solid;
+    margin: 15px 0;
+    border-radius: 10px;
+    /* padding: 20px 0; */
+}
+
+.accordionContentsLists {
+    margin: 10px 0;
+    cursor: pointer;
+    list-style: none;
+    padding: 0 10px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 6px;
+    color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.makeFlex img, .icall{
+    /*margin-right: 7px;*/
+    width: 11px;
+    height: 11px;
+}
+
+.makepayment{
+    width: 100%;
+}
+
+.makepayment:hover{
+    background-color: #fbcf60;
+}
+
+.makepaymentactive{
+    width: 100%;
+    background: #D1CACA;
+}
+
+
+
+
+@media (min-width: 375px){
+    .CoursesPageimg {
+        background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686270096/starpenzu/gd_sm_s2rhi1.svg);
+        width: 321px;
+        height: 147px;
+        margin: 0;
+        border-radius: 10px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    /*.ggggdFE{*/
+    /*    width: 427px;*/
+    /*    height: 173px;*/
+    /*}*/
+
+    /*.CoursesPageimgFE {*/
+    /*    background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686313674/starpenzu/fe_xmd_vntu6q.svg);*/
+
+    /*    margin: 0;*/
+    /*    border-radius: 10px;*/
+    /*    background-repeat: no-repeat;*/
+    /*    background-position: center;*/
+    /*}*/
+
+    .CoursesPageimgUIUX {
+        background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686313673/starpenzu/fg_xmd_ncqz44.svg);
+        width: 321px;
+        height: 147px;
+        margin: 0;
+        border-radius: 10px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    /*.CoursesPageimg {*/
+    /*    background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686313674/starpenzu/dj_xmd_fsvppf.svg);*/
+    /*    width: 500px;*/
+    /*    height: 181px;*/
+    /*    !*font-size: 23px;*!*/
+    /*}*/
+
+    .CoursesPagetitle {
+        width: 112%;
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 19px;
+        line-height: 20px;
+        color: #000000;
+        margin-bottom: 18px;
+    }
+
+    .CoursesPagetext {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 14px;
+        color: #000000;
+    }
+
+    .CoursesPagetext{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 8px;
+        line-height: 14px;
+        color: #000000;
+    }
+
+    .CoursesPagelist1 {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 8px;
+        line-height: 15px;
+        color: #000000;
+        display: inline-flex;
+    }
+
+    .CoursesPagelist2 .req{
+        font-size: 8px;
+    }
+
+    .CoursesPageContenttext{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 9px;
+        padding-left: 10px;
+    }
+
+    .makeFlex1 {
+        display: flex;
+        justify-content: space-between;
+        gap: 7px;
+        font-size: 8px;
+    }
+
+
+
+}
+
+@media (min-width: 425px) {
+    .CoursesPageimg {
+        /*background-image:url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686288205/starpenzu/dj_md_padwuf.svg);*/
+    }
+
+    .CoursesPagetitle{
+        line-height: 20px;
+        width: 112%;
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    .CoursesPagetext {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 9px;
+        line-height: 14px;
+        color: #000000;
+    }
+
+    .CoursesPagelist1 {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 9px;
+        gap: 9px;
+        width: 100%;
+        line-height: 15px;
+        color: #000000;
+        display: inline-flex;
+    }
+
+    .CoursesPagelist2 .req {
+        font-size: 9px;
+        line-height: 16px;
+    }
+
+    .CoursesPageContenttext{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 9px;
+        padding-left: 10px;
+    }
+
+    .makeFlex1 {
+        display: flex;
+        justify-content: space-between;
+        gap: 7px;
+        font-size: 8px;
+    }
+
+
+}
+
+@media (min-width: 560px){
+    #increase {
+        width: 102%;
+    }
+
+    .CoursesPageimg {
+        background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686313674/starpenzu/dj_xmd_fsvppf.svg);
+        width: 500px;
+        height: 181px;
+        /*font-size: 23px;*/
+    }
+
+    .CoursesPageimgUIUX {
+        background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686313673/starpenzu/fg_xmd_ncqz44.svg);
+        width: 500px;
+        height: 181px;
+        margin: 0;
+        border-radius: 10px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .CoursesPageimgFE {
+        background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686313674/starpenzu/fe_xmd_vntu6q.svg);
+        width: 500px;
+        height: 181px;
+        margin: 0;
+        border-radius: 10px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .CoursesPagetitle {
+        width: 112%;
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 23px;
+        line-height: 43px;
+        margin-bottom: 34px;
+    }
+
+    .CoursesPagetext {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 15px;
+        color: #000000;
+    }
+
+    .CoursesPagelist1 {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 11px;
+        gap: 9px;
+        width: 96%;
+        line-height: 15px;
+        color: #000000;
+        display: inline-flex;
+    }
+
+    .CoursesPagelist2 .req {
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .CoursesPageContenttext {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 11px;
+        padding-left: 10px;
+    }
+
+    .margin {
+        margin-top: 44px;
+        margin-bottom: 10px;
+    }
+
+    .makeFlex1 {
+        display: flex;
+        justify-content: space-between;
+        gap: 7px;
+        font-size: 10px;
+    }
+
+    .makeFlex img .icall{
+        width: 13px;
+        height: 13px;
+    }
+
+    .CoursesPageContainer{
+        margin: 60px 20px 0 20px;
+    }
+}
+
+@media (min-width: 760px){
+    .jjj {
+        margin: 25px 0;
+    }
+
+    .CoursesPageimg {
+        border-radius: 10px;
+        width: 527px;
+        height: 164px;
+        /*background-image:url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686288205/starpenzu/dj_md_padwuf.svg);*/
+    }
+
+    .CoursesPageimgUIUX {
+        /*background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686313673/starpenzu/fg_xmd_ncqz44.svg);*/
+        width: 527px;
+        height: 164px;
+    }
+
+    .CoursesPageimgFE {
+        /*background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686313673/starpenzu/fg_xmd_ncqz44.svg);*/
+        width: 527px;
+        height: 164px;
+    }
+
+    .accordionContentsLists {
+        margin: 10px 0;
+        cursor: pointer;
+        list-style: none;
+        padding: 0 10px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        color: #000000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+    .CoursesPageContainer {
+        margin: 112px 20px 0 20px;
+    }
+
+    #increase {
+        width: 104%;
+    }
+
+    .CoursesPagetitle {
+        width: 112%;
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        line-height: 43px;
+        font-size: 30px;
+        margin-bottom: 34px;
+    }
+
+    .CoursesPageHeader {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .CoursesPagetext  {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 26px;
+        color: #000000;
+}
+    .CoursesPagelist1 {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        gap: 6px;
+        width: 97%;
+        line-height: 25px;
+        color: #000000;
+        display: inline-flex;
+        justify-content: space-between;
+    }
+
+    .CoursesPagelist2 .req {
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    .CoursesPageContenttext {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        padding-left: 10px;
+    }
+
+    .makeFlex1 {
+        display: flex;
+        justify-content: space-between;
+        gap: 7px;
+        font-size: 13px;
+    }
+
+    .makeFlex img ,.icall{
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (min-width: 1024px){
+    .CoursesPagecontent{
+        width: 72%;
+    }
+
+    .CoursesPageimg {
+        width: 900px;
+        height: 300px;
+        background-image:url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686288205/starpenzu/dj_md_padwuf.svg);
+    }
+
+    .CoursesPageimgFE {
+        width: 900px;
+        height: 300px;
+        background-image:url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686288206/starpenzu/fe_md_wqppjw.svg);
+    }
+
+    .CoursesPageimgUIUX {
+        width: 900px;
+        height: 300px;
+        background-image:url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686288205/starpenzu/ui_md_jpxwmo.svg);
+    }
+
+
+
+    .CoursesPagetitle {
+        width: 112%;
+        line-height: 43px;
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 40px;
+        margin-bottom: 57px;
+    }
+
+    .CoursesPagetext{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 32px;
+        color: #000000;
+    }
+
+    .CoursesPagelist1 {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        gap: 6px;
+        width: 97%;
+        line-height: 29px;
+        color: #000000;
+        display: inline-flex;
+        justify-content: space-between;
+    }
+
+    .CoursesPagelist2 .req {
+        font-size: 20px;
+        line-height: 33px;
+    }
+
+    .CoursesPageContenttext {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        padding-left: 10px;
+    }
+
+    .jjj{
+        margin: 41px 0;
+    }
+
+    .ssss{
+        border-radius: 8px 7px 0 0;
+        color: white;
+        height: 24px;
+        display: inline-flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        padding: 12px 0;
+        background: #4F0995;
+    }
+
+    .makeFlex1 {
+        display: flex;
+        justify-content: space-between;
+        gap: 7px;
+        font-size: 19px;
+    }
+
+    .accordionContentsLists {
+        margin: 19px 0;
+        cursor: pointer;
+        list-style: none;
+        padding: 0 10px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        color: #000000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .makeFlex img, .icall{
+        width: 27px;
+        height: 27px;
+    }
+}
+
+@media (min-width: 1300px){
+    .CoursesPageimg {
+        width: 1230px;
+        height: 300px;
+        background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686320775/starpenzu/20230605_015939_1_akvrqn.svg);
+    }
+
+    .CoursesPageimgUIUX {
+        width: 1230px;
+        height: 300px;
+        background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686320774/starpenzu/20230605_015939_1_2_qtutby.svg);
+    }
+
+    .CoursesPageimgFE {
+        width: 1230px;
+        height: 300px;
+        background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686320775/starpenzu/20230605_015939_1_1_ricalg.svg);
+    }
+}
+
+
+@media (min-width: 1440px){
+    CoursesPageimg {
+        width: 1300px;
+        height: 300px;
+        background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686320775/starpenzu/20230605_015939_1_akvrqn.svg);
+    }
+
+    .CoursesPageimgUIUX {
+        width: 1300px;
+        height: 300px;
+        background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686320774/starpenzu/20230605_015939_1_2_qtutby.svg);
+    }
+
+    .CoursesPageimgFE {
+        width: 1300px;
+        height: 300px;
+        background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1686320775/starpenzu/20230605_015939_1_1_ricalg.svg);
+    }
+}

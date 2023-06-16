@@ -1,0 +1,11 @@
+{
+  "name": ".idea",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.13.1"
+  },
+  "dependencies": {
+    "react-router-dom": "^6.11.2"
+  }
+}
