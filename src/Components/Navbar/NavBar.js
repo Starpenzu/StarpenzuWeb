@@ -12,6 +12,9 @@ export default function NavBar() {
     const [ddMobile, setDdMobile] = React.useState(false)
     const [selectedItem, setSelectedItem] = React.useState(null);
     const location = useLocation();
+    const mobilenav ={
+        color: ddMobile || coursesDp ?'#F9B70B':''
+    }
 
     React.useEffect(() => {
         // Update selectedItem state when the location changes
@@ -26,7 +29,9 @@ export default function NavBar() {
         }else {
             setSelectedItem(null);
         }
-    }, [location]);
+    }, [location])
+
+
 
     function handlehamburger() {
         if(!hamburger){
@@ -96,7 +101,7 @@ export default function NavBar() {
                         >Home</li>
                         </Link>
 
-                            <li onMouseOver={handleMouseover} >Courses</li>
+                            <li onMouseOver={handleMouseover} style={mobilenav} >Courses</li>
                         {coursesDp &&
                             <div className="coursedp ">
 
@@ -149,7 +154,7 @@ export default function NavBar() {
                         >Home</li>
                         </Link>
 
-                            <li className='ddmobile' onClick={handleCourseClick}>Courses</li>
+                            <li className='ddmobile' style={mobilenav} onClick={handleCourseClick}>Courses</li>
                         {ddMobile &&
                             <div className="mobilecoursesdd">
                                 <Link className='link-d'  to='/coursespagedjango'>
