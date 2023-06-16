@@ -1,7 +1,7 @@
 import React from 'react';
 import './CertificateProps.css'
 
-export default function CertificateProps(props){
+export default function CertificateProps (props){
     return(
         <>
             <div className="certiContainer">

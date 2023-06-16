@@ -73,3 +73,72 @@
 .thirdSeg{
     cursor: pointer;
 }
+
+@media (max-width: 1024px) {
+    .certiContainer {
+        /* gap: 20px; */
+        margin-bottom: 20px;
+        padding: 9px;
+        width: 260px;
+        background: #FFFFFF;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .headtext {
+        font-family: 'Clash Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 8px;
+        line-height: 10px;
+        text-transform: capitalize;
+        color: #000000;
+
+    }
+
+    .firstSeg, .secSeg {
+        padding-right: 9px;
+    }
+
+    .subtext3 {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 8px;
+        color: #959292;
+    }
+
+    .thirdsegbtn3 {
+        background: #000000;
+        border-radius: 5px;
+        font-size: 8px;
+        line-height: unset;
+        width: 54px;
+        color: #FFFFFF;
+        letter-spacing: 0.5px;
+        padding: 5px 5px 5px 5px;
+    }
+
+.thirdsegbtn2 {
+    background: #F9B70B;
+    border-radius: 5px;
+    font-size: 8px;
+    line-height: unset;
+    width: 54px;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+    padding: 5px 5px 5px 5px;
+    }
+
+    .subtext {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 8px;
+        /* line-height: 48px; */
+        color: #F9B70B;
+    }
+
+}

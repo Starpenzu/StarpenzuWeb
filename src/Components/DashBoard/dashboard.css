@@ -333,3 +333,10 @@
     }
 
 }
+
+@media (max-width: 1024px) {
+    .margine{
+        margin-bottom: 20px;
+    }
+
+}

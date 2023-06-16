@@ -36,8 +36,8 @@ export default function  DashBoard (){
     }
 
     const makeactiveNotifications = {
-        color: notification ? '#F9B70B' : '',
-        borderBottom: notification ? '#F9B70B solid 1.5px' : '',
+        color: notification ? 'red' : '',
+        borderBottom: notification ? 'red solid 1.5px' : '',
         borderBottomWidth: notification ? '1px' : '0'
     }
 
@@ -202,7 +202,6 @@ export default function  DashBoard (){
                                 subtext='Completed'
                                 thirdsegbtn='View Course'
                             />
-
                         </div>
 
                         : ''

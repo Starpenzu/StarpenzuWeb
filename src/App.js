@@ -9,6 +9,7 @@ import CoursesPageUIUX from  '../src/Components/CoursesPageALL/UIUX/CoursesPageU
 import CoursesPageDjango from '../src/Components/CoursesPageALL/Django/CoursesPageDjango';
 import CoursesPageFE from '../src/Components/CoursesPageALL/Frontend/CoursesPageFE';
 import DashBoard from '../src/Components/DashBoard/DashBoard';
+import MyCourses from '../src/Components/DashBoard/MyCourses';
 
 
 
@@ -26,6 +27,7 @@ function App() {
               <Route exact  path ="/coursespagedjango" element={<CoursesPageDjango/>} />
               <Route exact  path ="/coursespagefe" element={<CoursesPageFE/>} />
               <Route exact  path ="/dashboard" element={<DashBoard/>} />
+              <Route exact  path ="/mycourses" element={<MyCourses/>} />
           </Routes>
       </Router>
 
