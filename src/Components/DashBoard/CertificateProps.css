@@ -74,7 +74,9 @@
     cursor: pointer;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1299px) {
+
+    @media (min-width: 300px) {
     .certiContainer {
         /* gap: 20px; */
         margin-bottom: 20px;
@@ -106,6 +108,7 @@
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 500;
+        margin-top: 5px;
         font-size: 8px;
         color: #959292;
     }
@@ -137,8 +140,60 @@
         font-style: normal;
         font-weight: 400;
         font-size: 8px;
-        /* line-height: 48px; */
+        margin-top: 5px;
         color: #F9B70B;
+    }
+    .thirdsegbtn{
+        text-align: center;
+        background: #F9B70B;
+        border-radius: 5px;
+        font-size: 8px;
+        line-height: unset;
+        width: 54px;
+        color: #FFFFFF;
+        letter-spacing: 0.5px;
+        padding: 5px 5px 5px 5px;
+    }
+
+    }
+
+    @media (min-width: 375px) {
+        .certiContainer {
+            /* gap: 20px; */
+            margin-bottom: 20px;
+            padding: 9px;
+            width: 315px;
+            background: #FFFFFF;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+    }
+
+    @media (min-width: 425px){
+        .certiContainer {
+            /* gap: 20px; */
+            margin-bottom: 20px;
+            padding: 9px;
+            width: 359px;
+            background: #FFFFFF;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .headtext {
+            font-family: 'Clash Display';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 10px;
+            line-height: 10px;
+            text-transform: capitalize;
+            color: #000000;
+        }
     }
 
 }

@@ -10,6 +10,8 @@ import CoursesPageDjango from '../src/Components/CoursesPageALL/Django/CoursesPa
 import CoursesPageFE from '../src/Components/CoursesPageALL/Frontend/CoursesPageFE';
 import DashBoard from '../src/Components/DashBoard/DashBoard';
 import MyCourses from '../src/Components/DashBoard/MyCourses';
+import MyCertificate from '../src/Components/DashBoard/MyCertificate';
+import MyNotification from '../src/Components/DashBoard/MyNotification';
 
 
 
@@ -28,6 +30,8 @@ function App() {
               <Route exact  path ="/coursespagefe" element={<CoursesPageFE/>} />
               <Route exact  path ="/dashboard" element={<DashBoard/>} />
               <Route exact  path ="/mycourses" element={<MyCourses/>} />
+              <Route exact  path ="/mycerti" element={<MyCertificate/>} />
+              <Route exact  path ="/mynoti" element={<MyNotification/>} />
           </Routes>
       </Router>
 

@@ -25,3 +25,35 @@
     color: #000000;
     text-align: right;
 }
+
+@media (max-width: 1299px) {
+    @media (min-width: 300px) {
+        .notiContainer{
+            margin-bottom: 20px;
+            padding: 9px;
+            width: 260px;
+            background: #FFFFFF;
+            border-radius: 10px;
+        }
+
+        .notiText{
+            font-family: 'Clash Display';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 8px;
+            line-height: 12px;
+            color: #000000;
+        }
+
+        .notiDate {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 6px;
+            line-height: 6px;
+            color: #000000;
+            margin-top: 10px;
+        }
+    }
+
+    }
