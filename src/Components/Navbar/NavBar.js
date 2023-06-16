@@ -6,6 +6,7 @@ import {Link, useLocation} from "react-router-dom";
 
 export default function NavBar() {
     const [hamburger, setHamburger] = React.useState(false)
+    const [dashdp, setDashDp] = React.useState(false)
     const [selectedItem, setSelectedItem] = React.useState(null);
     const location = useLocation();
 
@@ -29,6 +30,14 @@ export default function NavBar() {
             setHamburger(true)
         }else{
             setHamburger(false)
+        }
+    }
+
+    function handleDashDp(){
+        if(!dashdp){
+            setDashDp(true)
+        }else{
+            setDashDp(false)
         }
     }
 
@@ -72,6 +81,8 @@ export default function NavBar() {
                             >
                                 Courses</li>
                         </Link>
+
+                        {/*<li>dash</li>*/}
                         <li>Contact Us</li>
                         <li>About Us</li>
                         <li>
@@ -102,6 +113,25 @@ export default function NavBar() {
                             >
                                 Courses</li>
                         </Link>
+                        <div className={dashdp? 'dashboardii':"dashboard"} onClick={handleDashDp}>
+                            <li
+                                className={dashdp ? 'clickedActive dashboardf' : 'dashboardf'}
+                            >
+                                Dashbord</li>
+                            <div className="drpaimg">
+                                <img src={dashdp ? 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1685243073/starpenzu/arrowup_pjrati.svg'
+                                    : "https://res.cloudinary.com/do5wu6ikf/image/upload/v1685242829/starpenzu/Vector_jaiwhq.svg"}
+                                     alt=""/>
+                            </div>
+                        </div>
+                        { dashdp &&
+                            <div className="dds">
+                                <Link className='link-d'  to='/dashboard'><div className='dashboarddp'>My Profile</div></Link>
+                                <Link className='link-d'  to='/mycourses'><div className='dashboarddp'>My Courses</div></Link>
+                                <Link className='link-d'  to='/mycerti'><div className='dashboarddp'>Certificates</div></Link>
+                                <Link className='link-d'  to='/mynoti'><div className='dashboarddp'>Notification</div></Link>
+                            </div>
+                        }
                         <li>Contact Us</li>
                         <li>About Us</li>
                         <Link to='/signup' className='link-d'>

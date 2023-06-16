@@ -56,6 +56,36 @@ nav{
 
 }
 
+.dashboard{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 48px;
+}
+
+.dashboardii{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.harmBurgerDropDown ul li.dashboardf{
+    padding-bottom: 0;
+}
+
+.drpaimg{
+    padding-right: 29px;
+}
+
+.drpaimg img{
+    width: 20px;
+    height: 20px;
+    padding-bottom: 0;
+}
+
+
 /*.nav {*/
 /*    width: 100%;*/
 /*    display: inline-flex;*/
@@ -129,6 +159,15 @@ nav{
 
 .hamBurgerActive{
     padding-top: 48px;
+}
+
+.dds{
+    margin-left: 20px;
+    padding: 10px 0;
+}
+
+.dashboarddp{
+    margin-bottom: 10px;
 }
 
 /*Footer*/
