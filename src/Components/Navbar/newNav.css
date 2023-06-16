@@ -10,16 +10,28 @@
     border-radius: 15px;
 }
 
+.mobilecoursesdd {
+    background: white;
+    padding: 30px;
+    position: absolute;
+    top: 130px;
+    /*left: 100px;*/
+     width: 60%;
+    background: #FFFFFF;
+    box-shadow: 1px 0px 48px 3px rgba(16, 24, 40, 0.18);
+    border-radius: 15px;
+}
+
 .navItems ul{
     position: relative;
 }
 
 .makefexz {
-    cursor: pointer;
+     cursor: pointer;
      display: flex;
      flex-wrap: nowrap;
      justify-content: space-between;
-    margin: 20px 0;
+     margin: 20px 0;
  }
 
 .backendtext:hover{
@@ -33,4 +45,18 @@
     font-size: 18px;
     line-height: 27px;
     color: #000000;
+}
+
+@media (min-width: 375px) {
+
+    .mobilecoursesdd {
+        left: 80px;
+    }
+
+}
+
+@media (min-width: 765px) {
+    .mobilecoursesdd {
+        left: 190px;
+    }
 }

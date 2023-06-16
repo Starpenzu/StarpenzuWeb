@@ -9,6 +9,7 @@ export default function NavBar() {
     const [hamburger, setHamburger] = React.useState(false)
     const [dashdp, setDashDp] = React.useState(false)
     const [coursesDp, setCoursesDp] = React.useState(false)
+    const [ddMobile, setDdMobile] = React.useState(false)
     const [selectedItem, setSelectedItem] = React.useState(null);
     const location = useLocation();
 
@@ -50,6 +51,14 @@ export default function NavBar() {
             setDashDp(true)
         }else{
             setDashDp(false)
+        }
+    }
+
+    function handleCourseClick(){
+        if(!ddMobile){
+            setDdMobile(true)
+        }else{
+            setDdMobile(false)
         }
     }
 
@@ -139,7 +148,33 @@ export default function NavBar() {
                             onClick={() => handleItemClick('item1')}
                         >Home</li>
                         </Link>
-                            <li>Courses</li>
+
+                            <li className='ddmobile' onClick={handleCourseClick}>Courses</li>
+                        {ddMobile &&
+                            <div className="mobilecoursesdd">
+                                <Link className='link-d'  to='/coursespagedjango'>
+                                    <div className="backend makefexz">
+                                        <div className="backendtext">Backend Web Development</div>
+                                        <div className="backendimg"><img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1686939338/Vector_1_olhi2x.svg" alt=""/></div>
+                                    </div>
+                                </Link>
+
+                                <Link className='link-d'  to='/coursespagefe'>
+                                    <div className="frontend makefexz">
+                                        <div className="backendtext">Frontend Web Development</div>
+                                        <div className="backendimg"><img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1686939338/Vector_1_olhi2x.svg" alt=""/></div>
+                                    </div>
+                                </Link>
+
+                                <Link className='link-d'  to='/coursespageuiux'>
+                                    <div className="uiux makefexz">
+                                        <div className="backendtext">UI/UX Design</div>
+                                        <div className="backendimg"><img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1686939338/Vector_1_olhi2x.svg" alt=""/></div>
+                                    </div>
+                                </Link>
+                            </div>
+                        }
+
                         <div className={dashdp? 'dashboardii':"dashboard"} onClick={handleDashDp}>
                             <li
                                 className={dashdp ? 'clickedActive dashboardf' : 'dashboardf'}
