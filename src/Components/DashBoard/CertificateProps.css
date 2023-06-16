@@ -428,5 +428,24 @@
 
     }
 
+    @media (min-width: 900px) {
 
-}
+        .margine {
+            margin-bottom: 71px;
+        }
+
+        .certiContainer {
+            /* gap: 20px; */
+            margin-bottom: 20px;
+            padding: 20px;
+            width: 692px;
+            background: #FFFFFF;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+
+    }

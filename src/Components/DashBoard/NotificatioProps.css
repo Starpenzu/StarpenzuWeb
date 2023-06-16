@@ -27,7 +27,13 @@
 }
 
 @media (max-width: 1299px) {
-    @media (min-width: 300px) {
+
+    /*@media (min-width: 300px) {*/
+
+        .margine{
+            margin-bottom: 20px;
+        }
+
         .notiContainer{
             margin-bottom: 20px;
             padding: 9px;
@@ -54,6 +60,102 @@
             color: #000000;
             margin-top: 10px;
         }
+    /*}*/
+
+    @media (min-width: 375px) {
+        .notiContainer {
+            margin-bottom: 20px;
+            padding: 9px;
+            width: 323px;
+            background: #FFFFFF;
+            border-radius: 10px;
+        }
     }
 
+    @media (min-width: 425px) {
+        .notiContainer {
+            margin-bottom: 20px;
+            padding: 9px;
+            width: 364px;
+            background: #FFFFFF;
+            border-radius: 10px;
+        }
+
+        .notiText {
+            font-family: 'Clash Display';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+            color: #000000;
+        }
+
+        .notiDate {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 6px;
+            color: #000000;
+            margin-top: 18px;
+        }
+
     }
+
+    @media (min-width: 525px){
+        .notiContainer {
+            margin-bottom: 20px;
+            padding: 15px;
+            width: 460px;
+            background: #FFFFFF;
+            border-radius: 10px;
+        }
+
+
+    }
+
+    @media (min-width: 600px) {
+        .notiContainer {
+            margin-bottom: 20px;
+            /*padding: 9px;*/
+            width: 500px;
+            background: #FFFFFF;
+            border-radius: 10px;
+        }
+
+
+    }
+
+    @media (min-width: 765px) {
+        .notiContainer {
+            margin-bottom: 20px;
+            /*padding: 9px;*/
+            width: 564px;
+            background: #FFFFFF;
+            border-radius: 10px;
+        }
+    }
+
+
+    @media (min-width: 900px) {
+        .notiText {
+            font-family: 'Clash Display';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #000000;
+        }
+
+        .notiDate {
+            /*font-family: 'Clash Display';*/
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #000000;
+        }
+
+
+    }
+}
