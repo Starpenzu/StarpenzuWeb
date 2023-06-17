@@ -209,6 +209,16 @@ export default function SignUp() {
                         </div>
                         <label className={`outlined-label ${formData.confirmPassword ? 'active' : ''}`}>Confirm Password</label>
                     </div>
+
+                    <div className="validationsec">
+                        <div className="valid">At least 1 uppercase</div>
+                        <div className="valid">Minimum of 8 Characters</div>
+                        <div className="valid">Password  Match</div>
+                        <div className="valid">At least 1 number</div>
+                        <div className="valid">1 special Character</div>
+                        <div className="valid">At least 1 lowercase</div>
+                    </div>
+
                     <SignInButton className="registerBtn" buttonName="Register" />
                     <div className="already">
                         Already have an account? <Link className="link-d" to="/Login"><span className="loginn">Sign In</span></Link>

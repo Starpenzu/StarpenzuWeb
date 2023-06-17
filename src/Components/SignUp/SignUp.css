@@ -4,6 +4,22 @@
     padding: 0px 32px 50px 32px;
 }
 
+.validationsec{
+    font-family: Poppins;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 10px;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.valid{
+    background: #d4d4d4;
+    border-radius: 15px;
+    padding: 5px;
+}
+
 .loginbtn{
     margin-top: 90px;
 }
@@ -237,6 +253,20 @@
         padding: 0 100px 70px 100px;
     }
 
+    .validationsec{
+        font-family: Poppins;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        font-size: 15px;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+    .valid {
+        background: #d4d4d4;
+        border-radius: 20px;
+        padding: 10px;
+    }
     .backarrow img{
         width: 40px;
         /*padding-right: 206px;*/
