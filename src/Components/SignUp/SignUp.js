@@ -1,216 +1,221 @@
-import React , { useState, useRef }  from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import NavBar from '../Navbar/NavBar';
-import {Link} from "react-router-dom";
-import SignInButton from './SignInbutton'
-
-import './SignUp.css'
-
-
-
-
+import SignInButton from './SignInbutton';
+import './SignUp.css';
 
 export default function SignUp() {
+    const[visible, setVisible] = useState(false)
+    const [formData, setFormData] = useState(() => {
+        const storedData = localStorage.getItem('RegisterUser');
+        return storedData
+            ? JSON.parse(storedData)
+            : {
+                firstName: '',
+                surname: '',
+                DOB: '',
+                gender: '',
+                whatsappNum: '',
+                email: '',
+                password: '',
+                confirmPassword: '',
+            };
+    });
 
-    const [formData, setFormData] = React.useState(() => JSON.parse(localStorage.getItem("RegisterUser"))
-        ||
-        {
-            firstName: "",
-            surname: "",
-            DOB: "",
-            gender: "",
-            whatsappNum: "",
-            email: "",
-            password: "",
-            confirmPassword: "",
-        }
-    );
-    const [isFocused, setIsFocused] = useState(false);
-    const inputRef =useRef(null);
+    const inputRefs = useRef({
+        firstName: useRef(null),
+        surname: useRef(null),
+        DOB: useRef(null),
+        gender: useRef(null),
+        whatsappNum: useRef(null),
+        email: useRef(null),
+        password: useRef(null),
+        confirmPassword: useRef(null),
+    });
 
-    const handleInputFocus = () => {
-        setIsFocused(true);
+    useEffect(() => {
+        localStorage.setItem('RegisterUser', JSON.stringify(formData));
+    }, [formData]);
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormData((prevState) => ({
+            ...prevState,
+            [name]: value,
+        }));
     };
 
-    const handleInputBlur = () => {
-        if (inputRef.current.value) {
-            setIsFocused(true);
-        } else {
-            setIsFocused(false);
+    const handleInputFocus = (name) => {
+        inputRefs.current[name].current.classList.add('focused');
+    };
+
+    const handleInputBlur = (name) => {
+        if (!formData[name]) {
+            inputRefs.current[name].current.classList.remove('focused');
         }
     };
 
-
-    React.useEffect(
-        function () {
-            return (
-                localStorage.setItem("RegisterUser", JSON.stringify(formData))
-            )
-        },
-        [formData]
-    )
-
-
-    function handleChange(event) {
-
-        const {name, value} = event.target;
-        // setting your new state
-        setFormData(prevState => (
-            {
-                ...prevState,
-                [name]: value
-            }
-        ));
-    }
-
-    function handleSubmit(event) {
+    const handleSubmit = (event) => {
         event.preventDefault();
+        // Add your form submission logic here
+    };
 
+    function handleVisibility(){
+        if(!visible){
+            setVisible(true)
+        }else{
+            setVisible(false)
+        }
     }
-
 
     return (
         <>
-            <NavBar/>
+            <NavBar />
             <div className="signup">
-
+                {/*<div className="testingcent">*/}
                 <div className="signupHeader">
-                    <Link to='/'>
+                    <Link to="/">
                         <div className="backarrow">
-                            <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1684452441/starpenzu/back_qpybto.svg" alt=""/>
+                            <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1684452441/starpenzu/back_qpybto.svg" alt="" />
                         </div>
                     </Link>
-
-                    <div className="signupTitle">
-                        Register
+                    <div className="testing">
+                        <div className="signupTitle">Register</div>
                     </div>
+
                 </div>
-
-                <form action="" onSubmit={handleSubmit} className="register">
-
-                    <div className={`outlined-input-container ${isFocused ? 'focused' : ''}`}>
+                {/*</div>*/}
+                <form onSubmit={handleSubmit} className="register">
+                    <div className={`outlined-input-container ${formData.firstName ? 'focused' : ''}`}>
                         <input
-                            ref={inputRef}
                             type="text"
                             className="outlined-input"
-                            onFocus={handleInputFocus}
-                            onBlur={handleInputBlur}
+                            name="firstName"
+                            value={formData.firstName}
+                            ref={inputRefs.current.firstName}
+                            onChange={handleChange}
+                            onFocus={() => handleInputFocus('firstName')}
+                            onBlur={() => handleInputBlur('firstName')}
                         />
-                        <label className={`outlined-label ${isFocused ? 'active' : ''}`}>
-                            First Name
-                        </label>
+                        <label className={`outlined-label ${formData.firstName ? 'active' : ''}`}>First Name</label>
                     </div>
-
-                    <div className={`outlined-input-container ${isFocused ? 'focused' : ''}`}>
+                    {/* Repeat the same pattern for other input fields */}
+                    {/* Surname */}
+                    <div className={`outlined-input-container ${formData.surname ? 'focused' : ''}`}>
                         <input
-                            ref={inputRef}
                             type="text"
                             className="outlined-input"
-                            onFocus={handleInputFocus}
-                            onBlur={handleInputBlur}
+                            name="surname"
+                            value={formData.surname}
+                            ref={inputRefs.current.surname}
+                            onChange={handleChange}
+                            onFocus={() => handleInputFocus('surname')}
+                            onBlur={() => handleInputBlur('surname')}
                         />
-                        <label className={`outlined-label ${isFocused ? 'active' : ''}`}>
-                            Surname
-                        </label>
+                        <label className={`outlined-label ${formData.surname ? 'active' : ''}`}>Surname</label>
                     </div>
-
-                    <div className={`outlined-input-container ${isFocused ? 'focused' : ''}`}>
+                    {/* Date of Birth */}
+                    <div className={`outlined-input-container ${formData.DOB ? 'focused' : ''}`}>
                         <input
-                            ref={inputRef}
                             type="date"
                             className="outlined-input"
-                            onFocus={handleInputFocus}
-                            onBlur={handleInputBlur}
+                            name="DOB"
+                            value={formData.DOB}
+                            ref={inputRefs.current.DOB}
+                            onChange={handleChange}
+                            onFocus={() => handleInputFocus('DOB')}
+                            onBlur={() => handleInputBlur('DOB')}
                         />
-                        <label className={`outlined-label ${isFocused ? 'active' : ''}`}>
-                          Date of Birth
-                        </label>
+                        <label className={`outlined-label ${formData.DOB ? 'active' : ''}`}>Date of Birth</label>
                     </div>
-
-                    <div className={`outlined-input-container ${isFocused ? 'focused' : ''}`}>
+                    {/* Gender */}
+                    <div className={`outlined-input-container ${formData.gender ? 'focused' : ''}`}>
                         <input
-                            ref={inputRef}
                             type="text"
                             className="outlined-input"
-                            onFocus={handleInputFocus}
-                            onBlur={handleInputBlur}
+                            name="gender"
+                            value={formData.gender}
+                            ref={inputRefs.current.gender}
+                            onChange={handleChange}
+                            onFocus={() => handleInputFocus('gender')}
+                            onBlur={() => handleInputBlur('gender')}
                         />
-                        <label className={`outlined-label ${isFocused ? 'active' : ''}`}>
-                           Gender
-                        </label>
+                        <div className="selectgend">
+                            <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1686994453/Group_73_s3ap0w.svg" alt=""/>
+                        </div>
+                        <label className={`outlined-label ${formData.gender ? 'active' : ''}`}>Gender</label>
                     </div>
-
-                    <div className={`outlined-input-container ${isFocused ? 'focused' : ''}`}>
+                    {/* WhatsApp Number */}
+                    <div className={`outlined-input-container ${formData.whatsappNum ? 'focused' : ''}`}>
                         <input
-                            ref={inputRef}
                             type="text"
                             className="outlined-input"
-                            onFocus={handleInputFocus}
-                            onBlur={handleInputBlur}
+                            name="whatsappNum"
+                            value={formData.whatsappNum}
+                            ref={inputRefs.current.whatsappNum}
+                            onChange={handleChange}
+                            onFocus={() => handleInputFocus('whatsappNum')}
+                            onBlur={() => handleInputBlur('whatsappNum')}
                         />
-                        <label className={`outlined-label ${isFocused ? 'active' : ''}`}>
-                            WhatsApp Number
-                        </label>
+                        <label className={`outlined-label ${formData.whatsappNum ? 'active' : ''}`}>WhatsApp Number</label>
                     </div>
-
-                    <div className={`outlined-input-container ${isFocused ? 'focused' : ''}`}>
+                    {/* Email */}
+                    <div className={`outlined-input-container ${formData.email ? 'focused' : ''}`}>
                         <input
-                            ref={inputRef}
                             type="email"
                             className="outlined-input"
-                            onFocus={handleInputFocus}
-                            onBlur={handleInputBlur}
+                            name="email"
+                            value={formData.email}
+                            ref={inputRefs.current.email}
+                            onChange={handleChange}
+                            onFocus={() => handleInputFocus('email')}
+                            onBlur={() => handleInputBlur('email')}
                         />
-                        <label className={`outlined-label ${isFocused ? 'active' : ''}`}>
-                            Email
-                        </label>
+                        <label className={`outlined-label ${formData.email ? 'active' : ''}`}>Email</label>
                     </div>
-
-                    <div className={`outlined-input-container ${isFocused ? 'focused' : ''}`}>
+                    {/* Password */}
+                    <div className={`outlined-input-container ${formData.password ? 'focused' : ''}`}>
                         <input
-                            ref={inputRef}
-                            type="text"
+                            type={visible? "text":"password"}
                             className="outlined-input"
-                            onFocus={handleInputFocus}
-                            onBlur={handleInputBlur}
+                            name="password"
+                            value={formData.password}
+                            ref={inputRefs.current.password}
+                            onChange={handleChange}
+                            onFocus={() => handleInputFocus('password')}
+                            onBlur={() => handleInputBlur('password')}
                         />
-                        <label className={`outlined-label ${isFocused ? 'active' : ''}`}>
-                            Password
-                        </label>
+                        <div className="selectvisible" onClick={handleVisibility}>
+                            <img src={visible ? 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1686996024/View_sf9mqu.svg' : "https://res.cloudinary.com/do5wu6ikf/image/upload/v1686995027/Vector_2_zqswsd.svg"} alt=""/>
+                        </div>
+                        <label className={`outlined-label ${formData.password ? 'active' : ''}`}>Password</label>
                     </div>
-
-                    <div className={`outlined-input-container ${isFocused ? 'focused' : ''}`}>
+                    {/* Confirm Password */}
+                    <div className={`outlined-input-container ${formData.confirmPassword ? 'focused' : ''}`}>
                         <input
-                            ref={inputRef}
-                            type="text"
+                            type={visible? "text":"password"}
                             className="outlined-input"
-                            onFocus={handleInputFocus}
-                            onBlur={handleInputBlur}
+                            name="confirmPassword"
+                            value={formData.confirmPassword}
+                            ref={inputRefs.current.confirmPassword}
+                            onChange={handleChange}
+                            onFocus={() => handleInputFocus('confirmPassword')}
+                            onBlur={() => handleInputBlur('confirmPassword')}
                         />
-                        <label className={`outlined-label ${isFocused ? 'active' : ''}`}>
-                            Confirm password
-                        </label>
+
+                        <div className="selectvisible" onClick={handleVisibility}>
+                            <img src={visible ? 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1686996024/View_sf9mqu.svg' : "https://res.cloudinary.com/do5wu6ikf/image/upload/v1686995027/Vector_2_zqswsd.svg"} alt=""/>
+                        </div>
+                        <label className={`outlined-label ${formData.confirmPassword ? 'active' : ''}`}>Confirm Password</label>
                     </div>
-
-                    <SignInButton
-                        className='registerBtn'
-                        buttonName='Register'
-                    />
-
-                    <div className="already">Already have an account? <Link className='link-d' to='/Login'><span className="loginn">Sign In</span></Link></div>
-
-
-
-
+                    <SignInButton className="registerBtn" buttonName="Register" />
+                    <div className="already">
+                        Already have an account? <Link className="link-d" to="/Login"><span className="loginn">Sign In</span></Link>
+                    </div>
                 </form>
-
-
-
             </div>
-
-            <Footer/>
+            <Footer />
         </>
-
-    )
+    );
 }
-

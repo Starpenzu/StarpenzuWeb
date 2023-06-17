@@ -1,6 +1,6 @@
 .outlined-input-container {
     position: relative;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,23 +10,26 @@
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 10px;
     outline: none;
+    font-family: Poppins;
     transition: border-color 0.3s ease;
-    font-size: 14px;
+    font-size: 18px;
+    height: 29px;
 }
 
 .outlined-label {
     position: absolute;
     top: 50%;
-    left: 16px;
+    left: 12px;
+    font-family: poppins;
     padding: 0 4px;
     background-color: white;
     color: #666;
     pointer-events: none;
     transform: translateY(-50%);
     transition: all 0.3s ease;
-    font-size: 12px;
+    font-size: 17px;
 }
 
 .outlined-input-container.focused .outlined-label,
@@ -47,4 +50,83 @@
 .outlined-input:focus,
 .outlined-input-container.has-value .outlined-input {
     border-color: #F9B70B;
+}
+
+.selectgend{
+    position: absolute;
+    right: 11px;
+    top: 7px;
+}
+
+.selectvisible{
+    position: absolute;
+    right: 11px;
+    top: 16px;
+}
+
+
+@media (min-width:765px){
+    .outlined-input{
+        height: 40px;
+    }
+
+    .selectgend{
+        position: absolute;
+        right: 11px;
+        top: 12px;
+    }
+
+    .outlined-input-container {
+        margin-bottom: 25px;
+    }
+
+    .selectvisible{
+        position: absolute;
+        right: 11px;
+        top: 23px;
+    }
+}
+
+@media (min-width:1024px){
+    .outlined-input{
+        height: 50px;
+    }
+
+    .selectvisible{
+        position: absolute;
+        right: 18px;
+        top: 27px;
+    }
+
+    .selectgend{
+        position: absolute;
+        right: 11px;
+        top: 17px;
+    }
+
+    .outlined-input-container {
+        margin-bottom: 30px;
+    }
+}
+
+@media (min-width:1440px){
+    .outlined-input{
+        height: 50px;
+    }
+
+    .selectvisible {
+        position: absolute;
+        right: 26px;
+        top: 27px;
+    }
+
+    /*.selectgend{*/
+    /*    position: absolute;*/
+    /*    right: 11px;*/
+    /*    top: 7px;*/
+    /*}*/
+
+    .outlined-input-container {
+        margin-bottom: 35px;
+    }
 }

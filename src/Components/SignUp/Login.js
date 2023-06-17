@@ -1,19 +1,13 @@
-import React, {useRef, useState} from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import NavBar from '../Navbar/NavBar';
-import {Link, useLocation} from "react-router-dom";
-import './SignUp.css'
-import SignInButton from './SignInbutton'
-
+import SignInButton from './SignInbutton';
+import './SignUp.css';
 
 
 export default function Login (){
-
-
-
-
-
-
+    const[visible, setVisible] = useState(false)
     const [formData, setFormData] = React.useState(()=> JSON.parse(localStorage.getItem("LoginUser"))
         ||
         {
@@ -22,20 +16,11 @@ export default function Login (){
         }
     );
 
-    const [isFocused, setIsFocused] = useState(false);
-    const inputRef =useRef(null);
+    const inputRefs = useRef({
+        email: useRef(null),
+        password: useRef(null),
+    });
 
-    const handleInputFocus = () => {
-        setIsFocused(true);
-    };
-
-    const handleInputBlur = () => {
-        if (inputRef.current.value) {
-            setIsFocused(true);
-        } else {
-            setIsFocused(false);
-        }
-    };
 
 
     React.useEffect(
@@ -61,63 +46,84 @@ export default function Login (){
         ));
 
     }
-    function handleSubmit(event) {
-        event.preventDefault();
 
+    const handleInputFocus = (name) => {
+        inputRefs.current[name].current.classList.add('focused');
+    };
+
+    const handleInputBlur = (name) => {
+        if (!formData[name]) {
+            inputRefs.current[name].current.classList.remove('focused');
+        }
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        // Add your form submission logic here
+    };
+
+    function handleVisibility(){
+        if(!visible){
+            setVisible(true)
+        }else{
+            setVisible(false)
+        }
     }
+
 
     return(
         <>
             <NavBar/>
         <div className="signup">
             <div className="signupHeader">
-                <Link to='/'>
+                <Link to="/">
                     <div className="backarrow">
-                        <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1684452441/starpenzu/back_qpybto.svg" alt=""/>
+                        <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1684452441/starpenzu/back_qpybto.svg" alt="" />
                     </div>
                 </Link>
-
-                <div className="signupTitle">
-                    Login
+                <div className="testing">
+                    <div className="signupTitle">Login</div>
                 </div>
+
             </div>
 
 
-                <form action="" noValidate onSubmit={handleSubmit} className="register">
-                    <div className={`outlined-input-container ${isFocused ? 'focused' : ''}`}>
-                        <input
-                            ref={inputRef}
-                            type="email"
-                            className="outlined-input"
-                            onFocus={handleInputFocus}
-                            onBlur={handleInputBlur}
-                        />
-                        <label className={`outlined-label ${isFocused ? 'active' : ''}`}>
-                            Email
-                        </label>
+            <form onSubmit={handleSubmit} className="register">
+
+
+
+                {/* Email */}
+                <div className={`outlined-input-container ${formData.email ? 'focused' : ''}`}>
+                    <input
+                        type="email"
+                        className="outlined-input"
+                        name="email"
+                        value={formData.email}
+                        ref={inputRefs.current.email}
+                        onChange={handleChange}
+                        onFocus={() => handleInputFocus('email')}
+                        onBlur={() => handleInputBlur('email')}
+                    />
+                    <label className={`outlined-label ${formData.email ? 'active' : ''}`}>Email</label>
+                </div>
+                {/* Password */}
+                <div className={`outlined-input-container ${formData.password ? 'focused' : ''}`}>
+                    <input
+                        type={visible? "text":"password"}
+                        className="outlined-input"
+                        name="password"
+                        value={formData.password}
+                        ref={inputRefs.current.password}
+                        onChange={handleChange}
+                        onFocus={() => handleInputFocus('password')}
+                        onBlur={() => handleInputBlur('password')}
+                    />
+                    <div className="selectvisible" onClick={handleVisibility}>
+                        <img src={visible ? 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1686996024/View_sf9mqu.svg' : "https://res.cloudinary.com/do5wu6ikf/image/upload/v1686995027/Vector_2_zqswsd.svg"} alt=""/>
                     </div>
-
-                    <div className={`outlined-input-container ${isFocused ? 'focused' : ''}`}>
-                        <input
-                            ref={inputRef}
-                            type="password"
-                            className="outlined-input"
-                            onFocus={handleInputFocus}
-                            onBlur={handleInputBlur}
-                        />
-
-                        <label className={`outlined-label ${isFocused ? 'active' : ''}`}>
-                            password
-                        </label>
-
-                    </div>
-                    <div className="forgotpword">Forgotten Password?</div>
-
-
-
-
-
-
+                    <label className={`outlined-label ${formData.password ? 'active' : ''}`}>Password</label>
+                </div>
+                <div className="forgotpword">Forgotten Password?</div>
 
                     <SignInButton
                         className='registerBtn loginbtn'
