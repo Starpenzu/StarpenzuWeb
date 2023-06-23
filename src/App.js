@@ -12,6 +12,7 @@ import DashBoard from '../src/Components/DashBoard/DashBoard';
 import MyCourses from '../src/Components/DashBoard/MyCourses';
 import MyCertificate from '../src/Components/DashBoard/MyCertificate';
 import MyNotification from '../src/Components/DashBoard/MyNotification';
+import LandingPage from '../src/Components/LAndingPage/LandingPage';
 
 
 
@@ -20,6 +21,7 @@ function App() {
 
       <Router>
           <Routes>
+              <Route exact  path ="/LandingPage" element={<LandingPage/>} />
               <Route exact  path ="/" element={<Home/>} />
               {/*<Route exact  path ="/courses" element={<ViewAllCourses/>} />*/}
               <Route exact  path ="/signup" element={<SignUp/>} />

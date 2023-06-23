@@ -7,6 +7,15 @@ import './SignUp.css';
 
 export default function SignUp() {
     const[visible, setVisible] = useState(false)
+    const[uppercase, setUpperCase]= useState(true)
+    const[character, setCharacter]= useState(true)
+    const[pwmatch, setPwMatch]= useState(true)
+    const[number, setNumber]= useState(true)
+    const[specialchar, setSpecialchar]= useState(true)
+
+    const[lowerchar, setLowerchar]= useState(true)
+    const[password, setPassword]= useState('');
+    const[confirmPassword, setConfirmpassword]= useState('')
     const [formData, setFormData] = useState(() => {
         const storedData = localStorage.getItem('RegisterUser');
         return storedData
@@ -18,8 +27,8 @@ export default function SignUp() {
                 gender: '',
                 whatsappNum: '',
                 email: '',
-                password: '',
-                confirmPassword: '',
+                // password: '',
+                // confirmPassword: '',
             };
     });
 
@@ -59,6 +68,8 @@ export default function SignUp() {
     const handleSubmit = (event) => {
         event.preventDefault();
         // Add your form submission logic here
+        pwordValidation();
+        alert('okay')
     };
 
     function handleVisibility(){
@@ -66,6 +77,30 @@ export default function SignUp() {
             setVisible(true)
         }else{
             setVisible(false)
+        }
+    }
+
+    function pwordValidation (){
+        if (!password.length < 8) {
+            //setPasswordError("Password must be at least 8 characters long.");
+            setCharacter(false);
+        } else if (password.match(/[a-z]/)) {
+            //setPasswordError("Password must contain at least one lowercase letter.");
+            setLowerchar(false);
+        } else if (password.match(/[A-Z]/)) {
+            //setPasswordError("Password must contain at least one uppercase letter.");
+            setUpperCase(false);
+        } else if (password.match(/\d/)) {
+            //setPasswordError("Password must contain at least one number.");
+            setNumber(false);
+        } else if (password.match(/[@$!%*.?&]/)) {
+          //  setPasswordError("Password must contain at least one special character.");
+            setSpecialchar(false);
+        } else if (password === confirmPassword) {
+            //setPasswordError("Passwords do not match.");
+            setPwMatch(false);
+        } else {
+           return true
         }
     }
 
@@ -89,6 +124,7 @@ export default function SignUp() {
                 <form onSubmit={handleSubmit} className="register">
                     <div className={`outlined-input-container ${formData.firstName ? 'focused' : ''}`}>
                         <input
+                            required
                             type="text"
                             className="outlined-input"
                             name="firstName"
@@ -104,6 +140,7 @@ export default function SignUp() {
                     {/* Surname */}
                     <div className={`outlined-input-container ${formData.surname ? 'focused' : ''}`}>
                         <input
+                            required
                             type="text"
                             className="outlined-input"
                             name="surname"
@@ -118,6 +155,7 @@ export default function SignUp() {
                     {/* Date of Birth */}
                     <div className={`outlined-input-container ${formData.DOB ? 'focused' : ''}`}>
                         <input
+                            required
                             type="date"
                             className="outlined-input"
                             name="DOB"
@@ -132,6 +170,7 @@ export default function SignUp() {
                     {/* Gender */}
                     <div className={`outlined-input-container ${formData.gender ? 'focused' : ''}`}>
                         <input
+                            required
                             type="text"
                             className="outlined-input"
                             name="gender"
@@ -149,6 +188,7 @@ export default function SignUp() {
                     {/* WhatsApp Number */}
                     <div className={`outlined-input-container ${formData.whatsappNum ? 'focused' : ''}`}>
                         <input
+                            required
                             type="text"
                             className="outlined-input"
                             name="whatsappNum"
@@ -163,6 +203,7 @@ export default function SignUp() {
                     {/* Email */}
                     <div className={`outlined-input-container ${formData.email ? 'focused' : ''}`}>
                         <input
+                            required
                             type="email"
                             className="outlined-input"
                             name="email"
@@ -177,12 +218,13 @@ export default function SignUp() {
                     {/* Password */}
                     <div className={`outlined-input-container ${formData.password ? 'focused' : ''}`}>
                         <input
+                            required
                             type={visible? "text":"password"}
                             className="outlined-input"
                             name="password"
-                            value={formData.password}
+                            // value={formData.password}
                             ref={inputRefs.current.password}
-                            onChange={handleChange}
+                            onChange={(event) => setPassword(event.target.value)}
                             onFocus={() => handleInputFocus('password')}
                             onBlur={() => handleInputBlur('password')}
                         />
@@ -194,12 +236,13 @@ export default function SignUp() {
                     {/* Confirm Password */}
                     <div className={`outlined-input-container ${formData.confirmPassword ? 'focused' : ''}`}>
                         <input
+                            required
                             type={visible? "text":"password"}
                             className="outlined-input"
                             name="confirmPassword"
-                            value={formData.confirmPassword}
+                            //value={formData.confirmPassword}
                             ref={inputRefs.current.confirmPassword}
-                            onChange={handleChange}
+                            onChange={(e)=>setConfirmpassword(e.target.value)}
                             onFocus={() => handleInputFocus('confirmPassword')}
                             onBlur={() => handleInputBlur('confirmPassword')}
                         />
@@ -211,12 +254,12 @@ export default function SignUp() {
                     </div>
 
                     <div className="validationsec">
-                        <div className="valid">At least 1 uppercase</div>
-                        <div className="valid">Minimum of 8 Characters</div>
-                        <div className="valid">Password  Match</div>
-                        <div className="valid">At least 1 number</div>
-                        <div className="valid">1 special Character</div>
-                        <div className="valid">At least 1 lowercase</div>
+                        {uppercase && (<div className="valid">At least 1 uppercase</div>)}
+                        {character && (<div className="valid">Minimum of 8 Characters</div>)}
+                        {pwmatch && (<div className="valid">Password Match</div>)}
+                        {number && (<div className="valid">At least 1 number</div>)}
+                        {specialchar && (<div className="valid">1 special Character</div>)}
+                        {lowerchar && (<div className="valid">At least 1 lowercase</div>)}
                     </div>
 
                     <SignInButton className="registerBtn" buttonName="Register" />

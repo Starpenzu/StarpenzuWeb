@@ -1,0 +1,15 @@
+ <div className="validationsec">
+                        <div className="valid">At least 1 uppercase</div>
+                        <div className="valid">Minimum of 8 Characters</div>
+                        <div className="valid">Password  Match</div>
+                        <div className="valid">At least 1 number</div>
+                        <div className="valid">1 special Character</div>
+                        <div className="valid">At least 1 lowercase</div>
+ </div>
+
+                        const[uppercase, setUpperCase]= useState(false)
+                        const[character, setCharacter]= useState(false)
+                        const[pwmatch, setPwMatch]= useState(false)
+                        const[number, setNumber]= useState(false)
+                        const[specialchar, setSpecialchar]= useState(false)
+                        const[lowerchar, setLowerchar]= useState(false)

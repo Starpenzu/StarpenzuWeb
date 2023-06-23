@@ -1,0 +1,89 @@
+.hero-section {
+    background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1687553224/starpenzu/hero_mobile_azjb2p.svg);
+    background-repeat: no-repeat;
+    display: flex;
+    background-position: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+    background-size: cover;
+}
+
+.landPageContainer{
+    margin-top: 40px;
+}
+
+.hero-section{
+    color: white;
+}
+
+.hero-text{
+    padding: 60px 0 0 0;
+    text-align: center;
+    font-size: 18px;
+    width: 102%;
+    font-family: Clash Display;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.hero--subtext{
+    margin-top: 7px;
+    margin-bottom: 14px;
+    text-align: center;
+    width: 73%;
+    font-size: 7px;
+    font-family: Poppins;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+
+.hero-btn {
+    border-radius: 5px;
+    background: #F9B70B;
+    color: #000;
+    text-align: center;
+    font-size: 9.786px;
+    font-family: Clash Display;
+    font-weight: 500;
+    text-transform: capitalize;
+    width: 127px;
+    padding: 8px 0;
+    margin-bottom: 40px;
+    box-shadow: 0px 0px 20px -5px #F9B70B;
+}
+
+@media (min-width: 560px){
+    .landPageContainer{
+        margin-top: 58px;
+    }
+}
+
+@media (min-width: 760px){
+    .landPageContainer{
+        margin-top: 100px;
+    }
+}
+
+@media (min-width: 1024px){
+    .hero-section {
+        background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1687553251/starpenzu/hero_tab_wehsnd.svg);
+    }
+
+    .hero-text {
+        padding: 577px 0 0 0;
+        /*text-align: center;*/
+        /*font-size: 18px;*/
+        /*!* width: 103%; *!*/
+        /*font-family: Clash Display;*/
+        /*font-weight: 500;*/
+        /*text-transform: capitalize;*/
+    }
+}
+
+@media (min-width: 1300px){
+    .hero-section {
+        background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1687553223/starpenzu/hero_desktop_gghmq3.svg);
+    }
+}
