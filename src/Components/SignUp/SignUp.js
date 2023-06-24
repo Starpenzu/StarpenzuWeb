@@ -68,8 +68,8 @@ export default function SignUp() {
     const handleSubmit = (event) => {
         event.preventDefault();
         // Add your form submission logic here
-        pwordValidation();
-        alert('okay')
+        // pwordValidation();
+        // alert('okay')
     };
 
     function handleVisibility(){

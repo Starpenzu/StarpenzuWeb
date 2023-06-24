@@ -702,6 +702,12 @@ padding-left: 20px;
     line-height: 10px;
 }
 
+.signupTitle-subtext{
+    font-family: Poppins;
+    margin-top: 10px;
+    font-size: 10px;
+}
+
 
 @media (min-width: 300px){
     /*.hero2 {*/
@@ -940,6 +946,12 @@ padding-left: 20px;
 }
 
 @media (min-width: 760px){
+    .signupTitle-subtext{
+        font-family: Poppins;
+        margin-top: 13px;
+        font-size: 18px;
+    }
+
     /*Nav Bar*/
 
     .brand{

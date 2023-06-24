@@ -123,7 +123,7 @@ export default function Login (){
                     </div>
                     <label className={`outlined-label ${formData.password ? 'active' : ''}`}>Password</label>
                 </div>
-                <div className="forgotpword">Forgotten Password?</div>
+                <div className="forgotpword"><Link className='forgotpword' to='/passwordreset'>Forgotten Password?</Link></div>
 
                     <SignInButton
                         className='registerBtn loginbtn'
