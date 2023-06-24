@@ -13,3 +13,13 @@
                         const[number, setNumber]= useState(false)
                         const[specialchar, setSpecialchar]= useState(false)
                         const[lowerchar, setLowerchar]= useState(false)
+
+
+                        firstname
+                        surname
+                        dob
+                        gender
+                        whatsapp no
+                        email
+                        password
+                        confirmpassword

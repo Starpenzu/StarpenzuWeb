@@ -12,25 +12,18 @@ export default function SignUp() {
     const[pwmatch, setPwMatch]= useState(true)
     const[number, setNumber]= useState(true)
     const[specialchar, setSpecialchar]= useState(true)
-
     const[lowerchar, setLowerchar]= useState(true)
+    
+    const [fullname, setFullname] = useState('')
+    const [firstname, setFirstname] = useState('')
+    const [surname, setSurname] = useState('')
+    const [dob, setDob] = useState('')
+    const [gender, setGender] = useState('')
+    const [whatsappNum, setWhatsappNum] = useState('')
+    const [email, setEmail] = useState('')
     const[password, setPassword]= useState('');
     const[confirmPassword, setConfirmpassword]= useState('')
-    const [formData, setFormData] = useState(() => {
-        const storedData = localStorage.getItem('RegisterUser');
-        return storedData
-            ? JSON.parse(storedData)
-            : {
-                firstName: '',
-                surname: '',
-                DOB: '',
-                gender: '',
-                whatsappNum: '',
-                email: '',
-                // password: '',
-                // confirmPassword: '',
-            };
-    });
+    // const [formData, setFormData] = useState();
 
     const inputRefs = useRef({
         firstName: useRef(null),
@@ -43,34 +36,21 @@ export default function SignUp() {
         confirmPassword: useRef(null),
     });
 
-    useEffect(() => {
-        localStorage.setItem('RegisterUser', JSON.stringify(formData));
-    }, [formData]);
 
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-        setFormData((prevState) => ({
-            ...prevState,
-            [name]: value,
-        }));
-    };
+
 
     const handleInputFocus = (name) => {
         inputRefs.current[name].current.classList.add('focused');
     };
 
     const handleInputBlur = (name) => {
-        if (!formData[name]) {
-            inputRefs.current[name].current.classList.remove('focused');
+        const inputValue = inputRefs.current[name].current.value;
+        if (!inputValue) {
+            inputRefs.current[name].current.parentNode.classList.remove('focused');
         }
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        // Add your form submission logic here
-        // pwordValidation();
-        // alert('okay')
-    };
+
 
     function handleVisibility(){
         if(!visible){
@@ -80,29 +60,53 @@ export default function SignUp() {
         }
     }
 
-    function pwordValidation (){
-        if (!password.length < 8) {
-            //setPasswordError("Password must be at least 8 characters long.");
-            setCharacter(false);
-        } else if (password.match(/[a-z]/)) {
-            //setPasswordError("Password must contain at least one lowercase letter.");
-            setLowerchar(false);
-        } else if (password.match(/[A-Z]/)) {
-            //setPasswordError("Password must contain at least one uppercase letter.");
-            setUpperCase(false);
-        } else if (password.match(/\d/)) {
-            //setPasswordError("Password must contain at least one number.");
-            setNumber(false);
-        } else if (password.match(/[@$!%*.?&]/)) {
-          //  setPasswordError("Password must contain at least one special character.");
-            setSpecialchar(false);
-        } else if (password === confirmPassword) {
-            //setPasswordError("Passwords do not match.");
-            setPwMatch(false);
-        } else {
-           return true
-        }
+   function handleFirstNameChange (event){
+        setFirstname(event.target.value);
+
+   }
+
+    function handleSurNameChange (event){
+        setSurname(event.target.value);
+
     }
+
+    function handleDOBChange (event){
+        setDob(event.target.value);
+
+        console.log(dob)
+    }
+
+    function handleGenderChange (event){
+        setGender(event.target.value);
+
+    }
+
+    function handleWhatsappNoChange (event){
+        setWhatsappNum(event.target.value);
+    }
+
+    function handleEmailChange (event){
+        setEmail(event.target.value);
+    }
+
+    function uploadData (){
+        localStorage.setItem('firstname', firstname)
+        localStorage.setItem('surname', surname)
+        localStorage.setItem('DOB', dob)
+        localStorage.setItem('gender', gender)
+        localStorage.setItem('whatsappNum', whatsappNum)
+        localStorage.setItem('email', email)
+
+
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        // Add your form submission logic here
+        uploadData();
+        alert('okay')
+    };
+
 
     return (
         <>
@@ -122,107 +126,106 @@ export default function SignUp() {
                 </div>
                 {/*</div>*/}
                 <form onSubmit={handleSubmit} className="register">
-                    <div className={`outlined-input-container ${formData.firstName ? 'focused' : ''}`}>
+                    <div className={`outlined-input-container ${firstname ? 'focused' : ''}`}>
                         <input
-                            required
                             type="text"
-                            className="outlined-input"
-                            name="firstName"
-                            value={formData.firstName}
+                            id="firstName"
                             ref={inputRefs.current.firstName}
-                            onChange={handleChange}
+                            className="outlined-input"
+                            required
+                            value={firstname}
                             onFocus={() => handleInputFocus('firstName')}
                             onBlur={() => handleInputBlur('firstName')}
+                            onChange={handleFirstNameChange}
                         />
-                        <label className={`outlined-label ${formData.firstName ? 'active' : ''}`}>First Name</label>
+                        <label className={`outlined-label ${firstname ? 'active' : ''}`}>Firstname</label>
                     </div>
-                    {/* Repeat the same pattern for other input fields */}
-                    {/* Surname */}
-                    <div className={`outlined-input-container ${formData.surname ? 'focused' : ''}`}>
+
+                    <div className={`outlined-input-container ${surname ? 'focused' : ''}`}>
                         <input
-                            required
                             type="text"
-                            className="outlined-input"
-                            name="surname"
-                            value={formData.surname}
+                            id="surname"
                             ref={inputRefs.current.surname}
-                            onChange={handleChange}
+                            className="outlined-input"
+                            required
+                            value={surname}
                             onFocus={() => handleInputFocus('surname')}
                             onBlur={() => handleInputBlur('surname')}
+                            onChange={handleSurNameChange}
                         />
-                        <label className={`outlined-label ${formData.surname ? 'active' : ''}`}>Surname</label>
+                        <label className={`outlined-label ${surname ? 'active' : ''}`}>Surname</label>
                     </div>
                     {/* Date of Birth */}
-                    <div className={`outlined-input-container ${formData.DOB ? 'focused' : ''}`}>
+                    <div className={`outlined-input-container ${dob ? 'focused' : ''}`}>
                         <input
                             required
                             type="date"
                             className="outlined-input"
                             name="DOB"
-                            value={formData.DOB}
+                            value={dob}
                             ref={inputRefs.current.DOB}
-                            onChange={handleChange}
+                            onChange={handleDOBChange}
                             onFocus={() => handleInputFocus('DOB')}
                             onBlur={() => handleInputBlur('DOB')}
                         />
-                        <label className={`outlined-label ${formData.DOB ? 'active' : ''}`}>Date of Birth</label>
+                        <label className={`outlined-label ${dob ? 'active' : ''}`}>Date of Birth</label>
                     </div>
                     {/* Gender */}
-                    <div className={`outlined-input-container ${formData.gender ? 'focused' : ''}`}>
+                    <div className={`outlined-input-container ${gender ? 'focused' : ''}`}>
                         <input
                             required
                             type="text"
                             className="outlined-input"
                             name="gender"
-                            value={formData.gender}
+                           value={gender}
                             ref={inputRefs.current.gender}
-                            onChange={handleChange}
+                            onChange={handleGenderChange}
                             onFocus={() => handleInputFocus('gender')}
                             onBlur={() => handleInputBlur('gender')}
                         />
                         <div className="selectgend">
                             <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1686994453/Group_73_s3ap0w.svg" alt=""/>
                         </div>
-                        <label className={`outlined-label ${formData.gender ? 'active' : ''}`}>Gender</label>
+                        <label className={`outlined-label ${gender ? 'active' : ''}`}>Gender</label>
                     </div>
                     {/* WhatsApp Number */}
-                    <div className={`outlined-input-container ${formData.whatsappNum ? 'focused' : ''}`}>
+                    <div className={`outlined-input-container ${whatsappNum ? 'focused' : ''}`}>
                         <input
                             required
                             type="text"
                             className="outlined-input"
                             name="whatsappNum"
-                            value={formData.whatsappNum}
+                           value={whatsappNum}
                             ref={inputRefs.current.whatsappNum}
-                            onChange={handleChange}
+                            onChange={handleWhatsappNoChange}
                             onFocus={() => handleInputFocus('whatsappNum')}
                             onBlur={() => handleInputBlur('whatsappNum')}
                         />
-                        <label className={`outlined-label ${formData.whatsappNum ? 'active' : ''}`}>WhatsApp Number</label>
+                        <label className={`outlined-label ${whatsappNum ? 'active' : ''}`}>WhatsApp Number</label>
                     </div>
                     {/* Email */}
-                    <div className={`outlined-input-container ${formData.email ? 'focused' : ''}`}>
+                    <div className={`outlined-input-container ${email ? 'focused' : ''}`}>
                         <input
                             required
                             type="email"
                             className="outlined-input"
                             name="email"
-                            value={formData.email}
+                           value={email}
                             ref={inputRefs.current.email}
-                            onChange={handleChange}
+                            onChange={handleEmailChange}
                             onFocus={() => handleInputFocus('email')}
                             onBlur={() => handleInputBlur('email')}
                         />
-                        <label className={`outlined-label ${formData.email ? 'active' : ''}`}>Email</label>
+                        <label className={`outlined-label ${email ? 'active' : ''}`}>Email</label>
                     </div>
                     {/* Password */}
-                    <div className={`outlined-input-container ${formData.password ? 'focused' : ''}`}>
+                    <div className={`outlined-input-container ${password ? 'focused' : ''}`}>
                         <input
                             required
                             type={visible? "text":"password"}
                             className="outlined-input"
                             name="password"
-                            // value={formData.password}
+                            value={password}
                             ref={inputRefs.current.password}
                             onChange={(event) => setPassword(event.target.value)}
                             onFocus={() => handleInputFocus('password')}
@@ -231,16 +234,16 @@ export default function SignUp() {
                         <div className="selectvisible" onClick={handleVisibility}>
                             <img src={visible ? 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1686996024/View_sf9mqu.svg' : "https://res.cloudinary.com/do5wu6ikf/image/upload/v1686995027/Vector_2_zqswsd.svg"} alt=""/>
                         </div>
-                        <label className={`outlined-label ${formData.password ? 'active' : ''}`}>Password</label>
+                        <label className={`outlined-label ${password ? 'active' : ''}`}>Password</label>
                     </div>
                     {/* Confirm Password */}
-                    <div className={`outlined-input-container ${formData.confirmPassword ? 'focused' : ''}`}>
+                    <div className={`outlined-input-container ${confirmPassword ? 'focused' : ''}`}>
                         <input
                             required
                             type={visible? "text":"password"}
                             className="outlined-input"
                             name="confirmPassword"
-                            //value={formData.confirmPassword}
+                            value={confirmPassword}
                             ref={inputRefs.current.confirmPassword}
                             onChange={(e)=>setConfirmpassword(e.target.value)}
                             onFocus={() => handleInputFocus('confirmPassword')}
@@ -250,7 +253,7 @@ export default function SignUp() {
                         <div className="selectvisible" onClick={handleVisibility}>
                             <img src={visible ? 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1686996024/View_sf9mqu.svg' : "https://res.cloudinary.com/do5wu6ikf/image/upload/v1686995027/Vector_2_zqswsd.svg"} alt=""/>
                         </div>
-                        <label className={`outlined-label ${formData.confirmPassword ? 'active' : ''}`}>Confirm Password</label>
+                        <label className={`outlined-label ${confirmPassword ? 'active' : ''}`}>Confirm Password</label>
                     </div>
 
                     <div className="validationsec">
