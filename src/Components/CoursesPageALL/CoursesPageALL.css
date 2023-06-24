@@ -61,6 +61,7 @@
 }
 
 .CoursesPageimg{
+    background-size: cover;
     background-image: url("https://res.cloudinary.com/do5wu6ikf/image/upload/v1686270096/starpenzu/gd_sm_s2rhi1.svg");
     width: 276px;
     height: 137px;
