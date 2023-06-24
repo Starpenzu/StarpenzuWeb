@@ -130,6 +130,64 @@ export default function LandingPage(){
 
                 </div>
 
+                <div className="fourth-section">
+
+                    <div className="fourth-section-header stylize2">Newsletter</div>
+
+                    <div className="main--container">
+                    <div className="blank">
+                        <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1687571626/starpenzu/Rectangle_194_tw5xv0.svg" alt=""/>
+                    </div>
+
+                    <div className="sec2">
+                        <div className='sec2-text third-section-subtext'>
+                            We are a team focused on creating
+                            equal opportunities for all to learn
+                            about tech skills and how they can
+                            transform their lives and careers.
+                            And One of the ways we choose to
+                            achieve.<span className='makeYellow'> This through our Training
+                            Cohorts which would be held on
+                            the 23rd of July, 2023.</span>
+                        </div>
+
+                        <div className="sec2-lists third-section-subtext">
+                            <div className="fourth-section-header stylize">Courses  Available</div>
+                            <li>Backend Web Development (Python & Django)</li>
+                            <li>frontend Web Development (Html, CSS, javascript)</li>
+                            <li>UI/UX design (Figma)</li>
+                        </div>
+                    </div>
+
+
+                    </div>
+
+                    <div className="sec3">
+                        <div className="sec3-text">
+                            Be a part of this cohort and select any of these courses you would like to
+                            learn. Where we'll take you from noob to pro,,from student to master and
+                            zero to Hero in your tech career. This is the right place to know more about
+                            tech and elevate your status. <br/>
+                            <span className="makeYellow specss">
+                                    WARNING!!!
+                                </span>
+                            <br/>
+
+                            This training is not for you if you are not ready to learn and implement
+                            brutally. We are more concerned about your interest and willingness to
+                            become an expert in that tech skill you want to learn which would take
+                            your career to the next level.
+
+                        </div>
+
+                        <div className="sec-section-btn">
+                            Join The Waiting List
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
             <Footer/>
         </>

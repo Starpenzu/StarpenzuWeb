@@ -137,9 +137,88 @@
     padding: 0 20px;
 }
 
+.fourth-section{
+    background: #4F0995;
+    color: white;
+ padding: 20px;
+}
+.sec2-text{
+    color: white;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.sec2-lists {
+    color: #ffffff;
+    text-align: left;
+    width: 100%;
+    text-transform: capitalize;
+}
+
+.fourth-section-header{
+    /*text-align: center;*/
+    font-size: 12px;
+    font-family: Clash Display;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.main--container {
+    margin-top: 30px;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.blank{
+    margin-right: 20px;
+}
+
+
+.makeYellow{
+    color: #F9B70B;
+}
+
+.stylize {
+    text-align: left;
+}
+
+.stylize2{
+    text-align: center;
+}
+
+.sec3{
+    margin-top: 30px;
+    text-align: center;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.specss{
+
+}
+.sec3-text{
+    color: #FFF;
+    text-align: center;
+    font-size: 10px;
+    font-family: Clash Display;
+}
 
 
 @media (min-width: 425px) {
+
+    .sec3-text{
+        color: #FFF;
+        text-align: center;
+        font-size: 12px;
+        font-family: Clash Display;
+    }
+
+    .stylize {
+        text-align: left;
+    }
     .hero-text {
         width: 91%;
         padding: 70px 0 0 0;
@@ -184,15 +263,54 @@
     }
 
     .third-section-subtext {
-        color: #000;
-        text-align: center;
+        /*color: #000;*/
+        text-align: left;
         font-size: 10px;
         font-family: Clash Display;
         margin-bottom: 10px;
     }
+
+    .fourth-section-header {
+        /*text-align: center;*/
+        font-size: 14px;
+        font-family: Clash Display;
+        font-weight: 500;
+        margin-bottom: 8px;
+        text-transform: capitalize;
+    }
+
+    .sec2-text{
+        color: white;
+        text-align: left;
+        text-transform: capitalize;
+    }
+
+    .sec2-lists {
+        color: #ffffff;
+        text-align: left;
+        width: 100%;
+        text-transform: capitalize;
+    }
+
+    .blank img{
+        width: 200px;
+        height: 230px;
+    }
 }
 
 @media (min-width: 560px){
+
+    .sec3-text{
+        color: #FFF;
+        text-align: center;
+        font-size: 14px;
+        font-family: Clash Display;
+    }
+
+    .stylize {
+        text-align: left;
+    }
+
     .landPageContainer{
         margin-top: 58px;
     }
@@ -260,6 +378,7 @@
         width: 165px;
         color: #000000;
         font-size: 13px;
+        cursor: pointer;
         padding: 16px;
     }
 
@@ -270,9 +389,51 @@
         font-family: Clash Display;
         margin-bottom: 10px;
     }
+
+    .sec2-text{
+        color: white;
+        text-align: left;
+        text-transform: capitalize;
+    }
+
+    .sec2-lists {
+        color: #ffffff;
+        text-align: left;
+        width: 100%;
+        text-transform: capitalize;
+    }
+
+    .blank img {
+        width: 244px;
+        height: 239px;
+    }
+
+    .fourth-section-header {
+        /*text-align: center;*/
+        font-size: 20px;
+        font-family: Clash Display;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
 }
 
 @media (min-width: 760px){
+
+    .sec3-text{
+        color: #FFF;
+        text-align: center;
+        font-size: 16px;
+        font-family: Clash Display;
+    }
+
+    .sec2 {
+        width: 40%;
+    }
+
+    .stylize {
+        text-align: left;
+    }
+
     .landPageContainer{
         margin-top: 100px;
     }
@@ -352,9 +513,46 @@
         font-family: Clash Display;
         margin-bottom: 10px;
     }
+
+    .sec2-lists {
+        color: #ffffff;
+        text-align: left;
+        width: 100%;
+        text-transform: capitalize;
+    }
+
+    .sec2-text{
+        color: white;
+        text-align: left;
+        text-transform: capitalize;
+    }
+
+    .blank img {
+        width: 309px;
+        height: 314px;
+    }
+
+    .fourth-section-header {
+        /*text-align: center;*/
+        font-size: 25px;
+        font-family: Clash Display;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
 }
 
 @media (min-width: 1024px){
+
+    .sec3-text{
+        color: #FFF;
+        text-align: center;
+        font-size: 18px;
+        font-family: Clash Display;
+    }
+
+    .stylize {
+        margin-top: 40px;
+    }
     .hero-section {
         background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1687553251/starpenzu/hero_tab_wehsnd.svg);
     }
@@ -410,9 +608,47 @@
         font-family: Clash Display;
         margin-bottom: 10px;
     }
+
+    .sec2-lists {
+        color: #ffffff;
+        text-align: left;
+        width: 100%;
+        text-transform: capitalize;
+    }
+
+    .sec2-text{
+        color: white;
+        text-align: left;
+        text-transform: capitalize;
+    }
+
+    .fourth-section-header {
+        /*text-align: center;*/
+        font-size: 34px;
+        font-family: Clash Display;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+
+    .blank img {
+        width: 410px;
+        height: 413px;
+    }
 }
 
 @media (min-width: 1280px){
+
+    .sec3-text{
+        color: #FFF;
+        text-align: center;
+        font-size: 24px;
+        font-family: Clash Display;
+    }
+
+    .stylize {
+        text-align: left;
+    }
+
     .second-section-text {
         width: 89%;
         text-align: center;
@@ -440,9 +676,34 @@
         font-size: 18px;
         padding: 21px;
     }
+
+    .sec2-lists {
+        color: #ffffff;
+        text-align: left;
+        width: 100%;
+        text-transform: capitalize;
+    }
+
+    .sec2-text{
+        color: white;
+        text-align: left;
+        text-transform: capitalize;
+    }
 }
 
 @media (min-width: 1440px){
+
+    .sec3-text{
+        color: #FFF;
+        text-align: center;
+        font-size: 28px;
+        font-family: Clash Display;
+    }
+
+    .stylize {
+        text-align: left;
+    }
+
     .hero-section {
         background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1687553223/starpenzu/hero_desktop_gghmq3.svg);
     }
@@ -485,6 +746,27 @@
     .sec1-img {
         width: 517px;
         height: 436px;
+    }
+
+    .sec2-lists {
+        color: #ffffff;
+        text-align: left;
+        width: 100%;
+        text-transform: capitalize;
+    }
+
+    .sec2-text{
+        color: white;
+        text-align: left;
+        text-transform: capitalize;
+    }
+
+    .fourth-section-header {
+        /*text-align: center;*/
+        font-size: 48px;
+        font-family: Clash Display;
+        font-weight: 500;
+        text-transform: capitalize;
     }
 
 }
