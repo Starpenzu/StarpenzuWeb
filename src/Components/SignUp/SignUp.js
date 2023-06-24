@@ -138,32 +138,80 @@ export default function SignUp() {
     }, [firstname,surname])
 
     function passwordValidation (){
-        if (password.length < 8) {
-            setCharacter(true)
-            console.log('8 char')
-        } else if (!password.match(/[a-z]/)) {
-            setLowerchar(true)
-            console.log('lower char')
-        } else if (!password.match(/[A-Z]/)) {
-            setUpperCase(true)
-            console.log('upper char')
-        } else if (!password.match(/\d/)) {
-            setNumber(true)
-            console.log('1 num')
-        } else if (!password.match(/[@$!%*.?&]/)) {
-            setSpecialchar(true)
-            console.log('special char')
-        } else if (password !== confirmPassword) {
-            setPwMatch(true)
-            console.log('must match')
-        } else {
-            setCharacter(false)
-            setLowerchar(false)
-            setUpperCase(false)
-            setNumber(false)
-            setSpecialchar(false)
-            setPwMatch(false)
+        // if (password.length < 8) {
+        //     setCharacter(true);
+        //     console.log('8 char');
+        // } else {
+        //     setCharacter(false);
+        //     //console.log('okay')
+        // }
+        //
+        // if (!password.match(/[a-z]/)) {
+        //     setLowerchar(true);
+        //     console.log('lower char');
+        // } else {
+        //     setLowerchar(false);
+        //     //console.log('okay')
+        // }
+        //
+        // if (!password.match(/[A-Z]/)) {
+        //     setUpperCase(true);
+        //     console.log('upper char');
+        // } else {
+        //     setUpperCase(false);
+        //     //console.log('okay')
+        // }
+        //
+        // if (!password.match(/\d/)) {
+        //     setNumber(true);
+        //     console.log('1 num');
+        // } else {
+        //     setNumber(false);
+        //    // console.log('okay')
+        // }
+        //
+        // if (!password.match(/[@$!%*.?&]/)) {
+        //     setSpecialchar(true);
+        //     console.log('special char');
+        // } else {
+        //     setSpecialchar(false);
+        //     //console.log('okay')
+        // }
+        //
+        // if (password !== confirmPassword) {
+        //     setPwMatch(true);
+        //     console.log('must match');
+        // } else {
+        //     setPwMatch(false);
+        //     //console.log('okay')
+        // }
+        //
+        // if (!character && !lowerchar && !uppercase && !number && !specialchar && !pwmatch) {
+        //     console.log('Password meets all requirements!');
+        // }
+
+        let isCharacterValid = password.length >= 8;
+        let isLowerCharValid = password.match(/[a-z]/);
+        let isUpperCharValid = password.match(/[A-Z]/);
+        let isNumberValid = password.match(/\d/);
+        let isSpecialCharValid = password.match(/[@$!%*.?&]/);
+        let isPasswordMatchValid = password === confirmPassword;
+
+        let isPasswordValid = isCharacterValid && isLowerCharValid && isUpperCharValid && isNumberValid && isSpecialCharValid && isPasswordMatchValid;
+
+        setCharacter(!isCharacterValid);
+        setLowerchar(!isLowerCharValid);
+        setUpperCase(!isUpperCharValid);
+        setNumber(!isNumberValid);
+        setSpecialchar(!isSpecialCharValid);
+        setPwMatch(!isPasswordMatchValid);
+
+        if (isPasswordValid) {
+            console.log('Password meets all requirements!');
+            alert('Password meets all requirements!');
+            // ... additional code or actions for a successful password
         }
+
     }
 
 
@@ -184,7 +232,6 @@ export default function SignUp() {
         // Add your form submission logic here
         passwordValidation()
         uploadData();
-        console.log('okay')
     };
 
 
