@@ -4,6 +4,7 @@ import Footer from '../Footer/Footer';
 import NavBar from '../Navbar/NavBar';
 import SignInButton from './SignInbutton';
 import './SignUp.css';
+let formData = new FormData();
 
 export default function SignUp() {
     const[visible, setVisible] = useState(false)
@@ -14,13 +15,13 @@ export default function SignUp() {
     const[specialchar, setSpecialchar]= useState(true)
     const[lowerchar, setLowerchar]= useState(true)
     
-    const [fullname, setFullname] = useState('')
-    const [firstname, setFirstname] = useState('')
-    const [surname, setSurname] = useState('')
-    const [dob, setDob] = useState('')
-    const [gender, setGender] = useState('')
-    const [whatsappNum, setWhatsappNum] = useState('')
-    const [email, setEmail] = useState('')
+    const [fullname, setFullname] = useState(() => localStorage.getItem("fullname") || '')
+    const [firstname, setFirstname] = useState(() => localStorage.getItem("firstname") || '')
+    const [surname, setSurname] = useState(() => localStorage.getItem("surname") || '')
+    const [dob, setDob] = useState(() => localStorage.getItem("DOB") || '')
+    const [gender, setGender] = useState(() => localStorage.getItem("gender") || '')
+    const [whatsappNum, setWhatsappNum] = useState(() => localStorage.getItem("whatsappNum") || '')
+    const [email, setEmail] = useState(() => localStorage.getItem("email") || '')
     const[password, setPassword]= useState('');
     const[confirmPassword, setConfirmpassword]= useState('')
     // const [formData, setFormData] = useState();
@@ -89,22 +90,101 @@ export default function SignUp() {
         setEmail(event.target.value);
     }
 
-    function uploadData (){
-        localStorage.setItem('firstname', firstname)
-        localStorage.setItem('surname', surname)
-        localStorage.setItem('DOB', dob)
-        localStorage.setItem('gender', gender)
-        localStorage.setItem('whatsappNum', whatsappNum)
-        localStorage.setItem('email', email)
+    // function uploadData (){
+    //     localStorage.setItem('firstname', firstname)
+    //     localStorage.setItem('surname', surname)
+    //     localStorage.setItem('DOB', dob)
+    //     localStorage.setItem('gender', gender)
+    //     localStorage.setItem('whatsappNum', whatsappNum)
+    //     localStorage.setItem('email', email)
+    //
+    //
+    // }
 
+    useEffect(() => {
+        function uploadToLocal() {
+            localStorage.setItem('fullname', fullname);
+            localStorage.setItem('surname', surname);
+            localStorage.setItem('firstname', firstname);
+            localStorage.setItem('DOB', dob);
+            localStorage.setItem('gender', gender);
+            localStorage.setItem('whatsappNum', whatsappNum);
+            localStorage.setItem('email', email);
+        }
 
+        uploadToLocal();
+
+        // Clean-up function
+        return () => {
+            localStorage.removeItem('fullname');
+            localStorage.removeItem('surname');
+            localStorage.removeItem('firstname');
+            localStorage.removeItem('DOB');
+            localStorage.removeItem('gender');
+            localStorage.removeItem('whatsappNum');
+            localStorage.removeItem('email');
+        };
+    }, [firstname, surname, dob, gender, whatsappNum, email]);
+
+    useEffect( () => {
+        function makeFullname() {
+            const firstname = localStorage.getItem('firstname')
+            const surname = localStorage.getItem('surname')
+            const fullName = surname + " " + firstname;
+            setFullname(fullName);
+        }
+
+        makeFullname();
+    }, [firstname,surname])
+
+    function passwordValidation (){
+        if (password.length < 8) {
+            setCharacter(true)
+            console.log('8 char')
+        } else if (!password.match(/[a-z]/)) {
+            setLowerchar(true)
+            console.log('lower char')
+        } else if (!password.match(/[A-Z]/)) {
+            setUpperCase(true)
+            console.log('upper char')
+        } else if (!password.match(/\d/)) {
+            setNumber(true)
+            console.log('1 num')
+        } else if (!password.match(/[@$!%*.?&]/)) {
+            setSpecialchar(true)
+            console.log('special char')
+        } else if (password !== confirmPassword) {
+            setPwMatch(true)
+            console.log('must match')
+        } else {
+            setCharacter(false)
+            setLowerchar(false)
+            setUpperCase(false)
+            setNumber(false)
+            setSpecialchar(false)
+            setPwMatch(false)
+        }
     }
+
+
+    function uploadData (){
+        passwordValidation();
+        formData.append("name", fullname);
+        formData.append("email", email);
+        formData.append("password", password);
+        formData.append("DOB", dob);
+        formData.append("gender", gender);
+        formData.append("whatsappNum", whatsappNum);
+    }
+
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
         // Add your form submission logic here
+        passwordValidation()
         uploadData();
-        alert('okay')
+        console.log('okay')
     };
 
 
@@ -259,7 +339,7 @@ export default function SignUp() {
                     <div className="validationsec">
                         {uppercase && (<div className="valid">At least 1 uppercase</div>)}
                         {character && (<div className="valid">Minimum of 8 Characters</div>)}
-                        {pwmatch && (<div className="valid">Password Match</div>)}
+                        {pwmatch && (<div className="valid">Password must Match</div>)}
                         {number && (<div className="valid">At least 1 number</div>)}
                         {specialchar && (<div className="valid">1 special Character</div>)}
                         {lowerchar && (<div className="valid">At least 1 lowercase</div>)}
