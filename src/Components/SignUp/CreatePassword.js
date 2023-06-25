@@ -7,69 +7,124 @@ import './SignUp.css';
 import '../OutlinedInput/inputstyle.css';
 
 
-export default function CreatePassword (){
+ function CreatePassword (){
+
     const[uppercase, setUpperCase]= useState(true);
     const[character, setCharacter]= useState(true);
     const[pwmatch, setPwMatch]= useState(true);
-    // const[uppercase, setUpperCase]= useState(true);
     const[number, setNumber]= useState(true);
     const[specialchar, setSpecialchar]= useState(true);
     const[lowerchar, setLowerchar]= useState(true);
     const[password, setPassword]= useState('');
     const[confirmPassword, setConfirmpassword]= useState('');
     const[visible, setVisible] = useState(false);
-    const [formData, setFormData] = useState(()=> JSON.parse(localStorage.getItem("createPassword"))
-        ||
-        {
-            password: "",
-            confirmPassword: "",
-        }
-    );
+    // const [formData, setFormData] = useState(()=> JSON.parse(localStorage.getItem("createPassword"))
+    //     ||
+    //     {
+    //         password: "",
+    //         confirmPassword: "",
+    //     }
+    // );
 
-    const inputRefs = React.useRef({
+    const inputRefs = useRef({
         password: useRef(null),
         confirmPassword: useRef(null),
     });
 
 
 
-    React.useEffect(
-        function (){
-            return(
-                localStorage.setItem("createPassword", JSON.stringify(formData))
-            )
-        },
-        [formData]
-    )
-
-
-
-    function handleChange(event) {
-
-        const {name, value} = event.target;
-        // setting your new state
-        setFormData(prevState => (
-            {
-                ...prevState,
-                [name] : value
-            }
-        ));
-
-    }
-
     const handleInputFocus = (name) => {
         inputRefs.current[name].current.classList.add('focused');
     };
 
     const handleInputBlur = (name) => {
-        if (!formData[name]) {
-            inputRefs.current[name].current.classList.remove('focused');
+        const inputValue = inputRefs.current[name].current.value;
+        if (!inputValue) {
+            inputRefs.current[name].current.parentNode.classList.remove('focused');
         }
     };
+
+    function passwordValidation (){
+        // if (password.length < 8) {
+        //     setCharacter(true);
+        //     console.log('8 char');
+        // } else {
+        //     setCharacter(false);
+        //     //console.log('okay')
+        // }
+        //
+        // if (!password.match(/[a-z]/)) {
+        //     setLowerchar(true);
+        //     console.log('lower char');
+        // } else {
+        //     setLowerchar(false);
+        //     //console.log('okay')
+        // }
+        //
+        // if (!password.match(/[A-Z]/)) {
+        //     setUpperCase(true);
+        //     console.log('upper char');
+        // } else {
+        //     setUpperCase(false);
+        //     //console.log('okay')
+        // }
+        //
+        // if (!password.match(/\d/)) {
+        //     setNumber(true);
+        //     console.log('1 num');
+        // } else {
+        //     setNumber(false);
+        //    // console.log('okay')
+        // }
+        //
+        // if (!password.match(/[@$!%*.?&]/)) {
+        //     setSpecialchar(true);
+        //     console.log('special char');
+        // } else {
+        //     setSpecialchar(false);
+        //     //console.log('okay')
+        // }
+        //
+        // if (password !== confirmPassword) {
+        //     setPwMatch(true);
+        //     console.log('must match');
+        // } else {
+        //     setPwMatch(false);
+        //     //console.log('okay')
+        // }
+        //
+        // if (!character && !lowerchar && !uppercase && !number && !specialchar && !pwmatch) {
+        //     console.log('Password meets all requirements!');
+        // }
+
+        let isCharacterValid = password.length >= 8;
+        let isLowerCharValid = password.match(/[a-z]/);
+        let isUpperCharValid = password.match(/[A-Z]/);
+        let isNumberValid = password.match(/\d/);
+        let isSpecialCharValid = password.match(/[@$!%*.?&]/);
+        let isPasswordMatchValid = password === confirmPassword;
+
+        let isPasswordValid = isCharacterValid && isLowerCharValid && isUpperCharValid && isNumberValid && isSpecialCharValid && isPasswordMatchValid;
+
+        setCharacter(!isCharacterValid);
+        setLowerchar(!isLowerCharValid);
+        setUpperCase(!isUpperCharValid);
+        setNumber(!isNumberValid);
+        setSpecialchar(!isSpecialCharValid);
+        setPwMatch(!isPasswordMatchValid);
+
+        if (isPasswordValid) {
+            console.log('Password meets all requirements!');
+            alert('Password meets all requirements!');
+            // ... additional code or actions for a successful password
+        }
+
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
         // Add your form submission logic here
+        passwordValidation();
     };
 
     function handleVisibility(){
@@ -80,9 +135,7 @@ export default function CreatePassword (){
         }
     }
 
-    // const space ={
-    //     fontSize: '24px',
-    // }
+
 
 
     return(
@@ -107,7 +160,7 @@ export default function CreatePassword (){
 
 
                     {/* Password */}
-                    <div className={`outlined-input-container ${formData.password ? 'focused' : ''}`}>
+                    <div className={`outlined-input-container ${password ? 'focused' : ''}`}>
                         <input
                             required
                             type={visible? "text":"password"}
@@ -122,10 +175,10 @@ export default function CreatePassword (){
                         <div className="selectvisible" onClick={handleVisibility}>
                             <img src={visible ? 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1686996024/View_sf9mqu.svg' : "https://res.cloudinary.com/do5wu6ikf/image/upload/v1686995027/Vector_2_zqswsd.svg"} alt=""/>
                         </div>
-                        <label className={`outlined-label ${formData.password ? 'active' : ''}`}>Password</label>
+                        <label className={`outlined-label ${password ? 'active' : ''}`}>Password</label>
                     </div>
                     {/* Confirm Password */}
-                    <div className={`outlined-input-container ${formData.confirmPassword ? 'focused' : ''}`}>
+                    <div className={`outlined-input-container ${confirmPassword ? 'focused' : ''}`}>
                         <input
                             required
                             type={visible? "text":"password"}
@@ -141,7 +194,7 @@ export default function CreatePassword (){
                         <div className="selectvisible" onClick={handleVisibility}>
                             <img src={visible ? 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1686996024/View_sf9mqu.svg' : "https://res.cloudinary.com/do5wu6ikf/image/upload/v1686995027/Vector_2_zqswsd.svg"} alt=""/>
                         </div>
-                        <label className={`outlined-label ${formData.confirmPassword ? 'active' : ''}`}>Confirm Password</label>
+                        <label className={`outlined-label ${confirmPassword ? 'active' : ''}`}>Confirm Password</label>
                     </div>
 
                     <div className="validationsec">
@@ -167,3 +220,5 @@ export default function CreatePassword (){
         </>
     )
 }
+
+export default CreatePassword;
