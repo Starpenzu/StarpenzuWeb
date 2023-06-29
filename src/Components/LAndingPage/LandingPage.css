@@ -1,0 +1,772 @@
+.hero-section {
+    background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1687553224/starpenzu/hero_mobile_azjb2p.svg);
+    background-repeat: no-repeat;
+    display: flex;
+    background-position: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+    background-size: cover;
+}
+
+.landPageContainer{
+    margin-top: 40px;
+}
+
+.hero-section{
+    color: white;
+}
+
+.hero-text{
+    padding: 60px 0 0 0;
+    text-align: center;
+    font-size: 18px;
+    width: 102%;
+    font-family: Clash Display;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.hero--subtext {
+    margin-top: 7px;
+    margin-bottom: 14px;
+    text-align: center;
+    width: 89%;
+    font-size: 9px;
+    font-family: Poppins;
+    font-weight: 300;
+    text-transform: capitalize;
+    /*line-height: 10px;*/
+}
+
+
+.hero-btn {
+    border-radius: 5px;
+    background: #F9B70B;
+    color: #000;
+    text-align: center;
+    cursor: pointer;
+    font-size: 9.786px;
+    font-family: Clash Display;
+    font-weight: 500;
+    text-transform: capitalize;
+    width: 127px;
+    padding: 8px 0;
+    margin-bottom: 40px;
+    box-shadow: 0px 0px 20px -5px #F9B70B;
+}
+
+.first-section{
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    align-items: center;
+
+}
+
+.first-section-text .ohh{
+    font-size: 9px;
+    margin-right: 20px;
+    /*width: 85%;*/
+}
+
+/*.first-section-img{*/
+/*    width: 15%;*/
+/*}*/
+
+.sec1-img {
+    /*width: 150px;*/
+    /*height: 200px;*/
+}
+
+.second-section{
+    display: flex;
+    flex-direction: column;
+    background: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.second-section-text{
+    text-align: center;
+    font-size: 10px;
+    font-family: Clash Display;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.sec-section-btn{
+    margin-top: 20px;
+    box-shadow: 1px 2px 25px -5px #F9B70B;
+    background: #F9B70B;
+    border-radius: 5px;
+    width: 79px;
+    color: #000000;
+    font-size: 8px;
+    padding: 9px;
+}
+
+.third-section{
+    text-align: center;
+    padding: 30px 30px 0 30px;
+}
+
+.third-section-header{
+    color: #F9B70B;
+    text-align: center;
+    font-size: 13px;
+    font-family: Clash Display;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+.third-section-subtext{
+    color: #000;
+    text-align: center;
+    font-size: 8px;
+    font-family: Clash Display;
+    margin-bottom: 10px;
+}
+
+.landingpage {
+    margin: 0;
+    padding: 0 20px;
+}
+
+.fourth-section{
+    background: #4F0995;
+    color: white;
+ padding: 20px;
+}
+.sec2-text{
+    color: white;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.sec2-lists {
+    color: #ffffff;
+    text-align: left;
+    width: 100%;
+    text-transform: capitalize;
+}
+
+.fourth-section-header{
+    /*text-align: center;*/
+    font-size: 12px;
+    font-family: Clash Display;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.main--container {
+    margin-top: 30px;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.blank{
+    margin-right: 20px;
+}
+
+
+.makeYellow{
+    color: #F9B70B;
+}
+
+.stylize {
+    text-align: left;
+}
+
+.stylize2{
+    text-align: center;
+}
+
+.sec3{
+    margin-top: 30px;
+    text-align: center;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.specss{
+
+}
+.sec3-text{
+    color: #FFF;
+    text-align: center;
+    font-size: 10px;
+    font-family: Clash Display;
+}
+
+
+@media (min-width: 425px) {
+
+    .sec3-text{
+        color: #FFF;
+        text-align: center;
+        font-size: 12px;
+        font-family: Clash Display;
+    }
+
+    .stylize {
+        text-align: left;
+    }
+    .hero-text {
+        width: 91%;
+        padding: 70px 0 0 0;
+    }
+
+    .hero--subtext {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        text-align: center;
+        width: 79%;
+        font-size: 10px;
+        font-family: Poppins;
+        /*font-weight: 500;*/
+        text-transform: capitalize;
+    }
+
+    .first-section-text .ohh{
+        font-size: 12px;
+        margin-right: 20px;
+    }
+
+    .sec1-img {
+        /* background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1687553252/starpenzu/mobile_illust_ti8e38.svg); */
+        width: 150px;
+        height: 211px;
+    }
+
+    .second-section-text {
+        text-align: center;
+        font-size: 12px;
+        font-family: Clash Display;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+
+    .second-section-text {
+        text-align: center;
+        font-size: 10px;
+        font-family: Clash Display;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+
+    .third-section-subtext {
+        /*color: #000;*/
+        text-align: left;
+        font-size: 10px;
+        font-family: Clash Display;
+        margin-bottom: 10px;
+    }
+
+    .fourth-section-header {
+        /*text-align: center;*/
+        font-size: 14px;
+        font-family: Clash Display;
+        font-weight: 500;
+        margin-bottom: 8px;
+        text-transform: capitalize;
+    }
+
+    .sec2-text{
+        color: white;
+        text-align: left;
+        text-transform: capitalize;
+    }
+
+    .sec2-lists {
+        color: #ffffff;
+        text-align: left;
+        width: 100%;
+        text-transform: capitalize;
+    }
+
+    .blank img{
+        width: 200px;
+        height: 230px;
+    }
+}
+
+@media (min-width: 560px){
+
+    .sec3-text{
+        color: #FFF;
+        text-align: center;
+        font-size: 14px;
+        font-family: Clash Display;
+    }
+
+    .stylize {
+        text-align: left;
+    }
+
+    .landPageContainer{
+        margin-top: 58px;
+    }
+
+    .hero--subtext {
+        margin-top: 26px;
+        margin-bottom: 32px;
+        text-align: center;
+        width: 93%;
+        font-size: 13px;
+        font-family: Poppins;
+
+        text-transform: capitalize;
+    }
+
+    .hero-btn {
+        border-radius: 5px;
+        background: #F9B70B;
+        color: #000;
+        text-align: center;
+        font-size: 14.786px;
+        font-family: Clash Display;
+        font-weight: 500;
+        text-transform: capitalize;
+        width: 249px;
+        padding: 14px 0;
+        margin-bottom: 40px;
+        box-shadow: 0px 0px 20px -5px #F9B70B;
+    }
+
+    .hero-text {
+        padding: 80px 0 0 0;
+        text-align: center;
+        font-size: 23px;
+        width: 87%;
+        font-family: Clash Display;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+
+
+    .first-section-text .ohh {
+        font-size: 16px;
+        margin-right: 20px;
+    }
+
+    .sec1-img {
+        width: 187px;
+        height: 217px;
+    }
+
+    .second-section-text {
+        text-align: center;
+        font-size: 15px;
+        font-family: Clash Display;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+
+    .sec-section-btn {
+        margin-top: 40px;
+        box-shadow: 1px 2px 25px -5px #F9B70B;
+        background: #F9B70B;
+        border-radius: 5px;
+        width: 165px;
+        color: #000000;
+        font-size: 13px;
+        cursor: pointer;
+        padding: 16px;
+    }
+
+    .third-section-subtext {
+        color: #000;
+        text-align: center;
+        font-size: 14px;
+        font-family: Clash Display;
+        margin-bottom: 10px;
+    }
+
+    .sec2-text{
+        color: white;
+        text-align: left;
+        text-transform: capitalize;
+    }
+
+    .sec2-lists {
+        color: #ffffff;
+        text-align: left;
+        width: 100%;
+        text-transform: capitalize;
+    }
+
+    .blank img {
+        width: 244px;
+        height: 239px;
+    }
+
+    .fourth-section-header {
+        /*text-align: center;*/
+        font-size: 20px;
+        font-family: Clash Display;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+}
+
+@media (min-width: 760px){
+
+    .sec3-text{
+        color: #FFF;
+        text-align: center;
+        font-size: 16px;
+        font-family: Clash Display;
+    }
+
+    .sec2 {
+        width: 40%;
+    }
+
+    .stylize {
+        text-align: left;
+    }
+
+    .landPageContainer{
+        margin-top: 100px;
+    }
+
+    .hero--subtext {
+        margin-top: 44px;
+        margin-bottom: 61px;
+        text-align: center;
+        width: 93%;
+        font-size: 19px;
+        font-family: Poppins;
+        text-transform: capitalize;
+    }
+
+    .hero-btn {
+        border-radius: 5px;
+        background: #F9B70B;
+        color: #000;
+        text-align: center;
+        font-size: 24.786px;
+        font-family: Clash Display;
+        font-weight: 500;
+        text-transform: capitalize;
+        width: 372px;
+        padding: 22px 0;
+        margin-bottom: 95px;
+        box-shadow: 0px 0px 20px -5px #F9B70B;
+    }
+
+    .hero-text {
+        font-size: 38px;
+    }
+
+
+
+    .first-section-text .ohh {
+        font-size: 20px;
+        margin-right: 20px;
+    }
+
+    .sec1-img {
+        width: 297px;
+        height: 346px;
+    }
+
+    .first-section {
+        display: flex;
+        flex-direction: row;
+        padding: 40px;
+        align-items: center;
+    }
+
+    .second-section-text {
+        width: 86%;
+        text-align: center;
+        font-size: 18px;
+        font-family: Clash Display;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+
+    .sec-section-btn {
+        margin-top: 50px;
+        box-shadow: 1px 2px 25px -5px #F9B70B;
+        background: #F9B70B;
+        border-radius: 5px;
+        width: 216px;
+        color: #000000;
+        font-size: 15px;
+        padding: 19px;
+    }
+
+    .third-section-subtext {
+        color: #000;
+        text-align: center;
+        font-size: 16px;
+        font-family: Clash Display;
+        margin-bottom: 10px;
+    }
+
+    .sec2-lists {
+        color: #ffffff;
+        text-align: left;
+        width: 100%;
+        text-transform: capitalize;
+    }
+
+    .sec2-text{
+        color: white;
+        text-align: left;
+        text-transform: capitalize;
+    }
+
+    .blank img {
+        width: 309px;
+        height: 314px;
+    }
+
+    .fourth-section-header {
+        /*text-align: center;*/
+        font-size: 25px;
+        font-family: Clash Display;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+}
+
+@media (min-width: 1024px){
+
+    .sec3-text{
+        color: #FFF;
+        text-align: center;
+        font-size: 18px;
+        font-family: Clash Display;
+    }
+
+    .stylize {
+        margin-top: 40px;
+    }
+    .hero-section {
+        background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1687553251/starpenzu/hero_tab_wehsnd.svg);
+    }
+
+    .hero-text {
+        padding: 138px 0 0 0;
+        font-size: 44px;
+    }
+
+    .hero--subtext {
+        margin-top: 50px;
+        margin-bottom: 68px;
+        text-align: center;
+        width: 93%;
+        font-size: 19px;
+        font-family: Poppins;
+        text-transform: capitalize;
+    }
+
+    .sec1-img {
+        width: 359px;
+        height: 377px;
+    }
+
+    .first-section-text .ohh {
+        font-size: 25px;
+        margin-right: 20px;
+    }
+
+    .second-section-text {
+        text-align: center;
+        font-size: 20px;
+        font-family: Clash Display;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+
+    .sec-section-btn {
+        margin-top: 50px;
+        box-shadow: 1px 2px 25px -5px #F9B70B;
+        background: #F9B70B;
+        border-radius: 5px;
+        width: 257px;
+        color: #000000;
+        font-size: 18px;
+        padding: 18px;
+    }
+
+    .third-section-subtext {
+        color: #000;
+        text-align: center;
+        font-size: 18px;
+        font-family: Clash Display;
+        margin-bottom: 10px;
+    }
+
+    .sec2-lists {
+        color: #ffffff;
+        text-align: left;
+        width: 100%;
+        text-transform: capitalize;
+    }
+
+    .sec2-text{
+        color: white;
+        text-align: left;
+        text-transform: capitalize;
+    }
+
+    .fourth-section-header {
+        /*text-align: center;*/
+        font-size: 34px;
+        font-family: Clash Display;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+
+    .blank img {
+        width: 410px;
+        height: 413px;
+    }
+}
+
+@media (min-width: 1280px){
+
+    .sec3-text{
+        color: #FFF;
+        text-align: center;
+        font-size: 24px;
+        font-family: Clash Display;
+    }
+
+    .stylize {
+        text-align: left;
+    }
+
+    .second-section-text {
+        width: 89%;
+        text-align: center;
+        font-size: 30px;
+        font-family: Clash Display;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+
+    .third-section-subtext {
+        color: #000;
+        text-align: center;
+        font-size: 20px;
+        font-family: Clash Display;
+        margin-bottom: 10px;
+    }
+
+    .sec-section-btn {
+        margin-top: 50px;
+        box-shadow: 1px 2px 25px -5px #F9B70B;
+        background: #F9B70B;
+        border-radius: 5px;
+        width: 271px;
+        color: #000000;
+        font-size: 18px;
+        padding: 21px;
+    }
+
+    .sec2-lists {
+        color: #ffffff;
+        text-align: left;
+        width: 100%;
+        text-transform: capitalize;
+    }
+
+    .sec2-text{
+        color: white;
+        text-align: left;
+        text-transform: capitalize;
+    }
+}
+
+@media (min-width: 1440px){
+
+    .sec3-text{
+        color: #FFF;
+        text-align: center;
+        font-size: 28px;
+        font-family: Clash Display;
+    }
+
+    .stylize {
+        text-align: left;
+    }
+
+    .hero-section {
+        background-image: url(https://res.cloudinary.com/do5wu6ikf/image/upload/v1687553223/starpenzu/hero_desktop_gghmq3.svg);
+    }
+
+    .hero-text {
+        padding: 200px 0 0 0;
+        font-size: 65px;
+    }
+
+    .hero--subtext {
+        margin-top: 82px;
+        margin-bottom: 81px;
+        text-align: center;
+        width: 93%;
+        font-size: 30px;
+        font-family: Poppins;
+        text-transform: capitalize;
+    }
+
+    .hero-btn {
+        border-radius: 5px;
+        background: #F9B70B;
+        color: #000;
+        text-align: center;
+        font-size: 27.786px;
+        font-family: Clash Display;
+        font-weight: 500;
+        text-transform: capitalize;
+        width: 469px;
+        padding: 28px 0;
+        margin-bottom: 120px;
+        box-shadow: 0px 0px 20px -5px #F9B70B;
+    }
+
+    .first-section-text .ohh {
+        font-size: 30px;
+        margin-right: 45px;
+    }
+
+    .sec1-img {
+        width: 517px;
+        height: 436px;
+    }
+
+    .sec2-lists {
+        color: #ffffff;
+        text-align: left;
+        width: 100%;
+        text-transform: capitalize;
+    }
+
+    .sec2-text{
+        color: white;
+        text-align: left;
+        text-transform: capitalize;
+    }
+
+    .fourth-section-header {
+        /*text-align: center;*/
+        font-size: 48px;
+        font-family: Clash Display;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+
+}

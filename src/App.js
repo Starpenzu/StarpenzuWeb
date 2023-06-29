@@ -12,6 +12,9 @@ import DashBoard from '../src/Components/DashBoard/DashBoard';
 import MyCourses from '../src/Components/DashBoard/MyCourses';
 import MyCertificate from '../src/Components/DashBoard/MyCertificate';
 import MyNotification from '../src/Components/DashBoard/MyNotification';
+import LandingPage from '../src/Components/LAndingPage/LandingPage';
+import PasswordReset from '../src/Components/SignUp/PasswordReset';
+import CreatePassword from '../src/Components/SignUp/CreatePassword';
 
 
 
@@ -20,11 +23,13 @@ function App() {
 
       <Router>
           <Routes>
+              <Route exact  path ="/LandingPage" element={<LandingPage/>} />
               <Route exact  path ="/" element={<Home/>} />
-              {/*<Route exact  path ="/courses" element={<ViewAllCourses/>} />*/}
               <Route exact  path ="/signup" element={<SignUp/>} />
               <Route exact  path ="/Login" element={<Login/>} />
               <Route exact  path ="/form" element={<MyForm/>} />
+              <Route exact  path ="/passwordreset" element={<PasswordReset/>} />
+              <Route exact  path ="/createpassword" element={<CreatePassword/>} />
               <Route exact  path ="/coursespageuiux" element={<CoursesPageUIUX/>} />
               <Route exact  path ="/coursespagedjango" element={<CoursesPageDjango/>} />
               <Route exact  path ="/coursespagefe" element={<CoursesPageFE/>} />

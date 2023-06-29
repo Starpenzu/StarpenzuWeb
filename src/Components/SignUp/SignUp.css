@@ -1,7 +1,23 @@
 .signup{
     margin-top: 60px;
     text-align: center;
-    padding: 0px 32px;
+    padding: 0px 32px 50px 32px;
+}
+
+.validationsec{
+    font-family: Poppins;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 10px;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.valid{
+    background: #d4d4d4;
+    border-radius: 15px;
+    padding: 5px;
 }
 
 .loginbtn{
@@ -10,6 +26,7 @@
 
 .forgotpword{
     width: 100%;
+    text-decoration: none;
     text-align: left;
     font-family: 'Poppins';
     font-style: normal;
@@ -27,10 +44,18 @@
 }
 
 .signupHeader{
-    display: flex;
-    justify-content: flex-start;
-    gap: 52px;
-    margin-bottom: 30px;
+ position: relative;
+    margin-bottom: 20px;
+}
+
+.testingcent{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.backarrow img{
+    position: absolute;
+    left: 0;
 }
 
 .dhur{
@@ -115,9 +140,6 @@
     }
 
     .signupHeader {
-        display: flex;
-        justify-content: flex-start;
-        gap: 85px;
         margin-bottom: 30px;
     }
     .outlined{
@@ -173,10 +195,7 @@
 
 
     .signupHeader {
-        display: flex;
-        justify-content: flex-start;
-        gap: 102px;
-        margin-bottom: 30px;
+        margin-bottom: 35px;
     }
 
     .registerBtn {
@@ -205,17 +224,13 @@
     .signup {
         margin-top: 98px;
         text-align: center;
-        padding: 0px 32px;
+        padding: 0px 32px 55px 32px;
     }
 }
 
 @media (min-width: 560px){
     .signupHeader {
-        padding-right: 145px;
-        display: flex;
-        justify-content: center;
-        /* gap: 102px; */
-        margin-bottom: 30px;
+        margin-bottom: 35px;
     }
 
     .pword {
@@ -236,20 +251,30 @@
     .signup {
         margin-top: 160px;
         text-align: center;
-        padding: 0px 32px;
+        padding: 0 100px 70px 100px;
     }
 
+    .validationsec{
+        font-family: Poppins;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        font-size: 15px;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+    .valid {
+        background: #d4d4d4;
+        border-radius: 20px;
+        padding: 10px;
+    }
     .backarrow img{
         width: 40px;
-        padding-right: 206px;
+        /*padding-right: 206px;*/
     }
 
     .signupHeader {
-        padding-right: 245px;
-        display: flex;
-        justify-content: center;
-        gap: 0px;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
     }
 
     .forgotpword{
@@ -309,16 +334,12 @@
 
 @media (min-width: 1024px){
     .signupHeader {
-        padding-right: 328px;
-        display: flex;
-        justify-content: center;
-        gap: 105px;
-        margin-bottom: 71px;
+        margin-bottom: 50px;
     }
 
     .backarrow img {
         width: 40px;
-        padding-right: 227px;
+        /*padding-right: 227px;*/
     }
 
     .outlined {

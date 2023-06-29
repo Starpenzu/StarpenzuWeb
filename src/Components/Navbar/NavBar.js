@@ -1,14 +1,20 @@
 import React from 'react'
 //import Logo from '../../images/favicon.png'
 import Button from './Button'
+import '../Navbar/newNav.css'
 import {Link, useLocation} from "react-router-dom";
 //import harmburger from 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1683922753/starpenzu/Vector_r4aqp6.svg'
 
 export default function NavBar() {
     const [hamburger, setHamburger] = React.useState(false)
     const [dashdp, setDashDp] = React.useState(false)
+    const [coursesDp, setCoursesDp] = React.useState(false)
+    const [ddMobile, setDdMobile] = React.useState(false)
     const [selectedItem, setSelectedItem] = React.useState(null);
     const location = useLocation();
+    const mobilenav ={
+        color: ddMobile || coursesDp ?'#F9B70B':''
+    }
 
     React.useEffect(() => {
         // Update selectedItem state when the location changes
@@ -23,7 +29,9 @@ export default function NavBar() {
         }else {
             setSelectedItem(null);
         }
-    }, [location]);
+    }, [location])
+
+
 
     function handlehamburger() {
         if(!hamburger){
@@ -33,11 +41,29 @@ export default function NavBar() {
         }
     }
 
+    function handleMouseover(){
+        if(!coursesDp){
+            setCoursesDp(true)
+        }else{
+            setCoursesDp(false)
+        }
+
+
+    }
+
     function handleDashDp(){
         if(!dashdp){
             setDashDp(true)
         }else{
             setDashDp(false)
+        }
+    }
+
+    function handleCourseClick(){
+        if(!ddMobile){
+            setDdMobile(true)
+        }else{
+            setDdMobile(false)
         }
     }
 
@@ -74,13 +100,34 @@ export default function NavBar() {
                             onClick={() => handleItemClick('item1')}
                         >Home</li>
                         </Link>
-                        <Link className='link-d'  to='/Courses'>
-                            <li
-                                className={selectedItem === 'item2' ? 'clickedActive' : ''}
-                                onClick={() => handleItemClick('item2')}
-                            >
-                                Courses</li>
-                        </Link>
+
+                            <li onMouseOver={handleMouseover} style={mobilenav} >Courses</li>
+                        {coursesDp &&
+                            <div className="coursedp ">
+
+                                <Link className='link-d'  to='/coursespagedjango'>
+                                <div className="backend makefexz">
+                                    <div className="backendtext">Backend Web Development</div>
+                                    <div className="backendimg"><img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1686939338/Vector_1_olhi2x.svg" alt=""/></div>
+                                </div>
+                                </Link>
+
+                                <Link className='link-d'  to='/coursespagefe'>
+                                <div className="frontend makefexz">
+                                    <div className="backendtext">Frontend Web Development</div>
+                                    <div className="backendimg"><img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1686939338/Vector_1_olhi2x.svg" alt=""/></div>
+                                </div>
+                                </Link>
+
+                                <Link className='link-d'  to='/coursespageuiux'>
+                                <div className="uiux makefexz">
+                                    <div className="backendtext">UI/UX Design</div>
+                                    <div className="backendimg"><img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1686939338/Vector_1_olhi2x.svg" alt=""/></div>
+                                </div>
+                                </Link>
+                            </div>
+                        }
+
 
                         {/*<li>dash</li>*/}
                         <li>Contact Us</li>
@@ -106,18 +153,38 @@ export default function NavBar() {
                             onClick={() => handleItemClick('item1')}
                         >Home</li>
                         </Link>
-                        <Link  className='link-d' to='/Courses'>
-                            <li
-                                className={selectedItem === 'item2' ? 'clickedActive' : ''}
-                                onClick={() => handleItemClick('item2')}
-                            >
-                                Courses</li>
-                        </Link>
+
+                            <li className='ddmobile' style={mobilenav} onClick={handleCourseClick}>Courses</li>
+                        {ddMobile &&
+                            <div className="mobilecoursesdd">
+                                <Link className='link-d'  to='/coursespagedjango'>
+                                    <div className="backend makefexz">
+                                        <div className="backendtext">Backend Web Development</div>
+                                        <div className="backendimg"><img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1686939338/Vector_1_olhi2x.svg" alt=""/></div>
+                                    </div>
+                                </Link>
+
+                                <Link className='link-d'  to='/coursespagefe'>
+                                    <div className="frontend makefexz">
+                                        <div className="backendtext">Frontend Web Development</div>
+                                        <div className="backendimg"><img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1686939338/Vector_1_olhi2x.svg" alt=""/></div>
+                                    </div>
+                                </Link>
+
+                                <Link className='link-d'  to='/coursespageuiux'>
+                                    <div className="uiux makefexz">
+                                        <div className="backendtext">UI/UX Design</div>
+                                        <div className="backendimg"><img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1686939338/Vector_1_olhi2x.svg" alt=""/></div>
+                                    </div>
+                                </Link>
+                            </div>
+                        }
+
                         <div className={dashdp? 'dashboardii':"dashboard"} onClick={handleDashDp}>
                             <li
                                 className={dashdp ? 'clickedActive dashboardf' : 'dashboardf'}
                             >
-                                Dashbord</li>
+                                Dashboard</li>
                             <div className="drpaimg">
                                 <img src={dashdp ? 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1685243073/starpenzu/arrowup_pjrati.svg'
                                     : "https://res.cloudinary.com/do5wu6ikf/image/upload/v1685242829/starpenzu/Vector_jaiwhq.svg"}
@@ -129,7 +196,7 @@ export default function NavBar() {
                                 <Link className='link-d'  to='/dashboard'><div className='dashboarddp'>My Profile</div></Link>
                                 <Link className='link-d'  to='/mycourses'><div className='dashboarddp'>My Courses</div></Link>
                                 <Link className='link-d'  to='/mycerti'><div className='dashboarddp'>Certificates</div></Link>
-                                <Link className='link-d'  to='/mynoti'><div className='dashboarddp'>Notification</div></Link>
+                                <Link className='link-d'  to='/mynoti'><div className='dashboarddp'>Notifications</div></Link>
                             </div>
                         }
                         <li>Contact Us</li>
