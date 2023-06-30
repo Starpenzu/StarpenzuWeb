@@ -29,7 +29,7 @@ function App() {
               <Route exact  path ="/Login" element={<Login/>} />
               <Route exact  path ="/form" element={<MyForm/>} />
               <Route exact  path ="/passwordreset" element={<PasswordReset/>} />
-              <Route exact  path ="/createpassword" element={<CreatePassword/>} />
+              <Route exact  path ="/createpassword/:uidb64/:token" element={<CreatePassword/>} />
               <Route exact  path ="/coursespageuiux" element={<CoursesPageUIUX/>} />
               <Route exact  path ="/coursespagedjango" element={<CoursesPageDjango/>} />
               <Route exact  path ="/coursespagefe" element={<CoursesPageFE/>} />

@@ -4,62 +4,63 @@ import Footer from '../Footer/Footer';
 import NavBar from '../Navbar/NavBar';
 import SignInButton from './SignInbutton';
 import './SignUp.css';
+import { useNavigate } from "react-router-dom";
+import AxiosWithAuth from "./AxiosWithAuth";
 
 
 export default function PasswordReset (){
     const[visible, setVisible] = useState(false)
-    const [formData, setFormData] = React.useState(()=> JSON.parse(localStorage.getItem("LoginUser"))
-        ||
-        {
-            email: "",
-            // password: ""
-        }
-    );
+    const[email, setEmail] = useState('')
+    const navigate = useNavigate();
+
 
     const inputRefs = useRef({
         email: useRef(null),
-        // password: useRef(null),
     });
 
 
-
-    React.useEffect(
-        function (){
-            return(
-                localStorage.setItem("LoginUser", JSON.stringify(formData))
-            )
-        },
-        [formData]
-    )
-
-
-
-    function handleChange(event) {
-
-        const {name, value} = event.target;
-        // setting your new state
-        setFormData(prevState => (
-            {
-                ...prevState,
-                [name] : value
-            }
-        ));
-
-    }
 
     const handleInputFocus = (name) => {
         inputRefs.current[name].current.classList.add('focused');
     };
 
     const handleInputBlur = (name) => {
-        if (!formData[name]) {
-            inputRefs.current[name].current.classList.remove('focused');
+        const inputValue = inputRefs.current[name].current.value;
+        if (!inputValue) {
+            inputRefs.current[name].current.parentNode.classList.remove('focused');
         }
     };
 
-    const handleSubmit = (event) => {
+
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        // Add your form submission logic here
+
+
+        try {
+            const response = await AxiosWithAuth.post("/user/password-reset/", {
+                email,
+            });
+
+            if (response.status === 200 || response.status === 201) {
+                // const token = response.data.token;
+                // const fool = 'fool'
+                // localStorage.setItem("ent", token);
+                // localStorage.setItem("dummy", fool);
+                // window.location.reload();
+                console.log(response)
+                console.log("All dodo");
+                // Navigate to the home page after successful login
+                navigate(`/createpassword/${response.data.uidb64}/${response.data.token}`);
+                //console.log(localStorage.getItem("token"))
+            } else {
+                // setErrorMessage("Invalid credentials. Please try again.");
+                console.log("Invalid credentials. Please try again.");
+            }
+        }
+        catch (error) {
+            //setErrorMessage("Invalid credentials. Please try again.");
+            console.log("Invalid credentials. Please try again.");
+        }
     };
 
     function handleVisibility(){
@@ -92,18 +93,18 @@ export default function PasswordReset (){
                 <form onSubmit={handleSubmit} className="register">
 
                     {/* Email */}
-                    <div className={`outlined-input-container ${formData.email ? 'focused' : ''}`}>
+                    <div className={`outlined-input-container ${email ? 'focused' : ''}`}>
                         <input
                             type="email"
                             className="outlined-input"
                             name="email"
-                            value={formData.email}
+                            value={email}
                             ref={inputRefs.current.email}
-                            onChange={handleChange}
+                            onChange={(e) => setEmail(e.target.value)}
                             onFocus={() => handleInputFocus('email')}
                             onBlur={() => handleInputBlur('email')}
                         />
-                        <label className={`outlined-label ${formData.email ? 'active' : ''}`}>Email</label>
+                        <label className={`outlined-label ${email ? 'active' : ''}`}>Email</label>
                     </div>
                     {/*/!* Password *!/*/}
                     {/*<div className={`outlined-input-container ${formData.password ? 'focused' : ''}`}>*/}

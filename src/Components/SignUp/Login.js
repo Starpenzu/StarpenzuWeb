@@ -1,20 +1,17 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import NavBar from '../Navbar/NavBar';
 import SignInButton from './SignInbutton';
 import './SignUp.css';
+import AxiosWithAuth from './AxiosWithAuth'
 
 
 export default function Login (){
     const[visible, setVisible] = useState(false)
-    const [formData, setFormData] = React.useState(()=> JSON.parse(localStorage.getItem("LoginUser"))
-        ||
-        {
-            email: "",
-            password: ""
-        }
-    );
+    const[email, setEmail] = useState('')
+    const[password, setPassword] = useState('')
+
 
     const inputRefs = useRef({
         email: useRef(null),
@@ -23,43 +20,48 @@ export default function Login (){
 
 
 
-    React.useEffect(
-        function (){
-            return(
-                localStorage.setItem("LoginUser", JSON.stringify(formData))
-            )
-        },
-        [formData]
-    )
-
-
-
-    function handleChange(event) {
-
-        const {name, value} = event.target;
-        // setting your new state
-        setFormData(prevState => (
-            {
-                ...prevState,
-                [name] : value
-            }
-        ));
-
-    }
 
     const handleInputFocus = (name) => {
         inputRefs.current[name].current.classList.add('focused');
     };
 
     const handleInputBlur = (name) => {
-        if (!formData[name]) {
-            inputRefs.current[name].current.classList.remove('focused');
+        const inputValue = inputRefs.current[name].current.value;
+        if (!inputValue) {
+            inputRefs.current[name].current.parentNode.classList.remove('focused');
         }
     };
 
-    const handleSubmit = (event) => {
+
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        // Add your form submission logic here
+
+
+        try {
+            const response = await AxiosWithAuth.post("/user/token/", {
+                email,
+                password,
+            });
+
+            if (response.status === 200 || response.status === 201) {
+                const token = response.data.token;
+                const fool = 'fool'
+                localStorage.setItem("ent", token);
+                localStorage.setItem("dummy", fool);
+                // window.location.reload();
+                console.log("All good");
+                // Navigate to the home page after successful login
+                //navigate("/home");
+                //console.log(localStorage.getItem("token"))
+            } else {
+               // setErrorMessage("Invalid credentials. Please try again.");
+                console.log("Invalid credentials. Please try again.");
+            }
+        }
+        catch (error) {
+            //setErrorMessage("Invalid credentials. Please try again.");
+            console.log("Invalid credentials. Please try again.");
+        }
     };
 
     function handleVisibility(){
@@ -93,35 +95,35 @@ export default function Login (){
 
 
                 {/* Email */}
-                <div className={`outlined-input-container ${formData.email ? 'focused' : ''}`}>
+                <div className={`outlined-input-container ${email ? 'focused' : ''}`}>
                     <input
                         type="email"
                         className="outlined-input"
                         name="email"
-                        value={formData.email}
+                        value={email}
                         ref={inputRefs.current.email}
-                        onChange={handleChange}
+                        onChange={(e) => setEmail(e.target.value)}
                         onFocus={() => handleInputFocus('email')}
                         onBlur={() => handleInputBlur('email')}
                     />
-                    <label className={`outlined-label ${formData.email ? 'active' : ''}`}>Email</label>
+                    <label className={`outlined-label ${email ? 'active' : ''}`}>Email</label>
                 </div>
                 {/* Password */}
-                <div className={`outlined-input-container ${formData.password ? 'focused' : ''}`}>
+                <div className={`outlined-input-container ${password ? 'focused' : ''}`}>
                     <input
                         type={visible? "text":"password"}
                         className="outlined-input"
                         name="password"
-                        value={formData.password}
+                        value={password}
                         ref={inputRefs.current.password}
-                        onChange={handleChange}
+                        onChange={(e) => setPassword(e.target.value)}
                         onFocus={() => handleInputFocus('password')}
                         onBlur={() => handleInputBlur('password')}
                     />
                     <div className="selectvisible" onClick={handleVisibility}>
                         <img src={visible ? 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1686996024/View_sf9mqu.svg' : "https://res.cloudinary.com/do5wu6ikf/image/upload/v1686995027/Vector_2_zqswsd.svg"} alt=""/>
                     </div>
-                    <label className={`outlined-label ${formData.password ? 'active' : ''}`}>Password</label>
+                    <label className={`outlined-label ${password ? 'active' : ''}`}>Password</label>
                 </div>
                 <div className="forgotpword"><Link className='forgotpword' to='/passwordreset'>Forgotten Password?</Link></div>
 

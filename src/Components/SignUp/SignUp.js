@@ -4,6 +4,7 @@ import Footer from '../Footer/Footer';
 import NavBar from '../Navbar/NavBar';
 import SignInButton from './SignInbutton';
 import './SignUp.css';
+import AxioxWithAuth from './AxiosWithAuth'
 let formData = new FormData();
 
 export default function SignUp() {
@@ -15,20 +16,20 @@ export default function SignUp() {
     const[specialchar, setSpecialchar]= useState(true)
     const[lowerchar, setLowerchar]= useState(true)
     
-    const [fullname, setFullname] = useState(() => localStorage.getItem("fullname") || '')
-    const [firstname, setFirstname] = useState(() => localStorage.getItem("firstname") || '')
-    const [surname, setSurname] = useState(() => localStorage.getItem("surname") || '')
-    const [dob, setDob] = useState(() => localStorage.getItem("DOB") || '')
+    const [name, setName] = useState(() => localStorage.getItem("fullname") || '')
+    const [username, setUsername] = useState(() => localStorage.getItem("username") || '')
+  //  const [surname, setSurname] = useState(() => localStorage.getItem("surname") || '')
+    const [date_of_birth, setDate_of_birth] = useState(() => localStorage.getItem("DOB") || '')
     const [gender, setGender] = useState(() => localStorage.getItem("gender") || '')
-    const [whatsappNum, setWhatsappNum] = useState(() => localStorage.getItem("whatsappNum") || '')
+    const [whatsapp_number, setWhatsapp_number] = useState(() => localStorage.getItem("whatsappNum") || '')
     const [email, setEmail] = useState(() => localStorage.getItem("email") || '')
     const[password, setPassword]= useState('');
     const[confirmPassword, setConfirmpassword]= useState('')
-    // const [formData, setFormData] = useState();
+
 
     const inputRefs = useRef({
-        firstName: useRef(null),
-        surname: useRef(null),
+        name: useRef(null),
+        username: useRef(null),
         DOB: useRef(null),
         gender: useRef(null),
         whatsappNum: useRef(null),
@@ -62,19 +63,19 @@ export default function SignUp() {
     }
 
    function handleFirstNameChange (event){
-        setFirstname(event.target.value);
+        setName(event.target.value);
 
    }
 
     function handleSurNameChange (event){
-        setSurname(event.target.value);
+        setUsername(event.target.value);
 
     }
 
     function handleDOBChange (event){
-        setDob(event.target.value);
+        setDate_of_birth(event.target.value);
 
-        console.log(dob)
+        console.log(date_of_birth)
     }
 
     function handleGenderChange (event){
@@ -83,32 +84,21 @@ export default function SignUp() {
     }
 
     function handleWhatsappNoChange (event){
-        setWhatsappNum(event.target.value);
+        setWhatsapp_number(event.target.value);
     }
 
     function handleEmailChange (event){
         setEmail(event.target.value);
     }
 
-    // function uploadData (){
-    //     localStorage.setItem('firstname', firstname)
-    //     localStorage.setItem('surname', surname)
-    //     localStorage.setItem('DOB', dob)
-    //     localStorage.setItem('gender', gender)
-    //     localStorage.setItem('whatsappNum', whatsappNum)
-    //     localStorage.setItem('email', email)
-    //
-    //
-    // }
-
     useEffect(() => {
         function uploadToLocal() {
-            localStorage.setItem('fullname', fullname);
-            localStorage.setItem('surname', surname);
-            localStorage.setItem('firstname', firstname);
-            localStorage.setItem('DOB', dob);
+            localStorage.setItem('fullname', name);
+             localStorage.setItem('username', username);
+            // localStorage.setItem('firstname', firstname);
+            localStorage.setItem('DOB', date_of_birth);
             localStorage.setItem('gender', gender);
-            localStorage.setItem('whatsappNum', whatsappNum);
+            localStorage.setItem('whatsappNum', whatsapp_number);
             localStorage.setItem('email', email);
         }
 
@@ -117,79 +107,18 @@ export default function SignUp() {
         // Clean-up function
         return () => {
             localStorage.removeItem('fullname');
-            localStorage.removeItem('surname');
-            localStorage.removeItem('firstname');
+            localStorage.removeItem('username');
+            //localStorage.removeItem('firstname');
             localStorage.removeItem('DOB');
             localStorage.removeItem('gender');
             localStorage.removeItem('whatsappNum');
             localStorage.removeItem('email');
         };
-    }, [firstname, surname, dob, gender, whatsappNum, email]);
+    }, [name, date_of_birth, gender, whatsapp_number, email, username]);
 
-    useEffect( () => {
-        function makeFullname() {
-            const firstname = localStorage.getItem('firstname')
-            const surname = localStorage.getItem('surname')
-            const fullName = surname + " " + firstname;
-            setFullname(fullName);
-        }
 
-        makeFullname();
-    }, [firstname,surname])
 
     function passwordValidation (){
-        // if (password.length < 8) {
-        //     setCharacter(true);
-        //     console.log('8 char');
-        // } else {
-        //     setCharacter(false);
-        //     //console.log('okay')
-        // }
-        //
-        // if (!password.match(/[a-z]/)) {
-        //     setLowerchar(true);
-        //     console.log('lower char');
-        // } else {
-        //     setLowerchar(false);
-        //     //console.log('okay')
-        // }
-        //
-        // if (!password.match(/[A-Z]/)) {
-        //     setUpperCase(true);
-        //     console.log('upper char');
-        // } else {
-        //     setUpperCase(false);
-        //     //console.log('okay')
-        // }
-        //
-        // if (!password.match(/\d/)) {
-        //     setNumber(true);
-        //     console.log('1 num');
-        // } else {
-        //     setNumber(false);
-        //    // console.log('okay')
-        // }
-        //
-        // if (!password.match(/[@$!%*.?&]/)) {
-        //     setSpecialchar(true);
-        //     console.log('special char');
-        // } else {
-        //     setSpecialchar(false);
-        //     //console.log('okay')
-        // }
-        //
-        // if (password !== confirmPassword) {
-        //     setPwMatch(true);
-        //     console.log('must match');
-        // } else {
-        //     setPwMatch(false);
-        //     //console.log('okay')
-        // }
-        //
-        // if (!character && !lowerchar && !uppercase && !number && !specialchar && !pwmatch) {
-        //     console.log('Password meets all requirements!');
-        // }
-
         let isCharacterValid = password.length >= 8;
         let isLowerCharValid = password.match(/[a-z]/);
         let isUpperCharValid = password.match(/[A-Z]/);
@@ -207,9 +136,28 @@ export default function SignUp() {
         setPwMatch(!isPasswordMatchValid);
 
         if (isPasswordValid) {
-            console.log('Password meets all requirements!');
-            alert('Password meets all requirements!');
             // ... additional code or actions for a successful password
+
+            AxioxWithAuth.post('user/create/', formData, {
+                        headers: {
+                            "Content-Type": "multipart/form-data",
+                        },
+                    })
+                .then((response) => {
+                    console.log(response.data);
+                    if (response.status === 200 || response.status === 201) {
+                        console.log("response 200");
+                        // setRegistrationSuccess(true)
+                    } else {
+                        console.log("An error occurred while uploading user data. Please try again.");
+                        // handleError("An error occurred while uploading user data. Please try again.");
+                    }
+                })
+                .catch((error) => {
+                    console.log(error);
+                    // handleError("An error occurred while uploading user data. Please try again.");
+                })
+                .finally(() => console.log('alright'));
         }
 
     }
@@ -217,12 +165,13 @@ export default function SignUp() {
 
     function uploadData (){
         passwordValidation();
-        formData.append("name", fullname);
+        formData.append("name", name);
         formData.append("email", email);
         formData.append("password", password);
-        formData.append("DOB", dob);
+        formData.append("username", username)
+        formData.append("date_of_birth", date_of_birth);
         formData.append("gender", gender);
-        formData.append("whatsappNum", whatsappNum);
+        formData.append("whatsapp_number", whatsapp_number);
     }
 
 
@@ -232,6 +181,7 @@ export default function SignUp() {
         // Add your form submission logic here
         passwordValidation()
         uploadData();
+
     };
 
 
@@ -239,7 +189,6 @@ export default function SignUp() {
         <>
             <NavBar />
             <div className="signup">
-                {/*<div className="testingcent">*/}
                 <div className="signupHeader">
                     <Link to="/">
                         <div className="backarrow">
@@ -251,51 +200,52 @@ export default function SignUp() {
                     </div>
 
                 </div>
-                {/*</div>*/}
+
                 <form onSubmit={handleSubmit} className="register">
-                    <div className={`outlined-input-container ${firstname ? 'focused' : ''}`}>
+                    {/*name*/}
+                    <div className={`outlined-input-container ${name ? 'focused' : ''}`}>
                         <input
                             type="text"
-                            id="firstName"
-                            ref={inputRefs.current.firstName}
+                            id="name"
+                            ref={inputRefs.current.name}
                             className="outlined-input"
                             required
-                            value={firstname}
-                            onFocus={() => handleInputFocus('firstName')}
-                            onBlur={() => handleInputBlur('firstName')}
+                            value={name}
+                            onFocus={() => handleInputFocus('name')}
+                            onBlur={() => handleInputBlur('name')}
                             onChange={handleFirstNameChange}
                         />
-                        <label className={`outlined-label ${firstname ? 'active' : ''}`}>Firstname</label>
+                        <label className={`outlined-label ${name ? 'active' : ''}`}>Name</label>
                     </div>
-
-                    <div className={`outlined-input-container ${surname ? 'focused' : ''}`}>
+                    {/*username*/}
+                    <div className={`outlined-input-container ${username ? 'focused' : ''}`}>
                         <input
                             type="text"
-                            id="surname"
-                            ref={inputRefs.current.surname}
+                            id="username"
+                            ref={inputRefs.current.username}
                             className="outlined-input"
                             required
-                            value={surname}
-                            onFocus={() => handleInputFocus('surname')}
-                            onBlur={() => handleInputBlur('surname')}
+                            value={username}
+                            onFocus={() => handleInputFocus('username')}
+                            onBlur={() => handleInputBlur('username')}
                             onChange={handleSurNameChange}
                         />
-                        <label className={`outlined-label ${surname ? 'active' : ''}`}>Surname</label>
+                        <label className={`outlined-label ${username ? 'active' : ''}`}>Username</label>
                     </div>
                     {/* Date of Birth */}
-                    <div className={`outlined-input-container ${dob ? 'focused' : ''}`}>
+                    <div className={`outlined-input-container ${date_of_birth ? 'focused' : ''}`}>
                         <input
                             required
                             type="date"
                             className="outlined-input"
                             name="DOB"
-                            value={dob}
+                            value={date_of_birth}
                             ref={inputRefs.current.DOB}
                             onChange={handleDOBChange}
                             onFocus={() => handleInputFocus('DOB')}
                             onBlur={() => handleInputBlur('DOB')}
                         />
-                        <label className={`outlined-label ${dob ? 'active' : ''}`}>Date of Birth</label>
+                        <label className={`outlined-label ${date_of_birth ? 'active' : ''}`}>Date of Birth</label>
                     </div>
                     {/* Gender */}
                     <div className={`outlined-input-container ${gender ? 'focused' : ''}`}>
@@ -316,19 +266,19 @@ export default function SignUp() {
                         <label className={`outlined-label ${gender ? 'active' : ''}`}>Gender</label>
                     </div>
                     {/* WhatsApp Number */}
-                    <div className={`outlined-input-container ${whatsappNum ? 'focused' : ''}`}>
+                    <div className={`outlined-input-container ${whatsapp_number ? 'focused' : ''}`}>
                         <input
                             required
                             type="text"
                             className="outlined-input"
                             name="whatsappNum"
-                           value={whatsappNum}
+                           value={whatsapp_number}
                             ref={inputRefs.current.whatsappNum}
                             onChange={handleWhatsappNoChange}
                             onFocus={() => handleInputFocus('whatsappNum')}
                             onBlur={() => handleInputBlur('whatsappNum')}
                         />
-                        <label className={`outlined-label ${whatsappNum ? 'active' : ''}`}>WhatsApp Number</label>
+                        <label className={`outlined-label ${whatsapp_number ? 'active' : ''}`}>WhatsApp Number</label>
                     </div>
                     {/* Email */}
                     <div className={`outlined-input-container ${email ? 'focused' : ''}`}>
