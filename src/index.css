@@ -26,6 +26,32 @@ body{
 /*margin-top: 140px;*/
 }
 
+.dashbth
+{
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+    background:  #F9B70B;
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.dashbth img{
+    height: 27px;
+    width: 27px;
+}
+
+.dashtexttt{
+    color: #000;
+    font-size: 16px;
+    font-family: Clash Display;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+
 .allcourses{
     font-family: 'Clash Display';
     font-style: normal;
@@ -34,6 +60,10 @@ body{
     line-height: 20px;
     margin-top: 60px;
     margin-left: 40px;
+}
+.auth{
+    display: inline-flex;
+    gap: 20px;
 }
 
 .link-d{

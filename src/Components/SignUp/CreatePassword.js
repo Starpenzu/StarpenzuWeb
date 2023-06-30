@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import Footer from '../Footer/Footer';
 import NavBar from '../Navbar/NavBar';
 import SignInButton from './SignInbutton';
@@ -7,6 +7,7 @@ import '../OutlinedInput/inputstyle.css';
 import {Link,  useParams} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import AxiosWithAuth from "./AxiosWithAuth";
+import DoneCompo from "./doneCompo";
 
 
 
@@ -14,6 +15,7 @@ import AxiosWithAuth from "./AxiosWithAuth";
  function CreatePassword (){
 
     const[uppercase, setUpperCase]= useState(true);
+    const [expiredToken, setExpiredToken] = useState(false)
     const[character, setCharacter]= useState(true);
     const[pwmatch, setPwMatch]= useState(true);
     const[number, setNumber]= useState(true);
@@ -24,6 +26,7 @@ import AxiosWithAuth from "./AxiosWithAuth";
     const[password_confirm, setConfirmpassword]= useState('');
     const[visible, setVisible] = useState(false);
      const navigate = useNavigate();
+     const[done, setDone] = useState(false)
 
     const inputRefs = useRef({
         password: useRef(null),
@@ -64,9 +67,9 @@ import AxiosWithAuth from "./AxiosWithAuth";
 
         if (isPasswordValid) {
             console.log('Password meets all requirements!');
-            alert('Password meets all requirements!');
-            // ... additional code or actions for a successful password
+
         }
+
 
     }
 
@@ -83,7 +86,6 @@ import AxiosWithAuth from "./AxiosWithAuth";
 
      const handleSubmit = async (event) => {
          event.preventDefault();
-         passwordValidation()
          try {
 
              const response = await AxiosWithAuth.post(`/user/password-reset-confirm/${uidb64}/${token}/`, {
@@ -91,25 +93,49 @@ import AxiosWithAuth from "./AxiosWithAuth";
                  password_confirm,
              });
 
-             const userData = response.data;
+             //const userData = response.data;
              if (response.status === 200 || response.status === 201) {
 
-                 navigate("/Login");
+                 passwordValidation()
+                 setDone(true)
+
              } else {
-                 console.log('Invalid credentials. Please try again.');
+                 console.log('kk');
              }
          } catch (error) {
-             console.log('An error occurred. Please try again.');
+             console.log('invalid token restart the process');
+             setExpiredToken(true);
+             setTimeout(function() {
+                 console.log('process restarted')
+                 navigate("/passwordreset");
+             }, 5000);
          }
-         finally{
-           console.log('dd')
-         }
+         // finally{
+         //   console.log('dd')
+         // }
      }
 
 
 
     return(
         <>
+
+            {done && (<div className="overLaySignUp">
+                <div className="blackbg">
+                    <div className="mainoverlay">
+                        <DoneCompo
+                            img='https://res.cloudinary.com/do5wu6ikf/image/upload/v1688124086/starpenzu/go_l86grv.svg'
+                            donetext='New Password
+                                      Successfully Created.
+                                    '
+
+                            img2='https://res.cloudinary.com/do5wu6ikf/image/upload/v1688124092/starpenzu/f6etyt_twbh6j.svg'
+                            proceedsubtext='Click to Proceed'
+                            ff = '/Login'
+                        />
+                    </div>
+                </div>
+            </div>)}
             <NavBar/>
             <div className="signup">
                 <div className="signupHeader">
@@ -174,6 +200,7 @@ import AxiosWithAuth from "./AxiosWithAuth";
                         {number && (<div className="valid">At least 1 number</div>)}
                         {specialchar && (<div className="valid">1 special Character</div>)}
                         {lowerchar && (<div className="valid">At least 1 lowercase</div>)}
+                        {expiredToken && (<div className="valid">Oops, token expired. The process will restart in 5 secs</div>)}
                     </div>
 
                     <SignInButton

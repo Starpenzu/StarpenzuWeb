@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import NavBar from '../Navbar/NavBar';
@@ -9,8 +9,9 @@ import AxiosWithAuth from "./AxiosWithAuth";
 
 
 export default function PasswordReset (){
-    const[visible, setVisible] = useState(false)
+   // const[visible, setVisible] = useState(false)
     const[email, setEmail] = useState('')
+
     const navigate = useNavigate();
 
 
@@ -42,19 +43,13 @@ export default function PasswordReset (){
             });
 
             if (response.status === 200 || response.status === 201) {
-                // const token = response.data.token;
-                // const fool = 'fool'
-                // localStorage.setItem("ent", token);
-                // localStorage.setItem("dummy", fool);
-                // window.location.reload();
                 console.log(response)
                 console.log("All dodo");
-                // Navigate to the home page after successful login
                 navigate(`/createpassword/${response.data.uidb64}/${response.data.token}`);
-                //console.log(localStorage.getItem("token"))
+
             } else {
                 // setErrorMessage("Invalid credentials. Please try again.");
-                console.log("Invalid credentials. Please try again.");
+                console.log("e did nuh go");
             }
         }
         catch (error) {
@@ -63,13 +58,13 @@ export default function PasswordReset (){
         }
     };
 
-    function handleVisibility(){
-        if(!visible){
-            setVisible(true)
-        }else{
-            setVisible(false)
-        }
-    }
+    // function handleVisibility(){
+    //     if(!visible){
+    //         setVisible(true)
+    //     }else{
+    //         setVisible(false)
+    //     }
+    // }
 
 
     return(
@@ -106,24 +101,6 @@ export default function PasswordReset (){
                         />
                         <label className={`outlined-label ${email ? 'active' : ''}`}>Email</label>
                     </div>
-                    {/*/!* Password *!/*/}
-                    {/*<div className={`outlined-input-container ${formData.password ? 'focused' : ''}`}>*/}
-                    {/*    <input*/}
-                    {/*        type={visible? "text":"password"}*/}
-                    {/*        className="outlined-input"*/}
-                    {/*        name="password"*/}
-                    {/*        value={formData.password}*/}
-                    {/*        ref={inputRefs.current.password}*/}
-                    {/*        onChange={handleChange}*/}
-                    {/*        onFocus={() => handleInputFocus('password')}*/}
-                    {/*        onBlur={() => handleInputBlur('password')}*/}
-                    {/*    />*/}
-                    {/*    <div className="selectvisible" onClick={handleVisibility}>*/}
-                    {/*        <img src={visible ? 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1686996024/View_sf9mqu.svg' : "https://res.cloudinary.com/do5wu6ikf/image/upload/v1686995027/Vector_2_zqswsd.svg"} alt=""/>*/}
-                    {/*    </div>*/}
-                    {/*    <label className={`outlined-label ${formData.password ? 'active' : ''}`}>Password</label>*/}
-                    {/*</div>*/}
-                    {/*<div className="forgotpword">Forgotten Password?</div>*/}
 
                     <SignInButton
                         className='registerBtn loginbtn'

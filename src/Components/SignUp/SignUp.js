@@ -4,13 +4,17 @@ import Footer from '../Footer/Footer';
 import NavBar from '../Navbar/NavBar';
 import SignInButton from './SignInbutton';
 import './SignUp.css';
+import DoneCompo from "./doneCompo";
 import AxioxWithAuth from './AxiosWithAuth'
 let formData = new FormData();
+
+
 
 export default function SignUp() {
     const[visible, setVisible] = useState(false)
     const[uppercase, setUpperCase]= useState(true)
     const[character, setCharacter]= useState(true)
+    const[done, setDone]= useState(false)
     const[pwmatch, setPwMatch]= useState(true)
     const[number, setNumber]= useState(true)
     const[specialchar, setSpecialchar]= useState(true)
@@ -147,6 +151,7 @@ export default function SignUp() {
                     console.log(response.data);
                     if (response.status === 200 || response.status === 201) {
                         console.log("response 200");
+                        setDone(true)
                         // setRegistrationSuccess(true)
                     } else {
                         console.log("An error occurred while uploading user data. Please try again.");
@@ -187,6 +192,26 @@ export default function SignUp() {
 
     return (
         <>
+            {done && (<div className="overLaySignUp">
+                <div className="blackbg">
+                  <div className="mainoverlay">
+                      <DoneCompo
+                          img='https://res.cloudinary.com/do5wu6ikf/image/upload/v1688124086/starpenzu/1st_zdsxup.svg'
+                          donetext='Thank you for joining Starpenzu
+                                    Tech Academy..
+                                    Your Account has been
+                                    successfully created.
+
+                                    '
+
+                          mailtext='Check your mail (spam) for the activation link before signing in'
+                          img2='https://res.cloudinary.com/do5wu6ikf/image/upload/v1688124092/starpenzu/f6etyt_twbh6j.svg'
+                          proceedsubtext='Click to Proceed'
+                          ff = '/'
+                      />
+                  </div>
+                </div>
+            </div>)}
             <NavBar />
             <div className="signup">
                 <div className="signupHeader">

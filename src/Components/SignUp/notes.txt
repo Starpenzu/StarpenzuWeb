@@ -1,7 +1,12 @@
-to do
+To Do
+- Subscribe
+- course card
+- notification
+- Landing page
 
--Sign up
--Login
--Reset pword
--Subscribe
-- protected routing
+
+Done
+-Sign up -Login  - protected routing -Reset pword  - get user info to dash board
+
+
+

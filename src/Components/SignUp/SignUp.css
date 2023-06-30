@@ -14,6 +14,26 @@
     margin-bottom: 10px;
 }
 
+.overLaySignUp{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.blackbg{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 30px;
+}
+
 .valid{
     background: #d4d4d4;
     border-radius: 15px;
@@ -130,6 +150,14 @@
 
 
 @media (min-width: 375px){
+
+    .blackbg {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 0px 40px;
+    }
+
     .pword{
         padding: 0 10px;
         text-align: left;
@@ -176,6 +204,14 @@
 }
 
 @media (min-width: 425px){
+
+    .blackbg {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 0px 67px;
+    }
+
     .outlined{
         width: 363px;
         height: 65px;
@@ -229,6 +265,13 @@
 }
 
 @media (min-width: 560px){
+    .blackbg {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 0px 115px;
+    }
+
     .signupHeader {
         margin-bottom: 35px;
     }
@@ -248,6 +291,14 @@
 }
 
 @media (min-width: 760px){
+
+    .blackbg {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 0px 237px;
+    }
+
     .signup {
         margin-top: 160px;
         text-align: center;
@@ -333,6 +384,15 @@
 }
 
 @media (min-width: 1024px){
+
+    .blackbg {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 0px 337px;
+    }
+
+
     .signupHeader {
         margin-bottom: 50px;
     }
@@ -386,6 +446,21 @@
 }
 
 @media (min-width: 1280px){
+
+    .blackbg {
+        background-color: white;
+        padding: 90px;
+        border-radius: 10px;
+        margin: 0px 482px;
+    }
+
+    /*.blackbg {*/
+    /*    background-color: white;*/
+    /*    padding: 20px;*/
+    /*    border-radius: 10px;*/
+    /*    margin: 0px 482px;*/
+    /*}*/
+
     .signupTitle {
         font-weight: 500;
         font-size: 44px;
@@ -522,24 +597,3 @@
 }
 
 
-@media (max-width: 768px) {
-    /*.wrapper label {*/
-    /*    font-size: 20px;*/
-    /*}*/
-}
-
-/*@media (max-width: 480px) {*/
-/*    !*.wrapper {*!*/
-/*    !*    width: 100%;*!*/
-/*    !*}*!*/
-
-/*!*    .wrapper input,*!*/
-/*!*    .wrapper label {*!*/
-/*!*        width: 90%;*!*/
-/*!*        left: 5%;*!*/
-/*!*    }*!*/
-
-/*!*    .wrapper label {*!*/
-/*!*        font-size: 18px;*!*/
-/*!*    }*!*/
-/*!*}*!*/

@@ -5,12 +5,14 @@ import NavBar from '../Navbar/NavBar';
 import SignInButton from './SignInbutton';
 import './SignUp.css';
 import AxiosWithAuth from './AxiosWithAuth'
+import { useNavigate } from "react-router-dom";
 
 
 export default function Login (){
     const[visible, setVisible] = useState(false)
     const[email, setEmail] = useState('')
     const[password, setPassword] = useState('')
+    const navigate = useNavigate();
 
 
     const inputRefs = useRef({
@@ -51,7 +53,8 @@ export default function Login (){
                 // window.location.reload();
                 console.log("All good");
                 // Navigate to the home page after successful login
-                //navigate("/home");
+                navigate("/");
+                window.location.reload();
                 //console.log(localStorage.getItem("token"))
             } else {
                // setErrorMessage("Invalid credentials. Please try again.");

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import NavBar from '../Navbar/NavBar';
 import Footer from '../Footer/Footer';
 import NotificationProps from './NotificationProp';
@@ -6,14 +6,18 @@ import CertificateProps from './CertificateProps';
 import CompletedProps from './CompletedProps';
 import InprogressProps from './InprogressProps';
 import '../DashBoard/dashboard.css';
+import AxiosWithAuth from "../SignUp/AxiosWithAuth";
 
 
 export default function  DashBoard (){
-    const[myCourses, setMyCourse] = useState(true)
-    const[inprogress, setInProgress] = useState(null)
-    const[completed, setCompleted] = useState(null)
-    const[certificate, setCertificate] = useState(null)
-    const[notification, setNotification] = useState(null)
+    const[myCourses, setMyCourse] = useState(() => true)
+    const[inprogress, setInProgress] = useState(() => null)
+    const[completed, setCompleted] = useState(() => null)
+    const[certificate, setCertificate] = useState(() => null)
+    const[notification, setNotification] = useState(() => null)
+    const[userInfo, setUserInfo] = useState(() => null)
+    const[userGender, setUserGender] = useState(() =>null)
+
 
     const makeactiveCourses ={
         color: myCourses ? '#F9B70B' : '',
@@ -79,6 +83,42 @@ export default function  DashBoard (){
         }
     }
 
+    function handleLogout(){
+        localStorage.clear();
+        window.location.reload();
+    }
+
+
+    useEffect(() => {
+
+        const fetchData = async () => {
+            try {
+                const response = await AxiosWithAuth.get('/user/me/', {
+
+                });
+
+                if (response.status === 200 || response.status === 201) {
+                    setUserInfo(response.data.name)
+                    setUserGender(response.data.gender)
+                    console.log(response.data.gender)
+                }else {
+                    console.log('ori e ti gbale')
+                }
+
+
+                // Access the user info from the response data
+
+
+                // Further processing of the user info
+                // ...
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
     return(
         <>
             <NavBar/>
@@ -92,11 +132,11 @@ export default function  DashBoard (){
                 <div className='centralize'>
                 <div className="myProfileava">
                     <div className="avartar">
-                        <img src='https://res.cloudinary.com/do5wu6ikf/image/upload/v1686802377/starpenzu/Rectangle_ep2xlk.svg' alt=''/>
+                        <img src={userGender === 'M' ? 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1688150957/starpenzu/Rectangle_1_lcolsq.svg' : 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1686802377/starpenzu/Rectangle_ep2xlk.svg'} alt=''/>
                     </div>
 
                     <div className="profname">
-                        Rasheedat Imram
+                        {userInfo}
                     </div>
                 </div>
 
@@ -105,13 +145,13 @@ export default function  DashBoard (){
                <div className="dashProg">
                     <div className="completed round">
                         <div className="titlecompleted">Courses Completed</div>
-                        <div className="titlecompletedno">01</div>
+                        <div className="titlecompletedno">00</div>
 
                     </div>
 
                    <div className="inprogress round">
                        <div className="titlecompleted">Courses in Progress</div>
-                       <div className="titlecompletedno">01</div>
+                       <div className="titlecompletedno">00</div>
                    </div>
 
 
@@ -121,7 +161,7 @@ export default function  DashBoard (){
                             <div className="dashProg2">
                                 <div className="certificate round">
                                     <div className="titlecompleted">Certificate <br/> Earned</div>
-                                    <div className="titlecompletedno">01</div>
+                                    <div className="titlecompletedno">00</div>
                                 </div>
                             </div>
                     </div>
@@ -132,7 +172,7 @@ export default function  DashBoard (){
 
             <div className="dashcontainer2">
                 <div className="profile2">
-                    <div className="logout">
+                    <div className="logout" onClick={handleLogout}>
                         <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1686916316/starpenzu/Vector_lpnux7.svg" alt=""/>
                     </div>
                     <div className="myProfileava2">
@@ -141,7 +181,7 @@ export default function  DashBoard (){
                         </div>
 
                         <div className="profname2">
-                            Rasheedat Imram
+                            {userInfo}
                         </div>
                     </div>
 
@@ -150,13 +190,13 @@ export default function  DashBoard (){
                         <div className="dashProg3">
                             <div className="completed2 round2">
                                 <div className="titlecompleted2">Courses Completed</div>
-                                <div className="titlecompletedno2">01</div>
+                                <div className="titlecompletedno2">00</div>
 
                             </div>
 
                             <div className="inprogress2 round2">
                                 <div className="titlecompleted2">Courses in Progress</div>
-                                <div className="titlecompletedno2">01</div>
+                                <div className="titlecompletedno2">00</div>
                             </div>
 
 
@@ -166,7 +206,7 @@ export default function  DashBoard (){
                         <div className="dashProg4">
                             <div className="certificate2 round2">
                                 <div className="titlecompleted2">Certificate <br/> Earned</div>
-                                <div className="titlecompletedno2">01</div>
+                                <div className="titlecompletedno2">00</div>
                             </div>
                         </div>
                     </div>
