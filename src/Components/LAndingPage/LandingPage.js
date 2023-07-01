@@ -2,8 +2,52 @@ import React from 'react';
 import NavBar from '../Navbar/NavBar';
 import Footer from '../Footer/Footer';
 import './LandingPage.css'
+import { Link } from  'react-router-dom'
+import AxiosWithAuth from "../SignUp/AxiosWithAuth";
 
 export default function LandingPage(){
+
+    const [waitList, setWaitList] = React.useState(() => '')
+    const [changeBtn, setChangeBtn] = React.useState(() => false)
+
+    const email = waitList;
+    localStorage.setItem('waitlist_user', email)
+
+    const clearInput = () => {
+        setWaitList('');
+    };
+
+
+    const handleSubmitClick = async (event) => {
+        event.preventDefault();
+
+
+        try {
+            const response = await AxiosWithAuth.post("/user/subscribe-email/", {
+                email
+            });
+
+            if (response.status === 200 || response.status === 201) {
+                //const token = response.data.token;
+
+                console.log("All good, user subscribed");
+                // Navigate to the home page after successful login
+                // navigate("/
+                clearInput();
+                setChangeBtn(true)
+                // window.location.reload();
+                //console.log(localStorage.getItem("token"))
+            } else {
+                // setErrorMessage("Invalid credentials. Please try again.");
+                console.log("Invalid credentials. Please try again.");
+            }
+        }
+        catch (error) {
+            //setErrorMessage("Invalid credentials. Please try again.");
+            console.log(error);
+        }
+    };
+
     return(
         <>
             <NavBar/>
@@ -20,9 +64,9 @@ export default function LandingPage(){
                         in your tech career and sieze life changing opputunities?
                     </div>
 
-                    <div className="hero-btn">
+                   <Link to='/' className='link-d'> <div className="hero-btn">
                         Get Started
-                    </div>
+                    </div></Link>
 
                 </div>
 
@@ -53,9 +97,29 @@ export default function LandingPage(){
                         you into a knowledgeable and skilled tech expert.
                     </div>
 
-                    <div className="sec-section-btn">
-                        Join The Waiting List
+                    <div className="fourthSection">
+                        <div className="randomContainer">
+                            <div className="fourthText">
+                                Join The Waiting List
+                            </div>
+
+                            <div className="fourthSubtext">
+                                Get Personal Learning Recommendations.
+                            </div>
+
+                            <form onSubmit={handleSubmitClick}>
+                                <input type="email" placeholder={'Enter your mail...'} value={waitList} onChange={(e) => setWaitList(e.target.value)}/>
+                                <button> {changeBtn ? 'Joined' : 'Join'}</button>
+                            </form>
+
+
+                        </div>
+
                     </div>
+
+                    {/*<div className="sec-section-btn">*/}
+                    {/*   */}
+                    {/*</div>*/}
                 </div>
 
                 <div className="third-section">

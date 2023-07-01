@@ -1,7 +1,51 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import AxiosWithAuth from "../SignUp/AxiosWithAuth";
 
 
 export default function Section (){
+    const [subEmail, setSubEmail] = React.useState(() => '')
+    const [changeBtn, setChangeBtn] = React.useState(() => false)
+
+    const email = subEmail;
+    localStorage.setItem('subUser', email)
+
+    const clearInput = () => {
+        setSubEmail('');
+    };
+
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+
+        try {
+            const response = await AxiosWithAuth.post("/user/subscribe-email/", {
+                email
+            });
+
+            if (response.status === 200 || response.status === 201) {
+                //const token = response.data.token;
+
+                console.log("All good, user subscribed");
+                // Navigate to the home page after successful login
+                // navigate("/
+                clearInput();
+                setChangeBtn(true)
+                // window.location.reload();
+                //console.log(localStorage.getItem("token"))
+            } else {
+                // setErrorMessage("Invalid credentials. Please try again.");
+                console.log("Invalid credentials. Please try again.");
+            }
+        }
+        catch (error) {
+            //setErrorMessage("Invalid credentials. Please try again.");
+            console.log(error);
+        }
+    };
+
+
     return(
         <>
             <div className="firstSection">
@@ -56,7 +100,7 @@ export default function Section (){
 
                 <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1684251414/Group_51_htqgza.svg" alt=""/>
 
-                <div className='button'>Register With Us</div>
+                <Link to='/signup' className='link-d'><div className='button'>Register With Us</div></Link>
             </div>
 
 
@@ -115,9 +159,9 @@ export default function Section (){
                         Get Personal Learning Recommendations.
                     </div>
 
-                    <form>
-                        <input type="email" placeholder={'Enter your mail...'}/>
-                        <button>Subscribe</button>
+                    <form onSubmit={handleSubmit}>
+                        <input type="email" placeholder={'Enter your mail...'} value={subEmail} onChange={(e) => setSubEmail(e.target.value)}/>
+                        <button>{changeBtn ? 'Subscribed' : 'Subscribe'}</button>
                     </form>
 
 

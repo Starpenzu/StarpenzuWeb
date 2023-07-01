@@ -133,9 +133,7 @@ export default function  DashBoard (){
                 });
 
                 if (response.status === 200 || response.status === 201) {
-                    // setUserInfo(response.data.name)
-                    // setUserGender(response.data.gender)
-                    // setNick(response.data.username)
+
                     console.log(response)
                 }else {
                     console.log('ori e ti gbale')

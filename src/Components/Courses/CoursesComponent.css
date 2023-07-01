@@ -36,7 +36,7 @@
         letter-spacing: 0.8px;
         font-size: 14px;
         /*width: 107%;*/
-        color: #FFFFFF;
+        color: #262626;
         line-height: 15px;
         margin-top: 21px;
     }
@@ -45,7 +45,8 @@
         width: 87%;
         box-shadow: 6px 2px 24px -17px #8c8d8c;
         color: white;
-        background: #1E1E1E;
+        background: linear-gradient(105.82deg, rgba(249, 183, 11, 0.2) 9.8%, rgba(28, 14, 112, 0.2) 40.18%, rgba(79, 9, 150, 0.2) 78.98%);
+
         text-align: center;
         border-radius: 10px;
         padding: 20px;
@@ -70,7 +71,7 @@
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 500;
-        color: #FFFFFF;
+        color: #262626;
         font-size: 10px;
         margin-top: 10px;
         /*color: #333333;*/
@@ -146,7 +147,10 @@
     .CoursesComponent {
         width: 100%;
         color: white;
-        background: #1E1E1E;
+        background: linear-gradient(105.82deg, rgba(255, 183, 0, 0.1) 2.8%,
+        rgba(47, 3, 255, 0.1) 40.18%,
+        rgba(72, 0, 147, 0.1) 78.98%);
+
         border-radius: 10px;
         padding: 20px;
         margin-bottom: 30px;
