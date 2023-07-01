@@ -18,6 +18,8 @@ export default function  DashBoard (){
     const[userInfo, setUserInfo] = useState(() => null)
     const[userGender, setUserGender] = useState(() =>null)
     const [nick, setNick] = useState(() => null);
+    const [dataBaseCourse, setDataBaseCourse] = useState(() => null);
+
     const localvalue = localStorage.getItem('ent')
 
 
@@ -103,6 +105,7 @@ export default function  DashBoard (){
                     setUserInfo(response.data.name)
                     setUserGender(response.data.gender)
                     setNick(response.data.username)
+                    setDataBaseCourse(response.data.course)
                     console.log(response.data.gender)
                 }else {
                     console.log('ori e ti gbale')
@@ -263,28 +266,35 @@ export default function  DashBoard (){
                             <li style={makeactiveNotifications} onClick={() => handleitemclick('Notifications')}>Notifications</li>
                         </ul>
                     </div>
-                    { myCourses ?
+                    { myCourses && dataBaseCourse === "No Course" ?
                         <div className="myCourses">
-                            <InprogressProps
-                                CompletedProps
-                                imgFirst='https://res.cloudinary.com/do5wu6ikf/image/upload/v1686911910/starpenzu/How-Important-is-UI-UX-Design-in-an-App-Development-Process_4_k6q7yv.svg'
-                                headtext='The complete javascript course 2023: build real projects'
-                                subtext='In Progress'
-                                thirdsegbtn='View Course'
-                            />
+                            {dataBaseCourse === "No Course" ? 'No course available' :
+                                (<>
+                                    <InprogressProps
+                                        CompletedProps
+                                        imgFirst='https://res.cloudinary.com/do5wu6ikf/image/upload/v1686911910/starpenzu/How-Important-is-UI-UX-Design-in-an-App-Development-Process_4_k6q7yv.svg'
+                                        headtext='The complete javascript course 2023: build real projects'
+                                        subtext='In Progress'
+                                        thirdsegbtn='View Course'
+                                    />
 
-                            <CompletedProps
-                                imgFirst='https://res.cloudinary.com/do5wu6ikf/image/upload/v1686911910/starpenzu/How-Important-is-UI-UX-Design-in-an-App-Development-Process_4_k6q7yv.svg'
-                                headtext='The complete javascript course 2023: build real projects'
-                                subtext='Completed'
-                                thirdsegbtn='View Course'
-                            />
+                                    <CompletedProps
+                                        imgFirst='https://res.cloudinary.com/do5wu6ikf/image/upload/v1686911910/starpenzu/How-Important-is-UI-UX-Design-in-an-App-Development-Process_4_k6q7yv.svg'
+                                        headtext='The complete javascript course 2023: build real projects'
+                                        subtext='Completed'
+                                        thirdsegbtn='View Course'
+                                    />
+                                </>) }
+
                         </div>
 
                         : ''
                     }
 
-                    { inprogress ?
+                    { inprogress && dataBaseCourse === "No Course" ? 'No course in Progress'
+                        :
+                        (<>
+                        { inprogress ?
                             <div className="inprogress">
                                 <InprogressProps
                                     CompletedProps
@@ -295,43 +305,59 @@ export default function  DashBoard (){
                                 />
 
                             </div>
-
                             : ''
+                        }
+
+                        </>)
+
+
+
                     }
 
-                    { completed ?
-                        <div className="Completed">
-                            <CompletedProps
-                                imgFirst='https://res.cloudinary.com/do5wu6ikf/image/upload/v1686911910/starpenzu/How-Important-is-UI-UX-Design-in-an-App-Development-Process_4_k6q7yv.svg'
-                                headtext='The complete javascript course 2023: build real projects'
-                                subtext='Completed'
-                                thirdsegbtn='View Course'
-                            />
+                    { completed && dataBaseCourse === "No Course" ? 'No course available or completed' :
 
-                            <CompletedProps
-                                imgFirst='https://res.cloudinary.com/do5wu6ikf/image/upload/v1686911910/starpenzu/How-Important-is-UI-UX-Design-in-an-App-Development-Process_4_k6q7yv.svg'
-                                headtext='The complete javascript course 2023: build real projects'
-                                subtext='Completed'
-                                thirdsegbtn='View Course'
-                            />
+                        (
+                                <>
+                                    {completed ? <div className="Completed">
+                                        <CompletedProps
+                                            imgFirst='https://res.cloudinary.com/do5wu6ikf/image/upload/v1686911910/starpenzu/How-Important-is-UI-UX-Design-in-an-App-Development-Process_4_k6q7yv.svg'
+                                            headtext='The complete javascript course 2023: build real projects'
+                                            subtext='Completed'
+                                            thirdsegbtn='View Course'
+                                        />
 
-                        </div>
+                                        <CompletedProps
+                                            imgFirst='https://res.cloudinary.com/do5wu6ikf/image/upload/v1686911910/starpenzu/How-Important-is-UI-UX-Design-in-an-App-Development-Process_4_k6q7yv.svg'
+                                            headtext='The complete javascript course 2023: build real projects'
+                                            subtext='Completed'
+                                            thirdsegbtn='View Course'
+                                        />
 
-                        : ''
+                                     </div>
+
+                                    : '' }
+                                </>
+
+                        )
                     }
 
-                    { certificate ?
-                            <div className="Certificate">
-                                <CertificateProps
-                                    imgFirst='https://res.cloudinary.com/do5wu6ikf/image/upload/v1686911910/starpenzu/How-Important-is-UI-UX-Design-in-an-App-Development-Process_4_k6q7yv.svg'
-                                    headtext='The complete javascript course 2023: build real projects'
-                                    subtext='Congratulations, your certificate is ready. Proceed to download.'
-                                    thirdsegbtn='Download'
+                    { certificate && dataBaseCourse === "No Course" ? 'No Certificate available' :
+                        (
+                            <>
+                                {certificate ?
+                                    <div className="Certificate">
+                                        <CertificateProps
+                                            imgFirst='https://res.cloudinary.com/do5wu6ikf/image/upload/v1686911910/starpenzu/How-Important-is-UI-UX-Design-in-an-App-Development-Process_4_k6q7yv.svg'
+                                            headtext='The complete javascript course 2023: build real projects'
+                                            subtext='Congratulations, your certificate is ready. Proceed to download.'
+                                            thirdsegbtn='Download'
 
-                                />
-                            </div>
+                                        />
+                                    </div>
 
-                        : ''
+                                    : ''}
+                            </>
+                        )
                     }
 
                     { notification ?
