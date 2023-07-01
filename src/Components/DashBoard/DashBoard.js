@@ -17,6 +17,8 @@ export default function  DashBoard (){
     const[notification, setNotification] = useState(() => null)
     const[userInfo, setUserInfo] = useState(() => null)
     const[userGender, setUserGender] = useState(() =>null)
+    const [nick, setNick] = useState(() => null);
+    const localvalue = localStorage.getItem('ent')
 
 
     const makeactiveCourses ={
@@ -100,6 +102,7 @@ export default function  DashBoard (){
                 if (response.status === 200 || response.status === 201) {
                     setUserInfo(response.data.name)
                     setUserGender(response.data.gender)
+                    setNick(response.data.username)
                     console.log(response.data.gender)
                 }else {
                     console.log('ori e ti gbale')
@@ -119,6 +122,39 @@ export default function  DashBoard (){
         fetchData();
     }, []);
 
+
+
+    useEffect(() => {
+
+        const fetchNotification = async () => {
+            try {
+                const response = await AxiosWithAuth.get(`user/users/${localvalue}/messages/`, {
+
+                });
+
+                if (response.status === 200 || response.status === 201) {
+                    // setUserInfo(response.data.name)
+                    // setUserGender(response.data.gender)
+                    // setNick(response.data.username)
+                    console.log(response)
+                }else {
+                    console.log('ori e ti gbale')
+                }
+
+
+                // Access the user info from the response data
+
+
+                // Further processing of the user info
+                // ...
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        fetchNotification();
+    }, []);
+
     return(
         <>
             <NavBar/>
@@ -136,7 +172,8 @@ export default function  DashBoard (){
                     </div>
 
                     <div className="profname">
-                        {userInfo}
+                        {userInfo}<br/>
+                        <span className='nick'>{nick}</span>
                     </div>
                 </div>
 
@@ -177,11 +214,13 @@ export default function  DashBoard (){
                     </div>
                     <div className="myProfileava2">
                         <div className="avartar2">
-                            <img src='https://res.cloudinary.com/do5wu6ikf/image/upload/v1686802377/starpenzu/Rectangle_ep2xlk.svg' alt=''/>
+                            <img src={userGender === 'M' ? 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1688150957/starpenzu/Rectangle_1_lcolsq.svg' : 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1686802377/starpenzu/Rectangle_ep2xlk.svg'} alt=''/>
+
                         </div>
 
                         <div className="profname2">
                             {userInfo}
+                            <br/><span className='nick'>{nick}</span>
                         </div>
                     </div>
 

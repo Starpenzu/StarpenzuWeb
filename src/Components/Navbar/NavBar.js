@@ -1,18 +1,24 @@
-import React from 'react'
+import React ,{useEffect, useState} from 'react'
 //import Logo from '../../images/favicon.png'
 import Button from './Button'
 import '../Navbar/newNav.css'
 import {Link, useLocation} from "react-router-dom";
+import AxiosWithAuth from "../SignUp/AxiosWithAuth";
 //import harmburger from 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1683922753/starpenzu/Vector_r4aqp6.svg'
+
+
+
+
 
 export default function NavBar() {
     const [hamburger, setHamburger] = React.useState(false)
     const [dashdp, setDashDp] = React.useState(false)
-    //const [isauth, setIsAuth] = React.useState(false)
     const [coursesDp, setCoursesDp] = React.useState(false)
     const [ddMobile, setDdMobile] = React.useState(false)
     const [selectedItem, setSelectedItem] = React.useState(null);
+    const[userGender, setUserGender] = useState(null)
     const location = useLocation();
+
     const mobilenav ={
         color: ddMobile || coursesDp ?'#F9B70B':''
     }
@@ -23,20 +29,7 @@ export default function NavBar() {
 
 
 
-    // React.useEffect(() => {
-    //     function handleLocalStorage(){
-    //         if(checkLocalStorage_II === ''){
-    //             setIsAuth(true)
-    //             console.log('gotten')
-    //         }else{
-    //             setIsAuth(false)
-    //         }
-    //
-    //     }
-    //     handleLocalStorage();
-    //
-    // },
-    //     [])
+
 
     React.useEffect(() => {
         // Update selectedItem state when the location changes
@@ -97,6 +90,35 @@ export default function NavBar() {
         localStorage.clear();
         window.location.reload();
     }
+
+    useEffect(() => {
+
+        const fetchData = async () => {
+            try {
+                const response = await AxiosWithAuth.get('/user/me/', {
+
+                });
+
+                if (response.status === 200 || response.status === 201) {
+                    setUserGender(response.data.gender)
+                    console.log(response.data.gender)
+                }else {
+                    console.log('ori e ti gbale')
+                }
+
+
+                // Access the user info from the response data
+
+
+                // Further processing of the user info
+                // ...
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        fetchData();
+    }, []);
 
     return(
         <div className='sss'>
@@ -178,7 +200,8 @@ export default function NavBar() {
                                 <Link to='/dashboard' className='link-d'>
                                         <div className="dashbth">
 
-                                            <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1686802377/starpenzu/Rectangle_ep2xlk.svg" alt=""/>
+                                            <img src={userGender === 'M' ? 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1688150957/starpenzu/Rectangle_1_lcolsq.svg' : 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1686802377/starpenzu/Rectangle_ep2xlk.svg'} alt=''/>
+
                                             <div className="dashtexttt">My Dashboard</div>
 
                                         </div>

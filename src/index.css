@@ -410,25 +410,25 @@ ul{
     margin-left: 4px;
     color: #F9B70B;
 }
-.lefty{
-padding-left: 20px;
-    padding-right: 5px;
-}
+/*.lefty{*/
+/*padding-left: 20px;*/
+/*    padding-right: 5px;*/
+/*}*/
 
-.coursesContainer{
+.coursesContainer {
     margin: 0 auto;
-
     padding-top: 20px;
-    /*padding-left: 35px;*/
+    /* padding-left: 35px; */
     display: flex;
-    /*justify-content: left;*/
-    /*align-items: center;*/
-    /*flex-direction: column;*/
+    justify-content: space-evenly;
+    /* align-items: center; */
+    /* flex-direction: column; */
     gap: 36px;
     overflow-x: auto;
 }
+
 .feaCourses{
-   margin-bottom: 25px;
+
 }
 
 .headText{
@@ -761,9 +761,12 @@ padding-left: 20px;
     }
 
     .coursesContainer1 {
-        margin-top: 25px;
-        overflow: hidden;
-        /*padding: 0 10px 0 35px;*/
+        margin: 20px;
+        /*padding-block: 28px;*/
+        display: inline-flex;
+        flex-direction: column;
+        align-content: stretch;
+        justify-content: space-evenly;
     }
 }
 
@@ -812,7 +815,7 @@ padding-left: 20px;
     }
 
     .feaCourses{
-        gap: 81px;
+
     }
 
     .peeps1 .name {
@@ -896,7 +899,7 @@ padding-left: 20px;
     }
 
     .feaCourses {
-        gap: 102px;
+
     }
 
     .headText{
@@ -1140,13 +1143,7 @@ padding-left: 20px;
     }
 
     .feaCourses {
-        margin-top: 136px;
-        /*padding: 0 36px 0 36px;*/
-        display: inline-flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        gap: 94px;
+
     }
 
     .headText {
@@ -1504,7 +1501,7 @@ padding-left: 20px;
     }
 
     .feaCourses{
-        gap: 245px;
+
     }
 
 
@@ -1600,7 +1597,7 @@ padding-left: 20px;
     }
 
     .feaCourses {
-        gap: 402px;
+
     }
 
     .peeps {
@@ -1716,7 +1713,7 @@ padding-left: 20px;
     }
 
     .feaCourses {
-        gap: 709px;
+
     }
 
     .firstText{

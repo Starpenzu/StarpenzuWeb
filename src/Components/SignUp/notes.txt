@@ -3,6 +3,7 @@ To Do
 - course card
 - notification
 - Landing page
+- btn state / loading
 
 
 Done

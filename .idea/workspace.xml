@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f79712c9-9ba7-4953-b8cd-f685d0959d32" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/SignUp/done.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/SignUp/doneCompo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Courses/Courses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Courses/Courses.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Courses/CoursesComponent.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Courses/CoursesComponent.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Courses/CoursesComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Courses/CoursesComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/DashBoard/DashBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/DashBoard/DashBoard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/DashBoard/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/DashBoard/dashboard.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Navbar/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Navbar/NavBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SignUp/AxiosWithAuth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SignUp/AxiosWithAuth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SignUp/CreatePassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SignUp/CreatePassword.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SignUp/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SignUp/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SignUp/PasswordReset.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SignUp/PasswordReset.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SignUp/SignUp.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SignUp/SignUp.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SignUp/SignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SignUp/SignUp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/SignUp/notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SignUp/notes.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
@@ -88,7 +82,7 @@
       <option name="presentableId" value="Default" />
       <updated>1688082902230</updated>
       <workItem from="1688082905995" duration="5789000" />
-      <workItem from="1688116618397" duration="27554000" />
+      <workItem from="1688116618397" duration="40818000" />
     </task>
     <servers />
   </component>

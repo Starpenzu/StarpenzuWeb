@@ -14,7 +14,10 @@
     margin-top: 40px;
     padding: 20px 20px 50px 20px;
 }
-
+.nick{
+    font-family: Poppins;
+    font-size: 18px;
+}
 .centralize {
      display: flex;
      text-align: center;
@@ -38,6 +41,7 @@
     margin-bottom: 24px;
     margin-top: 24px;
     line-height: 30px;
+    text-align: center;
 }
 
 .dashProg{
@@ -242,6 +246,7 @@
         font-size: 32px;
         line-height: 48px;
         color: #000000;
+        text-align: center;
     }
 
     .round2 {
