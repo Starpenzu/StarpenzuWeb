@@ -7,6 +7,36 @@ import CompletedProps from './CompletedProps';
 import InprogressProps from './InprogressProps';
 import '../DashBoard/dashboard.css';
 import AxiosWithAuth from "../SignUp/AxiosWithAuth";
+import axios from "axios";
+
+
+// function formatDate(dateString) {
+//     const options = { year: 'numeric', month: 'long', day: 'numeric' };
+//     const date = new Date(dateString);
+//     const formattedDate = date.toLocaleDateString('en-US', options);
+//
+//     const day = date.getDate();
+//     const suffix = getNumberSuffix(day);
+//
+//     return `${day}${suffix} ${formattedDate}`;
+// }
+//
+// function getNumberSuffix(day) {
+//     if (day >= 11 && day <= 13) {
+//         return 'th';
+//     }
+//
+//     switch (day % 10) {
+//         case 1:
+//             return 'st';
+//         case 2:
+//             return 'nd';
+//         case 3:
+//             return 'rd';
+//         default:
+//             return 'th';
+//     }
+// }
 
 
 export default function  DashBoard (){
@@ -19,9 +49,18 @@ export default function  DashBoard (){
     const[userGender, setUserGender] = useState(() =>null)
     const [nick, setNick] = useState(() => null);
     const [dataBaseCourse, setDataBaseCourse] = useState(() => null);
+    const [message, setMessages] = useState(() => null);
+    const [userEmail, setUserEmail] = useState(() => '' || localStorage.getItem('email_a'));
 
-    const localvalue = localStorage.getItem('ent')
+    // const originalDate = message.created_at;
+    // const formattedDate = formatDate(originalDate);
 
+   // const encodedEmail = encodeURIComponent(userEmail);
+    localStorage.setItem('email_a', userEmail)
+    const email = localStorage.getItem('email_a');
+
+
+    console.log(message)
 
     const makeactiveCourses ={
         color: myCourses ? '#F9B70B' : '',
@@ -106,6 +145,8 @@ export default function  DashBoard (){
                     setUserGender(response.data.gender)
                     setNick(response.data.username)
                     setDataBaseCourse(response.data.course)
+                    setUserEmail(response.data.email)
+                    console.log(response.data.email)
                     console.log(response.data.gender)
                 }else {
                     console.log('ori e ti gbale')
@@ -127,17 +168,22 @@ export default function  DashBoard (){
 
 
 
+
+
     useEffect(() => {
 
         const fetchNotification = async () => {
             try {
-                const response = await AxiosWithAuth.get(`user/users/${localvalue}/messages/`, {
+                const response = await axios.get(`http://ec2-18-222-214-188.us-east-2.compute.amazonaws.com/api/user/users/${email}/messages/`, {
+                    headers: {
+                        Authorization: `Token ${localStorage.getItem('ent')}`
 
+                    },
                 });
 
                 if (response.status === 200 || response.status === 201) {
-
-                    console.log(response)
+                    setMessages(response.data)
+                    console.log(response.data)
                 }else {
                     console.log('ori e ti gbale')
                 }
@@ -154,7 +200,14 @@ export default function  DashBoard (){
         };
 
         fetchNotification();
-    }, []);
+    }, [myCourses, notification]);
+
+
+    // Reverse the order of the messages
+    const reversedMessages = Array.isArray(message) ? [...message].reverse() : [];
+
+
+
 
     return(
         <>
@@ -360,21 +413,23 @@ export default function  DashBoard (){
                         )
                     }
 
-                    { notification ?
-                        <div className="Notifications">
-                            <NotificationProps
-                                notificationText='Hello  Rasheedat, Congratulations on completing your Javascript courses, we know it hasn’t
-                                                    been easy so far but we are glad you scaled through. Congratulations once again'
-                                notificationDate='8th June, 2023'
-                            />
+                    { notification && !message  ? <div>No notifications for now, Enjoy the silence </div> :
 
-                            <NotificationProps
-                            notificationText='Hello  Rasheedat, Congratulations on enrolling  for one of our courses, we hope to see you
-                                                become a star player in that field. Enjoy your day. '
-                            notificationDate='8th May, 2023'
-                        />
-                         </div>
-                        : ''
+                        (
+                            <>{ notification ?
+
+                                <div className="Notifications">
+                                    {reversedMessages.map((item) => (
+                                        <NotificationProps key={item} notificationText={item.content} notificationDate={item.created_at}/>
+                                        ))}
+
+                                </div>
+                                        : ''
+                                   }
+
+                            </>
+                        )
+
                     }
 
 
