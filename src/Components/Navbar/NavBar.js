@@ -124,7 +124,7 @@ export default function NavBar() {
         <div className='sss'>
 
         <nav>
-            <Link class='stop' to='/'> <div className="brand">
+            <Link class='stop' to='/landingpage'> <div className="brand">
                     <img src={'https://res.cloudinary.com/do5wu6ikf/image/upload/v1683923725/starpenzu/Starlogo_1_hhmgj6.svg'} className='navLogo'  alt="brand logo"/>
                     <div className="lgText">
                         Starpenzu
