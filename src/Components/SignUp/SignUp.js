@@ -19,7 +19,8 @@ export default function SignUp() {
     const[number, setNumber]= useState(true)
     const[specialchar, setSpecialchar]= useState(true)
     const[lowerchar, setLowerchar]= useState(true)
-    
+    const[genderDropDown, setGenderDropDown]= useState(true)
+
     const [name, setName] = useState(() => localStorage.getItem("fullname") || '')
     const [username, setUsername] = useState(() => localStorage.getItem("username") || '')
   //  const [surname, setSurname] = useState(() => localStorage.getItem("surname") || '')
@@ -29,6 +30,25 @@ export default function SignUp() {
     const [email, setEmail] = useState(() => localStorage.getItem("email") || '')
     const[password, setPassword]= useState('');
     const[confirmPassword, setConfirmpassword]= useState('')
+    // const divRef = useRef();
+    //
+    // useEffect(() => {
+    //     // Function to handle the click event
+    //     const handleClickOutside = (event) => {
+    //         if (divRef.current && !divRef.current.contains(event.target)) {
+    //             // Clicked outside the div, so hide the div
+    //             divRef.current.style.display = 'none';
+    //         }
+    //     };
+    //
+    //     // Add the event listener to the document body
+    //     document.body.addEventListener('click', handleClickOutside);
+    //
+    //     // Clean up the event listener on component unmount
+    //     return () => {
+    //         document.body.removeEventListener('click', handleClickOutside);
+    //     };
+    // }, []);
 
 
     const inputRefs = useRef({
@@ -179,7 +199,21 @@ export default function SignUp() {
         formData.append("whatsapp_number", whatsapp_number);
     }
 
+    function handleGenderDropDown (){
+        if(genderDropDown){
+            setGenderDropDown(false)
+        }else {
+            setGenderDropDown(true)
+        }
+    }
 
+    function handleGenderSelect (x){
+        if(x === 'Male'){
+            setGender('M')
+        }else {
+            setGender('F')
+        }
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -286,8 +320,15 @@ export default function SignUp() {
                             onBlur={() => handleInputBlur('gender')}
                         />
                         <div className="selectgend">
-                            <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1686994453/Group_73_s3ap0w.svg" alt=""/>
+                            <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1686994453/Group_73_s3ap0w.svg" onClick={handleGenderDropDown} alt=""/>
+
                         </div>
+                        {genderDropDown &&
+                            <div  className="genderSelect">
+                            <li onClick={() => handleGenderSelect('Male')}>Male</li>
+                            <li onClick={() => handleGenderSelect('Female')}>Female</li>
+                            </div>
+                        }
                         <label className={`outlined-label ${gender ? 'active' : ''}`}>Gender</label>
                     </div>
                     {/* WhatsApp Number */}
