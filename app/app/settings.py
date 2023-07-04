@@ -63,8 +63,8 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://localhost:8000',
-    'http://ec2-18-222-214-188.us-east-2.compute.amazonaws.com',
-    'http://172.31.24.153:3000'
+    'http://ec2-18-198-55-166.eu-central-1.compute.amazonaws.com',
+    'http://172.31.42.209:3000'
     # Add any other allowed origins here
 ]
 

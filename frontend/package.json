@@ -1,7 +1,7 @@
 {
   "name": "starpenzu",
   "version": "0.2.0",
-  "homepage": "https://Starpenzu.github.io/StarpenzuWeb",
+  "homepage": "http://172.31.42.209/StarpenzuWeb",
   "private": false,
   "dependencies": {
     "@emotion/react": "^11.11.0",
