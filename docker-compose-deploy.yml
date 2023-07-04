@@ -1,5 +1,7 @@
 version: "3.9"
-app:
+
+services:
+#  app:
 #    build:
 #      context: .
 #    restart: always
@@ -22,8 +24,6 @@ app:
 #      - POSTGRES_DB=${DB_NAME}
 #      - POSTGRES_USER=${DB_USER}
 #      - POSTGRES_PASSWORD=${DB_PASS}
-services:
-#
 
   proxy:
     build:
