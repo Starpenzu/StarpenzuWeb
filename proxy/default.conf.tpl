@@ -5,6 +5,9 @@ server {
         alias /vol/static;
     }
 
+    root /home/ubuntu/StarpenzuWeb/frontend/build;
+    index index.html;
+
     location /api {
         uwsgi_pass                  ${APP_HOST}:${APP_PORT};
         include                     /etc/nginx/uwsgi_params;
@@ -12,6 +15,6 @@ server {
     }
 
     location / {
-        proxy_pass http://172.31.42.209:${FRONTEND_PORT};
+        try_files $uri $uri/ /index.html;
     }
 }
