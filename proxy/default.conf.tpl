@@ -1,5 +1,5 @@
 server {
-    listen ${LISTEN_PORT};
+    listen 80;
     server_name 3.66.220.224;
 
     location /static {
