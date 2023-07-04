@@ -36,16 +36,16 @@ services:
     volumes:
       - static-data:/vol/static
 
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: ./Dockerfile
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./frontend:/app
-    depends_on:
-      - app
+#  frontend:
+#    build:
+#      context: ./frontend
+#      dockerfile: ./Dockerfile
+#    ports:
+#      - "3000:3000"
+#    volumes:
+#      - ./frontend:/app
+#    depends_on:
+#      - app
 
 volumes:
   postgres-data:
