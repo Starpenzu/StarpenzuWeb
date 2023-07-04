@@ -1,13 +1,9 @@
 server {
     listen ${LISTEN_PORT};
-    server_name 3.66.220.224;
 
     location /static {
         alias /vol/static;
     }
-
-    root /home/ubuntu/StarpenzuWeb/frontend/build;
-    index index.html;
 
     location /api {
         uwsgi_pass                  ${APP_HOST}:${APP_PORT};
@@ -16,6 +12,6 @@ server {
     }
 
     location / {
-        try_files $uri $uri/ /index.html;
+        proxy_pass http://172.31.42.209:${FRONTEND_PORT};
     }
 }
