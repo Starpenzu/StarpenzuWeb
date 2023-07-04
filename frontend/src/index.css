@@ -158,6 +158,7 @@ nav{
 
 .harmBurger {
     padding-right: 28px;
+    cursor: pointer;
 }
 
 .hamburgerImg{
@@ -719,7 +720,14 @@ ul{
 
 }
 
+.fourthSection button:hover{
+    background: #363636;
+    transition: all ease-in-out 0.5s;
+    color: #F9B70B;
+}
+
 .fourthSection button{
+    cursor: pointer;
     width: 58px;
     height: 28px;
     color: white;

@@ -12,6 +12,9 @@ export default function Login (){
     const[visible, setVisible] = useState(false)
     const[email, setEmail] = useState('')
     const[password, setPassword] = useState('')
+    const[isLoading, setLoading]= useState(false)
+    const[errorMessage, setErrorMessage]= useState(null)
+
     const navigate = useNavigate();
 
 
@@ -50,6 +53,7 @@ export default function Login (){
                 const fool = 'fool'
                 localStorage.setItem("ent", token);
                 localStorage.setItem("dummy", fool);
+                setLoading(false)
                 // window.location.reload();
                 console.log("All good");
                 // Navigate to the home page after successful login
@@ -62,7 +66,7 @@ export default function Login (){
             }
         }
         catch (error) {
-            //setErrorMessage("Invalid credentials. Please try again.");
+            setErrorMessage("Invalid credentials. Please try again.");
             console.log("Invalid credentials. Please try again.");
         }
     };
@@ -75,6 +79,10 @@ export default function Login (){
         }
     }
 
+
+    function handleBtn(){
+        setLoading(true)
+    }
 
     return(
         <>
@@ -129,10 +137,15 @@ export default function Login (){
                     <label className={`outlined-label ${password ? 'active' : ''}`}>Password</label>
                 </div>
                 <div className="forgotpword"><Link className='forgotpword' to='/passwordreset'>Forgotten Password?</Link></div>
+                <div className="validationsec">
+                    {errorMessage && (<div className="valid">{errorMessage}</div>)}
+                </div>
 
                     <SignInButton
-                        className='registerBtn loginbtn'
-                        buttonName='Login'
+                        className='registerBtn loginbtn makepayment'
+                        // className='registerBtn loginbtn'
+                        buttonName={isLoading ? 'Loading...' : 'Login'}
+                        onclick={handleBtn}
                     />
                     <div className="already">Just joining us? <Link className='link-d' to='/signup'><span className="loginn">Sign Up</span></Link></div>
 

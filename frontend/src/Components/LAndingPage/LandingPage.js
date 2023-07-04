@@ -64,7 +64,7 @@ export default function LandingPage(){
                         in your tech career and sieze life changing opputunities?
                     </div>
 
-                   <Link to='/' className='link-d'> <div className="hero-btn">
+                   <Link to='/' className='link-d'> <div className="makepayment hero-btn">
                         Get Started
                     </div></Link>
 
@@ -244,7 +244,7 @@ export default function LandingPage(){
 
                         </div>
 
-                        <div className="sec-section-btn">
+                        <div className="sec-section-btn makepayment">
                             Join The Waiting List
                         </div>
 

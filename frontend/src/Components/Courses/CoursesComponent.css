@@ -85,6 +85,8 @@
     }
 
     .courseSpec {
+        color: #FFFFFF;
+
         background: #F9B70B;
         border-radius: 5px;
         padding: 3px 15px 3px 15px;
@@ -111,7 +113,7 @@
     .courseCTA {
         background: #FFFFFF;
         border-radius: 10px;
-        border: 1px solid #1E1E1E;
+        border: none;
         padding: 4px 56px;
         font-family: 'Clash Display';
         font-style: normal;
@@ -122,6 +124,7 @@
         margin-top: 22px;
         margin-bottom: 10px;
         text-align: center;
+        cursor: pointer;
         /*width: 200px;*/
         /*height: 38px;*/
     }
@@ -189,6 +192,7 @@
     }
 
     .courseSpec {
+        color: #FFFFFF;
         background: #F9B70B;
         border-radius: 10px;
         padding: 8px 15px 9px 15px;
@@ -216,7 +220,7 @@
     .courseCTA {
         background: #ffffff;
         border-radius: 10px;
-        border: 1px solid #1E1E1E;
+        border: none;
         font-family: 'Clash Display';
         font-style: normal;
         font-weight: 500;
@@ -224,7 +228,7 @@
         font-size: 28px;
         line-height: 34px;
         color: black;
-
+        cursor: pointer;
         text-align: center;
         }
 

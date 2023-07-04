@@ -103,7 +103,7 @@ export default function PasswordReset (){
                     </div>
 
                     <SignInButton
-                        className='registerBtn loginbtn'
+                        className='registerBtn loginbtn makepayment'
                         buttonName='Continue'
                     />
                     {/*<div className="already">Just joining us? <Link className='link-d' to='/signup'><span className="loginn">Sign Up</span></Link></div>*/}

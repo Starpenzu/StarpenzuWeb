@@ -100,7 +100,7 @@ export default function Section (){
 
                 <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1684251414/Group_51_htqgza.svg" alt=""/>
 
-                <Link to='/signup' className='link-d'><div className='button'>Register With Us</div></Link>
+                <Link to='/signup' className='link-d'><div className='makepayment button'>Register With Us</div></Link>
             </div>
 
 

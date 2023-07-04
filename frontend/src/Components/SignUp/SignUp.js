@@ -15,11 +15,12 @@ export default function SignUp() {
     const[uppercase, setUpperCase]= useState(true)
     const[character, setCharacter]= useState(true)
     const[done, setDone]= useState(false)
+    const[isLoading, setLoading]= useState(false)
     const[pwmatch, setPwMatch]= useState(true)
     const[number, setNumber]= useState(true)
     const[specialchar, setSpecialchar]= useState(true)
     const[lowerchar, setLowerchar]= useState(true)
-    const[genderDropDown, setGenderDropDown]= useState(true)
+    const[genderDropDown, setGenderDropDown]= useState(false)
 
     const [name, setName] = useState(() => localStorage.getItem("fullname") || '')
     const [username, setUsername] = useState(() => localStorage.getItem("username") || '')
@@ -162,6 +163,8 @@ export default function SignUp() {
         if (isPasswordValid) {
             // ... additional code or actions for a successful password
 
+            setLoading(true)
+
             AxioxWithAuth.post('user/create/', formData, {
                         headers: {
                             "Content-Type": "multipart/form-data",
@@ -172,6 +175,7 @@ export default function SignUp() {
                     if (response.status === 200 || response.status === 201) {
                         console.log("response 200");
                         setDone(true)
+
                         // setRegistrationSuccess(true)
                     } else {
                         console.log("An error occurred while uploading user data. Please try again.");
@@ -182,7 +186,7 @@ export default function SignUp() {
                     console.log(error);
                     // handleError("An error occurred while uploading user data. Please try again.");
                 })
-                .finally(() => console.log('alright'));
+                .finally(() => setLoading(false));
         }
 
     }
@@ -200,10 +204,10 @@ export default function SignUp() {
     }
 
     function handleGenderDropDown (){
-        if(genderDropDown){
-            setGenderDropDown(false)
-        }else {
+        if(!genderDropDown){
             setGenderDropDown(true)
+        }else {
+            setGenderDropDown(false)
         }
     }
 
@@ -222,6 +226,10 @@ export default function SignUp() {
         uploadData();
 
     };
+
+    // function handleBtn(){
+    //     setLoading(true)
+    // }
 
 
     return (
@@ -408,7 +416,8 @@ export default function SignUp() {
                         {lowerchar && (<div className="valid">At least 1 lowercase</div>)}
                     </div>
 
-                    <SignInButton className="registerBtn" buttonName="Register" />
+                    <SignInButton className="registerBtn makepayment" buttonName={isLoading ? 'Loading....' : 'Register'} />
+
                     <div className="already">
                         Already have an account? <Link className="link-d" to="/Login"><span className="loginn">Sign In</span></Link>
                     </div>

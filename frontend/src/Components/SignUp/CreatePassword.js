@@ -12,8 +12,10 @@ import DoneCompo from "./doneCompo";
 
 
 
+
  function CreatePassword (){
 
+     const[isLoading, setLoading]= useState(false)
     const[uppercase, setUpperCase]= useState(true);
     const [expiredToken, setExpiredToken] = useState(false)
     const[character, setCharacter]= useState(true);
@@ -115,7 +117,9 @@ import DoneCompo from "./doneCompo";
          // }
      }
 
-
+     function handleBtn(){
+         setLoading(true)
+     }
 
     return(
         <>
@@ -204,8 +208,9 @@ import DoneCompo from "./doneCompo";
                     </div>
 
                     <SignInButton
-                        className='registerBtn loginbtn'
-                        buttonName='Create'
+                        className='registerBtn loginbtn makepayment'
+                        buttonName={isLoading ? 'Loading...' : 'Create'}
+                        onclick={handleBtn}
                     />
                     {/*<div className="already">Just joining us? <Link className='link-d' to='/signup'><span className="loginn">Sign Up</span></Link></div>*/}
 
