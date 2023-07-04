@@ -24,16 +24,13 @@ SECRET_KEY = os.environ.get('SECRET_KEY','changeme')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(os.environ.get('DEBUG',0)))
 
-DEBUG = True
-ALLOWED_HOSTS = ['localhost',
-                 '127.0.0.1',
-                 'http://localhost:8000',]
-# ALLOWED_HOSTS.extend(
-#     filter(
-#         None,
-#         os.environ.get('ALLOWED_HOSTS','').split(',')
-#     )
-# )
+ALLOWED_HOSTS = []
+ALLOWED_HOSTS.extend(
+    filter(
+        None,
+        os.environ.get('ALLOWED_HOSTS','').split(',')
+    )
+)
 # Application definition
 
 INSTALLED_APPS = [
@@ -66,8 +63,8 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://localhost:8000',
-    'http://ec2-18-222-214-188.us-east-2.compute.amazonaws.com',
-    'http://172.31.24.153:3000'
+    'http://ec2-18-198-55-166.eu-central-1.compute.amazonaws.com',
+    'http://172.31.42.209:3000'
     # Add any other allowed origins here
 ]
 
