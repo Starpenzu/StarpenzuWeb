@@ -1,6 +1,6 @@
 server {
     listen ${LISTEN_PORT};
-    server_name 18.194.84.190;
+    server_name 18.196.102.188;
 
     location /static {
         alias /vol/static;

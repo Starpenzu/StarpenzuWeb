@@ -61,7 +61,7 @@ export default function MyNotification (){
 
         const fetchNotification = async () => {
             try {
-                const response = await axios.get(`http://ec2-18-194-84-190.eu-central-1.compute.amazonaws.com/api/user/users/${email}/messages/`, {
+                const response = await axios.get(`http://ec2-18-196-102-188.eu-central-1.compute.amazonaws.com/api/user/users/${email}/messages/`, {
                     headers: {
                         Authorization: `Token ${localStorage.getItem('ent')}`
 
