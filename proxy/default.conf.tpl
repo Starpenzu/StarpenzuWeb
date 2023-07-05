@@ -8,8 +8,8 @@ server {
     listen 443 ssl;
     server_name starpenzu.tech;
 
-    ssl_certificate /cert.pem;
-    ssl_certificate_key /privkey.pem;
+    ssl_certificate /etc/nginx/cert.pem;
+    ssl_certificate_key /etc/nginx/privkey.pem;
 
     location /static {
         alias /vol/static;
