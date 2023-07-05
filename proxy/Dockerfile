@@ -4,6 +4,9 @@ LABEL maintainer="TheOptimust"
 COPY /build /usr/share/nginx/html
 COPY ./default.conf.tpl /etc/nginx/default.conf.tpl
 COPY ./uwsgi_params /etc/nginx/uwsgi_params
+COPY ./cert.pem /etc/nginx/cert.pem
+COPY ./privkey.pem /etc/nginx/privkey.pem
+COPY ./fullchain.pem /etc/nginx/fullchain.pem
 COPY ./run.sh /run.sh
 
 ENV LISTEN_PORT=8000

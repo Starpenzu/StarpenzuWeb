@@ -34,9 +34,6 @@ services:
     ports:
       - 80:8000
     volumes:
-      - ./proxy/cert.pem:/etc/nginx/cert.pem
-      - ./proxy/privkey.pem:/etc/nginx/privkey.pem
-      - ./proxy/fullchain.pem:/etc/nginx/fullchain.pem
       - static-data:/vol/static
 
   frontend:
