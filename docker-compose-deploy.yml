@@ -34,7 +34,6 @@ services:
     ports:
       - 80:8000
     volumes:
-      - ./frontend/build:/usr/share/nginx/html
       - static-data:/vol/static
 
 #  frontend:

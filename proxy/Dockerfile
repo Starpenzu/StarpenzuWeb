@@ -17,6 +17,9 @@ RUN mkdir -p /vol/static && \
     touch /etc/nginx:nginx /etc/nginx/conf.d/default.conf && \
     chmod +x /run.sh
 
+# Copy the frontend build files
+COPY ./frontend/build /usr/share/nginx/html
+
 VOLUME /vol/static
 
 USER nginx
