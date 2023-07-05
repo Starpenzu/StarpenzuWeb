@@ -1,5 +1,5 @@
 server {
-    listen 80;
+    listen ${LISTEN_PORT};
     server_name starpenzu.tech;
     return 301 https://$host$request_uri;
 }
