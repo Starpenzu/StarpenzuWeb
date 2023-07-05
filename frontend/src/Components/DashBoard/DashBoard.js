@@ -174,7 +174,7 @@ export default function  DashBoard (){
 
         const fetchNotification = async () => {
             try {
-                const response = await axios.get(`http://ec2-18-198-55-166.eu-central-1.compute.amazonaws.com/api/user/users/${email}/messages/`, {
+                const response = await axios.get(`http://ec2-18-194-84-190.eu-central-1.compute.amazonaws.com/api/user/users/${email}/messages/`, {
                     headers: {
                         Authorization: `Token ${localStorage.getItem('ent')}`
 

@@ -1,5 +1,6 @@
 server {
     listen ${LISTEN_PORT};
+    server_name 18.194.84.190;
 
     location /static {
         alias /vol/static;
@@ -12,6 +13,8 @@ server {
     }
 
     location / {
-        proxy_pass http://172.31.42.209:${FRONTEND_PORT};
+        root /usr/share/nginx/html;
+        index index.html;
+        try_files $uri $uri/ /index.html;
     }
 }

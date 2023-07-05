@@ -34,18 +34,19 @@ services:
     ports:
       - 80:8000
     volumes:
+      - ./frontend/build:/usr/share/nginx/html
       - static-data:/vol/static
 
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: ./Dockerfile
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./frontend:/app
-    depends_on:
-      - app
+#  frontend:
+#    build:
+#      context: ./frontend
+#      dockerfile: ./Dockerfile
+#    ports:
+#      - "3000:3000"
+#    volumes:
+#      - ./frontend:/app
+#    depends_on:
+#      - app
 
 volumes:
   postgres-data:
