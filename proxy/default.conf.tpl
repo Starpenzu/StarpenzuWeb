@@ -8,8 +8,8 @@ server {
     listen 443 ssl;
     server_name starpenzu.tech;
 
-    ssl_certificate /etc/letsencrypt/live/starpenzu.tech/cert.pem;
-    ssl_certificate_key /etc/letsencrypt/live/starpenzu.tech/privkey.pem;
+    ssl_certificate /cert.pem;
+    ssl_certificate_key /privkey.pem;
 
     location /static {
         alias /vol/static;
