@@ -34,6 +34,9 @@ services:
     ports:
       - 80:8000
     volumes:
+      - /etc/letsencrypt/live/starpenzu.tech/cert.pem:/etc/nginx/cert.pem
+      - /etc/letsencrypt/live/starpenzu.tech/privkey.pem:/etc/nginx/privkey.pem
+      - /etc/letsencrypt/live/starpenzu.tech/fullchain.pem:/etc/nginx/fullchain.pem
       - static-data:/vol/static
 
   frontend:
