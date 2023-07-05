@@ -1,6 +1,7 @@
 FROM nginxinc/nginx-unprivileged:1-alpine
 LABEL maintainer="TheOptimust"
 
+COPY /build /usr/share/nginx/html
 COPY ./default.conf.tpl /etc/nginx/default.conf.tpl
 COPY ./uwsgi_params /etc/nginx/uwsgi_params
 COPY ./run.sh /run.sh
@@ -17,8 +18,6 @@ RUN mkdir -p /vol/static && \
     touch /etc/nginx:nginx /etc/nginx/conf.d/default.conf && \
     chmod +x /run.sh
 
-# Copy the frontend build files
-COPY ./frontend/build /usr/share/nginx/html
 
 VOLUME /vol/static
 
