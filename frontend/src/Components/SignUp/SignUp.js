@@ -153,7 +153,7 @@ export default function SignUp() {
 
         let isPasswordValid = isCharacterValid && isLowerCharValid && isUpperCharValid && isNumberValid && isSpecialCharValid && isPasswordMatchValid;
 
-        setCharacter(!isCharacterValid);
+        setCharacter(!isCharacterValid); //gvsdd
         setLowerchar(!isLowerCharValid);
         setUpperCase(!isUpperCharValid);
         setNumber(!isNumberValid);
