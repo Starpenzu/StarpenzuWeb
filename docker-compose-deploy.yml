@@ -31,23 +31,25 @@ services:
     restart: always
     depends_on:
       - app
+      - frontend
     ports:
-      - 80:8000
+      - 80:80
       - 443:8000
+      - 8080:3000
     volumes:
       - static-data:/vol/static
+      - react_build:/var/www/react
 
   frontend:
     build:
       context: ./frontend
       dockerfile: ./Dockerfile
-    ports:
-      - "3000:3000"
     volumes:
-      - ./frontend:/app
+      - react_build:/frontend/build
     depends_on:
       - app
 
 volumes:
   postgres-data:
   static-data:
+  react_build:

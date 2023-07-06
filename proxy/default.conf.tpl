@@ -1,5 +1,6 @@
 server {
     listen ${LISTEN_PORT} ssl;
+    listen 8080 ssl;
     server_name starpenzu.tech www.starpenzu.com;
 
     ssl_certificate /etc/nginx/cert.pem;
@@ -16,7 +17,7 @@ server {
     }
 
     location / {
-        proxy_pass http://172.31.42.209:${FRONTEND_PORT};
+        root /var/www/react;
     }
 }
 
