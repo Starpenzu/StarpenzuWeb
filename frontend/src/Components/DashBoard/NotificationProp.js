@@ -2,14 +2,17 @@ import React from 'react';
 import './NotificatioProps.css';
 
 function formatDate(dateTimeString) {
-    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true };
     const date = new Date(dateTimeString);
-    const formattedDateTime = date.toLocaleDateString('en-US', options);
+    const formattedDateTime = date.toLocaleString('en-US', options);
 
     const day = date.getDate();
     const suffix = getNumberSuffix(day);
 
-    return `${day}${suffix} ${formattedDateTime}`;
+    // Remove the day value from the formatted date string
+    const formattedDate = formattedDateTime.replace(`${day}${suffix}`, '');
+
+    return `${formattedDate.trim()} ${formattedDateTime.substr(formattedDateTime.length)}`;
 }
 
 function getNumberSuffix(day) {
@@ -28,7 +31,6 @@ function getNumberSuffix(day) {
             return 'th';
     }
 }
-
 
 export default function NotificationProps (props){
     const formattedDate = formatDate(props.notificationDate)
