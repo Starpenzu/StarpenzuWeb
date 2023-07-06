@@ -3,7 +3,7 @@ import axios from 'axios';
 
 
 const axiosWithAuth = axios.create({
-    baseURL: 'http://ec2-18-196-102-188.eu-central-1.compute.amazonaws.com/api/',
+    baseURL: 'https://starpenzu.tech/api/',
     headers: {
         Authorization: `Token ${localStorage.getItem('ent')}`
 
