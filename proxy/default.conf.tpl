@@ -1,12 +1,11 @@
 server {
     listen ${LISTEN_PORT} ssl;
-    listen 8080 ssl;
     server_name starpenzu.tech www.starpenzu.com;
 
     ssl_certificate /etc/nginx/cert.pem;
     ssl_certificate_key /etc/nginx/privkey.pem;
 
-    location /static {
+    location /static_ {
         alias /vol/static;
     }
 
