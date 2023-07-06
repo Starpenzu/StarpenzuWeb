@@ -11,6 +11,7 @@ import AxiosWithAuth from "./AxiosWithAuth";
 export default function PasswordReset (){
    // const[visible, setVisible] = useState(false)
     const[email, setEmail] = useState('')
+    const[errorMessage, setErrorMessage] = useState('')
 
     const navigate = useNavigate();
 
@@ -53,7 +54,7 @@ export default function PasswordReset (){
             }
         }
         catch (error) {
-            //setErrorMessage("Invalid credentials. Please try again.");
+            setErrorMessage("Invalid credentials. Please try again.");
             console.log("Invalid credentials. Please try again.");
         }
     };
@@ -100,6 +101,10 @@ export default function PasswordReset (){
                             onBlur={() => handleInputBlur('email')}
                         />
                         <label className={`outlined-label ${email ? 'active' : ''}`}>Email</label>
+                    </div>
+
+                    <div className="validationsec">
+                        {errorMessage && (<div className="valid">{errorMessage}</div>)}
                     </div>
 
                     <SignInButton

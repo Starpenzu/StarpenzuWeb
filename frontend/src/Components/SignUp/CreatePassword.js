@@ -112,9 +112,9 @@ import DoneCompo from "./doneCompo";
                  navigate("/passwordreset");
              }, 5000);
          }
-         // finally{
-         //   console.log('dd')
-         // }
+         finally{
+             setLoading(false)
+         }
      }
 
      function handleBtn(){

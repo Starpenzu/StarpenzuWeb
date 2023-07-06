@@ -69,6 +69,9 @@ export default function Login (){
             setErrorMessage("Invalid credentials. Please try again.");
             console.log("Invalid credentials. Please try again.");
         }
+        finally {
+            setLoading(false)
+        }
     };
 
     function handleVisibility(){
