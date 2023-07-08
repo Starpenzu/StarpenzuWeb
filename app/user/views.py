@@ -75,7 +75,7 @@ class ActivateView(generics.GenericAPIView):
         user = User.objects.activate(token)
         if user:
             # Redirect to a success page
-            return redirect('starpenzu.com')
+            return redirect('https://starpenzu.tech')
         else:
             # Return an error response
             return Response({'error': 'Invalid activation token'}, status=status.HTTP_400_BAD_REQUEST)
@@ -163,7 +163,7 @@ class ResendActivationView(APIView):
         activation_link = reverse('core:activate', kwargs={'token': token})
         email_subject = 'Activate your account'
         current_site = get_current_site(request)
-        email_body = f'Please click the following link to activate your account: http://{current_site.domain}{activation_link}'
+        email_body = f'Please click the following link to activate your account: https://{current_site.domain}{activation_link}'
         email = EmailMessage(subject=email_subject, body=email_body, to=[email],
                              from_email='landingpage@jaromtravels.com')
         email.send()

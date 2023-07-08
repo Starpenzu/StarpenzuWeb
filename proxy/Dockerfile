@@ -9,7 +9,7 @@ COPY ./privkey.pem /etc/nginx/privkey.pem
 COPY ./fullchain.pem /etc/nginx/fullchain.pem
 COPY ./run.sh /run.sh
 
-ENV LISTEN_PORT=8000
+ENV LISTEN_PORT=443
 ENV APP_HOST=app
 ENV APP_PORT=9000
 ENV FRONTEND_PORT=3000

@@ -33,19 +33,19 @@ services:
       - app
     ports:
       - 80:80
-      - 443:8000
+      - 443:443
     volumes:
       - static-data:/vol/static
       - react_build:/var/www/react
 
-#  frontend:
-#    build:
-#      context: ./frontend
-#      dockerfile: ./Dockerfile
-#    volumes:
-#      - react_build:/frontend/build
-#    depends_on:
-#      - app
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ./Dockerfile
+    volumes:
+      - react_build:/frontend/build
+    depends_on:
+      - app
 
 volumes:
   postgres-data:

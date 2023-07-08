@@ -1,11 +1,12 @@
 server {
     listen ${LISTEN_PORT} ssl;
+    listen 80;
     server_name starpenzu.tech www.starpenzu.com;
 
     ssl_certificate /etc/nginx/cert.pem;
     ssl_certificate_key /etc/nginx/privkey.pem;
 
-    location /static_ {
+    location /assets {
         alias /vol/static;
     }
 
@@ -16,7 +17,7 @@ server {
     }
 
     location / {
-        root /var/www/react;
+        proxy_pass http://frontend:${FRONTEND_PORT};
     }
 }
 
