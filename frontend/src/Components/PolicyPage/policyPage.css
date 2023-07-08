@@ -1,0 +1,103 @@
+.heroSec{
+    margin-top: 40px;
+    color: #FFFFFF;
+    background: black;
+    text-align: center;
+}
+
+.PrivacyHeroText{
+    color: #FFF;
+    font-family: Clash Display;
+    font-size: 24px;
+    font-style: normal;
+    padding: 57px 0;
+}
+
+.privacyMain{
+    color: #000;
+    font-family: Poppins;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.privacyHead{
+    font-family: Clash Display;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 0.15em;
+    text-align: left;
+
+}
+
+.privacyBody{
+ margin: 20px;
+
+}
+
+@media (min-width: 425px){
+    .privacyBody{
+        margin: 30px;
+
+    }
+    .privacyMain{
+        font-size: 12px;
+    }
+
+    .privacyHead{
+        font-size: 16px;
+    }
+}
+
+
+@media (min-width: 760px){
+    .privacyBody{
+        margin: 40px;
+
+    }
+
+    .privacyMain{
+        font-size: 14px;
+    }
+
+    .privacyHead{
+        font-size: 20px;
+    }
+
+    .heroSec{
+        margin-top: 100px;
+    }
+
+    .PrivacyHeroText{
+        color: #FFF;
+        font-family: Clash Display;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        padding: 170px 0;
+    }
+}
+
+
+@media (min-width: 1024px){
+
+    .privacyBody{
+        margin: 50px;
+
+    }
+    .PrivacyHeroText{
+        font-size: 80px;
+    }
+
+    .privacyMain{
+        font-size: 17px;
+    }
+
+    .privacyHead{
+        font-size: 25px;
+    }
+
+}

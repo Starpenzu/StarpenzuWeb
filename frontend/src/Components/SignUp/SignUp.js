@@ -5,7 +5,7 @@ import NavBar from '../Navbar/NavBar';
 import SignInButton from './SignInbutton';
 import './SignUp.css';
 import DoneCompo from "./doneCompo";
-import AxioxWithAuth from './AxiosWithAuth'
+import AxiosWithAuth from './AxiosWithAuth'
 let formData = new FormData();
 
 
@@ -21,6 +21,7 @@ export default function SignUp() {
     const[specialchar, setSpecialchar]= useState(true)
     const[lowerchar, setLowerchar]= useState(true)
     const[genderDropDown, setGenderDropDown]= useState(false)
+    const[handleErrror, setHandleErrror]= useState('')
 
     const [name, setName] = useState(() => localStorage.getItem("fullname") || '')
     const [username, setUsername] = useState(() => localStorage.getItem("username") || '')
@@ -31,25 +32,7 @@ export default function SignUp() {
     const [email, setEmail] = useState(() => localStorage.getItem("email") || '')
     const[password, setPassword]= useState('');
     const[confirmPassword, setConfirmpassword]= useState('')
-    // const divRef = useRef();
-    //
-    // useEffect(() => {
-    //     // Function to handle the click event
-    //     const handleClickOutside = (event) => {
-    //         if (divRef.current && !divRef.current.contains(event.target)) {
-    //             // Clicked outside the div, so hide the div
-    //             divRef.current.style.display = 'none';
-    //         }
-    //     };
-    //
-    //     // Add the event listener to the document body
-    //     document.body.addEventListener('click', handleClickOutside);
-    //
-    //     // Clean up the event listener on component unmount
-    //     return () => {
-    //         document.body.removeEventListener('click', handleClickOutside);
-    //     };
-    // }, []);
+
 
 
     const inputRefs = useRef({
@@ -129,7 +112,7 @@ export default function SignUp() {
 
         uploadToLocal();
 
-        // Clean-up function
+        // my Clean-up function
         return () => {
             localStorage.removeItem('fullname');
             localStorage.removeItem('username');
@@ -165,7 +148,7 @@ export default function SignUp() {
 
             setLoading(true)
 
-            AxioxWithAuth.post('user/create/', formData, {
+            AxiosWithAuth.post('user/create/', formData, {
                         headers: {
                             "Content-Type": "multipart/form-data",
                         },
@@ -176,15 +159,14 @@ export default function SignUp() {
                         console.log("response 200");
                         setDone(true)
 
-                        // setRegistrationSuccess(true)
                     } else {
                         console.log("An error occurred while uploading user data. Please try again.");
-                        // handleError("An error occurred while uploading user data. Please try again.");
+
                     }
                 })
                 .catch((error) => {
                     console.log(error);
-                    // handleError("An error occurred while uploading user data. Please try again.");
+                    setHandleErrror("An error occurred while uploading user data. Please try again.");
                 })
                 .finally(() => setLoading(false));
         }
@@ -203,10 +185,12 @@ export default function SignUp() {
         formData.append("whatsapp_number", whatsapp_number);
     }
 
+
     function handleGenderDropDown (){
         if(!genderDropDown){
             setGenderDropDown(true)
-        }else {
+        }
+        else {
             setGenderDropDown(false)
         }
     }
@@ -214,8 +198,15 @@ export default function SignUp() {
     function handleGenderSelect (x){
         if(x === 'Male'){
             setGender('M')
+            setTimeout(function (){
+                setGenderDropDown(false)
+            }, 200)
+
         }else {
             setGender('F')
+            setTimeout(function (){
+                setGenderDropDown(false)
+            }, 200)
         }
     }
 
@@ -227,9 +218,6 @@ export default function SignUp() {
 
     };
 
-    // function handleBtn(){
-    //     setLoading(true)
-    // }
 
 
     return (
@@ -414,6 +402,7 @@ export default function SignUp() {
                         {number && (<div className="valid">At least 1 number</div>)}
                         {specialchar && (<div className="valid">1 special Character</div>)}
                         {lowerchar && (<div className="valid">At least 1 lowercase</div>)}
+                        {handleErrror && (<div className="valid">{handleErrror}</div>)}
                     </div>
 
                     <SignInButton className="registerBtn makepayment" buttonName={isLoading ? 'Loading....' : 'Register'} />

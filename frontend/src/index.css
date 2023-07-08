@@ -16,6 +16,28 @@ body{
     cursor: pointer;
 }
 
+.co1{
+
+    background: rgba(254, 188, 184, 0.50);
+}
+
+.peeps1{
+    margin-bottom: 25px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.co2{
+    background: rgba(255, 232, 166, 0.50);
+
+}
+
+.co3{
+    background: rgba(191, 233, 252, 0.50);
+
+}
+
+
 .stop{
     margin-top: 5px;
     text-decoration: none;
@@ -66,9 +88,15 @@ body{
     gap: 20px;
 }
 
+.ffs:hover{
+    color: #F9B70B;
+
+}
+
 .link-d{
     text-decoration: none;
     color: unset;
+    cursor: pointer;
 }
 
 
@@ -91,6 +119,11 @@ nav{
 .hamBurgerActive{
     color: #F9B70B;
 
+}
+
+.lineHeight{
+    line-height: 10px;
+    margin: 4px 0;
 }
 
 .dashboard{
@@ -181,6 +214,8 @@ nav{
     top: 31px;
     left: 0;
     right: 0;
+    height: 60vh;
+    overflow-y: auto;
     z-index: -100;
 }
 
@@ -189,6 +224,7 @@ nav{
 /*}*/
 
 .harmBurgerDropDown ul li{
+    cursor: pointer;
     list-style: none;
     font-size: 24px;
     font-weight: 500;
@@ -220,11 +256,9 @@ footer{
     color: white;
     display: inline-flex;
     flex-direction: row;
-    gap: 35px;
+    gap: 10px;
     width: 100%;
     justify-content: center;
-    /*margin-top: 50px;*/
-    /* z-index: -1000000; */
 }
 
 .rightSeg{
@@ -232,6 +266,7 @@ footer{
 }
 
 footer h1{
+    width: 116%;
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
@@ -610,10 +645,18 @@ ul{
 
 .peeps{
     margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+
 }
 
-.peeps1{
+.peeps1 {
+    width: 70%;
     margin-bottom: 25px;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .peeps1 img{
@@ -632,7 +675,7 @@ ul{
     margin-bottom: 6px;
 }
 
-.peeps1 .notes{
+.peeps1 .notes {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
@@ -640,9 +683,10 @@ ul{
     line-height: 12px;
     text-align: center;
     color: #000000;
-    width: 69%;
+    width: 98%;
     margin: 0 auto;
 }
+
 .overlay{
     position: relative;
     bottom: 218px;
@@ -665,12 +709,19 @@ ul{
 .randomContainer{
     padding: 25px;
     text-align: center;
-    margin: 0 auto 50px auto;
+    margin: 0 auto 10px auto;
     background: #F9B70B;
     border-radius: 5px;
     width: 255px;
     height: 85px;
     /*margin-bottom: 50px;*/
+}
+
+.fourthSection{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    align-items: center;
 }
 
 .fourthText{
@@ -783,6 +834,9 @@ ul{
     /*    width: 82%;*/
     /*    margin: 0 auto;*/
     /*}*/
+    footer{
+        gap: 30px;
+    }
 
     .peeps1 .notes {
         font-family: 'Poppins';
@@ -792,7 +846,7 @@ ul{
         line-height: 14px;
         text-align: center;
         color: #000000;
-        width: 69%;
+        width: 99%;
         margin: 0 auto;
     }
 
@@ -944,6 +998,11 @@ ul{
         height: 58px;
     }
 
+    .lineHeight{
+        margin: 6px 0;
+    }
+
+
     .navLogo {
         width: 66px;
         height: 66px;
@@ -980,13 +1039,18 @@ ul{
         line-height: 17px;
         text-align: center;
         color: #000000;
-        width: 46%;
+        width: 82%;
         margin: 0 auto;
     }
 
 }
 
 @media (min-width: 760px){
+
+    .peeps1{
+        width: unset;
+    }
+
     .signupTitle-subtext{
         font-family: Poppins;
         margin-top: 13px;
@@ -1391,6 +1455,13 @@ ul{
 
 
 @media (min-width: 1024px){
+
+
+    .lineHeight{
+        margin: 18px 0;
+    }
+
+
     .allcourses {
         font-family: 'Clash Display';
         font-style: normal;
@@ -1611,12 +1682,16 @@ ul{
     .peeps {
         display: flex;
         flex-direction: row;
-        gap: 195px;
+        gap: 83px;
     }
-
 }
 
 @media (min-width: 1300px) {
+
+    .harmBurgerDropDown{
+        display: none;
+    }
+
     .harmBurger{
         display: none;
     }
@@ -1633,6 +1708,10 @@ ul{
 
 
 /*    footer*/
+    .lineHeight {
+        margin: 30px 0;
+    }
+
     footer ul li {
         font-size: 16px;
         margin-bottom: 24px;
@@ -1767,7 +1846,7 @@ ul{
 
     .coursesContainer {
         display: block;
-        padding-left: 125px;
+        /*padding-left: 125px;*/
     }
 
     .courcesContainer2 {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import NavBar from '../Navbar/NavBar';
 import Footer from '../Footer/Footer';
 import './LandingPage.css'
@@ -6,8 +6,11 @@ import { Link } from  'react-router-dom'
 import AxiosWithAuth from "../SignUp/AxiosWithAuth";
 
 export default function LandingPage(){
+    const waitListRef = useRef(null);
 
     const [waitList, setWaitList] = React.useState(() => '')
+    const [show, setShow] = React.useState(() => '')
+    const [show1, setShow1] = React.useState(() => '')
     const [changeBtn, setChangeBtn] = React.useState(() => false)
 
     const email = waitList;
@@ -31,6 +34,8 @@ export default function LandingPage(){
                 //const token = response.data.token;
 
                 console.log("All good, user subscribed");
+                setShow1('Subscription Successful')
+                setShow('')
                 // Navigate to the home page after successful login
                 // navigate("/
                 clearInput();
@@ -39,13 +44,19 @@ export default function LandingPage(){
                 //console.log(localStorage.getItem("token"))
             } else {
                 // setErrorMessage("Invalid credentials. Please try again.");
-                console.log("Invalid credentials. Please try again.");
+
             }
         }
         catch (error) {
+            setShow('Subscription Unsuccessful')
+            setShow1('')
             //setErrorMessage("Invalid credentials. Please try again.");
             console.log(error);
         }
+    };
+
+    const handleScrollClick = () => {
+        waitListRef.current.scrollIntoView({ behavior: 'smooth' });
     };
 
     return(
@@ -90,7 +101,7 @@ export default function LandingPage(){
                     </div>
                 </div>
 
-                <div className="second-section">
+                <div className="second-section" ref={waitListRef}>
                     <div className="second-section-text">
                         At Starpenzu Tech Academy, we are dedicated to helping you realize
                         your aspirations by providing extensive training that will transform
@@ -113,6 +124,12 @@ export default function LandingPage(){
                             </form>
 
 
+
+                        </div>
+
+                        <div className="validationsec">
+                            {show && (<div className="valid ssaa">{show}</div>)}
+                            {show1 && (<div className="valid ssaa">{show1}</div>)}
                         </div>
 
                     </div>
@@ -158,35 +175,51 @@ export default function LandingPage(){
                     </div>
 
                     <div className="peeps">
-                        <div className="peeps1">
-                            <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1684272184/starpenzu/Starpenzu%20%28Copy%29%20%282%29/Rectangle-2_njg3hr.svg" alt=""/>
-                            <div className="name">Ajadi  Michael</div>
+                        <div className="peeps1 co1">
+                            <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1688763915/starpenzu/Mask_group_dv9wlp.svg" alt=""/>
+                            <div className="name">Daniel Agoobola</div>
                             <div className="notes">
-                                I believe in lifelong learning and Starpenzu is
-                                a great place to learn from experts. I’ve learned
-                                a lot and recommended it to all my friends.
+                                I would recommend Starpenzu Tech Academy
+                                to any aspiring tech expert looking forward to upskilling
+                                themselves into an elite level.
+                                The tutors offer a practical oriented teaching system,
+                                they are very patient and  they pay attention to little details to
+                                ensure that students learn effectively and implement efficiently.
+                                The training was really impactful in my journey from a
+                                tech enthusiast to a professional.
                             </div>
                         </div>
 
-                        <div className="peeps1">
-                            <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1684272184/starpenzu/Starpenzu%20%28Copy%29%20%282%29/Rectangle-1_mk1d5u.svg" alt=""/>
-                            <div className="name">Sebastian Promise</div>
+                        <div className="peeps1 co2">
+                            <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1688763912/starpenzu/IMG-20230626-WA0006_1_ifxyem.svg" alt=""/>
+                            <div className="name">Inioluwa Olaleye</div>
                             <div className="notes">
-                                I believe in lifelong learning and Starpenzu is
-                                a great place to learn from experts. I’ve learned
-                                a lot and recommended it to all my friends.
+                                Starpenzu Tech Academy has been very beneficial in
+                                helping me carve my resume. The Management team did a great job
+                                of following up on their student and ensuring they get the
+                                complete tech training experience.
+                                They ensured that we kept being productive by giving us
+                                assignments to practice all we’ve learnt. They also sent videos
+                                and messages to my mail to help me in my training process.
+                                This Academy will be one of the biggest
+                                training platforms in year’s to come, keep up the good work guys.
                             </div>
 
                         </div>
 
-                        <div className="peeps1">
-                            <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1684272184/starpenzu/Starpenzu%20%28Copy%29%20%282%29/Rectangle_g9lguq.svg" alt=""/>
+                        <div className="peeps1 co3">
+                            <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1688763910/starpenzu/Mask_group_1_uvcg46.svg" alt=""/>
 
-                            <div className="name">Olalekan Tunmise</div>
+                            <div className="name">Gbolahan Salahudeen</div>
                             <div className="notes">
-                                I believe in lifelong learning and Starpenzu is
-                                a great place to learn from experts. I’ve learned
-                                a lot and recommended it to all my friends.
+                                Firstly, I want to show my appreciation to Starpenzu Academy
+                                for the oppurtunity they have given me to learn more about data
+                                analysis, I joined at a time when I had no knowledge on
+                                what data analysis entails.
+                                Secondly, the teachings process was flexible and in 3 weeks
+                                I had acquired te essential knowledge needed to become a
+                                top analyst and all of this would not be possible if not for Starpenzu
+                                Tech Academy.
                             </div>
                         </div>
 
@@ -228,23 +261,13 @@ export default function LandingPage(){
 
                     <div className="sec3">
                         <div className="sec3-text">
-                            Be a part of this cohort and select any of these courses you would like to
-                            learn. Where we'll take you from noob to pro,,from student to master and
-                            zero to Hero in your tech career. This is the right place to know more about
-                            tech and elevate your status. <br/>
-                            <span className="makeYellow specss">
-                                    WARNING!!!
-                                </span>
-                            <br/>
-
-                            This training is not for you if you are not ready to learn and implement
-                            brutally. We are more concerned about your interest and willingness to
-                            become an expert in that tech skill you want to learn which would take
-                            your career to the next level.
-
+                            Be a part of this cohort and select any of these courses you would like to learn.
+                            Where we'll take you from noob to pro,from student to master and from zero to Hero
+                            in your tech career. This is the right place to know more about
+                            tech and elevate your status.
                         </div>
 
-                        <div className="sec-section-btn makepayment">
+                        <div className="sec-section-btn makepayment gg" onClick={handleScrollClick}>
                             Join The Waiting List
                         </div>
 

@@ -1,20 +1,37 @@
-import React from 'react';
-import Slider from 'react-slick';
+import React, {useEffect, useRef} from 'react';
 import CoursesComponent from './CoursesComponent'
-import {Link, useLocation} from "react-router-dom";
+import {useLocation} from "react-router-dom";
 
-export default function Courses(){
 
-        const settings = {
-            dots: true,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-        };
 
-        return (
-            <div className='lefty'>
+export default function Courses({ refProp }){
+
+        // const settings = {
+        //     dots: true,
+        //     infinite: true,
+        //     speed: 500,
+        //     slidesToShow: 1,
+        //     slidesToScroll: 1,
+        // };
+
+
+    const courseRef = useRef(null);
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.hash === '#course-section') {
+            window.scrollTo({
+                top: courseRef.current.offsetTop,
+                behavior: 'smooth',
+            });
+        }
+    }, [location]);
+
+
+
+
+    return (
+            <div className='lefty' ref={courseRef} >
 
                 <div className='coursesContainer'>
                     <div className="feaCourses">

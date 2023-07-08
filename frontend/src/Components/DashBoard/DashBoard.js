@@ -265,6 +265,7 @@ export default function  DashBoard (){
                 <div className="profile2">
                     <div className="logout" onClick={handleLogout}>
                         <img src="https://res.cloudinary.com/do5wu6ikf/image/upload/v1686916316/starpenzu/Vector_lpnux7.svg" alt=""/>
+                        <p>Logout</p>
                     </div>
                     <div className="myProfileava2">
                         <div className="avartar2">

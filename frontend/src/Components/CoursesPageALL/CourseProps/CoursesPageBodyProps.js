@@ -70,12 +70,12 @@ export default function CoursesPageBodyProps (props){
                 <CoursesPageContent courses={props.coursedata} />
 
             </div>
-
+            <a href="https://wa.me/message/6PVZWPUTB6KSN1">
            <SignInButton
                 className={changeButton ? 'registerBtn loginbtn makepaymentactive':'registerBtn loginbtn makepayment'}
                 buttonName={changeButton ? 'In progress' : 'Proceed to Pay'}
                 onclick={handleBtnChange}
-            />
+            /></a>
 
 
 

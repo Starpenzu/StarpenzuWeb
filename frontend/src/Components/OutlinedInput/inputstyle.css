@@ -53,12 +53,14 @@
 }
 
 .selectgend{
+    cursor: pointer;
     position: absolute;
     right: 11px;
     top: 7px;
 }
 
 .selectvisible{
+    cursor: pointer;
     position: absolute;
     right: 11px;
     top: 16px;

@@ -213,12 +213,15 @@
         display: none;
     }
 
-    .logout{
-        padding-top: 10px;
+    .logout {
+        display: flex;
+        padding-top: 0;
+        gap: 5px;
         text-align: right;
         cursor: pointer;
+        justify-content: flex-end;
+        align-items: center;
     }
-
     .dashcontainer2{
         display: flex;
         background: #eff1ef;

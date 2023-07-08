@@ -13,7 +13,11 @@ import MyCertificate from "../src/Components/DashBoard/MyCertificate";
 import MyNotification from "../src/Components/DashBoard/MyNotification";
 import LandingPage from "../src/Components/LAndingPage/LandingPage";
 import PasswordReset from "../src/Components/SignUp/PasswordReset";
-import CreatePassword from "../src/Components/SignUp/CreatePassword";
+import CreatePassword from "../src/Components/SignUp/CreatePassword"
+import PrivacyPage from "./Components/PolicyPage/PrivacyPage";
+import TermsAndConditionPage from "./Components/PolicyPage/TermsAndConditionPage";
+
+
 
 function App() {
     const checkLocalStorage = localStorage.getItem("ent");
@@ -26,6 +30,8 @@ function App() {
                 <Route exact path="/" element={<Home />} />
                 <Route exact path="/signup" element={<SignUp />} />
                 <Route exact path="/Login" element={<Login />} />
+                <Route exact path="/tncpage" element={<TermsAndConditionPage />} />
+                <Route exact path="/privacypage" element={<PrivacyPage />} />
                 <Route exact path="/passwordreset" element={<PasswordReset />} />
                 <Route
                     exact

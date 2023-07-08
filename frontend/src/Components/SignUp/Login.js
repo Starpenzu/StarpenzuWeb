@@ -50,24 +50,22 @@ export default function Login (){
 
             if (response.status === 200 || response.status === 201) {
                 const token = response.data.token;
-                const fool = 'fool'
                 localStorage.setItem("ent", token);
-                localStorage.setItem("dummy", fool);
+
                 setLoading(false)
-                // window.location.reload();
-                console.log("All good");
-                // Navigate to the home page after successful login
+
                 navigate("/");
+
                 window.location.reload();
-                //console.log(localStorage.getItem("token"))
+
             } else {
-               // setErrorMessage("Invalid credentials. Please try again.");
+
                 console.log("Invalid credentials. Please try again.");
             }
         }
         catch (error) {
             setErrorMessage("Invalid credentials. Please try again.");
-            console.log("Invalid credentials. Please try again.");
+
         }
         finally {
             setLoading(false)
