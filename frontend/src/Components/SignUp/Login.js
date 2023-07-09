@@ -37,9 +37,30 @@ export default function Login (){
         }
     };
 
+    const clearCookies = () => {
+
+        const csrfTokenCookie = document.cookie.split(';').find(cookie => cookie.trim().startsWith('csrftoken='));
+
+        if (csrfTokenCookie) {
+            document.cookie = "csrftoken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=starpenzu.tech; path=/;";
+
+        }
+
+        const sessionIdCookie = document.cookie.split(';').find(cookie => cookie.trim().startsWith('sessionid='));
+        if (sessionIdCookie) {
+
+            document.cookie = "sessionid=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=starpenzu.tech; path=/;";
+        }
+
+
+
+    }
+
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+
+        clearCookies();
 
 
         try {
@@ -63,6 +84,7 @@ export default function Login (){
                 console.log("Invalid credentials. Please try again.");
             }
         }
+
         catch (error) {
             setErrorMessage("Invalid credentials. Please try again.");
 
@@ -70,6 +92,7 @@ export default function Login (){
         finally {
             setLoading(false)
         }
+
     };
 
     function handleVisibility(){
