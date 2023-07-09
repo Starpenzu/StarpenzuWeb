@@ -1,6 +1,5 @@
 server {
     listen ${LISTEN_PORT} ssl;
-    listen 80;
     server_name starpenzu.tech www.starpenzu.com;
 
     ssl_certificate /etc/nginx/cert.pem;
