@@ -11,6 +11,7 @@ let formData = new FormData();
 
 
 export default function SignUp() {
+
     const[visible, setVisible] = useState(false)
     const[uppercase, setUpperCase]= useState(true)
     const[character, setCharacter]= useState(true)
@@ -22,14 +23,21 @@ export default function SignUp() {
     const[lowerchar, setLowerchar]= useState(true)
     const[genderDropDown, setGenderDropDown]= useState(false)
     const[handleErrror, setHandleErrror]= useState('')
+    //
+    // const storedName = localStorage.getItem("fullname");
+    // const storedUsername = localStorage.getItem("username");
+    // const storedDOB = localStorage.getItem("DOB");
+    // const storedGender = localStorage.getItem("gender");
+    // const storedWhatsappNum = localStorage.getItem("whatsappNum");
+    // const storedEmail = localStorage.getItem("email");
 
-    const [name, setName] = useState(() => localStorage.getItem("fullname") || '')
-    const [username, setUsername] = useState(() => localStorage.getItem("username") || '')
+    const [name, setName] = useState( '')
+    const [username, setUsername] = useState(  '')
   //  const [surname, setSurname] = useState(() => localStorage.getItem("surname") || '')
-    const [date_of_birth, setDate_of_birth] = useState(() => localStorage.getItem("DOB") || '')
-    const [gender, setGender] = useState(() => localStorage.getItem("gender") || '')
-    const [whatsapp_number, setWhatsapp_number] = useState(() => localStorage.getItem("whatsappNum") || '')
-    const [email, setEmail] = useState(() => localStorage.getItem("email") || '')
+    const [date_of_birth, setDate_of_birth] = useState(  '')
+    const [gender, setGender] = useState( '')
+    const [whatsapp_number, setWhatsapp_number] = useState('')
+    const [email, setEmail] = useState( '')
     const[password, setPassword]= useState('');
     const[confirmPassword, setConfirmpassword]= useState('')
 
@@ -45,6 +53,26 @@ export default function SignUp() {
         password: useRef(null),
         confirmPassword: useRef(null),
     });
+
+    const clearCookies = () => {
+
+        const csrfTokenCookie = document.cookie.split(';').find(cookie => cookie.trim().startsWith('csrftoken='));
+
+        if (csrfTokenCookie) {
+            document.cookie = "csrftoken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=starpenzu.tech; path=/;";
+
+        }
+
+        const sessionIdCookie = document.cookie.split(';').find(cookie => cookie.trim().startsWith('sessionid='));
+        if (sessionIdCookie) {
+
+            document.cookie = "sessionid=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=starpenzu.tech; path=/;";
+        }
+
+
+
+    }
+
 
 
 
@@ -112,21 +140,20 @@ export default function SignUp() {
 
         uploadToLocal();
 
-        // my Clean-up function
         return () => {
             localStorage.removeItem('fullname');
             localStorage.removeItem('username');
-            //localStorage.removeItem('firstname');
             localStorage.removeItem('DOB');
             localStorage.removeItem('gender');
             localStorage.removeItem('whatsappNum');
             localStorage.removeItem('email');
         };
-    }, [name, date_of_birth, gender, whatsapp_number, email, username]);
+    }, [name, username, date_of_birth, gender, whatsapp_number, email]);
 
 
 
     function passwordValidation (){
+
         let isCharacterValid = password.length >= 8;
         let isLowerCharValid = password.match(/[a-z]/);
         let isUpperCharValid = password.match(/[A-Z]/);
@@ -136,46 +163,24 @@ export default function SignUp() {
 
         let isPasswordValid = isCharacterValid && isLowerCharValid && isUpperCharValid && isNumberValid && isSpecialCharValid && isPasswordMatchValid;
 
-        setCharacter(!isCharacterValid); //gvsdd
+        setCharacter(!isCharacterValid);
         setLowerchar(!isLowerCharValid);
         setUpperCase(!isUpperCharValid);
         setNumber(!isNumberValid);
         setSpecialchar(!isSpecialCharValid);
         setPwMatch(!isPasswordMatchValid);
 
+
         if (isPasswordValid) {
-            // ... additional code or actions for a successful password
 
-            setLoading(true)
-
-            AxiosWithAuth.post('user/create/', formData, {
-                        headers: {
-                            "Content-Type": "multipart/form-data",
-                        },
-                    })
-                .then((response) => {
-                    console.log(response.data);
-                    if (response.status === 200 || response.status === 201) {
-                        console.log("response 200");
-                        setDone(true)
-
-                    } else {
-                        console.log("An error occurred while uploading user data. Please try again.");
-
-                    }
-                })
-                .catch((error) => {
-                    console.log(error);
-                    setHandleErrror("An error occurred while uploading user data. Please try again.");
-                })
-                .finally(() => setLoading(false));
+          uploadData();
+          SendToAPI();
         }
-
     }
 
 
     function uploadData (){
-        passwordValidation();
+
         formData.append("name", name);
         formData.append("email", email);
         formData.append("password", password);
@@ -210,11 +215,54 @@ export default function SignUp() {
         }
     }
 
+    function SendToAPI (){
+        const storedName = localStorage.getItem("fullname");
+        const storedUsername = localStorage.getItem("username");
+        const storedDOB = localStorage.getItem("DOB");
+        const storedGender = localStorage.getItem("gender");
+        const storedWhatsappNum = localStorage.getItem("whatsappNum");
+        const storedEmail = localStorage.getItem("email");
+
+
+        clearCookies();
+        setLoading(true)
+
+
+        if(storedName && storedUsername && storedDOB && storedGender && storedWhatsappNum && storedEmail){
+            AxiosWithAuth.post('user/create/', formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            })
+                .then((response) => {
+                    console.log(response.data);
+                    if (response.status === 200 || response.status === 201) {
+                        console.log("response 200");
+                        setDone(true)
+
+                    } else {
+                        console.log("An error occurred while uploading user data. Please try again.");
+
+                    }
+                })
+                .catch((error) => {
+                    console.log(error);
+                    setHandleErrror("An error occurred while uploading user data. Please try again.");
+                })
+                .finally(() => setLoading(false));
+
+        }else {
+            console.log('wahala')
+
+        }
+
+    }
+
+
     const handleSubmit = (event) => {
         event.preventDefault();
         // Add your form submission logic here
-        passwordValidation()
-        uploadData();
+        passwordValidation();
 
     };
 

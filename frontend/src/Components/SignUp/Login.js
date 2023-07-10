@@ -6,7 +6,26 @@ import SignInButton from './SignInbutton';
 import './SignUp.css';
 import AxiosWithAuth from './AxiosWithAuth'
 import { useNavigate } from "react-router-dom";
+import { encrypt } from  '../Security'
 
+export const clearCookies = () => {
+
+    const csrfTokenCookie = document.cookie.split(';').find(cookie => cookie.trim().startsWith('csrftoken='));
+
+    if (csrfTokenCookie) {
+        document.cookie = "csrftoken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=starpenzu.tech; path=/;";
+
+    }
+
+    const sessionIdCookie = document.cookie.split(';').find(cookie => cookie.trim().startsWith('sessionid='));
+    if (sessionIdCookie) {
+
+        document.cookie = "sessionid=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=starpenzu.tech; path=/;";
+    }
+
+
+
+}
 
 export default function Login (){
     const[visible, setVisible] = useState(false)
@@ -37,24 +56,9 @@ export default function Login (){
         }
     };
 
-    const clearCookies = () => {
-
-        const csrfTokenCookie = document.cookie.split(';').find(cookie => cookie.trim().startsWith('csrftoken='));
-
-        if (csrfTokenCookie) {
-            document.cookie = "csrftoken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=starpenzu.tech; path=/;";
-
-        }
-
-        const sessionIdCookie = document.cookie.split(';').find(cookie => cookie.trim().startsWith('sessionid='));
-        if (sessionIdCookie) {
-
-            document.cookie = "sessionid=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=starpenzu.tech; path=/;";
-        }
 
 
 
-    }
 
 
     const handleSubmit = async (event) => {
@@ -71,7 +75,8 @@ export default function Login (){
 
             if (response.status === 200 || response.status === 201) {
                 const token = response.data.token;
-                localStorage.setItem("ent", token);
+
+                localStorage.setItem("ent", encrypt(token));
 
                 setLoading(false)
 
@@ -181,3 +186,4 @@ export default function Login (){
         </>
     )
 }
+
