@@ -17,6 +17,8 @@ import CreatePassword from "../src/Components/SignUp/CreatePassword"
 import PrivacyPage from "./Components/PolicyPage/PrivacyPage";
 import TermsAndConditionPage from "./Components/PolicyPage/TermsAndConditionPage";
 import VideoPage from "./Components/VideoPage/VideoPage";
+import AboutUs from "./Components/PolicyPage/AboutUs";
+import HelpSupport from "./Components/PolicyPage/HelpSupport";
 
 
 
@@ -33,6 +35,8 @@ function App() {
                 <Route exact path="/Login" element={<Login />} />
                 <Route exact path="/tncpage" element={<TermsAndConditionPage />} />
                 <Route exact path="/privacypage" element={<PrivacyPage />} />
+                <Route exact path="/aboutuspage" element={<AboutUs />} />
+                <Route exact path="/helpSupportpage" element={<HelpSupport />} />
                 <Route exact path="/passwordreset" element={<PasswordReset />} />
                 <Route exact path="/videopage" element={<VideoPage />} />
                 <Route

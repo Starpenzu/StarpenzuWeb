@@ -5,6 +5,11 @@
     text-align: center;
 }
 
+.makekHighlight{
+    color: #F9B70B;
+    cursor: pointer;
+}
+
 .PrivacyHeroText{
     color: #FFF;
     font-family: Clash Display;

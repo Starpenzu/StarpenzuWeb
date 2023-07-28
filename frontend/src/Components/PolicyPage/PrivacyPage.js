@@ -23,9 +23,9 @@ export default function PrivacyPage(){
                     of our users. This Privacy Policy outlines how we collect,
                     use, disclose, and safeguard the information you provide
                     to us through our website, services, and other interactions.
-                    By accessing or using our services, you consent to the practices
+                    By accessing or using our services, you consent to the pactices
                     described in this policy.
-                </p>
+                </p>r
 
                 <p className="privacyHead">Information We Collect:</p>
 

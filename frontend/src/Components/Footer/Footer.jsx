@@ -33,12 +33,20 @@ export default function Footer(){
                     <div className="companySeg">
                         <h1 className='companyHead'>Company</h1>
                         <ul>
-                            <li>About Us</li>
+                            <Link to='/aboutuspage' onClick={scrollToTop} className='link-d ffs'>
+                                <li>About Us</li>
+                            </Link>
+
                                 <a className='link-d ffs'
                                    href="https://wa.me/message/6PVZWPUTB6KSN1">
                                     <li>Contact Us</li>
                                 </a>
-                            <li>Help and Support</li>
+
+                            <Link to='/helpSupportpage' onClick={scrollToTop} className='link-d ffs'>
+                                <li>Help and Support</li>
+                            </Link>
+
+
                                 <Link to='/privacypage' onClick={scrollToTop} className='link-d ffs'>
                                     <li>Privacy Policy</li>
                                 </Link>

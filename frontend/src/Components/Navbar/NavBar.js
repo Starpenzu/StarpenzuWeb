@@ -41,6 +41,8 @@ export default function NavBar() {
             setSelectedItem('item3');
         }else if(location.pathname === '/Login'){
             setSelectedItem('item4');
+        }else if(location.pathname === '/aboutuspage'){
+            setSelectedItem('item5');
         }else {
             setSelectedItem(null);
         }
@@ -143,7 +145,7 @@ export default function NavBar() {
 
                 <div className="navItems">
                     <ul>
-                        <Link className='link-d'  to='/'>
+                        <Link className='link-d link-d ffs'  to='/'>
                             <li
                             className={selectedItem === 'item1' ? 'clickedActive' : ''}
                             onClick={() => handleItemClick('item1')}
@@ -178,9 +180,16 @@ export default function NavBar() {
                         }
 
 
-                        {/*<li>dash</li>*/}
-                        <li>Contact Us</li>
-                        <li>About Us</li>
+                        <a className='link-d ffs'
+                           href="https://wa.me/message/6PVZWPUTB6KSN1">
+                            <li>Contact Us</li>
+                        </a>
+                        <Link className='link-d link-d ffs'  to='/aboutuspage'>
+                            <li
+                                className={selectedItem === 'item5' ? 'clickedActive' : ''}
+                                onClick={() => handleItemClick('item5')}
+                            >About Us</li>
+                        </Link>
                         { isAuthenticated ?
                             (
                                 <div className="auth">
@@ -274,9 +283,18 @@ export default function NavBar() {
                             }
                         </div>)}
 
+                        <a className='link-d ffs'
+                           href="https://wa.me/message/6PVZWPUTB6KSN1">
+                            <li>Contact Us</li>
+                        </a>
 
-                        <li>Contact Us</li>
-                        <li>About Us</li>
+
+                        <Link to='/aboutuspage' className='link-d'>
+                            <li
+                                className={selectedItem === 'item5' ? 'clickedActive' : ''}
+                                onClick={() => handleItemClick('item5')}
+                            >About Us</li>
+                        </Link>
                         {!isAuthenticated ?
                             (
                                 <li className="logout--" onClick={handleLogout}>
