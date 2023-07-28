@@ -136,7 +136,7 @@ export default function NavBar() {
                     {!hamburger? <img src={"https://res.cloudinary.com/do5wu6ikf/image/upload/v1683922718/starpenzu/Vector_hgh9j9.svg"}
                           className='hamburgerImg' onClick={handlehamburger} alt="ham"/> :
                         <img src={"https://res.cloudinary.com/do5wu6ikf/image/upload/v1683922753/starpenzu/Vector_r4aqp6.svg"}
-                                                                                                className='hamburgerImg'  onClick={handlehamburger} alt="ham"/>}
+                         className='hamburgerImg'  onClick={handlehamburger} alt="ham"/>}
                 </div>
 
                 {/*show on 1024px*/}

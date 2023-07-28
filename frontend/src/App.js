@@ -16,6 +16,7 @@ import PasswordReset from "../src/Components/SignUp/PasswordReset";
 import CreatePassword from "../src/Components/SignUp/CreatePassword"
 import PrivacyPage from "./Components/PolicyPage/PrivacyPage";
 import TermsAndConditionPage from "./Components/PolicyPage/TermsAndConditionPage";
+import VideoPage from "./Components/VideoPage/VideoPage";
 
 
 
@@ -33,6 +34,7 @@ function App() {
                 <Route exact path="/tncpage" element={<TermsAndConditionPage />} />
                 <Route exact path="/privacypage" element={<PrivacyPage />} />
                 <Route exact path="/passwordreset" element={<PasswordReset />} />
+                <Route exact path="/videopage" element={<VideoPage />} />
                 <Route
                     exact
                     path="/createpassword/:uidb64/:token"

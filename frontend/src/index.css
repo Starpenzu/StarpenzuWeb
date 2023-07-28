@@ -1579,10 +1579,11 @@ ul{
         font-size: 16px;
     }
 
-    .feaCourses{
 
+    .feaCourses {
+        display: flex;
+        flex-direction: column;
     }
-
 
     .peeps1 .name {
         font-family: 'Clash Display';

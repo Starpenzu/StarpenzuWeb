@@ -212,7 +212,7 @@ import DoneCompo from "./doneCompo";
                         buttonName={isLoading ? 'Loading...' : 'Create'}
                         onclick={handleBtn}
                     />
-                    {/*<div className="already">Just joining us? <Link className='link-d' to='/signup'><span className="loginn">Sign Up</span></Link></div>*/}
+
 
 
                 </form>
