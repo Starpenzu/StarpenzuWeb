@@ -19,12 +19,19 @@ import TermsAndConditionPage from "./Components/PolicyPage/TermsAndConditionPage
 import VideoPage from "./Components/VideoPage/VideoPage";
 import AboutUs from "./Components/PolicyPage/AboutUs";
 import HelpSupport from "./Components/PolicyPage/HelpSupport";
+import UIUXData from './Components/CoursesPageALL/UIUX/accordionData';
+import DJANGOData from './Components/CoursesPageALL/Django/accordionData';
+import FRONTENDData from './Components/CoursesPageALL/Frontend/accordionData';
+import {decrypt} from "./Components/Security";
+
 
 
 
 function App() {
-    const checkLocalStorage = localStorage.getItem("ent");
-    const isAuthenticated = checkLocalStorage === null || checkLocalStorage === "";
+
+    const entToken = localStorage.getItem('ent');
+    // const checkLocalStorage = localStorage.getItem("ent");
+    const isAuthenticated = entToken === 'true' ? true : false//checkLocalStorage === null || checkLocalStorage === "";
 
     return (
         <Router>
@@ -33,12 +40,12 @@ function App() {
                 <Route exact path="/" element={<Home />} />
                 <Route exact path="/signup" element={<SignUp />} />
                 <Route exact path="/Login" element={<Login />} />
-                <Route exact path="/tncpage" element={<TermsAndConditionPage />} />
+                <Route exact path="/signup" element={<TermsAndConditionPage />} />
                 <Route exact path="/privacypage" element={<PrivacyPage />} />
                 <Route exact path="/aboutuspage" element={<AboutUs />} />
                 <Route exact path="/helpSupportpage" element={<HelpSupport />} />
                 <Route exact path="/passwordreset" element={<PasswordReset />} />
-                <Route exact path="/videopage" element={<VideoPage />} />
+                <Route exact path="/videopage/:videoId" element={<VideoPage />} />
                 <Route
                     exact
                     path="/createpassword/:uidb64/:token"
@@ -48,77 +55,77 @@ function App() {
                     exact
                     path="/coursespageuiux"
                     element={
-                        isAuthenticated ? (
-                            <Navigate to="/Login" replace />
-                        ) : (
-                            <CoursesPageUIUX />
-                        )
+                        // isAuthenticated ? (
+                        //     <Navigate to="/Login" replace />
+                        // ) : (
+                            <CoursesPageUIUX accordionData={UIUXData}/>
+                        // )
                     }
                 />
                 <Route
                     exact
                     path="/coursespagedjango"
                     element={
-                        isAuthenticated ? (
-                            <Navigate to="/Login" replace />
-                        ) : (
-                            <CoursesPageDjango />
-                        )
+                        // isAuthenticated ? (
+                        //     <Navigate to="/Login" replace />
+                        // ) : (
+                            <CoursesPageDjango accordionData={DJANGOData}/>
+                        // )
                     }
                 />
                 <Route
                     exact
                     path="/coursespagefe"
                     element={
-                        isAuthenticated ? (
-                            <Navigate to="/Login" replace />
-                        ) : (
-                            <CoursesPageFE />
-                        )
+                        // isAuthenticated ? (
+                        //     <Navigate to="/Login" replace />
+                        // ) : (
+                            <CoursesPageFE accordionData={FRONTENDData} />
+                    //     )
                     }
                 />
                 <Route
                     exact
                     path="/dashboard"
                     element={
-                        isAuthenticated ? (
-                            <Navigate to="/Login" replace />
-                        ) : (
+                        // isAuthenticated ? (
+                        //     <Navigate to="/Login" replace />
+                        // ) : (
                             <DashBoard />
-                        )
+                        // )
                     }
                 />
                 <Route
                     exact
                     path="/mycourses"
                     element={
-                        isAuthenticated ? (
-                            <Navigate to="/Login" replace />
-                        ) : (
+                        // isAuthenticated ? (
+                        //     <Navigate to="/Login" replace />
+                        // ) : (
                             <MyCourses />
-                        )
+                        // )
                     }
                 />
                 <Route
                     exact
                     path="/mycerti"
                     element={
-                        isAuthenticated ? (
-                            <Navigate to="/Login" replace />
-                        ) : (
+                        // isAuthenticated ? (
+                        //     <Navigate to="/Login" replace />
+                        // ) : (
                             <MyCertificate />
-                        )
+                        // )
                     }
                 />
                 <Route
                     exact
                     path="/mynoti"
                     element={
-                        isAuthenticated ? (
-                            <Navigate to="/Login" replace />
-                        ) : (
+                        // isAuthenticated ? (
+                        //     <Navigate to="/Login" replace />
+                        // ) : (
                             <MyNotification />
-                        )
+                        // )
                     }
                 />
             </Routes>

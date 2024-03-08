@@ -5,7 +5,8 @@ const accordionData = [
         img2: 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1685243073/starpenzu/arrowup_pjrati.svg',
         locked: true, //if changed to false it will be unlocked  works for all
         imgLock: 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1685242709/starpenzu/lock_tssaht.svg',
-        stages: ['Downloading & Installation of Figma on your PC']
+        stages: ['Intro to Django', 'Models in Django'],
+        videoIds: ['rHux0gMZ3Eg', 'i5JykvxUk_A', ]
     },
     {
         title: 'Understanding Design Basics',

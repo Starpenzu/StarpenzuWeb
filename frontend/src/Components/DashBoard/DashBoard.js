@@ -8,6 +8,7 @@ import InprogressProps from './InprogressProps';
 import '../DashBoard/dashboard.css';
 import AxiosWithAuth from "../SignUp/AxiosWithAuth";
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 
 // function formatDate(dateString) {
@@ -40,6 +41,7 @@ import axios from "axios";
 
 
 export default function  DashBoard (){
+    const navigate = useNavigate();
     const[myCourses, setMyCourse] = useState(() => true)
     const[inprogress, setInProgress] = useState(() => null)
     const[completed, setCompleted] = useState(() => null)
@@ -127,8 +129,9 @@ export default function  DashBoard (){
     }
 
     function handleLogout(){
-        localStorage.clear();
-        window.location.reload();
+        localStorage.clear('ent');
+        // window.location.reload();
+        navigate('/')
     }
 
 

@@ -2,9 +2,25 @@ import React from 'react'
 import NavBar from "../Navbar/NavBar";
 import './VideoPageStyle.css'
 import Footer from "../Footer/Footer";
-import {textAlign} from "@mui/system";
+import {useLocation, useParams} from "react-router-dom";
+import ReactPlayer from "react-player";
+import accordionData from "../CoursesPageALL/Django/accordionData";
+
 
 export default function VideoPage(){
+    const { videoId } = useParams();
+    const location = useLocation();
+    const { courseData, selectedIndex } = location.state || {};
+
+    if (!courseData || selectedIndex === undefined) {
+        // Handle the case when data is not available
+        return <div>Loading or error message...</div>;
+    }
+
+
+
+
+
     return (
         <>
             <NavBar/>
@@ -20,14 +36,21 @@ export default function VideoPage(){
                         </div>
 
                         <div className="videoPageContSubText">
-                            Downloading and Installation of Figma on your PC
+                         {/*Downloading and Installation of Figma on your PC*/}
+                            {courseData}
                         </div>
+
                     </div>
                 </div>
 
                 <div className="videoCont">
                     <div className="mainVid">
-                        <div>video</div>
+                        <ReactPlayer
+                            url={`https://www.youtube.com/watch?v=${videoId}`}
+                            controls
+                            width="100%"
+                            height="100%"
+                        />
                     </div>
                 </div>
 

@@ -4,6 +4,7 @@ import Footer from '../Footer/Footer';
 import './LandingPage.css'
 import { Link } from  'react-router-dom'
 import AxiosWithAuth from "../SignUp/AxiosWithAuth";
+import {Helmet} from "react-helmet-async";
 
 export default function LandingPage(){
     const waitListRef = useRef(null);
@@ -61,14 +62,21 @@ export default function LandingPage(){
 
     return(
         <>
+            <Helmet>
+                <title>Landing Page</title>
+                <meta
+                    name='description'
+                    content='Unlock your potential with our programming courses. From beginner to advanced levels, master the art of programming with our expert-led courses.'
+                />
+                <link rel="canonical" href="/LandingPage"/>
+            </Helmet>
             <NavBar/>
             <div className="landPageContainer">
                 <div className="hero-section">
-                    <div className="hero-text">
-                        Are you searching for a reputable
-                        Academy to learn & master
-                        essential tech skills ?
-                    </div>
+                    <h1 className="hero-text">
+                        Are you searching for an
+                        Academy to learn essential tech skills ?
+                    </h1>
 
                     <div className="hero--subtext">
                         Or perhaps you yearn to elevate your expertise, make waves

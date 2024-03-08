@@ -2,8 +2,9 @@ import React ,{useEffect, useState} from 'react'
 //import Logo from '../../images/favicon.png'
 import Button from './Button'
 import '../Navbar/newNav.css'
-import {Link, useLocation} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 import AxiosWithAuth from "../SignUp/AxiosWithAuth";
+import {decrypt} from "../Security";
 //import harmburger from 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1683922753/starpenzu/Vector_r4aqp6.svg'
 
 
@@ -11,6 +12,7 @@ import AxiosWithAuth from "../SignUp/AxiosWithAuth";
 
 
 export default function NavBar() {
+    const navigate = useNavigate();
     const [hamburger, setHamburger] = React.useState(false)
     const [dashdp, setDashDp] = React.useState(false)
     const [coursesDp, setCoursesDp] = React.useState(false)
@@ -22,9 +24,12 @@ export default function NavBar() {
     const mobilenav ={
         color: ddMobile || coursesDp ?'#F9B70B':''
     }
-
-    const checkLocalStorage = localStorage.getItem("ent");
-    const isAuthenticated = checkLocalStorage === null || checkLocalStorage === "";
+    const entToken = localStorage.getItem('ent');
+    const authorizationHeader = entToken ? entToken : '';
+    // const checkLocalStorage = localStorage.getItem("ent");
+    const isAuthenticated =  authorizationHeader === 'true' ? false : true//checkLocalStorage === null || checkLocalStorage === "";
+    // const checkLocalStorage = localStorage.getItem("ent");
+    // const isAuthenticated = checkLocalStorage === null || checkLocalStorage === "";
 
 
 
@@ -91,6 +96,7 @@ export default function NavBar() {
     function handleLogout(){
         localStorage.clear();
         window.location.reload();
+        navigate('/')
     }
 
     useEffect(() => {

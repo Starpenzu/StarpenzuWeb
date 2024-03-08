@@ -11,7 +11,7 @@ export default function Footer(){
         localStorage.clear();
         // window.location.reload();
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        navigate('/Login')
+        navigate('/')
     }
 
 
@@ -31,7 +31,7 @@ export default function Footer(){
                 {/*<div className='widthAdjust'>*/}
                 <div className="leftSeg">
                     <div className="companySeg">
-                        <h1 className='companyHead'>Company</h1>
+                        <div className='companyHead'>Company</div>
                         <ul>
                             <Link to='/aboutuspage' onClick={scrollToTop} className='link-d ffs'>
                                 <li>About Us</li>
@@ -58,7 +58,7 @@ export default function Footer(){
                     </div>
 
                     <div className="socialSeg">
-                        <h1 className='socialHead'>Social Media</h1>
+                        <div className='socialHead'>Social Media</div>
 
                         <ul>
                             <a className='link-d ffs'
@@ -93,7 +93,7 @@ export default function Footer(){
                 </div>
 
                 <div className="middleSeg">
-                    <h1 className='offersHead'>Offers</h1>
+                    <div className='offersHead'>Offers</div>
                     <ul>
                         <li>Portfolio Review</li>
                         <li>CV Template</li>
@@ -106,7 +106,7 @@ export default function Footer(){
                 </div>
 
                 <div className="rightSeg">
-                    <h1 className='menuHead'>Menu</h1>
+                    <div className='menuHead'>Menu</div>
                     <ul>
                         <Link className='link-d ffs' onClick={scrollToTop} to="/">
                             <li >Course</li>
@@ -128,7 +128,7 @@ export default function Footer(){
                 </div>
 
                 <div className="socialSeg2">
-                    <h1 className='socialHead'>Social Media</h1>
+                    <div className='socialHead'>Social Media</div>
 
                     <ul>
                         <a className='link-d ffs'

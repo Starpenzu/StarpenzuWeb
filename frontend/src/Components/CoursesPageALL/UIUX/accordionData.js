@@ -5,7 +5,8 @@ const accordionData = [
         img2: 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1685243073/starpenzu/arrowup_pjrati.svg',
         locked: true, //if changed to false it will be unlocked  works for all
         imgLock: 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1685242709/starpenzu/lock_tssaht.svg',
-        stages: ['Downloading & Installation of Figma on your PC']
+        stages: ['Downloading & Installation of Figma on your PC', 'How to use primary colours '],
+        videoIds: ['PNMKJo2fxfU', 'YeI6Wqn4I78', ]
     },
     {
         title: 'Understanding Design Basics',
@@ -13,7 +14,8 @@ const accordionData = [
         img2: 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1685243073/starpenzu/arrowup_pjrati.svg',
         locked: true,
          imgLock: 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1685242709/starpenzu/lock_tssaht.svg',
-        stages: ['Stage 1', 'Stage 2', 'Stage 3', 'Stage 4']
+        stages: ['Stage 1', 'Stage 2', 'Stage 3', 'Stage 4'],
+        videoIds: ['video_id_1', 'video_id_2', 'video_id_3', 'video_id_4']
     },
     {
         title: 'Understanding  Colour Theory & Basics ',
@@ -21,7 +23,8 @@ const accordionData = [
         img2: 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1685243073/starpenzu/arrowup_pjrati.svg',
         locked: true,
          imgLock: 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1685242709/starpenzu/lock_tssaht.svg',
-        stages: ['How the colour wheel works ', 'How to use primary colours ', 'How to use primary colours ', 'How to use tetiary colours ']
+        stages: ['How the colour wheel works ', 'How to use primary colours ', 'How to use primary colours ', 'How to use tetiary colours '],
+        videoIds: ['video_id_1', 'video_id_2', 'video_id_3', 'video_id_4']
     },
     {
         title: 'Understanding  Figma Tool',
@@ -29,7 +32,8 @@ const accordionData = [
         img2: 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1685243073/starpenzu/arrowup_pjrati.svg',
         locked: true,
          imgLock: 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1685242709/starpenzu/lock_tssaht.svg',
-        stages: ['Stage 1', 'Stage 2', 'Stage 3', 'Stage 4', 'Stage 5']
+        stages: ['Stage 1', 'Stage 2', 'Stage 3', 'Stage 4', 'Stage 5'],
+        videoIds: ['video_id_1', 'video_id_2', 'video_id_3', 'video_id_4', 'video_id_5']
     },
     {
         title: 'Usage of Plugins in Figma',
@@ -37,7 +41,8 @@ const accordionData = [
         img2: 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1685243073/starpenzu/arrowup_pjrati.svg',
         locked: true,
          imgLock: 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1685242709/starpenzu/lock_tssaht.svg',
-        stages: ['Stage 1']
+        stages: ['Stage 1'],
+        videoIds: ['video_id_1']
     },
     {
         title: 'How to Use figma Components',
@@ -45,7 +50,8 @@ const accordionData = [
         img2: 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1685243073/starpenzu/arrowup_pjrati.svg',
         locked: true,
          imgLock: 'https://res.cloudinary.com/do5wu6ikf/image/upload/v1685242709/starpenzu/lock_tssaht.svg',
-        stages: ['Stage 1']
+        stages: ['Stage 1'],
+        videoIds: ['video_id_1']
     }
 ];
 

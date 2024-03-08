@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import NavBar from '../Navbar/NavBar';
 import SignInButton from './SignInbutton';
@@ -11,6 +11,7 @@ let formData = new FormData();
 
 
 export default function SignUp() {
+    const navigate = useNavigate();
 
     const[visible, setVisible] = useState(false)
     const[uppercase, setUpperCase]= useState(true)
@@ -172,9 +173,10 @@ export default function SignUp() {
 
 
         if (isPasswordValid) {
-
-          uploadData();
-          SendToAPI();
+            // navigate('/Login')
+          // uploadData();
+          // SendToAPI();
+            setDone(true)
         }
     }
 
@@ -285,7 +287,7 @@ export default function SignUp() {
                           mailtext='Check your mail (spam) for the activation link before signing in'
                           img2='https://res.cloudinary.com/do5wu6ikf/image/upload/v1688124092/starpenzu/f6etyt_twbh6j.svg'
                           proceedsubtext='Click to Proceed'
-                          ff = '/'
+                          ff = '/Login'
                       />
                   </div>
                 </div>

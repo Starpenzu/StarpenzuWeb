@@ -67,36 +67,39 @@ export default function Login (){
         clearCookies();
 
 
-        try {
-            const response = await AxiosWithAuth.post("/user/token/", {
-                email,
-                password,
-            });
+        // try {
+        //     const response = await AxiosWithAuth.post("/user/token/", {
+        //         email,
+        //         password,
+        //     });
+        //
+        //     if (response.status === 200 || response.status === 201) {
+        //         const token = response.data.token;
+        //
+        //         localStorage.setItem("ent", encrypt(token));
+        //
+        //         setLoading(false)
+        //
+        //
+        //         window.location.reload();
+        //
+        //     } else {
+        //
+        //         console.log("Invalid credentials. Please try again.");
+        //     }
+        // }
+        //
+        // catch (error) {
+        //     setErrorMessage("Invalid credentials. Please try again.");
+        //
+        // }
+        // finally {
+        //     setLoading(false)
+        // }
+        localStorage.setItem("ent", 'true');
 
-            if (response.status === 200 || response.status === 201) {
-                const token = response.data.token;
+        navigate("/");
 
-                localStorage.setItem("ent", encrypt(token));
-
-                setLoading(false)
-
-                navigate("/");
-
-                window.location.reload();
-
-            } else {
-
-                console.log("Invalid credentials. Please try again.");
-            }
-        }
-
-        catch (error) {
-            setErrorMessage("Invalid credentials. Please try again.");
-
-        }
-        finally {
-            setLoading(false)
-        }
 
     };
 
